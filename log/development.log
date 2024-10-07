@@ -5403,3 +5403,38 @@ Started GET "/manifest.json" for ::1 at 2024-10-07 00:32:22 -0700
   
 ActionController::RoutingError (No route matches [GET] "/manifest.json"):
   
+Started GET "/" for 127.0.0.1 at 2024-10-07 00:38:46 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 6.9ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 3.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 745.1ms | GC: 0.0ms)
+Completed 200 OK in 923ms (Views: 788.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-10-07 00:38:48 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/recipes" for 127.0.0.1 at 2024-10-07 00:38:54 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/recipes"):
+  
+Started GET "/swipe" for 127.0.0.1 at 2024-10-07 00:38:55 -0700
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (4.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:7
+  Rendered swipe/index.html.erb within layouts/application (Duration: 48.5ms | GC: 0.2ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 65.0ms | GC: 0.2ms)
+Completed 200 OK in 137ms (Views: 66.6ms | ActiveRecord: 7.4ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-10-07 00:38:56 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
