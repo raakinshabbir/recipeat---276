@@ -1,46 +1,49 @@
 <h1>Swipe Through Recipes</h1>
 
-<!-- Swiper container -->
-<div class="swiper-container">
-  <div class="swiper-wrapper">
-    <!-- Loop through recipes and display each one as a swiper slide -->
-    <% @recipes.each do |recipe| %>
-      <div class="swiper-slide" style="padding: 60px; border: 3px solid #ccc; border-radius: 16px; background-color: #f9f9f9; max-width: 600px; margin: 0 auto;">
-        <!-- Recipe Title -->
-        <h2 style="color: #2c3e50;"><%= recipe.title %></h2>
-        
-        <!-- Recipe Details -->
-        <div style="margin-top: 10px;">
-          <strong>Ingredients:</strong>
-          <p style="font-size: 14px; color: #555;"><%= recipe.ingredients %></p>
-          
-          <strong>Instructions:</strong>
-          <p style="font-size: 14px; color: #555;"><%= recipe.instructions %></p>
-          
-          <div style="display: flex; justify-content: space-between; margin-top: 10px;">
-            <!-- Cooking Time -->
-            <div style="text-align: left;">
-              <strong>Cooking Time:</strong>
-              <p><%= recipe.cooking_time %></p>
-            </div>
-            <!-- Servings -->
-            <div style="text-align: center;">
-              <strong>Servings:</strong>
-              <p><%= recipe.servings %></p>
-            </div>
-            <!-- Difficulty -->
-            <div style="text-align: right;">
-              <strong>Difficulty:</strong>
-              <p><%= recipe.difficulty %></p>
-            </div>
+<!-- Swiper Web Component container -->
+<swiper-container
+  direction="horizontal"
+  loop="true"
+  slides-per-view="1"
+  navigation="true"
+  pagination="true"
+  style="--swiper-navigation-color: #333; --swiper-pagination-color: #333; width: 100%; max-width: 600px; margin: 0 auto;"
+>
+  <!-- Loop through recipes and display each one as a swiper slide -->
+  <% @recipes.each do |recipe| %>
+    <swiper-slide style="padding: 60px; border: 3px solid #ccc; border-radius: 16px; background-color: #f9f9f9;">
+      <!-- Recipe Title -->
+      <h2 style="color: #2c3e50;"><%= recipe.title %></h2>
+
+      <!-- Recipe Details -->
+      <div style="margin-top: 10px;">
+        <strong>Ingredients:</strong>
+        <p style="font-size: 14px; color: #555;"><%= recipe.ingredients %></p>
+
+        <strong>Instructions:</strong>
+        <p style="font-size: 14px; color: #555;"><%= recipe.instructions %></p>
+
+        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+          <!-- Cooking Time -->
+          <div style="text-align: left;">
+            <strong>Cooking Time:</strong>
+            <p><%= recipe.cooking_time %></p>
+          </div>
+          <!-- Servings -->
+          <div style="text-align: center;">
+            <strong>Servings:</strong>
+            <p><%= recipe.servings %></p>
+          </div>
+          <!-- Difficulty -->
+          <div style="text-align: right;">
+            <strong>Difficulty:</strong>
+            <p><%= recipe.difficulty %></p>
           </div>
         </div>
       </div>
-    <% end %>
-  </div>
+    </swiper-slide>
+  <% end %>
+</swiper-container>
 
-  <!-- Swiper controls (optional) -->
-  <div class="swiper-button-next" style="color: #333;"></div>
-  <div class="swiper-button-prev" style="color: #333;"></div>
-  
-</div>
+<!-- Include Swiper Web Component JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>

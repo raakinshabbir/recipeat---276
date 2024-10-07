@@ -6,13 +6,21 @@ document.addEventListener("DOMContentLoaded", function () {
   const swiper = new Swiper('.swiper-container', {
     direction: 'horizontal',
     loop: true,
-    sliderPerView: 1,
+    slidesPerView: 1,
+    spaceBetween: 50,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
     swipeHandler: true,
-    spaceBetween: 50,
+    keyboard: {
+      enabled: true,
+      onlyInViewport: false,
+    },
+    // Enable mouse drag/swipe functionality
+    simulateTouch: true,   // Allows swiping with the mouse
+    mousewheel: true,      // Optional: Allows scrolling with the mouse wheel
+    grabCursor: true,
     on: {
       slideChangeTransitionEnd: function () {
         // Example: Capture swipe left or right
