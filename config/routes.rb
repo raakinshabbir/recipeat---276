@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get "/recipes", to: "recipes#index"
+  get "/swipe", to: "swipe#index"
+  get "/recipes/:id", to: "recipes#show"
   devise_for :users
 
 
