@@ -1,10 +1,3 @@
-// Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
-import "@hotwired/turbo-rails"
-import "controllers"
-
-// application.js
-//= require swiper
-
 document.addEventListener("DOMContentLoaded", function () {
     const swiper = new Swiper('.swiper-container', {
       direction: 'horizontal',
