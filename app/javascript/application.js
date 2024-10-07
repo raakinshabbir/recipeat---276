@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const swiper = new Swiper('.swiper-container', {
     direction: 'horizontal',
     loop: true,
+    sliderPerView: 1,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
