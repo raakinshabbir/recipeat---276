@@ -7540,3 +7540,30 @@ Started GET "/manifest.json" for ::1 at 2024-10-08 15:25:05 -0700
   
 ActionController::RoutingError (No route matches [GET] "/manifest.json"):
   
+Started GET "/" for ::1 at 2024-10-08 15:36:33 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 2.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 117.1ms | GC: 8.7ms)
+Completed 200 OK in 134ms (Views: 121.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 8.7ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-10-08 15:36:33 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/manifest.json" for ::1 at 2024-10-08 15:36:36 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/welcomePage" for ::1 at 2024-10-08 15:36:45 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/welcomePage"):
+  
+Started GET "/welcome" for ::1 at 2024-10-08 15:36:48 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/welcome"):
+  
