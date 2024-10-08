@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipeat Recipes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <center>
+    <h1>Add Your Recipe!</h1>
+    <form id="recipe-form">
+        <input type="text" id ="recipe-name" placeholder="Recipe Name" required><br>
+        <textarea id="recipe-description" placeholder="Recipe Description" required></textarea>
+        <textarea id="recipe-origin" placeholder="Country Origin" required></textarea>
+        <textarea id="recipe-steps" placeholder="Steps" required></textarea>
+        <input type="file" id="recipe-photo" accept="image/*"><br>
+        <button type="submit">Add Recipe</button>
+    </form>
+    <div id="recipe-list"></div>
+    <script src="recipeatadd.js"></script>
+</center>
+</body>
+</html>
