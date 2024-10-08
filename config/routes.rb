@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get "/swipe", to: "swipe#index"
   get "/recipes/:id", to: "recipes#show"
   devise_for :users
-
+  get "/addrecipe", to: "addrecipe#index"
 
 
   root to: "welcome#index"
