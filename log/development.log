@@ -1778,3 +1778,71 @@ Causes:
 ActionDispatch::MissingController (uninitialized constant AddrecipeController)
 NameError (uninitialized constant AddrecipeController)
   
+Started GET "/addrecipe" for ::1 at 2024-10-08 16:16:28 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant AddrecipeController):
+
+Causes:
+ActionDispatch::MissingController (uninitialized constant AddrecipeController)
+NameError (uninitialized constant AddrecipeController)
+  
+Started GET "/" for ::1 at 2024-10-08 16:16:33 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.7ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 96.2ms | GC: 10.4ms)
+Completed 200 OK in 114ms (Views: 100.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 10.4ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-10-08 16:16:33 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/add%20recipe" for ::1 at 2024-10-08 16:16:53 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/add%20recipe"):
+  
+Started GET "/addrecipe" for ::1 at 2024-10-08 16:16:59 -0700
+  
+ActionController::RoutingError (uninitialized constant AddrecipeController):
+
+Causes:
+ActionDispatch::MissingController (uninitialized constant AddrecipeController)
+NameError (uninitialized constant AddrecipeController)
+  
+Started GET "/addrecipe" for ::1 at 2024-10-08 16:17:58 -0700
+  
+ActionController::RoutingError (uninitialized constant AddrecipeController):
+
+Causes:
+ActionDispatch::MissingController (uninitialized constant AddrecipeController)
+NameError (uninitialized constant AddrecipeController)
+  
+Started GET "/addrecipe" for ::1 at 2024-10-08 16:18:05 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant AddrecipeController):
+
+Causes:
+ActionDispatch::MissingController (uninitialized constant AddrecipeController)
+NameError (uninitialized constant AddrecipeController)
+  
+Started GET "/addrecipe" for ::1 at 2024-10-08 16:18:56 -0700
+  
+ActionController::RoutingError (uninitialized constant AddrecipeController):
+
+Causes:
+ActionDispatch::MissingController (uninitialized constant AddrecipeController)
+NameError (uninitialized constant AddrecipeController)
+  
+Started GET "/addrecipe" for ::1 at 2024-10-08 16:18:57 -0700
+  
+ActionController::RoutingError (uninitialized constant AddrecipeController):
+
+Causes:
+ActionDispatch::MissingController (uninitialized constant AddrecipeController)
+NameError (uninitialized constant AddrecipeController)
+  
