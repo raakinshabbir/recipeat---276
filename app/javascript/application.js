@@ -19,6 +19,11 @@ document.addEventListener("DOMContentLoaded", function () {
       if (swiper.activeIndex !== lastIndex) {
         const activeSlide = swiper.slides[swiper.activeIndex];
         const previousIndex = swiper.previousIndex;
+        const recipeId = activeSlide.getAttribute('data-recipe-id'); // Get the recipe ID from data attribute
+        if (!recipeId) {
+          console.error("Recipe ID not found on the active slide");
+          return;
+        }
   
         //variables for overlay
         const likeOverlay = activeSlide.querySelector('.feedback-overlay.like');

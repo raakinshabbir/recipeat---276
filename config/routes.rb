@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get '/liked', to: 'liked#index', as: 'liked'
   
-  root to: "welcome#index"
+    root to: "welcome#index"
   # Defines the root path route ("/")
   # root "posts#index"
 end
