@@ -1,4 +1,3 @@
-# README
 # Recipeat - Iteration 1 Retrospective
 
 **Date:** Wed Oct 9  
@@ -47,3 +46,7 @@ Challenges faced during this iteration included:
 To enhance our next iteration, we identified the following areas for improvement:
 - Adding comments in the code and providing more detailed Git commit messages to give context.
 - Implementing a code review process prior to merging branches to identify potential issues early and improve overall code quality.
+
+
+# Jira - Feature Tracking with Kanban Board
+![image](https://github.com/user-attachments/assets/2f9d86f6-d8a0-449c-84e3-928cfa73e12c)
