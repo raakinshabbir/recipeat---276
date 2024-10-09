@@ -2,22 +2,28 @@ const recipes = JSON.parse(localStorage.getItem('recipes')) || [];
 
 // Function to display recipes
 function displayRecipes() {
-    const recipeList = document.getElementById('recipe-list');
-    recipeList.innerHTML = ''; // Clear existing recipes
+    fetch('/recipes')
+        .then(response => response.json())
+        .then (data => {
+            const recipeList = document.getElementById('recipe-list');
+            recipeList.innerHTML = ''; // Clear existing recipes
 
-    recipes.forEach((recipe, index) => {
-        const item = document.createElement('div');
-        item.innerHTML = `
-            <h3>${recipe.name}</h3>
-            <p>${recipe.description}</p>
-            <p>${recipe.origin}</p>
-            <p>${recipe.steps}</p>
-            <img src="${recipe.photo}" alt="${recipe.name}" style="display: block; margin: 0 auto; max-width: 100%;">
-            <button onclick="deleteRecipe(${index})">Delete</button>
-            `;
-        recipeList.appendChild(item);
-    });
+            data.forEach((recipe, index) => {
+                const item = document.createElement('div');
+                item.innerHTML = `
+                    <h3>${recipe.name}</h3>
+                    <p>${recipe.description}</p>
+                    <p>${recipe.origin}</p>
+                    <p>${recipe.steps}</p>
+                    <img src="${recipe.photo}" alt="${recipe.name}" style="display: block; margin: 0 auto; max-width: 100%;">
+                    <button onclick="deleteRecipe(${index})">Delete</button>
+                    `;
+                recipeList.appendChild(item);
+            });
+        })
+        .catch(error => console.error('Error:', error));
 }
+
 
 // Function to add a new recipe
 document.getElementById('recipe-form').addEventListener('submit', function(e) {
@@ -36,20 +42,31 @@ document.getElementById('recipe-form').addEventListener('submit', function(e) {
 
     const reader = new FileReader();
     reader.onload = function(event) {
-        const recipe = {
-            name,
-            description,
-            origin,
-            steps,
-            photo: event.target.result // Save the image as a data URL
-        };
-
-        recipes.push(recipe);
-        localStorage.setItem('recipes', JSON.stringify(recipes)); // Save to localStorage
-        displayRecipes(); // Update the displayed recipes
+        fetch('/recipes', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').content
+            },
+            body: JSON.stringify({
+                recipe: {
+                    name,
+                    description,
+                    origin,
+                    steps,
+                    photo: event.target.result
+                }
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            displayRecipes();
+        })
+        .catch(error => console.error('Error:', error));
     };
     reader.readAsDataURL(photo);
 });
+
 
 // Load recipes from localStorage on page load
 window.onload = function() {
