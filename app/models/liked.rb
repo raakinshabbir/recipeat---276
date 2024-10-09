@@ -1,0 +1,2 @@
+class Liked < ApplicationRecord
+end

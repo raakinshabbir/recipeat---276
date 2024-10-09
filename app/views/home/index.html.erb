@@ -1,1 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liked Recipes</title>
+</head>
+<body>
+  <center>
+    <h1>Liked Recipes</h1>
 
+    <div id="liked-recipes-list">
+      <!-- This is where the liked recipes will be rendered -->
+      <ul id="recipes">
+        <!-- Each liked recipe will be appended here as an <li> element -->
+      </ul>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // Fetch liked recipes from the server via AJAX
+        fetch('/liked', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+        .then(response => response.json())
+        .then(likedRecipes => {
+          // Grab the <ul> element to append the recipes
+          const recipesList = document.getElementById('recipes');
+
+          // Check if there are liked recipes
+          if (likedRecipes.length === 0) {
+            recipesList.innerHTML = '<li>No liked recipes yet!</li>';
+          } else {
+            // Dynamically render each liked recipe into the list
+            likedRecipes.forEach(recipe => {
+              const listItem = document.createElement('li');
+              listItem.innerHTML = `
+                <h3>${recipe.name}</h3>
+                <p>${recipe.description}</p>
+                <img src="${recipe.photo_url}" alt="${recipe.name}" width="150" height="150">
+              `;
+              recipesList.appendChild(listItem);
+            });
+          }
+        })
+        .catch(error => {
+          console.error("Error fetching liked recipes:", error);
+          document.getElementById('recipes').innerHTML = '<li>Error loading liked recipes.</li>';
+        });
+      });
+    </script>
+  </center>
+</body>
+</html>
