@@ -2,7 +2,7 @@
 import "@hotwired/turbo-rails";
 import "controllers";
 
-
+//swiper js
 document.addEventListener("DOMContentLoaded", function () {
 
 
