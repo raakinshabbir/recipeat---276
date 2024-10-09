@@ -15914,3 +15914,221 @@ Started POST "/liked" for ::1 at 2024-10-09 00:39:41 -0700
   
 ActionController::RoutingError (No route matches [POST] "/liked"):
   
+Started GET "/swipe" for ::1 at 2024-10-09 12:32:49 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:14
+  Rendered swipe/index.html.erb within layouts/application (Duration: 18.5ms | GC: 0.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 37.3ms | GC: 9.9ms)
+  Rendered layout layouts/application.html.erb (Duration: 192.1ms | GC: 9.9ms)
+Completed 200 OK in 218ms (Views: 191.0ms | ActiveRecord: 6.4ms (2 queries, 0 cached) | GC: 9.9ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-10-09 12:32:49 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/swipe" for ::1 at 2024-10-09 12:32:50 -0700
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:14
+  Rendered swipe/index.html.erb within layouts/application (Duration: 4.7ms | GC: 0.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 7.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | GC: 0.3ms)
+Completed 200 OK in 27ms (Views: 21.6ms | ActiveRecord: 0.8ms (2 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/addrecipe" for ::1 at 2024-10-09 12:32:51 -0700
+Processing by AddrecipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering addrecipe/index.html within layouts/application
+  Rendered addrecipe/index.html within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 3.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | GC: 0.0ms)
+Completed 200 OK in 22ms (Views: 15.5ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/liked" for ::1 at 2024-10-09 12:32:51 -0700
+Processing by LikedController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering liked/liked.html.erb within layouts/application
+  Rendered liked/liked.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 4.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | GC: 0.6ms)
+Completed 200 OK in 20ms (Views: 17.5ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/liked.json" for ::1 at 2024-10-09 12:32:52 -0700
+Processing by LikedController#index as JSON
+  Parameters: {"liked"=>{}}
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.8ms (0 queries, 0 cached) | GC: 1.3ms)
+
+
+Started GET "/example1.jpg" for ::1 at 2024-10-09 12:32:52 -0700
+Started GET "/example2.jpg" for ::1 at 2024-10-09 12:32:52 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/example1.jpg"):
+  
+Started GET "/example3.jpg" for ::1 at 2024-10-09 12:32:52 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/example2.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/example3.jpg"):
+  
+Started DELETE "/users/sign_out?_method=delete" for ::1 at 2024-10-09 12:32:52 -0700
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 21ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2024-10-09 12:32:52 -0700
+Processing by WelcomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 11.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2024-10-09 12:32:52 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 8.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | GC: 0.0ms)
+Completed 200 OK in 24ms (Views: 18.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2024-10-09 12:32:53 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.1ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 11.2ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | GC: 0.0ms)
+Completed 200 OK in 22ms (Views: 16.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2024-10-09 12:32:54 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 5.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | GC: 0.6ms)
+Completed 200 OK in 20ms (Views: 16.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2024-10-09 12:32:54 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 9.8ms | GC: 0.3ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | GC: 0.3ms)
+Completed 200 OK in 20ms (Views: 14.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2024-10-09 12:32:55 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 14.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.5ms | GC: 0.2ms)
+Completed 200 OK in 29ms (Views: 21.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2024-10-09 12:32:58 -0700
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/swipe
+Completed 303 See Other in 369ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/swipe" for ::1 at 2024-10-09 12:32:58 -0700
+Processing by SwipeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:14
+  Rendered swipe/index.html.erb within layouts/application (Duration: 6.1ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 6.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.0ms | GC: 0.0ms)
+Completed 200 OK in 21ms (Views: 19.6ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/swipe" for ::1 at 2024-10-09 12:33:01 -0700
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:14
+  Rendered swipe/index.html.erb within layouts/application (Duration: 2.0ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | GC: 3.6ms)
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 3.6ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-10-09 12:33:01 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started POST "/liked" for ::1 at 2024-10-09 12:33:02 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/liked"):
+  
+Started POST "/liked" for ::1 at 2024-10-09 12:33:03 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/liked"):
+  
+Started POST "/liked" for ::1 at 2024-10-09 12:33:05 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/liked"):
+  
+Started POST "/liked" for ::1 at 2024-10-09 12:33:05 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/liked"):
+  
+Started POST "/liked" for ::1 at 2024-10-09 12:33:05 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/liked"):
+  
+Started GET "/swipe" for ::1 at 2024-10-09 12:33:07 -0700
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:14
+  Rendered swipe/index.html.erb within layouts/application (Duration: 4.3ms | GC: 0.0ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 6.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | GC: 1.3ms)
+Completed 200 OK in 22ms (Views: 19.8ms | ActiveRecord: 1.1ms (2 queries, 0 cached) | GC: 1.3ms)
+
+
