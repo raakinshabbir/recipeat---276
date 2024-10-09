@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
   get "/addrecipe", to: "addrecipe#index"
 
-  get '/liked', to: 'liked#index', as: 'liked'
+  get '/liked', to: 'liked#index'
   
     root to: "welcome#index"
   # Defines the root path route ("/")

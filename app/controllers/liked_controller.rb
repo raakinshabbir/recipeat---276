@@ -12,7 +12,7 @@ class LikedController < ApplicationController
         render json: liked_recipes
       else
         # Render the HTML view (index.html.erb)
-        render :liked
+        render :index
       end
     end
   
