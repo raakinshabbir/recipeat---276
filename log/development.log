@@ -9636,3 +9636,56 @@ Started GET "/manifest.json" for ::1 at 2024-10-08 23:36:48 -0700
   
 ActionController::RoutingError (No route matches [GET] "/manifest.json"):
   
+Started GET "/swipe" for ::1 at 2024-10-09 00:01:01 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:14
+  Rendered swipe/index.html.erb within layouts/application (Duration: 15.2ms | GC: 0.0ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 22.1ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 177.6ms | GC: 9.4ms)
+Completed 200 OK in 201ms (Views: 177.1ms | ActiveRecord: 4.7ms (2 queries, 0 cached) | GC: 9.4ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-10-09 00:01:02 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/liked" for ::1 at 2024-10-09 00:01:07 -0700
+Processing by LikedController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering liked/liked.html.erb within layouts/application
+  Rendered liked/liked.html.erb within layouts/application (Duration: 1.1ms | GC: 0.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 6.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | GC: 1.3ms)
+Completed 200 OK in 18ms (Views: 16.3ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 1.3ms)
+
+
+Started GET "/liked.json" for ::1 at 2024-10-09 00:01:07 -0700
+Started GET "/manifest.json" for ::1 at 2024-10-09 00:01:07 -0700
+Processing by LikedController#index as JSON
+  Parameters: {"liked"=>{}}
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 0.7ms (0 queries, 0 cached) | GC: 1.1ms)
+
+
+Started GET "/example1.jpg" for ::1 at 2024-10-09 00:01:07 -0700
+Started GET "/example2.jpg" for ::1 at 2024-10-09 00:01:07 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/example2.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/example1.jpg"):
+  
+Started GET "/example3.jpg" for ::1 at 2024-10-09 00:01:08 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/example3.jpg"):
+  
