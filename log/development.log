@@ -10922,6 +10922,7 @@ Processing by SwipeController#index as HTML
 Completed 200 OK in 20ms (Views: 18.4ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.0ms)
 
 
+<<<<<<< HEAD
 Started GET "/swipe" for ::1 at 2024-10-08 23:41:42 -0700
   [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 Processing by SwipeController#index as HTML
@@ -11388,12 +11389,16 @@ Completed 200 OK in 13ms (Views: 9.2ms | ActiveRecord: 0.2ms (2 queries, 0 cache
 
 
 Started GET "/swipe" for ::1 at 2024-10-08 23:51:04 -0700
+=======
+Started GET "/swipe" for ::1 at 2024-10-09 00:42:07 -0700
+>>>>>>> UI-Integration
   [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 Processing by SwipeController#index as HTML
   Rendering layout layouts/application.html.erb
   Rendering swipe/index.html.erb within layouts/application
   [1m[36mRecipe Load (0.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
   ↳ app/views/swipe/index.html.erb:14
+<<<<<<< HEAD
   Rendered swipe/index.html.erb within layouts/application (Duration: 14.3ms | GC: 0.0ms)
   [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
   ↳ app/views/shared/_navbar.html.erb:9
@@ -11707,11 +11712,27 @@ Started GET "/manifest.json" for ::1 at 2024-10-09 00:43:05 -0700
 ActionController::RoutingError (No route matches [GET] "/manifest.json"):
   
 Started GET "/swipe" for ::1 at 2024-10-09 00:43:06 -0700
+=======
+  Rendered swipe/index.html.erb within layouts/application (Duration: 13.5ms | GC: 0.0ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 20.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 43.8ms | GC: 0.0ms)
+Completed 200 OK in 66ms (Views: 43.3ms | ActiveRecord: 4.5ms (2 queries, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-10-09 00:42:08 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/swipe" for ::1 at 2024-10-09 00:42:10 -0700
+>>>>>>> UI-Integration
 Processing by SwipeController#index as HTML
   Rendering layout layouts/application.html.erb
   Rendering swipe/index.html.erb within layouts/application
   [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
   ↳ app/views/swipe/index.html.erb:14
+<<<<<<< HEAD
   Rendered swipe/index.html.erb within layouts/application (Duration: 3.6ms | GC: 0.0ms)
   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
   ↳ app/views/shared/_navbar.html.erb:9
@@ -11759,11 +11780,27 @@ Completed 200 OK in 14ms (Views: 10.8ms | ActiveRecord: 0.1ms (1 query, 0 cached
 
 
 Started GET "/swipe" for ::1 at 2024-10-09 00:43:08 -0700
+=======
+  Rendered swipe/index.html.erb within layouts/application (Duration: 3.3ms | GC: 0.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 6.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 13.1ms | ActiveRecord: 0.7ms (2 queries, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-10-09 00:42:10 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/swipe" for ::1 at 2024-10-09 00:42:11 -0700
+>>>>>>> UI-Integration
 Processing by SwipeController#index as HTML
   Rendering layout layouts/application.html.erb
   Rendering swipe/index.html.erb within layouts/application
   [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
   ↳ app/views/swipe/index.html.erb:14
+<<<<<<< HEAD
   Rendered swipe/index.html.erb within layouts/application (Duration: 2.1ms | GC: 0.0ms)
   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
   ↳ app/views/shared/_navbar.html.erb:9
@@ -11938,3 +11975,17 @@ Processing by SwipeController#index as HTML
 Completed 200 OK in 32ms (Views: 29.5ms | ActiveRecord: 0.2ms (2 queries, 0 cached) | GC: 0.0ms)
 
 
+=======
+  Rendered swipe/index.html.erb within layouts/application (Duration: 2.3ms | GC: 1.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 2.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | GC: 1.1ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.2ms (2 queries, 0 cached) | GC: 1.1ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-10-09 00:42:11 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+>>>>>>> UI-Integration
