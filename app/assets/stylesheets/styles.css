@@ -25,14 +25,18 @@
 .navbar-brand {
     font-size: 3.0rem; 
     color: white;
-    font-family: "Bebas Neue", sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
     font-weight: bold;
-    letter-spacing: 1px;
+    font-style: oblique;
+    letter-spacing: 0px;
 }
 
 .nav-link {
     font-size: 1.2rem;
     font-weight: bold;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+    font-weight: bold;
+    font-style: oblique;
+    letter-spacing: 0px;
 }

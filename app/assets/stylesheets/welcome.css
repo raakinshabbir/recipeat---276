@@ -10,6 +10,10 @@ body {
 
 
 .welcome-container {
+  display: flex; /* Enables Flexbox layout */
+  flex-direction: column; /* Stacks children vertically */
+  justify-content: center; /* Centers children vertically */
+  align-items: center; /* Centers children horizontally */
   overflow: hidden;
   position: relative; /* Positioning context for the overlay */
   text-align: center;
@@ -27,15 +31,28 @@ body {
   .welcome-container h1 {
     font-size: 3rem;
     margin-bottom: 20px;
+    align-items: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+    font-style: oblique;
   }
   
-  .welcome-container p {
+  .welcome-container h2 {
     font-size: 1.2rem;
     margin-bottom: 30px;
+    align-items: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+    font-weight: bolder;
+    font-style: oblique;
+
+
   }
   
   .welcome-container .btn {
     font-size: 1.2rem;
     padding: 10px 20px;
+    font-weight: bolder;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+    font-weight: bolder;
+    font-style: oblique;
   }
   
