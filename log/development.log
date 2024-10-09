@@ -10810,3 +10810,258 @@ Processing by SwipeController#index as HTML
 Completed 200 OK in 20ms (Views: 18.4ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/swipe" for ::1 at 2024-10-08 23:41:42 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (1.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:14
+  Rendered swipe/index.html.erb within layouts/application (Duration: 17.4ms | GC: 0.0ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 19.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 178.4ms | GC: 9.1ms)
+Completed 500 Internal Server Error in 203ms (ActiveRecord: 5.1ms (2 queries, 0 cached) | GC: 9.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `liked_recipes_path' for an instance of #<Class:0x000000012ca63ad8>):
+
+Causes:
+NameError (undefined local variable or method `liked_recipes_path' for an instance of #<Class:0x000000012ca63ad8>)
+    17:           </li>
+    18:           <!-- Liked Recipes Button -->
+    19:           <li class="nav-item">
+    20:             <%= link_to 'Liked Recipes', liked_recipes_path, class: "btn btn-outline-warning nav-link" %>
+    21:           </li>
+    22:           <!-- Sign Out Button -->
+    23:           <li class="nav-item">
+  
+app/views/shared/_navbar.html.erb:20
+app/views/layouts/application.html.erb:36
+Started GET "/swipe" for ::1 at 2024-10-08 23:41:52 -0700
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (2.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:14
+  Rendered swipe/index.html.erb within layouts/application (Duration: 13.0ms | GC: 0.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 24.7ms | GC: 10.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 63.1ms | GC: 22.7ms)
+Completed 500 Internal Server Error in 68ms (ActiveRecord: 2.6ms (2 queries, 0 cached) | GC: 22.8ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `liked_path' for an instance of #<Class:0x000000012d9f0960>):
+
+Causes:
+NameError (undefined local variable or method `liked_path' for an instance of #<Class:0x000000012d9f0960>)
+    17:           </li>
+    18:           <!-- Liked Recipes Button -->
+    19:           <li class="nav-item">
+    20:             <%= link_to 'Liked Recipes', liked_path, class: "btn btn-outline-warning nav-link" %>
+    21:           </li>
+    22:           <!-- Sign Out Button -->
+    23:           <li class="nav-item">
+  
+app/views/shared/_navbar.html.erb:20
+app/views/layouts/application.html.erb:36
+Started GET "/swipe" for ::1 at 2024-10-08 23:42:04 -0700
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (1.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:14
+  Rendered swipe/index.html.erb within layouts/application (Duration: 9.4ms | GC: 0.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 23.4ms | GC: 2.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 42.5ms | GC: 2.8ms)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 2.0ms (2 queries, 0 cached) | GC: 2.8ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `liked_path' for an instance of #<Class:0x000000012dab7c68>):
+
+Causes:
+NameError (undefined local variable or method `liked_path' for an instance of #<Class:0x000000012dab7c68>)
+    17:           </li>
+    18:           <!-- Liked Recipes Button
+    19:           <li class="nav-item">
+    20:             <%= link_to 'Liked Recipes', liked_path, class: "btn btn-outline-warning nav-link" %>
+    21:           </li>
+    22:           -->
+    23:           <!-- Sign Out Button -->
+  
+app/views/shared/_navbar.html.erb:20
+app/views/layouts/application.html.erb:36
+Started GET "/swipe" for ::1 at 2024-10-08 23:42:05 -0700
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:14
+  Rendered swipe/index.html.erb within layouts/application (Duration: 3.0ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 1.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | GC: 0.5ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `liked_path' for an instance of #<Class:0x000000012dab7c68>):
+
+Causes:
+NameError (undefined local variable or method `liked_path' for an instance of #<Class:0x000000012dab7c68>)
+    17:           </li>
+    18:           <!-- Liked Recipes Button
+    19:           <li class="nav-item">
+    20:             <%= link_to 'Liked Recipes', liked_path, class: "btn btn-outline-warning nav-link" %>
+    21:           </li>
+    22:           -->
+    23:           <!-- Sign Out Button -->
+  
+app/views/shared/_navbar.html.erb:20
+app/views/layouts/application.html.erb:36
+Started GET "/swipe" for ::1 at 2024-10-08 23:42:30 -0700
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (1.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:14
+  Rendered swipe/index.html.erb within layouts/application (Duration: 10.8ms | GC: 2.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 8.4ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 28.6ms | GC: 3.8ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 1.6ms (2 queries, 0 cached) | GC: 3.8ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `liked_path' for an instance of #<Class:0x000000012ae05b48>):
+
+Causes:
+NameError (undefined local variable or method `liked_path' for an instance of #<Class:0x000000012ae05b48>)
+    17:           </li>
+    18:           <!-- Liked Recipes Button
+    19:           <li class="nav-item">
+    20:             <%= link_to 'Liked Recipes', liked_path, class: "btn btn-outline-warning nav-link" %>
+    21:           </li>
+    22:           -->
+    23:           <!-- Sign Out Button -->
+  
+app/views/shared/_navbar.html.erb:20
+app/views/layouts/application.html.erb:36
+Started GET "/swipe" for ::1 at 2024-10-08 23:42:31 -0700
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:14
+  Rendered swipe/index.html.erb within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 6.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `liked_path' for an instance of #<Class:0x000000012ae05b48>):
+
+Causes:
+NameError (undefined local variable or method `liked_path' for an instance of #<Class:0x000000012ae05b48>)
+    17:           </li>
+    18:           <!-- Liked Recipes Button
+    19:           <li class="nav-item">
+    20:             <%= link_to 'Liked Recipes', liked_path, class: "btn btn-outline-warning nav-link" %>
+    21:           </li>
+    22:           -->
+    23:           <!-- Sign Out Button -->
+  
+app/views/shared/_navbar.html.erb:20
+app/views/layouts/application.html.erb:36
+Started GET "/swipe" for ::1 at 2024-10-08 23:42:42 -0700
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:14
+  Rendered swipe/index.html.erb within layouts/application (Duration: 8.5ms | GC: 1.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 9.4ms | GC: 2.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 26.4ms | GC: 3.5ms)
+Completed 200 OK in 32ms (Views: 26.8ms | ActiveRecord: 1.0ms (2 queries, 0 cached) | GC: 3.5ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-10-08 23:42:42 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/addrecipe" for ::1 at 2024-10-08 23:42:44 -0700
+  
+ActionController::RoutingError (uninitialized constant AddrecipeController):
+
+Causes:
+ActionDispatch::MissingController (uninitialized constant AddrecipeController)
+NameError (uninitialized constant AddrecipeController)
+  
+Started GET "/addrecipe" for ::1 at 2024-10-08 23:42:45 -0700
+  
+ActionController::RoutingError (uninitialized constant AddrecipeController):
+
+Causes:
+ActionDispatch::MissingController (uninitialized constant AddrecipeController)
+NameError (uninitialized constant AddrecipeController)
+  
+Started GET "/swipe" for ::1 at 2024-10-08 23:42:46 -0700
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:14
+  Rendered swipe/index.html.erb within layouts/application (Duration: 4.9ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 3.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 14.8ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/addrecipe" for ::1 at 2024-10-08 23:42:48 -0700
+  
+ActionController::RoutingError (uninitialized constant AddrecipeController):
+
+Causes:
+ActionDispatch::MissingController (uninitialized constant AddrecipeController)
+NameError (uninitialized constant AddrecipeController)
+  
+Started GET "/addrecipe" for ::1 at 2024-10-08 23:43:02 -0700
+  
+ActionController::RoutingError (uninitialized constant AddrecipeController):
+
+Causes:
+ActionDispatch::MissingController (uninitialized constant AddrecipeController)
+NameError (uninitialized constant AddrecipeController)
+  
+Started GET "/addrecipe" for ::1 at 2024-10-08 23:43:07 -0700
+  
+ActionController::RoutingError (uninitialized constant AddrecipeController):
+
+Causes:
+ActionDispatch::MissingController (uninitialized constant AddrecipeController)
+NameError (uninitialized constant AddrecipeController)
+  
+Started GET "/addrecipe" for ::1 at 2024-10-08 23:43:11 -0700
+  
+ActionController::RoutingError (uninitialized constant AddrecipeController):
+
+Causes:
+ActionDispatch::MissingController (uninitialized constant AddrecipeController)
+NameError (uninitialized constant AddrecipeController)
+  
