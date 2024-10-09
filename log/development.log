@@ -11772,3 +11772,74 @@ Processing by SwipeController#index as HTML
 Completed 200 OK in 37ms (Views: 33.6ms | ActiveRecord: 0.2ms (2 queries, 0 cached) | GC: 1.1ms)
 
 
+Started GET "/" for ::1 at 2024-10-09 01:01:58 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 20.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 97.0ms | GC: 0.4ms)
+Completed 200 OK in 117ms (Views: 100.0ms | ActiveRecord: 1.8ms (1 query, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-10-09 01:01:58 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/users/sign_in" for ::1 at 2024-10-09 01:01:59 -0700
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Redirected to http://localhost:3000/swipe
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 13ms (ActiveRecord: 4.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/swipe" for ::1 at 2024-10-09 01:01:59 -0700
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:14
+  Rendered swipe/index.html.erb within layouts/application (Duration: 17.2ms | GC: 0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 3.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 25.2ms | GC: 0.0ms)
+Completed 200 OK in 31ms (Views: 24.8ms | ActiveRecord: 1.9ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/swipe" for ::1 at 2024-10-09 01:02:01 -0700
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:14
+  Rendered swipe/index.html.erb within layouts/application (Duration: 4.4ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 2.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 28.4ms | GC: 9.4ms)
+Completed 200 OK in 31ms (Views: 28.8ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 9.4ms)
+
+
+Started GET "/swipe" for ::1 at 2024-10-09 01:02:02 -0700
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:14
+  Rendered swipe/index.html.erb within layouts/application (Duration: 4.3ms | GC: 1.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 3.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.2ms | GC: 2.9ms)
+Completed 200 OK in 20ms (Views: 16.5ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 2.9ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-10-09 01:02:02 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
