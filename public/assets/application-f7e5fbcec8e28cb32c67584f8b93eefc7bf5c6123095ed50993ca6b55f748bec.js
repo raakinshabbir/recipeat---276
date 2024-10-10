@@ -3,7 +3,7 @@ import "@hotwired/turbo-rails";
 import "controllers";
 
 //swiper js
-document.addEventListener("turbo:load", function () {
+document.addEventListener("DOMContentLoaded", function () {
 
 
   const swiperContainer = document.querySelector('swiper-container');
