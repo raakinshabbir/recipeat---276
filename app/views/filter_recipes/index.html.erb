@@ -1,0 +1,36 @@
+<h2>Filter Recipes</h2>
+
+<form id="recipeFilterForm" method="get" action="/filter_recipes">
+  <div>
+    <label for="difficulty">Difficulty:</label>
+    <select id="difficulty" name="difficulty">
+      <option value="">All</option>
+      <option value="Easy">Easy</option>
+      <option value="Medium">Medium</option>
+      <option value="Hard">Hard</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="cooking_time">Max Cooking Time (minutes):</label>
+    <input type="number" id="cooking_time" name="cooking_time" placeholder="e.g., 30", min="0">
+  </div>
+
+  <div>
+    <label for="unwanted_ingredients">Unwanted Ingredients (comma-separated):</label>
+    <input type="text" id="unwanted_ingredients" name="unwanted_ingredients" placeholder="e.g., Garlic, Onion" value="<%= params[:unwanted_ingredients] %>">
+  </div>
+
+  <button type="submit">Filter</button>
+</form>
+
+<!-- Filtered recipes will be displayed here -->
+<div id="recipe-results">
+  <% if @recipes.any? %> <!-- Check if there are any recipes -->
+    <% @recipes.each do |recipe| %>
+      <p><%= recipe.title %> - Difficulty: <%= recipe.difficulty %>, Cooking Time: <%= recipe.cooking_time %> mins</p>
+    <% end %>
+  <% else %>
+    <p>No recipes match your criteria.</p> <!-- Message if no recipes match the filter -->
+  <% end %>
+</div>
