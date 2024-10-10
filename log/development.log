@@ -18562,3 +18562,463 @@ puma (6.4.3) lib/puma/request.rb:99:in `handle_request'
 puma (6.4.3) lib/puma/server.rb:464:in `process_client'
 puma (6.4.3) lib/puma/server.rb:245:in `block in run'
 puma (6.4.3) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/" for ::1 at 2024-10-09 18:44:08 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20241009225700_create_likedrecipes.rb
+
+
+):
+  
+activerecord (7.2.1) lib/active_record/migration.rb:756:in `check_pending_migrations'
+activerecord (7.2.1) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.1) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.1) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.1) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.1) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.7) lib/rack/method_override.rb:28:in `call'
+rack (3.1.7) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.7) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.4.3) lib/puma/configuration.rb:272:in `call'
+puma (6.4.3) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.3) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.3) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.3) lib/puma/server.rb:464:in `process_client'
+puma (6.4.3) lib/puma/server.rb:245:in `block in run'
+puma (6.4.3) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/" for ::1 at 2024-10-09 18:44:09 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20241009225700_create_likedrecipes.rb
+
+
+):
+  
+activerecord (7.2.1) lib/active_record/migration.rb:756:in `check_pending_migrations'
+activerecord (7.2.1) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.1) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.1) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.1) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.1) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.7) lib/rack/method_override.rb:28:in `call'
+rack (3.1.7) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.7) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.4.3) lib/puma/configuration.rb:272:in `call'
+puma (6.4.3) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.3) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.3) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.3) lib/puma/server.rb:464:in `process_client'
+puma (6.4.3) lib/puma/server.rb:245:in `block in run'
+puma (6.4.3) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateLikedrecipes (20241009225700)
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateLikedrecipes (20241009225700)
+Started GET "/" for ::1 at 2024-10-09 18:46:31 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20241009225700_create_likedrecipes.rb
+
+
+):
+  
+activerecord (7.2.1) lib/active_record/migration.rb:756:in `check_pending_migrations'
+activerecord (7.2.1) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.1) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.1) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.1) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.1) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.7) lib/rack/method_override.rb:28:in `call'
+rack (3.1.7) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.7) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.4.3) lib/puma/configuration.rb:272:in `call'
+puma (6.4.3) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.3) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.3) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.3) lib/puma/server.rb:464:in `process_client'
+puma (6.4.3) lib/puma/server.rb:245:in `block in run'
+puma (6.4.3) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/" for ::1 at 2024-10-09 18:46:33 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20241009225700_create_likedrecipes.rb
+
+
+):
+  
+activerecord (7.2.1) lib/active_record/migration.rb:756:in `check_pending_migrations'
+activerecord (7.2.1) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.1) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.1) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.1) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.1) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.7) lib/rack/method_override.rb:28:in `call'
+rack (3.1.7) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.7) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.4.3) lib/puma/configuration.rb:272:in `call'
+puma (6.4.3) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.3) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.3) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.3) lib/puma/server.rb:464:in `process_client'
+puma (6.4.3) lib/puma/server.rb:245:in `block in run'
+puma (6.4.3) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateLikedrecipes (20241009225700)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "liked_recipes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "recipe_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_bf79a2cdc2"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_8e79603492"
+FOREIGN KEY ("recipe_id")
+  REFERENCES "recipes" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_liked_recipes_on_user_id" ON "liked_recipes" ("user_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_liked_recipes_on_recipe_id" ON "liked_recipes" ("recipe_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241009225700') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2024-10-09 18:47:02 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 24.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 35.9ms | GC: 0.0ms)
+Completed 200 OK in 56ms (Views: 39.0ms | ActiveRecord: 2.0ms (1 query, 0 cached) | GC: 1.1ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-10-09 18:47:03 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2024-10-09 18:47:43 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 22.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 32.6ms | GC: 0.0ms)
+Completed 200 OK in 48ms (Views: 35.1ms | ActiveRecord: 1.8ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-10-09 18:47:43 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/" for ::1 at 2024-10-09 18:47:44 -0700
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 10.1ms | GC: 1.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | GC: 1.4ms)
+Completed 200 OK in 21ms (Views: 15.1ms | ActiveRecord: 3.0ms (1 query, 0 cached) | GC: 1.4ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-10-09 18:47:44 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/" for ::1 at 2024-10-09 18:47:44 -0700
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 7.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-10-09 18:47:44 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/addrecipe" for ::1 at 2024-10-09 18:47:56 -0700
+Processing by AddrecipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering addrecipe/index.html within layouts/application
+  Rendered addrecipe/index.html within layouts/application (Duration: 2.0ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 5.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 12.4ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/liked" for ::1 at 2024-10-09 18:47:56 -0700
+Processing by LikedController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering liked/index.html.erb within layouts/application
+  Rendered liked/index.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 4.3ms | GC: 2.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | GC: 2.2ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 2.2ms)
+
+
+Started GET "/addrecipe" for ::1 at 2024-10-09 18:47:57 -0700
+Processing by AddrecipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering addrecipe/index.html within layouts/application
+  Rendered addrecipe/index.html within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 5.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 14.5ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/swipe" for ::1 at 2024-10-09 18:47:57 -0700
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (1.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:14
+  Rendered swipe/index.html.erb within layouts/application (Duration: 24.2ms | GC: 1.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 6.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 33.6ms | GC: 1.4ms)
+Completed 200 OK in 44ms (Views: 33.9ms | ActiveRecord: 2.8ms (2 queries, 0 cached) | GC: 1.4ms)
+
+
+Started GET "/liked" for ::1 at 2024-10-09 18:47:58 -0700
+Processing by LikedController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering liked/index.html.erb within layouts/application
+  Rendered liked/index.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 5.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | GC: 0.3ms)
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/addrecipe" for ::1 at 2024-10-09 18:47:58 -0700
+Processing by AddrecipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering addrecipe/index.html within layouts/application
+  Rendered addrecipe/index.html within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 14.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | GC: 0.0ms)
+Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/swipe" for ::1 at 2024-10-09 18:47:59 -0700
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:14
+  Rendered swipe/index.html.erb within layouts/application (Duration: 6.4ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 4.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | GC: 0.0ms)
+Completed 200 OK in 29ms (Views: 19.8ms | ActiveRecord: 0.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/swipe" for ::1 at 2024-10-09 18:48:20 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:14
+  Rendered swipe/index.html.erb within layouts/application (Duration: 17.3ms | GC: 0.0ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 26.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 54.4ms | GC: 0.0ms)
+Completed 200 OK in 74ms (Views: 52.9ms | ActiveRecord: 5.7ms (2 queries, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-10-09 18:48:21 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/" for ::1 at 2024-10-09 18:48:24 -0700
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 7.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | GC: 0.0ms)
+Completed 200 OK in 20ms (Views: 14.4ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 1.4ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-10-09 18:48:24 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/" for ::1 at 2024-10-09 18:48:25 -0700
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 7.9ms | GC: 1.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | GC: 1.7ms)
+Completed 200 OK in 16ms (Views: 14.4ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 1.7ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-10-09 18:48:26 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
