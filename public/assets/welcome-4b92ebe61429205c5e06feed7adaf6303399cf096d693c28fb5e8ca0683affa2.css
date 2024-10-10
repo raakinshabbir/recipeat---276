@@ -1,0 +1,58 @@
+body {
+  overflow: hidden;
+}
+
+
+.notice, .alert {
+  margin: 0; /* Remove default margins */
+  padding: 0; /* Remove default padding */
+}
+
+
+.welcome-container {
+  display: flex; /* Enables Flexbox layout */
+  flex-direction: column; /* Stacks children vertically */
+  justify-content: center; /* Centers children vertically */
+  align-items: center; /* Centers children horizontally */
+  overflow: hidden;
+  position: relative; /* Positioning context for the overlay */
+  text-align: center;
+  padding: 50px;
+  background-image: url(/assets/background3.png); /* Your background image */
+  background-size: cover; /* Ensures the image covers the entire container */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  height: 100vh; /* Full height of the viewport */
+  color: white;
+  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 1.0) 50%, transparent 100%); /* For Safari */
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 1.0) 50%, transparent 100%); /* For other browsers */
+}
+
+  .welcome-container h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    align-items: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+    font-style: oblique;
+  }
+  
+  .welcome-container h2 {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    align-items: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+    font-weight: bolder;
+    font-style: oblique;
+
+
+  }
+  
+  .welcome-container .btn {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    font-weight: bolder;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+    font-weight: bolder;
+    font-style: oblique;
+  }
+  
