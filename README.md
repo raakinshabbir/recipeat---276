@@ -50,3 +50,8 @@ To enhance our next iteration, we identified the following areas for improvement
 
 # Jira - Feature Tracking with Kanban Board
 ![image](https://github.com/user-attachments/assets/2f9d86f6-d8a0-449c-84e3-928cfa73e12c)
+
+# Running Instructions
+1. Ensure that the user is in the correct folder with the Ruby on Rails framework first.
+2. Type 'rails s' in the command line.
+3. Open up 'localhost:3000' on your favourite web browser
