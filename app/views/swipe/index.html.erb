@@ -1,6 +1,3 @@
-<h1>Swipe Through Recipes</h1>
-
-<!-- Swiper Web Component container -->
 <swiper-container
   direction="horizontal"
   loop="true"
@@ -10,7 +7,7 @@
   style="--swiper-navigation-color: #333; --swiper-pagination-color: #333; width: 100%; max-width: 600px; margin: 0 auto;"
   keyboard="true"
 >
-  <!-- Loop through recipes and display each one as a swiper slide -->
+  <!-- Loop through filtered recipes and display each one as a swiper slide -->
   <% @recipes.each do |recipe| %>
     <swiper-slide style="padding: 60px; border: 3px solid #ccc; border-radius: 16px; background-color: #f9f9f9;" data-recipe-id="<%=recipe.id %>"> 
       <!-- Recipe Title -->

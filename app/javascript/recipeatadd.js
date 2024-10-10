@@ -8,11 +8,13 @@ function displayRecipes() {
     recipes.forEach((recipe, index) => {
         const item = document.createElement('div');
         item.innerHTML = `
-            <h3>${recipe.name}</h3>
-            <p>${recipe.description}</p>
-            <p>${recipe.origin}</p>
-            <p>${recipe.steps}</p>
-            <img src="${recipe.photo}" alt="${recipe.name}" style="display: block; margin: 0 auto; max-width: 100%;">
+            <h3>${recipe.title}</h3>
+            <p>Ingredients: ${recipe.ingredients}</p>
+            <p>Instructions: ${recipe.instructions}</p>
+            <p>Cooking Time: ${recipe.cooking_time} minutes</p>
+            <p>Servings: ${recipe.servings}</p>
+            <p>Difficulty: ${recipe.difficulty}</p>
+            <img src="${recipe.photo}" alt="${recipe.title}" style="display: block; margin: 0 auto; max-width: 100%;">
             <button onclick="deleteRecipe(${index})">Delete</button>
             `;
         recipeList.appendChild(item);
@@ -23,13 +25,15 @@ function displayRecipes() {
 document.getElementById('recipe-form').addEventListener('submit', function(e) {
     e.preventDefault();
 
-    const name = document.getElementById('recipe-name').value;
-    const description = document.getElementById('recipe-description').value;
-    const origin = document.getElementById('recipe-origin').value;
-    const steps = document.getElementById('recipe-steps').value;
+    const title = document.getElementById('recipe-title').value;
+    const ingredients = document.getElementById('recipe-ingredients').value;
+    const instructions = document.getElementById('recipe-instructions').value;
+    const cookingTime = document.getElementById('recipe-cooking-time').value;
+    const servings = document.getElementById('recipe-servings').value;
+    const difficulty = document.getElementById('recipe-difficulty').value;
     const photo = document.getElementById('recipe-photo').files[0];
 
-    if (!name || !description || !steps || !origin) {
+    if (!title || !ingredients || !instructions || !cookingTime || !servings || !difficulty) {
         alert('Please fill all required fields.');
         return;
     }
@@ -37,10 +41,12 @@ document.getElementById('recipe-form').addEventListener('submit', function(e) {
     const reader = new FileReader();
     reader.onload = function(event) {
         const recipe = {
-            name,
-            description,
-            origin,
-            steps,
+            title,
+            ingredients,
+            instructions,
+            cooking_time: cookingTime,
+            servings,
+            difficulty,
             photo: event.target.result // Save the image as a data URL
         };
 

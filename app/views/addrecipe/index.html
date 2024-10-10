@@ -1,18 +1,25 @@
 <!DOCTYPE html>
-<html lang ="en">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipeat Recipes</title>
 </head>
 <body>
     <center>
     <h1>Add Your Recipe!</h1>
     <form id="recipe-form">
-        <input type="text" id ="recipe-name" placeholder="Recipe Name" required><br>
-        <textarea id="recipe-description" placeholder="Recipe Description" required></textarea>
-        <textarea id="recipe-origin" placeholder="Country Origin" required></textarea>
-        <textarea id="recipe-steps" placeholder="Steps" required></textarea>
+        <input type="text" id="recipe-title" placeholder="Recipe Title" required><br>
+        <textarea id="recipe-ingredients" placeholder="Ingredients" required></textarea><br>
+        <textarea id="recipe-instructions" placeholder="Instructions" required></textarea><br>
+        <input type="number" id="recipe-cooking-time" placeholder="Cooking Time (minutes)" required><br>
+        <input type="number" id="recipe-servings" placeholder="Servings" required><br>
+        <select id="recipe-difficulty" required>
+            <option value="" disabled selected>Select Difficulty</option>
+            <option value="Easy">Easy</option>
+            <option value="Medium">Medium</option>
+            <option value="Hard">Hard</option>
+        </select><br>
         <input type="file" id="recipe-photo" accept="image/*"><br>
         <button type="submit">Add Recipe</button>
     </form>
