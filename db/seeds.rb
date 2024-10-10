@@ -43,3 +43,16 @@ Recipe.create(
   servings: 8,
   difficulty: "Hard"
 )
+
+# Create some sample recipes
+recipe1 = Recipe.create(name: 'Spaghetti Carbonara', description: 'A delicious Italian pasta dish.', photo_url: 'example1.jpg')
+recipe2 = Recipe.create(name: 'Chicken Tacos', description: 'Tacos with a spicy chicken filling.', photo_url: 'example2.jpg')
+recipe3 = Recipe.create(name: 'Vegan Buddha Bowl', description: 'A healthy vegan dish with quinoa and veggies.', photo_url: 'example3.jpg')
+
+# Create a sample user (Make sure you have a User model and any necessary validations)
+user = User.create(email: 'jaden.chan54@gmail.com', password: 'cmpt276')
+
+# Create liked recipes for the user
+LikedRecipe.create(user: user, recipe: recipe1)
+LikedRecipe.create(user: user, recipe: recipe2)
+LikedRecipe.create(user: user, recipe: recipe3)

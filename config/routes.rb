@@ -4,12 +4,11 @@ Rails.application.routes.draw do
   get "/recipes/:id", to: "recipes#show"
   devise_for :users
 
-  resources :recipes do
-      resource :liked, only: [:create, :destroy]
-  end
   get "/addrecipe", to: "addrecipe#index"
 
+  resources :liked_recipes, only: [:index, :create]
   get '/liked', to: 'liked#index'
+  post '/liked', to: 'liked#create' 
   
     root to: "welcome#index"
   # Defines the root path route ("/")
