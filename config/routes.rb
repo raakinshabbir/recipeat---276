@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "filter_recipes/index"
   get "welcome/index"
   get "/swipe", to: "swipe#index"
   get "/recipes/:id", to: "recipes#show"

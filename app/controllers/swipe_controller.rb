@@ -1,10 +1,9 @@
 class SwipeController < ApplicationController
   def index
-    @recipes = Recipe.all
+    @recipes = filter_recipes(Recipe.all)
   end
 
   def show 
-    @recipes = Recipe.find(params[:id])
-  end
-  
+    @recipe = Recipe.find(params[:id])
+  end 
 end
