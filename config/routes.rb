@@ -1,18 +1,19 @@
 Rails.application.routes.draw do
-  get "filter_recipes/index"
-  get "welcome/index"
-  get "/swipe", to: "swipe#index"
-  get "/recipes/:id", to: "recipes#show"
+  get 'filter_recipes', to: 'filter_recipes#index', as: 'filter_recipes'
+
+  get 'welcome/index'
+  get '/swipe', to: 'swipe#index'
+  get '/recipes/:id', to: 'recipes#show'
   devise_for :users
 
   resources :recipes do
-      resource :liked, only: [:create, :destroy]
+    resource :liked, only: [:create, :destroy]
   end
-  get "/addrecipe", to: "addrecipe#index"
 
+  get '/addrecipe', to: 'addrecipe#index'
   get '/liked', to: 'liked#index'
-  
-    root to: "welcome#index"
+
+  root to: 'welcome#index'
   # Defines the root path route ("/")
   # root "posts#index"
 end

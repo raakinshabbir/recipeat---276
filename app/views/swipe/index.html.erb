@@ -1,53 +1,11 @@
-<h1>Swipe Through Recipes</h1>
+<h2>Filtered Recipes</h2>
 
-<!-- Swiper Web Component container -->
-<swiper-container
-  direction="horizontal"
-  loop="true"
-  slides-per-view="1"
-  navigation="true"
-  pagination="true"
-  style="--swiper-navigation-color: #333; --swiper-pagination-color: #333; width: 100%; max-width: 600px; margin: 0 auto;"
-  keyboard="true"
->
-  <!-- Loop through recipes and display each one as a swiper slide -->
+<ul>
   <% @recipes.each do |recipe| %>
-    <swiper-slide style="padding: 60px; border: 3px solid #ccc; border-radius: 16px; background-color: #f9f9f9;" data-recipe-id="<%=recipe.id %>"> 
-      <!-- Recipe Title -->
-      <h2 style="color: #2c3e50;"><%= recipe.title %></h2>
-
-      <!-- Recipe Details -->
-      <div style="margin-top: 10px;">
-        <strong>Ingredients:</strong>
-        <p style="font-size: 14px; color: #555;"><%= recipe.ingredients %></p>
-
-        <strong>Instructions:</strong>
-        <p style="font-size: 14px; color: #555;"><%= recipe.instructions %></p>
-
-        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
-          <!-- Cooking Time -->
-          <div style="text-align: left;">
-            <strong>Cooking Time:</strong>
-            <p><%= recipe.cooking_time %></p>
-          </div>
-          <!-- Servings -->
-          <div style="text-align: center;">
-            <strong>Servings:</strong>
-            <p><%= recipe.servings %></p>
-          </div>
-          <!-- Difficulty -->
-          <div style="text-align: right;">
-            <strong>Difficulty:</strong>
-            <p><%= recipe.difficulty %></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="feedback-overlay like">Liked</div>
-      <div class="feedback-overlay dislike">Disliked</div>
-    </swiper-slide>
+    <li>
+      <%= link_to recipe.title, recipe_path(recipe) %>  <!-- Link to recipe show page -->
+    </li>
   <% end %>
-</swiper-container>
+</ul>
 
-<!-- Include Swiper Web Component JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+<%= link_to 'Back to Filter Recipes', filter_recipes_path %>  <!-- Link back to filter form -->
