@@ -1,6 +1,6 @@
 <h2>Filter Recipes</h2>
 
-<form id="recipeFilterForm" method="get" action="/filter_recipes">
+<form id="recipeFilterForm" method="get" action="/swipe">
   <div>
     <label for="difficulty">Difficulty:</label>
     <select id="difficulty" name="difficulty">
@@ -23,14 +23,3 @@
 
   <button type="submit">Filter</button>
 </form>
-
-<!-- Filtered recipes will be displayed here -->
-<div id="recipe-results">
-  <% if @recipes.any? %> <!-- Check if there are any recipes -->
-    <% @recipes.each do |recipe| %>
-      <p><%= recipe.title %> - Difficulty: <%= recipe.difficulty %>, Cooking Time: <%= recipe.cooking_time %> mins</p>
-    <% end %>
-  <% else %>
-    <p>No recipes match your criteria.</p> <!-- Message if no recipes match the filter -->
-  <% end %>
-</div>
