@@ -21126,3 +21126,627 @@ Processing by SwipeController#index as TURBO_STREAM
 Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 8.1ms)
 
 
+Started GET "/" for 127.0.0.1 at 2024-10-23 15:15:24 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 3.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 6.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 153.7ms | GC: 0.0ms)
+Completed 200 OK in 750ms (Views: 357.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-10-23 15:15:26 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-10-23 15:15:27 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 550.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 557.6ms | GC: 0.0ms)
+Completed 200 OK in 1253ms (Views: 755.0ms | ActiveRecord: 7.7ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-10-23 15:15:31 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.7ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | GC: 0.0ms)
+Completed 200 OK in 33ms (Views: 21.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2024-10-23 15:15:38 -0700
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 164ms (ActiveRecord: 1.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.8ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | GC: 0.0ms)
+Completed 200 OK in 1072ms (Views: 12.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2024-10-23 15:15:45 -0700
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 30ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 27.9ms | GC: 0.2ms)
+Completed 200 OK in 900ms (Views: 30.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-10-23 15:15:47 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.8ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 185.9ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 192.4ms | GC: 0.0ms)
+Completed 200 OK in 400ms (Views: 384.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2024-10-23 15:16:01 -0700
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (14.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (8.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2024-10-23 22:16:02.527104"], ["updated_at", "2024-10-23 22:16:02.527104"]]
+  [1m[36mTRANSACTION (8.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/swipe
+Completed 303 See Other in 962ms (ActiveRecord: 31.0ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/swipe" for 127.0.0.1 at 2024-10-23 15:16:02 -0700
+Processing by SwipeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:11
+  Rendered swipe/index.html.erb within layouts/application (Duration: 35.5ms | GC: 0.0ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 14.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 57.9ms | GC: 0.0ms)
+Completed 200 OK in 541ms (Views: 100.5ms | ActiveRecord: 2.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (3.5ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Scrambled Eggs"], ["ingredients", "Eggs, Butter, Salt, Pepper"], ["instructions", "1. Whisk eggs. 2. Melt butter in a pan. 3. Pour eggs into pan. 4. Stir gently until fully cooked."], ["cooking_time", 10], ["servings", 2], ["difficulty", "Easy"], ["created_at", "2024-10-23 22:35:56.865861"], ["updated_at", "2024-10-23 22:35:56.865861"]]
+  [1m[36mTRANSACTION (7.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (3.2ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Cajun Chicken"], ["ingredients", "Chicken Breasts, Cajun Seasoning, Olive Oil, Garlic, Lemon"], ["instructions", "1. Rub chicken with seasoning. 2. Heat oil in pan. 3. Cook chicken until golden and fully cooked."], ["cooking_time", 30], ["servings", 4], ["difficulty", "Medium"], ["created_at", "2024-10-23 22:35:56.885468"], ["updated_at", "2024-10-23 22:35:56.885468"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (3.1ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Pasta Carbonara"], ["ingredients", "Spaghetti, Eggs, Parmesan, Pancetta, Black Pepper"], ["instructions", "1. Boil pasta. 2. Fry pancetta. 3. Mix eggs and cheese. 4. Toss with pasta and pancetta."], ["cooking_time", 20], ["servings", 4], ["difficulty", "Medium"], ["created_at", "2024-10-23 22:35:56.894188"], ["updated_at", "2024-10-23 22:35:56.894188"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (2.9ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Chocolate Cake"], ["ingredients", "Flour, Sugar, Cocoa Powder, Eggs, Butter, Baking Powder"], ["instructions", "1. Mix dry ingredients. 2. Add eggs and butter. 3. Bake in oven for 30 minutes."], ["cooking_time", 45], ["servings", 8], ["difficulty", "Hard"], ["created_at", "2024-10-23 22:35:56.902219"], ["updated_at", "2024-10-23 22:35:56.902219"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (5.7ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Scrambled Eggs"], ["ingredients", "Eggs, Butter, Salt, Pepper"], ["instructions", "1. Whisk eggs. 2. Melt butter in a pan. 3. Pour eggs into pan. 4. Stir gently until fully cooked."], ["cooking_time", 10], ["servings", 2], ["difficulty", "Easy"], ["created_at", "2024-10-23 22:37:09.601888"], ["updated_at", "2024-10-23 22:37:09.601888"]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (6.0ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Cajun Chicken"], ["ingredients", "Chicken Breasts, Cajun Seasoning, Olive Oil, Garlic, Lemon"], ["instructions", "1. Rub chicken with seasoning. 2. Heat oil in pan. 3. Cook chicken until golden and fully cooked."], ["cooking_time", 30], ["servings", 4], ["difficulty", "Medium"], ["created_at", "2024-10-23 22:37:09.622867"], ["updated_at", "2024-10-23 22:37:09.622867"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (3.5ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Pasta Carbonara"], ["ingredients", "Spaghetti, Eggs, Parmesan, Pancetta, Black Pepper"], ["instructions", "1. Boil pasta. 2. Fry pancetta. 3. Mix eggs and cheese. 4. Toss with pasta and pancetta."], ["cooking_time", 20], ["servings", 4], ["difficulty", "Medium"], ["created_at", "2024-10-23 22:37:09.636771"], ["updated_at", "2024-10-23 22:37:09.636771"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (3.8ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Chocolate Cake"], ["ingredients", "Flour, Sugar, Cocoa Powder, Eggs, Butter, Baking Powder"], ["instructions", "1. Mix dry ingredients. 2. Add eggs and butter. 3. Bake in oven for 30 minutes."], ["cooking_time", 45], ["servings", 8], ["difficulty", "Hard"], ["created_at", "2024-10-23 22:37:09.646123"], ["updated_at", "2024-10-23 22:37:09.646123"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (3.9ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Scrambled Eggs"], ["ingredients", "Eggs, Butter, Salt, Pepper"], ["instructions", "1. Whisk eggs. 2. Melt butter in a pan. 3. Pour eggs into pan. 4. Stir gently until fully cooked."], ["cooking_time", 10], ["servings", 2], ["difficulty", "Easy"], ["created_at", "2024-10-23 22:38:13.975525"], ["updated_at", "2024-10-23 22:38:13.975525"]]
+  [1m[36mTRANSACTION (5.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (3.7ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Cajun Chicken"], ["ingredients", "Chicken Breasts, Cajun Seasoning, Olive Oil, Garlic, Lemon"], ["instructions", "1. Rub chicken with seasoning. 2. Heat oil in pan. 3. Cook chicken until golden and fully cooked."], ["cooking_time", 30], ["servings", 4], ["difficulty", "Medium"], ["created_at", "2024-10-23 22:38:13.994122"], ["updated_at", "2024-10-23 22:38:13.994122"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (4.1ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Pasta Carbonara"], ["ingredients", "Spaghetti, Eggs, Parmesan, Pancetta, Black Pepper"], ["instructions", "1. Boil pasta. 2. Fry pancetta. 3. Mix eggs and cheese. 4. Toss with pasta and pancetta."], ["cooking_time", 20], ["servings", 4], ["difficulty", "Medium"], ["created_at", "2024-10-23 22:38:14.004735"], ["updated_at", "2024-10-23 22:38:14.004735"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (4.5ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Chocolate Cake"], ["ingredients", "Flour, Sugar, Cocoa Powder, Eggs, Butter, Baking Powder"], ["instructions", "1. Mix dry ingredients. 2. Add eggs and butter. 3. Bake in oven for 30 minutes."], ["cooking_time", 45], ["servings", 8], ["difficulty", "Hard"], ["created_at", "2024-10-23 22:38:14.015149"], ["updated_at", "2024-10-23 22:38:14.015149"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (4.5ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Pasta Carbonara"], ["ingredients", "Cocoa Powder, Pomegranate, Raspberry, Dashi, Bocconcini"], ["instructions", "Dolores placeat praesentium. Culpa maxime itaque. In cumque qui. At id incidunt."], ["cooking_time", 52], ["servings", 5], ["difficulty", "Hard"], ["created_at", "2024-10-23 22:38:14.914939"], ["updated_at", "2024-10-23 22:38:14.914939"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (4.5ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Pasta and Beans"], ["ingredients", "Buckwheat Noodles, Turkey, Rhubarb, Star Fruit, Kiwi Berries"], ["instructions", "Consectetur maiores sed. Tempora rerum sapiente. Laudantium distinctio totam. Placeat ea consequatur."], ["cooking_time", 32], ["servings", 1], ["difficulty", "Hard"], ["created_at", "2024-10-23 22:38:14.927479"], ["updated_at", "2024-10-23 22:38:14.927479"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (3.1ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Cheeseburger"], ["ingredients", "Malt Vinegar, Rice Paper, Nutritional Yeast, Pear, Cheddar"], ["instructions", "Quia ut et. Aut porro rerum. Atque facere odio. Hic cumque sunt."], ["cooking_time", 30], ["servings", 3], ["difficulty", "Easy"], ["created_at", "2024-10-23 22:38:14.940768"], ["updated_at", "2024-10-23 22:38:14.940768"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (2.7ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Chicken Milanese"], ["ingredients", "Nuts, Vermicelli Noodles, Haricot Beans, Yeast, Kudzu"], ["instructions", "Ut sit harum. Aut illo necessitatibus. Aut ipsa asperiores. Tenetur officia ut."], ["cooking_time", 24], ["servings", 1], ["difficulty", "Easy"], ["created_at", "2024-10-23 22:38:14.950229"], ["updated_at", "2024-10-23 22:38:14.950229"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (2.7ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Peking Duck"], ["ingredients", "Turkey, Mulberries, Gula Melaka, Carrot, Bocconcini"], ["instructions", "Et voluptates corrupti. Ea repellendus recusandae. Ut et quia. Maiores mollitia numquam."], ["cooking_time", 19], ["servings", 4], ["difficulty", "Medium"], ["created_at", "2024-10-23 22:38:14.958312"], ["updated_at", "2024-10-23 22:38:14.958312"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (2.7ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Tiramisù"], ["ingredients", "Barberry, Potato Flour, Pumpkin, Saffron, English Spinach"], ["instructions", "Hic voluptas asperiores. Est ea aut. Vel unde quisquam. Aut et soluta."], ["cooking_time", 23], ["servings", 4], ["difficulty", "Medium"], ["created_at", "2024-10-23 22:38:14.966102"], ["updated_at", "2024-10-23 22:38:14.966102"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (3.1ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Peking Duck"], ["ingredients", "Avocado Spread, Camellia Tea Oil, Apples, Camembert, Pandanus Leaves"], ["instructions", "Odio cupiditate consequuntur. Eius inventore eveniet. Dolorem ex at. Sequi itaque voluptatem."], ["cooking_time", 38], ["servings", 5], ["difficulty", "Medium"], ["created_at", "2024-10-23 22:38:14.974852"], ["updated_at", "2024-10-23 22:38:14.974852"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (3.1ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Fettuccine Alfredo"], ["ingredients", "Kale, Longan, Plums, Tea, Snowpea sprouts"], ["instructions", "Sed ut veniam. Aut error delectus. Porro omnis nam. Non eius enim."], ["cooking_time", 43], ["servings", 5], ["difficulty", "Medium"], ["created_at", "2024-10-23 22:38:14.983434"], ["updated_at", "2024-10-23 22:38:14.983434"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (3.4ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Linguine with Clams"], ["ingredients", "Chickpea, Butter Beans, Chia Seeds, Omega Spread, Sausages"], ["instructions", "Ullam asperiores minima. Qui reiciendis odio. Repudiandae ad doloribus. Similique tenetur sit."], ["cooking_time", 52], ["servings", 4], ["difficulty", "Hard"], ["created_at", "2024-10-23 22:38:15.000347"], ["updated_at", "2024-10-23 22:38:15.000347"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (2.7ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "California Maki"], ["ingredients", "Aniseed, Cake, Iceberg Lettuce, Marigold, Wasabi"], ["instructions", "Veniam non rerum. Aut iure magnam. Et consequatur ut. Nisi sed fuga."], ["cooking_time", 44], ["servings", 4], ["difficulty", "Hard"], ["created_at", "2024-10-23 22:38:15.009888"], ["updated_at", "2024-10-23 22:38:15.009888"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2024-10-23 15:38:30 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 4.1ms | GC: 0.0ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 51.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 117.0ms | GC: 0.0ms)
+Completed 200 OK in 1409ms (Views: 138.7ms | ActiveRecord: 7.4ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-10-23 15:38:33 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-10-23 15:38:34 -0700
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/swipe
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 35ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/swipe" for 127.0.0.1 at 2024-10-23 15:38:34 -0700
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:11
+  Rendered swipe/index.html.erb within layouts/application (Duration: 30.9ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 5.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 40.5ms | GC: 0.0ms)
+Completed 200 OK in 217ms (Views: 56.4ms | ActiveRecord: 1.6ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/liked" for 127.0.0.1 at 2024-10-23 15:38:36 -0700
+Processing by LikedController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering liked/index.html.erb within layouts/application
+  Rendered liked/index.html.erb within layouts/application (Duration: 2.2ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 9.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | GC: 0.0ms)
+Completed 200 OK in 48ms (Views: 38.2ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/swipe" for 127.0.0.1 at 2024-10-23 16:05:55 -0700
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (38.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:11
+  Rendered swipe/index.html.erb within layouts/application (Duration: 80.5ms | GC: 0.0ms)
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 56.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 227.5ms | GC: 0.0ms)
+Completed 200 OK in 271ms (Views: 200.9ms | ActiveRecord: 41.8ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/swipe" for 127.0.0.1 at 2024-10-23 16:08:53 -0700
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:11
+  Rendered swipe/index.html.erb within layouts/application (Duration: 12.1ms | GC: 0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 12.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 34.0ms | GC: 0.0ms)
+Completed 200 OK in 44ms (Views: 34.4ms | ActiveRecord: 1.0ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-10-23 16:08:54 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/swipe" for 127.0.0.1 at 2024-10-23 16:09:03 -0700
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (39.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:11
+  Rendered swipe/index.html.erb within layouts/application (Duration: 81.8ms | GC: 0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 42.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 135.3ms | GC: 0.2ms)
+Completed 200 OK in 145ms (Views: 97.5ms | ActiveRecord: 39.9ms (2 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-10-23 16:09:04 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/swipe" for 127.0.0.1 at 2024-10-23 16:11:22 -0700
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:11
+  Rendered swipe/index.html.erb within layouts/application (Duration: 8.1ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 9.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 25.0ms | GC: 0.0ms)
+Completed 200 OK in 32ms (Views: 25.6ms | ActiveRecord: 0.6ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-10-23 16:11:23 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/filter_recipes" for 127.0.0.1 at 2024-10-23 16:11:26 -0700
+Processing by FilterRecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering filter_recipes/index.html.erb within layouts/application
+  Rendered filter_recipes/index.html.erb within layouts/application (Duration: 4.4ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 5.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | GC: 0.0ms)
+Completed 200 OK in 28ms (Views: 21.0ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mRecipe Delete All (15.8ms)[0m  [1m[31mDELETE FROM "recipes"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (3.2ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Barbecue Ribs"], ["ingredients", "Milk, Pineapple, Goat Cheese, Hijiki, Onion"], ["instructions", "Molestias tenetur quos. Sit dolorem quia. Suscipit et nesciunt. Molestiae laudantium dignissimos."], ["cooking_time", 56], ["servings", 4], ["difficulty", "Easy"], ["created_at", "2024-10-23 23:12:44.283823"], ["updated_at", "2024-10-23 23:12:44.283823"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (2.8ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Lasagne"], ["ingredients", "Oats, Mung Beans, Peppercorns, Butternut Lettuce, Lettuce"], ["instructions", "Ut sit odit. Et quasi vel. Aspernatur et sunt. Eum accusamus eius."], ["cooking_time", 60], ["servings", 4], ["difficulty", "Hard"], ["created_at", "2024-10-23 23:12:44.293411"], ["updated_at", "2024-10-23 23:12:44.293411"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (3.1ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Katsu Curry"], ["ingredients", "Sea Salt, Wheat, Gruyere, Blue Cheese, Chinese Cabbage"], ["instructions", "Dolores similique praesentium. Harum sit a. Assumenda dolore ex. Doloribus iste animi."], ["cooking_time", 18], ["servings", 5], ["difficulty", "Easy"], ["created_at", "2024-10-23 23:12:44.301743"], ["updated_at", "2024-10-23 23:12:44.301743"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (3.1ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Tacos"], ["ingredients", "Jicama, Curry Leaves, Milk Chocolate, Anchovies, Harissa"], ["instructions", "Quis sit vero. Occaecati non deserunt. Eos vel molestiae. Et natus labore."], ["cooking_time", 51], ["servings", 6], ["difficulty", "Easy"], ["created_at", "2024-10-23 23:12:44.311253"], ["updated_at", "2024-10-23 23:12:44.311253"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (3.1ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Chilli con Carne"], ["ingredients", "Artichoke, Margarine, Yeast, Agave Syrup, Red Pepper"], ["instructions", "Alias quo totam. Asperiores placeat quia. Quia velit debitis. Dolore excepturi a."], ["cooking_time", 44], ["servings", 2], ["difficulty", "Easy"], ["created_at", "2024-10-23 23:12:44.329690"], ["updated_at", "2024-10-23 23:12:44.329690"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (4.7ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Teriyaki Chicken Donburi"], ["ingredients", "Plums, Sultanas, Anchovies, Basil Basmati Rice, Horseradish"], ["instructions", "Sed vitae atque. Qui libero dignissimos. Pariatur perspiciatis quae. Adipisci et est."], ["cooking_time", 14], ["servings", 5], ["difficulty", "Hard"], ["created_at", "2024-10-23 23:12:44.338461"], ["updated_at", "2024-10-23 23:12:44.338461"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (4.0ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Chilli con Carne"], ["ingredients", "Rice Syrup, Tamari, Carrot, Soy Milk, Cabbage"], ["instructions", "Et officiis eaque. Pariatur est ratione. Nemo facilis blanditiis. Omnis similique quam."], ["cooking_time", 31], ["servings", 3], ["difficulty", "Medium"], ["created_at", "2024-10-23 23:12:44.352721"], ["updated_at", "2024-10-23 23:12:44.352721"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (6.6ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Pasta with Tomato and Basil"], ["ingredients", "Rye, Arugula, Dill, Potato Flour, Sultanas"], ["instructions", "Consequuntur illo fugiat. Ratione consequatur ad. Praesentium ipsa explicabo. Dolorem soluta ipsum."], ["cooking_time", 33], ["servings", 6], ["difficulty", "Medium"], ["created_at", "2024-10-23 23:12:44.366450"], ["updated_at", "2024-10-23 23:12:44.366450"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (4.0ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Cauliflower Penne"], ["ingredients", "Berries, Parsley, Sugar, Kale, Molasses"], ["instructions", "Libero recusandae sapiente. Blanditiis fugiat rerum. Dicta ipsa quo. Omnis eum officia."], ["cooking_time", 43], ["servings", 3], ["difficulty", "Medium"], ["created_at", "2024-10-23 23:12:44.382361"], ["updated_at", "2024-10-23 23:12:44.382361"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (2.9ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Chilli con Carne"], ["ingredients", "Dragonfruit, Agave Syrup, Vegetable Oil, Iceberg Lettuce, Potato Flour"], ["instructions", "Dignissimos alias a. Dolorem temporibus porro. Sint ut ipsa. Ut sed qui."], ["cooking_time", 12], ["servings", 5], ["difficulty", "Medium"], ["created_at", "2024-10-23 23:12:44.394218"], ["updated_at", "2024-10-23 23:12:44.394218"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2024-10-23 16:13:00 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 1.5ms | GC: 0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 48.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 86.1ms | GC: 0.0ms)
+Completed 200 OK in 1137ms (Views: 104.8ms | ActiveRecord: 5.6ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-10-23 16:13:03 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/addrecipe" for 127.0.0.1 at 2024-10-23 16:13:04 -0700
+Processing by AddrecipeController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering addrecipe/new.html.erb within layouts/application
+  Rendered addrecipe/new.html.erb within layouts/application (Duration: 213.6ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 6.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 223.6ms | GC: 0.0ms)
+Completed 200 OK in 423ms (Views: 238.9ms | ActiveRecord: 1.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started DELETE "/users/sign_out?_method=delete" for 127.0.0.1 at 2024-10-23 16:13:06 -0700
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 159ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2024-10-23 16:13:06 -0700
+Processing by WelcomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 1.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 6.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | GC: 0.0ms)
+Completed 200 OK in 25ms (Views: 18.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-10-23 16:13:08 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.2ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 48.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 57.4ms | GC: 0.0ms)
+Completed 200 OK in 102ms (Views: 91.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-10-23 16:13:10 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | GC: 0.0ms)
+Completed 200 OK in 60ms (Views: 38.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2024-10-23 16:13:21 -0700
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 1165ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.7ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | GC: 0.0ms)
+Completed 200 OK in 881ms (Views: 10.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-10-23 16:13:25 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 5.6ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | GC: 0.0ms)
+Completed 200 OK in 25ms (Views: 14.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-10-23 16:13:28 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | GC: 0.0ms)
+Completed 200 OK in 28ms (Views: 15.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-10-23 16:13:32 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | GC: 0.0ms)
+Completed 200 OK in 25ms (Views: 14.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2024-10-23 16:13:42 -0700
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 30ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | GC: 0.0ms)
+Completed 200 OK in 870ms (Views: 9.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-10-23 16:13:45 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 8.9ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.0ms | GC: 0.0ms)
+Completed 200 OK in 32ms (Views: 20.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2024-10-23 16:13:57 -0700
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (14.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 8.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | GC: 0.0ms)
+Completed 422 Unprocessable Content in 978ms (Views: 18.2ms | ActiveRecord: 15.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-10-23 16:14:02 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.9ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | GC: 0.0ms)
+Completed 200 OK in 25ms (Views: 13.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-10-23 16:14:05 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 8.6ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.8ms | GC: 0.0ms)
+Completed 200 OK in 33ms (Views: 19.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-10-23 16:14:05 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 6.9ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | GC: 0.0ms)
+Completed 200 OK in 25ms (Views: 14.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2024-10-23 16:14:33 -0700
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (14.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 10.6ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | GC: 0.0ms)
+Completed 422 Unprocessable Content in 950ms (Views: 19.7ms | ActiveRecord: 15.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2024-10-23 16:14:45 -0700
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (11.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2024-10-23 23:14:46.245531"], ["updated_at", "2024-10-23 23:14:46.245531"]]
+  [1m[36mTRANSACTION (34.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/swipe
+Completed 303 See Other in 961ms (ActiveRecord: 46.8ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/swipe" for 127.0.0.1 at 2024-10-23 16:14:46 -0700
+Processing by SwipeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:11
+  Rendered swipe/index.html.erb within layouts/application (Duration: 26.0ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 9.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 45.8ms | GC: 0.0ms)
+Completed 200 OK in 73ms (Views: 61.1ms | ActiveRecord: 0.6ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/swipe" for 127.0.0.1 at 2024-10-23 16:17:29 -0700
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (5.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:11
+  Rendered swipe/index.html.erb within layouts/application (Duration: 17.5ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 15.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 66.5ms | GC: 0.2ms)
+Completed 200 OK in 841ms (Views: 801.6ms | ActiveRecord: 7.1ms (2 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-10-23 16:17:31 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/addrecipe" for 127.0.0.1 at 2024-10-23 16:19:52 -0700
+Processing by AddrecipeController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering addrecipe/new.html.erb within layouts/application
+  Rendered addrecipe/new.html.erb within layouts/application (Duration: 5.1ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 5.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | GC: 0.0ms)
+Completed 200 OK in 31ms (Views: 22.3ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/swipe" for 127.0.0.1 at 2024-10-23 16:24:02 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (5.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:11
+  Rendered swipe/index.html.erb within layouts/application (Duration: 85.9ms | GC: 0.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 41.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 194.5ms | GC: 0.5ms)
+Completed 200 OK in 2018ms (Views: 1849.1ms | ActiveRecord: 9.3ms (2 queries, 0 cached) | GC: 1.1ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-10-23 16:24:05 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/manifest.json" for 127.0.0.1 at 2024-10-23 17:05:25 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/manifest.json" for 127.0.0.1 at 2024-10-23 17:19:54 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
