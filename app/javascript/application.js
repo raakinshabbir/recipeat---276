@@ -38,7 +38,7 @@ document.addEventListener("turbo:load", function () {
           }, 500); // Hide after 1 second
         }
 
-        lastIndex = swiper.activeIndex
+        lastIndex = swiperContainer.swiper.activeIndex
       }
     });
   } else {

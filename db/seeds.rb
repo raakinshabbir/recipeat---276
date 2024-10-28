@@ -8,38 +8,31 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-Recipe.create(
-  title: "Scrambled Eggs",
-  ingredients: "Eggs, Butter, Salt, Pepper",
-  instructions: "1. Whisk eggs. 2. Melt butter in a pan. 3. Pour eggs into pan. 4. Stir gently until fully cooked.",
-  cooking_time: "10 minutes",
-  servings: 2,
-  difficulty: "Easy"
-)
+# In db/seeds.rb
+require 'net/http'
+require 'json'
 
-Recipe.create(
-  title: "Cajun Chicken",
-  ingredients: "Chicken Breasts, Cajun Seasoning, Olive Oil, Garlic, Lemon",
-  instructions: "1. Rub chicken with seasoning. 2. Heat oil in pan. 3. Cook chicken until golden and fully cooked.",
-  cooking_time: "30 minutes",
-  servings: 4,
-  difficulty: "Medium"
-)
+#clear the current recipes
+#Recipe.delete_all
 
-Recipe.create(
-  title: "Pasta Carbonara",
-  ingredients: "Spaghetti, Eggs, Parmesan, Pancetta, Black Pepper",
-  instructions: "1. Boil pasta. 2. Fry pancetta. 3. Mix eggs and cheese. 4. Toss with pasta and pancetta.",
-  cooking_time: "20 minutes",
-  servings: 4,
-  difficulty: "Medium"
-)
+# Function to fetch and save recipes
+def fetch_recipes_from_api
+  url = URI("https://www.themealdb.com/api/json/v1/1/search.php?s=")
+  response = Net::HTTP.get(url)
+  recipes_data = JSON.parse(response)["meals"]
 
-Recipe.create(
-  title: "Chocolate Cake",
-  ingredients: "Flour, Sugar, Cocoa Powder, Eggs, Butter, Baking Powder",
-  instructions: "1. Mix dry ingredients. 2. Add eggs and butter. 3. Bake in oven for 30 minutes.",
-  cooking_time: "45 minutes",
-  servings: 8,
-  difficulty: "Hard"
-)
+  recipes_data.each do |meal|
+    Recipe.create(
+      title: meal["strMeal"],
+      ingredients: meal["strIngredient1"], # Adjust this based on actual API format
+      instructions: meal["strInstructions"],
+      cooking_time: rand(10..120),  # Random or calculated time
+      servings: rand(1..5),         # Random serving size
+      difficulty: ["Easy", "Medium", "Hard"].sample,
+      image_url: meal['strMealThumb']
+    )
+  end
+end
+
+# Run the function
+fetch_recipes_from_api
