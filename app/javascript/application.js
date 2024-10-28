@@ -2,48 +2,42 @@
 import "@hotwired/turbo-rails";
 import "controllers";
 
-//swiper js
+// swiper js
 document.addEventListener("turbo:load", function () {
-
-
   const swiperContainer = document.querySelector('swiper-container');
-  
-  if (swiperContainer) {
-    let lastIndex = swiperContainer.swiper.activeIndex
 
-    swiperContainer.addEventListener('swiperslidechange', (event) =>{
-      
-      const swiper = swiperContainer.swiper
+  if (swiperContainer) {
+    let lastIndex = swiperContainer.swiper.activeIndex;
+
+    swiperContainer.addEventListener('swiperslidechange', (event) => {
+      const swiper = swiperContainer.swiper;
       const direction = swiper.activeIndex > swiper.previousIndex ? 'right' : 'left';
-      
+
       if (swiper.activeIndex !== lastIndex) {
         const activeSlide = swiper.slides[swiper.activeIndex];
-        const previousIndex = swiper.previousIndex;
-  
-        //variables for overlay
+
+        // Variables for overlay
         const likeOverlay = activeSlide.querySelector('.feedback-overlay.like');
         const dislikeOverlay = activeSlide.querySelector('.feedback-overlay.dislike');
-        
+
         if (direction === 'right') {
           console.log("Liked recipe");
           likeOverlay.style.display = 'flex';
           setTimeout(() => {
             likeOverlay.style.display = 'none';
-          }, 500); // Hide after 1 second
+          }, 500); // Hide after 0.5 seconds
         } else if (direction === 'left') {
           console.log("Disliked recipe");
           dislikeOverlay.style.display = 'flex';
           setTimeout(() => {
             dislikeOverlay.style.display = 'none';
-          }, 500); // Hide after 1 second
+          }, 500); // Hide after 0.5 seconds
         }
 
-        lastIndex = swiperContainer.swiper.activeIndex
+        lastIndex = swiper.activeIndex;
       }
     });
   } else {
     console.log("Swiper container not found");
   }
-
 });
-

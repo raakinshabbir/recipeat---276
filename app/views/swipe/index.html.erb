@@ -1,11 +1,12 @@
 <swiper-container
   direction="horizontal"
-  loop="true"
+  loop="false"
   slides-per-view="1"
-  navigation="true"
-  pagination="true"
+  navigation="false"
+  pagination="false"
   style="--swiper-navigation-color: #333; --swiper-pagination-color: #333; width: 100%; max-width: 600px; margin: 0 auto;"
   keyboard="true"
+  #allow-slide-prev="false"
 >
   <!-- Loop through filtered recipes and display each one as a swiper slide -->
   <% @recipes.each do |recipe| %>
@@ -24,7 +25,9 @@
         <p style="font-size: 14px; color: #555;"><%= recipe.ingredients %></p>
 
         <strong>Instructions:</strong>
-        <p style="font-size: 14px; color: #555;"><%= recipe.instructions %></p>
+        <div style="font-size: 14px; color: #555;">
+          <%= recipe.instructions.split(".").map { |line| "<p>#{line.strip}</p>" }.join.html_safe %>
+        </div>
 
         <div style="display: flex; justify-content: space-between; margin-top: 10px;">
           <!-- Cooking Time -->

@@ -13,7 +13,7 @@ require 'net/http'
 require 'json'
 
 #clear the current recipes
-#Recipe.delete_all
+Recipe.delete_all
 
 # Function to fetch and save recipes
 def fetch_recipes_from_api
@@ -25,14 +25,15 @@ def fetch_recipes_from_api
     Recipe.create(
       title: meal["strMeal"],
       ingredients: meal["strIngredient1"], # Adjust this based on actual API format
-      instructions: meal["strInstructions"],
+      instructions: ["strInstructions"],
       cooking_time: rand(10..120),  # Random or calculated time
       servings: rand(1..5),         # Random serving size
       difficulty: ["Easy", "Medium", "Hard"].sample,
-      image_url: meal['strMealThumb']
+      image_url: meal["strMealThumb"]
     )
   end
 end
 
-# Run the function
+
+# Run the API fetch function
 fetch_recipes_from_api
