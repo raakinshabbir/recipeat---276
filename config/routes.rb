@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   post '/addrecipe', to: 'addrecipe#create', as: 'create_recipe' # Form submission
   get '/liked', to: 'liked#index'
 
+  # New route for Recipe of the Day
+  get '/recipe_of_the_day', to: 'recipes#recipe_of_the_day', as: 'recipe_of_the_day'
+
   root to: 'welcome#index'
   # Defines the root path route ("/")
   # root "posts#index"
