@@ -1,38 +1,30 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
-
 # In db/seeds.rb
 require 'net/http'
 require 'json'
 
-#clear the current recipes
-#Recipe.delete_all
+# Clear existing recipes
+Recipe.delete_all
 
-# Function to fetch and save recipes
-def fetch_recipes_from_api
-  url = URI("https://www.themealdb.com/api/json/v1/1/search.php?s=")
+# Function to fetch and save a random meal
+def fetch_random_recipe
+  url = URI("https://www.themealdb.com/api/json/v1/1/random.php")
   response = Net::HTTP.get(url)
-  recipes_data = JSON.parse(response)["meals"]
+  meal_data = JSON.parse(response)["meals"]&.first # Get the first meal object
 
-  recipes_data.each do |meal|
-    Recipe.create(
-      title: meal["strMeal"],
-      ingredients: meal["strIngredient1"], # Adjust this based on actual API format
-      instructions: meal["strInstructions"],
-      cooking_time: rand(10..120),  # Random or calculated time
-      servings: rand(1..5),         # Random serving size
-      difficulty: ["Easy", "Medium", "Hard"].sample,
-      image_url: meal['strMealThumb']
-    )
-  end
+  return unless meal_data # Exit if no meal data
+
+  Recipe.create(
+    title: meal_data["strMeal"],
+    ingredients: meal_data["strIngredient1"], # Adjust as needed to include all ingredients
+    instructions: meal_data["strInstructions"],
+    cooking_time: rand(10..120),  # Random or calculated time
+    servings: rand(1..5),         # Random serving size
+    difficulty: [ "Easy", "Medium", "Hard" ].sample,
+    image_url: meal_data['strMealThumb']
+  )
 end
 
-# Run the function
-fetch_recipes_from_api
+# Fetch multiple random recipes
+10.times do
+  fetch_random_recipe
+end
