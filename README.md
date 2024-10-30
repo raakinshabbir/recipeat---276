@@ -1,57 +1,54 @@
-# Recipeat - Iteration 1 Retrospective
+# Iteration 2 Retrospective
 
-**Date:** Wed Oct 9  
-**Team Members:**
-- Jaden Chan - 301545137
-- Asfand Khan - 301605890
-- Raakin Shabbir - 301555190
-- Abrar Rahman - 301401426
-- Javier Sy Quia - 301564151
+**Project Name:** Recipeat  
+**Date:** Wed Oct 30  
+**Team Members:**  
+- Jaden Chan - 301545137  
+- Asfand Khan - 301605890  
+- Raakin Shabbir - 301555190  
+- Abrar Rahman - 301401426  
+- Javier Sy Quia - 301564151  
 
 ## 1. Overview of Iteration 1
-For Iteration 1, we focused on establishing the main features and structure of the app while familiarizing ourselves with the Ruby on Rails MVC framework. Our goals included delivering:
-- A solid application foundation
-- Database integration
-- A responsive UI
-- Secure user authentication
-- Version control
+A brief summary of the goals and scope of Iteration 1. What was intended to be delivered at the end of this iteration?  
+For iteration 2, we mainly focused on refining our current functional requirements and features to enhance the user experience. We also added a new feature of a “Recipe of the Day” and completed our Liked Recipe feature that was intended for the previous iteration. Our goal for this iteration was to improve fluidity and make some features more visually appealing. 
 
-We spent significant time setting up the Ruby on Rails environment, linking web pages, and learning to use Git collaboratively, which greatly improved our ability to merge and integrate work.
+In iteration 1, we focused on getting the bare-bones skeleton of the app to work and the main features that mattered. A significant portion of work in this iteration was spent on implementing the API for retrieving our recipes and integrating it with our database and Ruby framework. We utilized a meal API to gather all the information about each meal and displayed it on our swiper page. We updated the logic of the swiper page to follow a similar interface to Tinder, allowing users to move to the next page regardless of whether they swiped left or right.
 
 ## 2. Accomplishments
-During this iteration, the team successfully completed:
-- **Feature Tracking:** We utilized Jira and Kanban principles to track issues and assign tasks.
-- **Retrospective Document:** This document serves to reflect on our accomplishments and challenges.
-- **Version Control/Git Repository:** Successfully set up a Git repository with appropriate branching for features and individual work.
-- **Testing:** Conducted meticulous UI testing to ensure components routed correctly and user authentication was valid.
-- **Feature Implementation:** Began implementing key functional requirements:
-  - **Welcome Page:** A page welcoming users and prompting sign-in or sign-up.
-  - **Login Page:** User sign-in functionality.
-  - **Swiping Recipes:** Users can swipe left or right on sample recipes with feedback messages.
-  - **Add Recipes:** Framework for users to add their own recipes is in progress.
-  - **Liked Recipes:** Framework for users to view their liked recipes is in progress.
+What did the team successfully complete during this iteration?  
+- **Feature Tracking:** The team continued using Jira and principles from the Kanban software framework to track issues and assign features to team members. From the previous iteration, the team found great value in combining the Scrum framework with the Kanban format.
+  
+- **Retrospective Document:** This document reflects our team members coming together to address the work accomplished in the past few weeks, focusing on what went well and what went wrong while following the template from the previous iteration retrospective.
+  
+- **Version Control/Git Repository:** We maintained the same branching principles from our previous iteration to ensure consistent version control and cross-functionality.
+  
+- **Testing:** *(someone please fill this out)*
+
+- **Feature Implementation:** The team began implementing and improving the following functional requirements for iteration 2:
+  - **Recipe of the Day Page:** Displayed a recipe of the day to engage users, along with a button to refresh for more exploration.
+  - **Swiping Recipes:** Users could now swipe through a larger batch of recipes using a Tinder-like logic, preventing backtracking after swiping.
+  - **Liked Recipes:** The Liked Recipes feature now functions as intended, allowing users to view their liked recipes and related information in the liked recipes tab.
 
 ## 3. What Went Well?
-Positive aspects of this iteration included:
-- Regular team meetings every few days facilitated collaboration on implementation.
-- Efficient learning of Bootstrap for creating HTML elements like buttons and navbars.
-- The Kanban board in Jira was effective for visualizing task delegation and ensuring accountability.
+Highlight the positive aspects of this iteration. What worked well for the team?  
+- The team effectively collaborated to discuss which functional requirements to add or improve.
+- Completed previously intended features that enhance the overall implementation of the app.
+- Continued to develop teamwork skills and knowledge around the MVC environment and developer tools, Git and GitHub.
 
 ## 4. Challenges Encountered
-Challenges faced during this iteration included:
-- Frequent merge conflicts when pulling or switching branches, as we were new to collaborative Git usage.
-- Difficulty interpreting each other's code due to limited experience in a full-stack environment, causing confusion and slow progress.
+List the challenges, blockers, or difficulties the team faced during this iteration.  
+- Implementing the Liked Recipes feature was challenging due to extensive debugging and integration with the backend.
+- Handling merge conflicts was time-consuming since some features required multiple team members to work on the same code.
+- Setting up the API took longer than anticipated. The team agreed that it would have been more effective to implement this as a first step and build from there.
 
 ## 5. Areas for Improvement
-To enhance our next iteration, we identified the following areas for improvement:
-- Adding comments in the code and providing more detailed Git commit messages to give context.
-- Implementing a code review process prior to merging branches to identify potential issues early and improve overall code quality.
+Identify areas where the team can improve for the next iteration.  
+- We aim to continue implementing improvements identified in the previous iteration, including:
+  - Writing more comments within the code and enhancing the substance of our Git commit messages to provide better context on each member's contributions.
+  - Establishing a code review process before merging branches to identify potential issues early. This would not only enhance code quality but also ensure that all team members have a better understanding of the changes, reducing the likelihood of future merge conflicts.
 
-
-# Jira - Feature Tracking with Kanban Board
-![image](https://github.com/user-attachments/assets/2f9d86f6-d8a0-449c-84e3-928cfa73e12c)
-
-# Running Instructions
-1. Ensure that the user is in the correct folder with the Ruby on Rails framework first.
-2. Type 'rails s' in the command line.
-3. Open up 'localhost:3000' on your favourite web browser
+- New areas for improvement include:
+  - Creating a more cohesive aesthetic for the app and enhancing visual appeal.
+  - Fixing the swiper page logic to properly like and delete recipes, eliminating bugs.
+  - Refreshing new recipes into the swiper after reaching the end.
