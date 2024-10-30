@@ -1,0 +1,170 @@
+.navbar {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    position: relative; /* Ensures that it stays at the top */
+    z-index: 1; /* Keeps it above other elements */
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.navbar .nav-link {
+    color: white; 
+}
+
+.navbar-brand {
+    font-size: 3.0rem; 
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+    font-weight: bold;
+    font-style: oblique;
+    letter-spacing: 0px;
+}
+
+.nav-link {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+    font-weight: bold;
+    font-style: oblique;
+    letter-spacing: 0px;
+}
+  .feedback-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    color: white;
+    display: none;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    text-align: center;
+  }
+  
+  .like {
+    background-color: rgba(0, 255, 0, 0.6);
+  }
+  
+  .dislike {
+    background-color: rgba(255, 0, 0, 0.6);
+  }
+  
+  
+  body {
+    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  swiper-container {
+    max-width: 100%;
+    height: 1000px;
+    padding: 20px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    background-color: white;
+  }
+  
+  swiper-slide {
+    background: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  img {
+    border-radius: 16px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+body {
+  overflow: hidden;
+}
+
+
+.notice, .alert {
+  margin: 0; /* Remove default margins */
+  padding: 0; /* Remove default padding */
+}
+
+
+.welcome-container {
+  display: flex; /* Enables Flexbox layout */
+  flex-direction: column; /* Stacks children vertically */
+  justify-content: center; /* Centers children vertically */
+  align-items: center; /* Centers children horizontally */
+  overflow: hidden;
+  position: relative; /* Positioning context for the overlay */
+  text-align: center;
+  padding: 50px;
+  background-image: url(/assets/background3.png); /* Your background image */
+  background-size: cover; /* Ensures the image covers the entire container */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  height: 100vh; /* Full height of the viewport */
+  color: white;
+  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 1.0) 50%, transparent 100%); /* For Safari */
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 1.0) 50%, transparent 100%); /* For other browsers */
+}
+
+  .welcome-container h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    align-items: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+    font-style: oblique;
+  }
+  
+  .welcome-container h2 {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    align-items: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+    font-weight: bolder;
+    font-style: oblique;
+
+
+  }
+  
+  .welcome-container .btn {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    font-weight: bolder;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+    font-weight: bolder;
+    font-style: oblique;
+  }
+  
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
+
+ 

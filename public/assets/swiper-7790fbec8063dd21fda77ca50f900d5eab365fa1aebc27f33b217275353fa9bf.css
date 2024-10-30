@@ -1,0 +1,22 @@
+  .feedback-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    color: white;
+    display: none;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    text-align: center;
+  }
+  
+  .like {
+    background-color: rgba(0, 255, 0, 0.6);
+  }
+  
+  .dislike {
+    background-color: rgba(255, 0, 0, 0.6);
+  }
