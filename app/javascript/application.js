@@ -9,13 +9,14 @@ document.addEventListener("turbo:load", function () {
   if (swiperContainer) {
     const swiper = swiperContainer.swiper;
     let lastSeenIndex = 0;
+    let actionHandled = false; // Track if swipe action was already handled
 
     swiperContainer.addEventListener('swiperslidechange', (event) => {
       const activeIndex = swiper.activeIndex;
       const direction = activeIndex > lastSeenIndex ? 'right' : 'left';
 
-      // Only process the change if the index has actually changed
-      if (activeIndex !== lastSeenIndex) {
+      if (activeIndex !== lastSeenIndex && !actionHandled) {
+        actionHandled = true; // Set action as handled
         const activeSlide = swiper.slides[swiper.previousIndex]; // Get the slide to remove
 
         // Variables for overlay
@@ -24,22 +25,24 @@ document.addEventListener("turbo:load", function () {
 
         if (direction === 'right') {
           // Show like overlay and remove the previous slide
-          lastSeenIndex = activeIndex; // Update last seen index
+          lastSeenIndex = activeIndex
           console.log("Liked recipe");
           likeOverlay.style.display = 'flex';
           setTimeout(() => {
-            swiper.removeSlide(swiper.previousIndex); // Remove the slide that was just swiped away
-            likeOverlay.style.display = 'none'; // Hide overlay after removing slide
-          }, 500); // Delay for the slide removal
+            likeOverlay.style.display = 'none'; // Hide overlay
+            swiper.removeSlide(swiper.previousIndex); // Remove the slide after the overlay hides
+            actionHandled = false; // Reset action handling
+          }, 500);
         } else if (direction === 'left') {
           // Show dislike overlay and remove the previous slide
           console.log("Disliked recipe");
           dislikeOverlay.style.display = 'flex';
           setTimeout(() => {
-            swiper.removeSlide(swiper.previousIndex); // Remove the slide that was just swiped away
-            dislikeOverlay.style.display = 'none'; // Hide overlay after removing slide
-          }, 500); // Delay for the slide removal
-
+            dislikeOverlay.style.display = 'none'; // Hide overlay
+            swiper.removeSlide(swiper.previousIndex); // Remove the slide after the overlay hides
+            swiper.slideNext(); // Move to the next slide after removal
+            actionHandled = false; // Reset action handling
+          }, 500);
         }
       }
     });
