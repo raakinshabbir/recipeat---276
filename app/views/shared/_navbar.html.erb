@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Recipeat</a>
+    <a class="navbar-brand" href="<%= welcome_index_path %>">Recipeat</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -13,19 +13,19 @@
           </li>
           <!-- Swipe Button -->
           <li class="nav-item">
-            <%= link_to 'Swipe Recipes', swipe_path, class: "btn btn-outline-success nav-link" %>
+            <%= link_to 'Swipe', swipe_path, class: "btn btn-outline-success nav-link" %>
           </li>
           <!-- Add Recipe Button -->
           <li class="nav-item">
-            <%= link_to 'Add Recipe', addrecipe_path, class: "btn btn-outline-primary nav-link" %>
+            <%= link_to 'Add', addrecipe_path, class: "btn btn-outline-primary nav-link" %>
           </li>
           <!-- Liked Recipes Button -->
           <li class="nav-item">
-            <%= link_to 'Liked Recipes', liked_path, class: "btn btn-outline-warning nav-link" %>
+            <%= link_to 'Liked', liked_path, class: "btn btn-outline-warning nav-link" %>
           </li>
           <!-- Filter Recipes Button -->
           <li class="nav-item">
-            <%= link_to 'Filter Recipes', filter_recipes_path, class: "btn btn-outline-warning nav-link" %>
+            <%= link_to 'Filter', filter_recipes_path, class: "btn btn-outline-warning nav-link" %>
           </li>
           <!-- Sign Out Button -->
           <li class="nav-item">
