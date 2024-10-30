@@ -23792,3 +23792,184 @@ Processing by RecipesController#recipe_of_the_day as HTML
 Completed 200 OK in 73ms (Views: 43.6ms | ActiveRecord: 1.8ms (2 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/" for ::1 at 2024-10-30 14:49:04 -0700
+Started GET "/recipe_of_the_day" for ::1 at 2024-10-30 14:49:04 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+Processing by RecipesController#recipe_of_the_day as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 2.7ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 4.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 172.2ms | GC: 0.0ms)
+Completed 200 OK in 1011ms (Views: 466.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mRecipe Load (6.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:27:in `block in recipe_of_the_day'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/recipe_of_the_day.html.erb within layouts/application
+  Rendered recipes/recipe_of_the_day.html.erb within layouts/application (Duration: 6.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | GC: 0.0ms)
+Completed 200 OK in 1143ms (Views: 41.6ms | ActiveRecord: 8.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-10-30 14:49:07 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/recipe_of_the_day" for ::1 at 2024-10-30 14:49:09 -0700
+Processing by RecipesController#recipe_of_the_day as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/recipe_of_the_day.html.erb within layouts/application
+  Rendered recipes/recipe_of_the_day.html.erb within layouts/application (Duration: 1.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 181.2ms | GC: 0.0ms)
+Completed 200 OK in 191ms (Views: 182.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-10-30 14:49:09 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/recipe_of_the_day" for ::1 at 2024-10-30 14:49:10 -0700
+Processing by RecipesController#recipe_of_the_day as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/recipe_of_the_day.html.erb within layouts/application
+  Rendered recipes/recipe_of_the_day.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | GC: 0.0ms)
+Completed 200 OK in 14ms (Views: 5.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-10-30 14:49:10 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/recipe_of_the_day" for ::1 at 2024-10-30 14:49:11 -0700
+Processing by RecipesController#recipe_of_the_day as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/recipe_of_the_day.html.erb within layouts/application
+  Rendered recipes/recipe_of_the_day.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | GC: 0.0ms)
+Completed 200 OK in 20ms (Views: 8.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-10-30 14:49:11 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/recipe_of_the_day" for ::1 at 2024-10-30 14:49:15 -0700
+Processing by RecipesController#recipe_of_the_day as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/recipe_of_the_day.html.erb within layouts/application
+  Rendered recipes/recipe_of_the_day.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 6.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-10-30 14:49:15 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/recipe_of_the_day" for ::1 at 2024-10-30 14:49:16 -0700
+Processing by RecipesController#recipe_of_the_day as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/recipe_of_the_day.html.erb within layouts/application
+  Rendered recipes/recipe_of_the_day.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | GC: 0.0ms)
+Completed 200 OK in 21ms (Views: 10.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-10-30 14:49:16 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/recipe_of_the_day" for ::1 at 2024-10-30 14:49:16 -0700
+Processing by RecipesController#recipe_of_the_day as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/recipe_of_the_day.html.erb within layouts/application
+  Rendered recipes/recipe_of_the_day.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 6.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-10-30 14:49:17 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/recipe_of_the_day" for ::1 at 2024-10-30 14:49:20 -0700
+Processing by RecipesController#recipe_of_the_day as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/recipe_of_the_day.html.erb within layouts/application
+  Rendered recipes/recipe_of_the_day.html.erb within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | GC: 0.0ms)
+Completed 200 OK in 20ms (Views: 12.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-10-30 14:49:20 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/recipe_of_the_day" for ::1 at 2024-10-30 14:49:22 -0700
+Processing by RecipesController#recipe_of_the_day as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/recipe_of_the_day.html.erb within layouts/application
+  Rendered recipes/recipe_of_the_day.html.erb within layouts/application (Duration: 1.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | GC: 0.0ms)
+Completed 200 OK in 22ms (Views: 11.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-10-30 14:49:22 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/recipe_of_the_day" for ::1 at 2024-10-30 14:49:22 -0700
+Processing by RecipesController#recipe_of_the_day as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/recipe_of_the_day.html.erb within layouts/application
+  Rendered recipes/recipe_of_the_day.html.erb within layouts/application (Duration: 2.8ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | GC: 0.0ms)
+Completed 200 OK in 22ms (Views: 12.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-10-30 14:49:23 -0700
+Started GET "/recipe_of_the_day" for ::1 at 2024-10-30 14:49:23 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Processing by RecipesController#recipe_of_the_day as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/recipe_of_the_day.html.erb within layouts/application
+  Rendered recipes/recipe_of_the_day.html.erb within layouts/application (Duration: 1.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | GC: 0.0ms)
+Completed 200 OK in 18ms (Views: 8.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-10-30 14:49:23 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/recipe_of_the_day" for ::1 at 2024-10-30 14:51:34 -0700
+Processing by RecipesController#recipe_of_the_day as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/recipe_of_the_day.html.erb within layouts/application
+  Rendered recipes/recipe_of_the_day.html.erb within layouts/application (Duration: 2.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 2.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 27.2ms | GC: 0.0ms)
+Completed 200 OK in 185ms (Views: 42.8ms | ActiveRecord: 8.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-10-30 14:51:35 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
