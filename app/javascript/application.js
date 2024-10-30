@@ -11,6 +11,18 @@ document.addEventListener("turbo:load", function () {
     let lastSeenIndex = 0;
     let actionHandled = false; // Track if swipe action was already handled
 
+    swiper.on("reachEnd", async () => {
+      console.log("Reached the last slide - fetching more recipes...");
+      try {
+        // Trigger a server endpoint to load more recipes
+        await fetch("/load_more_recipes");
+        // Optionally, reinitialize or reload swiper with new slides
+        swiper.update();
+      } catch (error) {
+        console.error("Failed to load more recipes", error);
+      }
+    });
+
     swiperContainer.addEventListener('swiperslidechange', (event) => {
       const activeIndex = swiper.activeIndex;
       const direction = activeIndex > lastSeenIndex ? 'right' : 'left';
@@ -46,6 +58,8 @@ document.addEventListener("turbo:load", function () {
         }
       }
     });
+
+
   } else {
     console.log("Swiper container not found");
   }

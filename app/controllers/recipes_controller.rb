@@ -20,7 +20,12 @@ class RecipesController < ApplicationController
       end
     end
 
-  
+    #Function to load more recipes once reaching end of swiper
+    def load_more
+      Recipe.fetch_new_recipes_from_api # Custom method to call API and save recipes
+      render json: { status: "success" }
+    end
+
     def recipe_of_the_day
       @recipe_of_the_day = Recipe.order("RANDOM()").first
       respond_to do |format|
