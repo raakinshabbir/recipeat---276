@@ -27754,3 +27754,75 @@ Recipe ID: 3, Recipe Title: Scrambled Eggs
 Completed 200 OK in 51ms (Views: 29.5ms | ActiveRecord: 0.6ms (3 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2024-10-30 22:15:02 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 2.8ms | GC: 0.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 207.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 389.9ms | GC: 0.0ms)
+Completed 200 OK in 1765ms (Views: 567.0ms | ActiveRecord: 15.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/application-af5b29b15b01acf4a8157bec930e4c00575101b9307f7971909a6a297e2b7e24.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/application-af5b29b15b01acf4a8157bec930e4c00575101b9307f7971909a6a297e2b7e24.js"):
+  
+Started GET "/manifest.json" for 127.0.0.1 at 2024-10-30 22:15:08 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-10-30 22:15:10 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 110.8ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 118.6ms | GC: 0.0ms)
+Completed 200 OK in 333ms (Views: 281.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/application-af5b29b15b01acf4a8157bec930e4c00575101b9307f7971909a6a297e2b7e24.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/application-af5b29b15b01acf4a8157bec930e4c00575101b9307f7971909a6a297e2b7e24.js"):
+  
+Started GET "/manifest.json" for 127.0.0.1 at 2024-10-30 22:15:12 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-10-30 22:15:15 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.7ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 186.0ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 191.0ms | GC: 0.0ms)
+Completed 200 OK in 331ms (Views: 322.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/application-af5b29b15b01acf4a8157bec930e4c00575101b9307f7971909a6a297e2b7e24.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/application-af5b29b15b01acf4a8157bec930e4c00575101b9307f7971909a6a297e2b7e24.js"):
+  
+Started GET "/manifest.json" for 127.0.0.1 at 2024-10-30 22:15:17 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/manifest.json" for 127.0.0.1 at 2024-10-30 22:15:20 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/manifest.json" for 127.0.0.1 at 2024-10-30 22:15:22 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
