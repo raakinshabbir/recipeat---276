@@ -29802,22 +29802,766 @@ Processing by RecipesController#load_more as */*
 Completed 200 OK in 3532ms (Views: 0.7ms | ActiveRecord: 70.7ms (10 queries, 0 cached) | GC: 0.0ms)
 
 
+<<<<<<< HEAD
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[36mRecipe Delete All (2.2ms)[0m  [1m[31mDELETE FROM "recipes"[0m
   [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
   ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
   [1m[36mRecipe Create (7.1ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "created_at", "updated_at", "image_url", "photo", "servings", "difficulty") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "French Onion Soup"], ["ingredients", "50g Butter, 1 tbs Olive Oil, 1 kg Onion, 1 tsp  Sugar, 4 sliced Garlic Clove, 2 tbs Plain Flour, 250ml Dry White Wine, 1L Beef Stock, 4 sliced Bread, 140g Gruyère"], ["instructions", "Melt the butter with the oil in a large heavy-based pan. Add the onions and fry with the lid on for 10 mins until soft. Sprinkle in the sugar and cook for 20 mins more, stirring frequently, until caramelised. The onions should be really golden, full of flavour and soft when pinched between your fingers. Take care towards the end to ensure that they don’t burn.\r\nAdd the garlic for the final few mins of the onions’ cooking time, then sprinkle in the flour and stir well. Increase the heat and keep stirring as you gradually add the wine, followed by the hot stock. Cover and simmer for 15-20 mins.\r\nTo serve, turn on the grill, and toast the bread. Ladle the soup into heatproof bowls. Put a slice or two of toast on top of the bowls of soup, and pile on the cheese. Grill until melted. Alternatively, you can complete the toasts under the grill, then serve them on top."], ["cooking_time", 82], ["created_at", "2024-10-31 06:26:34.431204"], ["updated_at", "2024-10-31 06:26:34.431204"], ["image_url", "https://www.themealdb.com/images/media/meals/xvrrux1511783685.jpg"], ["photo", nil], ["servings", 4], ["difficulty", "Medium"]]
+=======
+Started GET "/" for 127.0.0.1 at 2024-10-30 23:01:54 -0700
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 8 pending migrations:
+
+db/migrate/20241002010702_devise_create_users.rb
+db/migrate/20241006022135_create_recipes.rb
+db/migrate/20241006234911_create_active_storage_tables.active_storage.rb
+db/migrate/20241009000848_create_likeds.rb
+db/migrate/20241009225700_create_likedrecipes.rb
+db/migrate/20241028190640_add_image_url_to_recipes.rb
+db/migrate/20241029212013_rename_name_to_title_in_recipes.rb
+db/migrate/20241029212640_fix_recipes_table.rb
+
+
+):
+  
+activerecord (7.2.1) lib/active_record/migration.rb:756:in `check_pending_migrations'
+activerecord (7.2.1) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.1) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.1) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.1) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.1) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.7) lib/rack/method_override.rb:28:in `call'
+rack (3.1.7) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.7) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.4.3) lib/puma/configuration.rb:272:in `call'
+puma (6.4.3) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.3) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.3) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.3) lib/puma/server.rb:464:in `process_client'
+puma (6.4.3) lib/puma/server.rb:245:in `block in run'
+puma (6.4.3) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2024-10-30 23:01:58 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 8 pending migrations:
+
+db/migrate/20241002010702_devise_create_users.rb
+db/migrate/20241006022135_create_recipes.rb
+db/migrate/20241006234911_create_active_storage_tables.active_storage.rb
+db/migrate/20241009000848_create_likeds.rb
+db/migrate/20241009225700_create_likedrecipes.rb
+db/migrate/20241028190640_add_image_url_to_recipes.rb
+db/migrate/20241029212013_rename_name_to_title_in_recipes.rb
+db/migrate/20241029212640_fix_recipes_table.rb
+
+
+):
+  
+activerecord (7.2.1) lib/active_record/migration.rb:756:in `check_pending_migrations'
+activerecord (7.2.1) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.1) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.1) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.1) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.1) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.7) lib/rack/method_override.rb:28:in `call'
+rack (3.1.7) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.7) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.4.3) lib/puma/configuration.rb:272:in `call'
+puma (6.4.3) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.3) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.3) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.3) lib/puma/server.rb:464:in `process_client'
+puma (6.4.3) lib/puma/server.rb:245:in `block in run'
+puma (6.4.3) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2024-10-30 23:02:08 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 8 pending migrations:
+
+db/migrate/20241002010702_devise_create_users.rb
+db/migrate/20241006022135_create_recipes.rb
+db/migrate/20241006234911_create_active_storage_tables.active_storage.rb
+db/migrate/20241009000848_create_likeds.rb
+db/migrate/20241009225700_create_likedrecipes.rb
+db/migrate/20241028190640_add_image_url_to_recipes.rb
+db/migrate/20241029212013_rename_name_to_title_in_recipes.rb
+db/migrate/20241029212640_fix_recipes_table.rb
+
+
+):
+  
+activerecord (7.2.1) lib/active_record/migration.rb:756:in `check_pending_migrations'
+activerecord (7.2.1) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.1) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.1) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.1) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.1) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.7) lib/rack/method_override.rb:28:in `call'
+rack (3.1.7) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.7) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.4.3) lib/puma/configuration.rb:272:in `call'
+puma (6.4.3) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.3) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.3) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.3) lib/puma/server.rb:464:in `process_client'
+puma (6.4.3) lib/puma/server.rb:245:in `block in run'
+puma (6.4.3) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (1.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-10-31 06:02:24.010797', '2024-10-31 06:02:24.010801') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20241002010702)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime(6), "remember_created_at" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241002010702') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateRecipes (20241006022135)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "recipes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "ingredients" text, "instructions" text, "cooking_time" integer, "servings" integer, "difficulty" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241006022135') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateActiveStorageTables (20241006234911)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar NOT NULL, "filename" varchar NOT NULL, "content_type" varchar, "metadata" text, "service_name" varchar NOT NULL, "byte_size" bigint NOT NULL, "checksum" varchar, "created_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" bigint NOT NULL, "variation_digest" varchar NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241006234911') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateLikeds (20241009000848)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "likeds" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241009000848') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateLikedrecipes (20241009225700)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "liked_recipes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "recipe_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_bf79a2cdc2"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_8e79603492"
+FOREIGN KEY ("recipe_id")
+  REFERENCES "recipes" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_liked_recipes_on_user_id" ON "liked_recipes" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_liked_recipes_on_recipe_id" ON "liked_recipes" ("recipe_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241009225700') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddImageUrlToRecipes (20241028190640)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "recipes" ADD "image_url" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241028190640') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to RenameNameToTitleInRecipes (20241029212013)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RenameNameToTitleInRecipes (20241029212013)
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RenameNameToTitleInRecipes (20241029212013)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241029212013') RETURNING "version"[0m
+  [1m[36mTRANSACTION (14.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to FixRecipesTable (20241029212640)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to FixRecipesTable (20241029212640)
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to FixRecipesTable (20241029212640)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Create (2.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241029212640') RETURNING "version"[0m
+  [1m[36mTRANSACTION (4.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2024-10-30 23:17:29 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  [1m[36mUser Load (6.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 82.9ms | GC: 25.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 115.4ms | GC: 37.8ms)
+Completed 200 OK in 130ms (Views: 105.7ms | ActiveRecord: 12.6ms (1 query, 0 cached) | GC: 38.5ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-10-30 23:17:33 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.5ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 23.0ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 25.4ms | GC: 0.0ms)
+Completed 200 OK in 39ms (Views: 29.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2024-10-30 23:17:47 -0700
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (2.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2024-10-31 06:17:48.237432"], ["updated_at", "2024-10-31 06:17:48.237432"]]
+  [1m[36mTRANSACTION (10.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/swipe
+Completed 303 See Other in 310ms (ActiveRecord: 13.6ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/swipe" for 127.0.0.1 at 2024-10-30 23:17:48 -0700
+Processing by SwipeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 3.2ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 3.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | GC: 0.0ms)
+Completed 200 OK in 48ms (Views: 11.4ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/recipe_of_the_day" for 127.0.0.1 at 2024-10-30 23:17:50 -0700
+Processing by RecipesController#recipe_of_the_day as HTML
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:34:in `block in recipe_of_the_day'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/recipe_of_the_day.html.erb within layouts/application
+  Rendered recipes/recipe_of_the_day.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 5.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 9.5ms | ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/swipe" for 127.0.0.1 at 2024-10-30 23:17:51 -0700
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 1.9ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 2.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | GC: 0.0ms)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/addrecipe" for 127.0.0.1 at 2024-10-30 23:17:54 -0700
+Processing by AddrecipeController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering addrecipe/new.html.erb within layouts/application
+  Rendered addrecipe/new.html.erb within layouts/application (Duration: 7.3ms | GC: 0.0ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 5.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | GC: 0.0ms)
+Completed 200 OK in 30ms (Views: 16.0ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/liked" for 127.0.0.1 at 2024-10-30 23:17:55 -0700
+Processing by LikedController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering liked/index.html.erb within layouts/application
+  Rendered liked/index.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 2.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 29.9ms | GC: 22.9ms)
+Completed 200 OK in 32ms (Views: 31.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 22.9ms)
+
+
+Started GET "/swipe" for 127.0.0.1 at 2024-10-30 23:17:56 -0700
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 1.4ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 6.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.2ms (2 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/recipe_of_the_day" for 127.0.0.1 at 2024-10-30 23:17:57 -0700
+Processing by RecipesController#recipe_of_the_day as HTML
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:34:in `block in recipe_of_the_day'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/recipe_of_the_day.html.erb within layouts/application
+  Rendered recipes/recipe_of_the_day.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 3.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | GC: 1.0ms)
+Completed 200 OK in 18ms (Views: 14.2ms | ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/swipe" for 127.0.0.1 at 2024-10-30 23:17:58 -0700
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 1.4ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 3.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/addrecipe" for 127.0.0.1 at 2024-10-30 23:17:59 -0700
+Processing by AddrecipeController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering addrecipe/new.html.erb within layouts/application
+  Rendered addrecipe/new.html.erb within layouts/application (Duration: 8.3ms | GC: 1.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 4.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | GC: 1.2ms)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 1.2ms)
+
+
+Started GET "/recipes/share" for 127.0.0.1 at 2024-10-30 23:18:00 -0700
+Processing by RecipesController#share as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/share.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/share.html.erb:3
+  Rendered recipes/share.html.erb within layouts/application (Duration: 3.5ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 4.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/filter_recipes" for 127.0.0.1 at 2024-10-30 23:18:01 -0700
+Processing by FilterRecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering filter_recipes/index.html.erb within layouts/application
+  Rendered filter_recipes/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 4.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | GC: 0.0ms)
+Completed 200 OK in 11ms (Views: 8.9ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/addrecipe" for 127.0.0.1 at 2024-10-30 23:18:02 -0700
+Processing by AddrecipeController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering addrecipe/new.html.erb within layouts/application
+  Rendered addrecipe/new.html.erb within layouts/application (Duration: 5.6ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 8.5ms | GC: 0.8ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | GC: 0.8ms)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.8ms)
+
+
+Started POST "/addrecipe" for 127.0.0.1 at 2024-10-30 23:18:20 -0700
+Processing by AddrecipeController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"title"=>"Food", "ingredients"=>"Not", "instructions"=>"ajsf", "cooking_time"=>"20", "servings"=>"2", "difficulty"=>"Easy"}, "commit"=>"Add Recipe"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/addrecipe_controller.rb:14:in `create'
+  [1m[36mRecipe Create (2.3ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Food"], ["ingredients", "Not"], ["instructions", "ajsf"], ["cooking_time", 20], ["servings", 2], ["difficulty", "Easy"], ["created_at", "2024-10-31 06:18:20.199920"], ["updated_at", "2024-10-31 06:18:20.199920"], ["image_url", nil]]
+  ↳ app/controllers/addrecipe_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/addrecipe_controller.rb:14:in `create'
+Redirected to http://localhost:3000/recipes/1
+Completed 302 Found in 8ms (ActiveRecord: 2.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2024-10-30 23:18:20 -0700
+Processing by RecipesController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:48:in `show'
+No template found for RecipesController#show, rendering head :no_content
+Completed 204 No Content in 3ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/addrecipe" for 127.0.0.1 at 2024-10-30 23:18:22 -0700
+Processing by AddrecipeController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"title"=>"Food", "ingredients"=>"Not", "instructions"=>"ajsf", "cooking_time"=>"20", "servings"=>"2", "difficulty"=>"Easy"}, "commit"=>"Add Recipe"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/addrecipe_controller.rb:14:in `create'
+  [1m[36mRecipe Create (4.1ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Food"], ["ingredients", "Not"], ["instructions", "ajsf"], ["cooking_time", 20], ["servings", 2], ["difficulty", "Easy"], ["created_at", "2024-10-31 06:18:22.562869"], ["updated_at", "2024-10-31 06:18:22.562869"], ["image_url", nil]]
+  ↳ app/controllers/addrecipe_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/addrecipe_controller.rb:14:in `create'
+Redirected to http://localhost:3000/recipes/2
+Completed 302 Found in 12ms (ActiveRecord: 4.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/recipes/2" for 127.0.0.1 at 2024-10-30 23:18:22 -0700
+Processing by RecipesController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:48:in `show'
+No template found for RecipesController#show, rendering head :no_content
+Completed 204 No Content in 2ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/addrecipe" for 127.0.0.1 at 2024-10-30 23:18:23 -0700
+Processing by AddrecipeController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"title"=>"Food", "ingredients"=>"Not", "instructions"=>"ajsf", "cooking_time"=>"20", "servings"=>"2", "difficulty"=>"Easy"}, "commit"=>"Add Recipe"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/addrecipe_controller.rb:14:in `create'
+  [1m[36mRecipe Create (1.7ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Food"], ["ingredients", "Not"], ["instructions", "ajsf"], ["cooking_time", 20], ["servings", 2], ["difficulty", "Easy"], ["created_at", "2024-10-31 06:18:23.162312"], ["updated_at", "2024-10-31 06:18:23.162312"], ["image_url", nil]]
+  ↳ app/controllers/addrecipe_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/addrecipe_controller.rb:14:in `create'
+Redirected to http://localhost:3000/recipes/3
+Completed 302 Found in 9ms (ActiveRecord: 1.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/recipes/3" for 127.0.0.1 at 2024-10-30 23:18:23 -0700
+Processing by RecipesController#show as TURBO_STREAM
+  Parameters: {"id"=>"3"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:48:in `show'
+No template found for RecipesController#show, rendering head :no_content
+Completed 204 No Content in 29ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 17.3ms)
+
+
+Started POST "/addrecipe" for 127.0.0.1 at 2024-10-30 23:18:23 -0700
+Processing by AddrecipeController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"title"=>"Food", "ingredients"=>"Not", "instructions"=>"ajsf", "cooking_time"=>"20", "servings"=>"2", "difficulty"=>"Easy"}, "commit"=>"Add Recipe"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/addrecipe_controller.rb:14:in `create'
+  [1m[36mRecipe Create (1.5ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Food"], ["ingredients", "Not"], ["instructions", "ajsf"], ["cooking_time", 20], ["servings", 2], ["difficulty", "Easy"], ["created_at", "2024-10-31 06:18:23.319409"], ["updated_at", "2024-10-31 06:18:23.319409"], ["image_url", nil]]
+  ↳ app/controllers/addrecipe_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/addrecipe_controller.rb:14:in `create'
+Redirected to http://localhost:3000/recipes/4
+Completed 302 Found in 8ms (ActiveRecord: 1.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/recipes/4" for 127.0.0.1 at 2024-10-30 23:18:23 -0700
+Processing by RecipesController#show as TURBO_STREAM
+  Parameters: {"id"=>"4"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:48:in `show'
+No template found for RecipesController#show, rendering head :no_content
+Completed 204 No Content in 5ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/addrecipe" for 127.0.0.1 at 2024-10-30 23:18:23 -0700
+Processing by AddrecipeController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"title"=>"Food", "ingredients"=>"Not", "instructions"=>"ajsf", "cooking_time"=>"20", "servings"=>"2", "difficulty"=>"Easy"}, "commit"=>"Add Recipe"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/addrecipe_controller.rb:14:in `create'
+  [1m[36mRecipe Create (5.1ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Food"], ["ingredients", "Not"], ["instructions", "ajsf"], ["cooking_time", 20], ["servings", 2], ["difficulty", "Easy"], ["created_at", "2024-10-31 06:18:23.515230"], ["updated_at", "2024-10-31 06:18:23.515230"], ["image_url", nil]]
+  ↳ app/controllers/addrecipe_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/addrecipe_controller.rb:14:in `create'
+Redirected to http://localhost:3000/recipes/5
+Completed 302 Found in 36ms (ActiveRecord: 5.2ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/recipes/5" for 127.0.0.1 at 2024-10-30 23:18:23 -0700
+Processing by RecipesController#show as TURBO_STREAM
+  Parameters: {"id"=>"5"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:48:in `show'
+No template found for RecipesController#show, rendering head :no_content
+Completed 204 No Content in 3ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/recipe_of_the_day" for 127.0.0.1 at 2024-10-30 23:18:24 -0700
+Processing by RecipesController#recipe_of_the_day as HTML
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:34:in `block in recipe_of_the_day'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/recipe_of_the_day.html.erb within layouts/application
+  Rendered recipes/recipe_of_the_day.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 8.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | GC: 0.5ms)
+Completed 200 OK in 22ms (Views: 17.5ms | ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/swipe" for 127.0.0.1 at 2024-10-30 23:18:26 -0700
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 2.0ms | GC: 0.0ms)
+  [1m[36mUser Load (5.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 13.7ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 21.0ms | GC: 0.3ms)
+Completed 200 OK in 22ms (Views: 16.3ms | ActiveRecord: 5.1ms (2 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/load_more_recipes" for 127.0.0.1 at 2024-10-30 23:18:29 -0700
+Processing by RecipesController#load_more as */*
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (5.9ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Crock Pot Chicken Baked Tacos"], ["ingredients", "4 - 6 Chicken Breasts, 1 bottle Vinaigrette Dressing, 1½ tablespoon Cumin, 1 tablespoon Smoked Paprika, 1 teaspoon Garlic, 1 can Refried Beans, 12 Hard Taco Shells, 2 cups Shredded Mexican Cheese, Halved Grape Tomatoes, Sliced and Seeded Jalapeno, Peeled and Sliced Avocado, 2 tablespoons Green Salsa, 3 tablespoons Sour Cream, 1 tablespoon Milk"], ["instructions", "Put the uncooked chicken breasts in the crock pot. Pour the full bottle of salad dressing over the chicken. Sprinkle the rest of the ingredients over the top and mix them in a bit with a spoon.\r\nCover your crock pot with the lid and cook on high for 4 hours.\r\nRemove all the chicken breasts from the crock pot and let cool.\r\nShred the chicken breasts and move to a glass bowl.\r\nPour most of the liquid over the shredded chicken.\r\nFOR THE TACOS:\r\nMake the guacamole sauce by mixing the avocado and green salsa together. Pour the guacamole mixture through a strainer until smooth and transfer to a squeeze bottle. Cut the tip off the lid of the squeeze bottle to make the opening more wide if needed.\r\nMake the sour cream sauce by mixing the sour cream and milk together until you get a more liquid sour cream sauce. Transfer to a squeeze bottle.\r\nIn a 9x 13 glass baking dish, fill all 12+ tacos with a layer of refried beans, cooked chicken and shredded cheese.\r\nBake at 450 for 10-15 minutes just until the cheese is melted and bubbling.\r\nOut of the oven top all the tacos with the sliced grape tomaotes, jalapeno and cilantro.\r\nFinish with a drizzle of guacamole and sour cream.\r\nEnjoy!"], ["cooking_time", 43], ["servings", 1], ["difficulty", "Easy"], ["created_at", "2024-10-31 06:18:30.256050"], ["updated_at", "2024-10-31 06:18:30.256050"], ["image_url", "https://www.themealdb.com/images/media/meals/ypxvwv1505333929.jpg"]]
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (1.9ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Split Pea Soup"], ["ingredients", "1kg Ham, 200g (soaked overnight) Peas, 2 chopped Onions, 2 chopped Carrots, 2 Bay Leaves, 1 chopped Celery, 300g Frozen Peas, to serve Bread"], ["instructions", "Put the gammon in a very large pan with 2 litres water and bring to the boil. Remove from the heat and drain off the water – this helps to get rid of some of the saltiness. Recover with 2 litres cold water and bring to the boil again. Put everything but the frozen peas into the pan and bring to the boil. Reduce to a simmer and cook for 1½-2½ hrs, topping up the water as and when you need to, to a similar level it started at. As the ham cooks and softens, you can halve it if you want, so it is all submerged under the liquid. When the ham is tender enough to pull into shreds, it is ready.\r\nLift out the ham, peel off and discard the skin. While it is still hot (wear a clean pair of rubber gloves), shred the meat. Remove bay from the soup and stir in the frozen peas. Simmer for 1 min, then blend until smooth. Add a splash of water if too thick, and return to the pan to heat through if it has cooled, or if you are making ahead.\r\nWhen you are ready to serve, mix the hot soup with most of the ham – gently reheat if made ahead. Serve in bowls with the remaining ham scattered on top, and eat with crusty bread and butter."], ["cooking_time", 77], ["servings", 2], ["difficulty", "Medium"], ["created_at", "2024-10-31 06:18:30.667526"], ["updated_at", "2024-10-31 06:18:30.667526"], ["image_url", "https://www.themealdb.com/images/media/meals/xxtsvx1511814083.jpg"]]
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (1.8ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Corned Beef and Cabbage"], ["ingredients", "3 Lbs Beef Brisket, 10 Small Potatoes, 5 Carrots, 1 head Cabbage"], ["instructions", "1\r\n\r\nPlace corned beef in large pot or Dutch oven and cover with water. Add the spice packet that came with the corned beef. Cover pot and bring to a boil, then reduce to a simmer. Simmer approximately 50 minutes per pound or until tender.\r\n\r\n2\r\n\r\nAdd whole potatoes and peeled and cut carrots, and cook until the vegetables are almost tender. Add cabbage and cook for 15 more minutes. Remove meat and let rest 15 minutes.\r\n\r\n3\r\n\r\nPlace vegetables in a bowl and cover. Add as much broth (cooking liquid reserved in the Dutch oven or large pot) as you want. Slice meat across the grain."], ["cooking_time", 108], ["servings", 5], ["difficulty", "Medium"], ["created_at", "2024-10-31 06:18:31.076515"], ["updated_at", "2024-10-31 06:18:31.076515"], ["image_url", "https://www.themealdb.com/images/media/meals/xb97a81583266727.jpg"]]
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (3.4ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Roti john"], ["ingredients", "1/4 lb Minced Beef, 1 Onion, 3 Eggs, 1 tbs Chilli, 1/2  Baguette, To taste Salt, To taste Pepper, Top Mayonnaise"], ["instructions", "Mix all the ingredients in a bowl.\r\nHeat a pan or griddle with a little vegetable oil.\r\nPour the mixture onto the pan and place a piece of open-faced baguette on top.\r\nPress on the bread with a spatula and grill for 2 minutes.\r\nTurn the bread over to make it a little crispy.\r\nRemove from pan and cut the bread into small portions.\r\nAdd mayonnaise and/or Sambal before cutting the sandwich (optional)."], ["cooking_time", 113], ["servings", 4], ["difficulty", "Medium"], ["created_at", "2024-10-31 06:18:31.383954"], ["updated_at", "2024-10-31 06:18:31.383954"], ["image_url", "https://www.themealdb.com/images/media/meals/hx335q1619789561.jpg"]]
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (1.5ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Beef Wellington"], ["ingredients", "400g mushrooms, 1-2tbsp English Mustard, Dash Olive Oil, 750g piece Beef Fillet, 6-8 slices Parma ham, 500g Puff Pastry, Dusting Flour, 2 Beaten  Egg Yolks"], ["instructions", "Put the mushrooms into a food processor with some seasoning and pulse to a rough paste. Scrape the paste into a pan and cook over a high heat for about 10 mins, tossing frequently, to cook out the moisture from the mushrooms. Spread out on a plate to cool.\r\nHeat in a frying pan and add a little olive oil. Season the beef and sear in the hot pan for 30 secs only on each side. (You don't want to cook it at this stage, just colour it). Remove the beef from the pan and leave to cool, then brush all over with the mustard.\r\nLay a sheet of cling film on a work surface and arrange the Parma ham slices on it, in slightly overlapping rows. With a palette knife, spread the mushroom paste over the ham, then place the seared beef fillet in the middle. Keeping a tight hold of the cling film from the edge, neatly roll the Parma ham and mushrooms around the beef to form a tight barrel shape. Twist the ends of the cling film to secure. Chill for 15-20 mins to allow the beef to set and keep its shape.\r\nRoll out the puff pastry on a floured surface to a large rectangle, the thickness of a £1 coin. Remove the cling film from the beef, then lay in the centre. Brush the surrounding pastry with egg yolk. Fold the ends over, the wrap the pastry around the beef, cutting off any excess. Turn over, so the seam is underneath, and place on a baking sheet. Brush over all the pastry with egg and chill for about 15 mins to let the pastry rest.\r\nHeat the oven to 200C, 400F, gas 6.\r\nLightly score the pastry at 1cm intervals and glaze again with beaten egg yolk. Bake for 20 minutes, then lower the oven setting to 180C, 350F, gas 4 and cook for another 15 mins. Allow to rest for 10-15 mins before slicing and serving with the side dishes of your choice. The beef should still be pink in the centre when you serve it."], ["cooking_time", 106], ["servings", 2], ["difficulty", "Medium"], ["created_at", "2024-10-31 06:18:31.895663"], ["updated_at", "2024-10-31 06:18:31.895663"], ["image_url", "https://www.themealdb.com/images/media/meals/vvpprx1487325699.jpg"]]
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (2.8ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Roast fennel and aubergine paella"], ["ingredients", "6 small Baby Aubergine, 4 small Fennel, 1 thinly sliced Red Pepper, 1 medium Courgettes, 1 finely chopped  Onion, 300g Paella Rice, 1 tsp  Paprika, pinch Saffron, 200ml White Wine, 700ml Vegetable Stock, 100g  Frozen Peas, 1 chopped Lemon, Handful Parsley, pinch Salt, pinch Black Pepper"], ["instructions", "1 Put the fennel, aubergine, pepper and courgette in a roasting tray. Add a glug of olive oil, season with salt and pepper and toss around to coat the veggies in the oil. Roast in the oven for 20 minutes, turning a couple of times until the veg are pretty much cooked through and turning golden.\r\n\r\n2 Meanwhile, heat a paella pan or large frying pan over a low– medium heat and add a glug of olive oil. Sauté the onion for 8–10 minutes until softened. Increase the heat to medium and stir in the rice, paprika and saffron. Cook for around 1 minute to start toasting the rice, then add the white wine. Reduce by about half before stirring in two-thirds of the stock. Reduce to a simmer and cook for 10 minutes without a lid, stirring a couple of times.\r\n\r\n3 Stir in the peas, add some seasoning, then gently mix in the roasted veg. Pour over the remaining stock, arrange the lemon wedges on top and cover with a lid or some aluminium foil. Cook for a further 10 minutes.\r\n\r\n4 To ensure you get the classic layer of toasted rice at the bottom of the pan, increase the heat to high until you hear a slight crackle. Remove from the heat and sit for 5 minutes before sprinkling over the parsley and serving."], ["cooking_time", 30], ["servings", 5], ["difficulty", "Hard"], ["created_at", "2024-10-31 06:18:32.205243"], ["updated_at", "2024-10-31 06:18:32.205243"], ["image_url", "https://www.themealdb.com/images/media/meals/1520081754.jpg"]]
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (2.9ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Chocolate Caramel Crispy"], ["ingredients", "6 chopped Mars Bar, 150g Butter, 120g Rice Krispies, 150g Milk Chocolate"], ["instructions", "Grease and line a 20 x 20cm/8\" x 8\" baking tin with parchment paper.\r\nPut the mars bars and butter in a heat proof bowl and place over a pan of barely simmering water. Mixing with a whisk, melt until the mixture is smooth.\r\nPour over the rice krispies in a mixing bowl and mix until all the ingredients are evenly combined. Press evenly into the prepare baking tin and set aside.\r\nMelt the milk chocolate in the microwave or over a pan of barely simmering water.\r\nSpread the melted chocolate over the rice krispie mixture and leave to set in a cool place. Once set slice into squares and serve!"], ["cooking_time", 72], ["servings", 4], ["difficulty", "Hard"], ["created_at", "2024-10-31 06:18:32.510674"], ["updated_at", "2024-10-31 06:18:32.510674"], ["image_url", "https://www.themealdb.com/images/media/meals/1550442508.jpg"]]
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (1.6ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Steak and Kidney Pie"], ["ingredients", "300g Puff Pastry, Beaten Egg White, Beaten Egg Yolks, 2 tbs Vegetable Oil, 70 ml  Beef, 200g Lamb Kidney, 2 chopped Onions, 30g Plain Flour, 85 ml  Beef Stock, pinch Salt, pinch Pepper, Dash Worcestershire Sauce"], ["instructions", "Preheat the oven to 220C/425F/Gas 7\r\nHeat the vegetable oil in a large frying pan, and brown the beef all over. (You may need to do this in batches.) Set aside, then brown the kidneys on both sides in the same pan. Add the onions and cook for 3-4 minutes.\r\nReturn the beef to the pan, sprinkle flour over and coat the meat and onions\r\nAdd the stock to the pan, stir well and bring to the boil.\r\nTurn the heat down and simmer for 1½ hours without a lid. If the liquid evaporates too much, add more stock.\r\nRemove from the heat. Add salt, pepper and Worcestershire sauce and allow to cool completely. Place the cooked meat mixture into a pie dish.\r\nRoll out the pastry to 5mm/¼in thick and 5cm/2in larger than the dish you are using.\r\nUsing a rolling pin, lift the pastry and place it over the top of the pie dish. Trim and crimp the edges with your fingers and thumb.\r\nBrush the surface with the beaten egg mixture and bake for 30-40 minutes until golden-brown and puffed.\r\nServe with creamy mash and steamed vegetables to soak up the gravy."], ["cooking_time", 102], ["servings", 3], ["difficulty", "Hard"], ["created_at", "2024-10-31 06:18:32.920179"], ["updated_at", "2024-10-31 06:18:32.920179"], ["image_url", "https://www.themealdb.com/images/media/meals/qysyss1511558054.jpg"]]
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (3.1ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Beef Brisket Pot Roast"], ["ingredients", "4-5 pound Beef Brisket, Dash Salt, 3 Onion, 5 cloves Garlic, 1 Sprig Thyme, 1 sprig  Rosemary, 4 Bay Leaves, 2 cups beef stock, 3 Large Carrots, 1 Tbsp Mustard, 4 Mashed Potatoes"], ["instructions", "1 Prepare the brisket for cooking: On one side of the brisket there should be a layer of fat, which you want. If there are any large chunks of fat, cut them off and discard them. Large pieces of fat will not be able to render out completely.\r\nUsing a sharp knife, score the fat in parallel lines, about 3/4-inch apart. Slice through the fat, not the beef. Repeat in the opposite direction to make a cross-hatch pattern.\r\nSalt the brisket well and let it sit at room temperature for 30 minutes.\r\n \r\n2 Sear the brisket: You'll need an oven-proof, thick-bottomed pot with a cover, or Dutch oven, that is just wide enough to hold the brisket roast with a little room for the onions.\r\nPat the brisket dry and place it, fatty side down, into the pot and place it on medium high heat. Cook for 5-8 minutes, lightly sizzling, until the fat side is nicely browned. (If the roast seems to be cooking too fast, turn the heat down to medium. You want a steady sizzle, not a raging sear.)\r\nTurn the brisket over and cook for a few minutes more to brown the other side.\r\n\r\n3 Sauté the onions and garlic: When the brisket has browned, remove it from the pot and set aside. There should be a couple tablespoons of fat rendered in the pot, if not, add some olive oil.\r\nAdd the chopped onions and increase the heat to high. Sprinkle a little salt on the onions. Sauté, stirring often, until the onions are lightly browned, 5-8 minutes. Stir in the garlic and cook 1-2 more minutes.\r\n \r\n4 Return brisket to pot, add herbs, stock, bring to simmer, cover, cook in oven: Preheat the oven to 300°F. Use kitchen twine to tie together the bay leaves, rosemary and thyme.\r\nMove the onions and garlic to the sides of the pot and nestle the brisket inside. Add the beef stock and the tied-up herbs. Bring the stock to a boil on the stovetop.\r\nCover the pot, place the pot in the 300°F oven and cook for 3 hours. Carefully flip the brisket every hour so it cooks evenly.\r\n \r\n5 Add carrots, continue to cook: After 3 hours, add the carrots. Cover the pot and cook for 1 hour more, or until the carrots are cooked through and the brisket is falling-apart tender.\r\n6 Remove brisket to cutting board, tent with foil: When the brisket is falling-apart tender, take the pot out of the oven and remove the brisket to a cutting board. Cover it with foil. Pull out and discard the herbs.\r\n7 Make sauce (optional): At this point you have two options. You can serve as is, or you can make a sauce with the drippings and some of the onions. If you serve as is, skip this step.\r\nTo make a sauce, remove the carrots and half of the onions, set aside and cover them with foil. Pour the ingredients that are remaining into the pot into a blender, and purée until smooth. If you want, add 1 tablespoon of mustard to the mix. Put into a small pot and keep warm.\r\n8 Slice the meat across the grain: Notice the lines of the muscle fibers of the roast. This is the \"grain\" of the meat. Slice the meat perpendicular to these lines, or across the grain (cutting this way further tenderizes the meat), in 1/4-inch to 1/2-inch slices.\r\nServe with the onions, carrots and gravy. Serve with mashed, roasted or boiled potatoes, egg noodles or polenta."], ["cooking_time", 89], ["servings", 3], ["difficulty", "Medium"], ["created_at", "2024-10-31 06:18:33.330492"], ["updated_at", "2024-10-31 06:18:33.330492"], ["image_url", "https://www.themealdb.com/images/media/meals/ursuup1487348423.jpg"]]
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (1.5ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Shawarma"], ["ingredients", "1 kg Chicken Thighs, 1 tbs Coriander, 1 tbs Cumin, 1 tbs Cardamom, 1 tsp  Cayenne Pepper, 2 tsp Paprika, 2 tbs Lemon Juice, 3 tbs Olive Oil, 1 cup  Greek Yogurt, 1 Garlic Clove, 1 tsp  Cumin, Splash Lemon Juice, Sliced Lettuce, Sliced Tomato, 6 Pita Bread"], ["instructions", "Combine the marinade ingredients in a large ziplock bag (or bowl).\r\nAdd the chicken and use your hands to make sure each piece is coated. If using a ziplock bag, I find it convenient to close the bag then massage the bag to disperse the rub all over each chicken piece.\r\nMarinate overnight or up to 24 hours.\r\nCombine the Yoghurt Sauce ingredients in a bowl and mix. Cover and put in the fridge until required (it will last for 3 days in the fridge).\r\nHeat grill/BBQ (or large heavy based pan on stove) on medium high. You should not need to oil it because the marinade has oil in it and also thigh fillets have fat. But if you are worried then oil your hotplate/grill. (See notes for baking)\r\nPlace chicken on the grill and cook the first side for 4 to 5 minutes until nicely charred, then turn and cook the other side for 3 to 4 minutes (the 2nd side takes less time).\r\nRemove chicken from the grill and cover loosely with foil. Set aside to rest for 5 minutes.\r\nTO SERVE\r\nSlice chicken and pile onto platter alongside flatbreads, Salad and the Yoghurt Sauce.\r\nTo make a wrap, get a piece of flatbread and smear with Yoghurt Sauce. Top with a bit of lettuce and tomato and Chicken Shawarma. Roll up and enjoy!"], ["cooking_time", 34], ["servings", 1], ["difficulty", "Medium"], ["created_at", "2024-10-31 06:18:33.639007"], ["updated_at", "2024-10-31 06:18:33.639007"], ["image_url", "https://www.themealdb.com/images/media/meals/kcv6hj1598733479.jpg"]]
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+Completed 200 OK in 3779ms (Views: 0.5ms | ActiveRecord: 30.2ms (10 queries, 0 cached) | GC: 1.3ms)
+
+
+Started GET "/filter_recipes" for 127.0.0.1 at 2024-10-30 23:18:53 -0700
+Processing by FilterRecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering filter_recipes/index.html.erb within layouts/application
+  Rendered filter_recipes/index.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 12.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/recipes/share" for 127.0.0.1 at 2024-10-30 23:18:54 -0700
+Processing by RecipesController#share as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/share.html.erb within layouts/application
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/share.html.erb:3
+  Rendered recipes/share.html.erb within layouts/application (Duration: 2.5ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 2.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/swipe" for 127.0.0.1 at 2024-10-30 23:18:57 -0700
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 5.4ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 4.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/load_more_recipes" for 127.0.0.1 at 2024-10-30 23:19:09 -0700
+Processing by RecipesController#load_more as */*
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (3.0ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "15-minute chicken & halloumi burgers"], ["ingredients", "2 Chicken Breasts, 1 tbsp Oil, 4 tbsp Hotsauce, ½ Lemon Juice, 2 Buns, 250g Cheese, ¼ Cabbage, 2 tbsp Mayonnaise, 4 tbsp Sour Cream, 4 leaves Lettuce, 2 Red Pepper"], ["instructions", "STEP 1\r\n\r\nPut the chicken breasts between two pieces of baking parchment and use a rolling pin to gently bash them until they are approximately 1cm thick. Cut each chicken breast into two even pieces.\r\n\r\nSTEP 2\r\n\r\nIf you're using a frying pan, heat two frying pans over medium-high heat, with one of them containing oil. Fry the chicken in the oiled pan for 3-4 mins on each side until they are cooked through. Season the chicken, reduce the heat, drizzle in the chilli sauce and half of the lemon juice, and cook for an additional 1-2 mins until the sauce is reduced. Remove the chicken from the heat.\r\n\r\nSTEP 3\r\n\r\nIf you're using an air-fryer, preheat it to 180C for 4 mins. Add the chicken to the air-fryer and cook for 12 mins. Drizzle over the chilli sauce and half the lemon juice and cook for an additional 1-2 mins until the chicken is cooked through and the sauce is reduced. Remove the chicken and keep it warm.\r\nSTEP 4\r\n\r\nWhile the chicken is cooking, toast the buns in the dry frying pan for 30 seconds. Transfer them to a plate. If you're using an air fryer, put the buns in the air fryer for 1-2 mins until they are warm. Increase the air fryer temperature to 200C. Add the halloumi to the air fryer basket and cook for 10 mins, turning halfway through, until it's golden. Toss the cabbage with the mayo and the remaining lemon juice.\r\n\r\nSTEP 5\r\n\r\nSpoon the hummus (or dip of your choice) into the toasted buns, then top with the rocket, chilli chicken, halloumi, and peppers. Drizzle with a little more chilli sauce, spoon over the cabbage, season with black pepper, and top with the bun lids. Serve with any extra cabbage on the side or a green salad."], ["cooking_time", 96], ["servings", 2], ["difficulty", "Easy"], ["created_at", "2024-10-31 06:19:09.680520"], ["updated_at", "2024-10-31 06:19:09.680520"], ["image_url", "https://www.themealdb.com/images/media/meals/vdwloy1713225718.jpg"]]
+>>>>>>> 3e5c4ca4d7b4f0c891e8e7208e125526d301f283
   ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
   [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
   ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
   ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+<<<<<<< HEAD
   [1m[36mRecipe Create (4.9ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "created_at", "updated_at", "image_url", "photo", "servings", "difficulty") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Tuna Nicoise"], ["ingredients", "450g Potatoes, 2 tblsp  Olive Oil, 4 Eggs, 1 tbls Red Wine Vinegar, 2 tblsp  Capers, 50g Sunflower Oil, ½ Red Onions, 100g  Spinach, 400g Tuna"], ["instructions", "Heat oven to 200C/fan 180C/gas 6. Toss the potatoes with 2 tsp oil and some seasoning. Tip onto a large baking tray, then roast for 20 mins, stirring halfway, until crisp, golden and cooked through.\r\nMeanwhile, put eggs in a small pan of water, bring to the boil, then simmer for 8-10 mins, depending on how you like them cooked. Plunge into a bowl of cold water to cool for a few mins. Peel away the shells, then cut into halves.\r\nIn a large salad bowl, whisk together the remaining oil, red wine vinegar, capers and chopped tomatoes. Season, tip in the onion, spinach, tuna and potatoes, then gently toss together. Top with the eggs, then serve straight away."], ["cooking_time", 86], ["created_at", "2024-10-31 06:26:34.824454"], ["updated_at", "2024-10-31 06:26:34.824454"], ["image_url", "https://www.themealdb.com/images/media/meals/yypwwq1511304979.jpg"], ["photo", nil], ["servings", 4], ["difficulty", "Easy"]]
+=======
+  [1m[36mRecipe Create (10.0ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Mbuzi Choma (Roasted Goat)"], ["ingredients", "1 kg Goat Meat, 1 kg Corn Flour, 2 Tomatoes, Pinch Salt, 1 Onion, 1 Green Chilli, 1  bunch Coriander Leaves"], ["instructions", "1. Steps for the Meat: \r\n Roast meat over medium heat for 50 minutes and salt it as you turn it.\r\n\r\n2. Steps for Ugali:\r\nBring the water and salt to a boil in a heavy-bottomed saucepan. Stir in the cornmeal slowly, letting it fall through the fingers of your hand.\r\n\r\n3. Reduce heat to medium-low and continue stirring regularly, smashing any lumps with a spoon, until the mush pulls away from the sides of the pot and becomes very thick, about 10 minutes.\r\n\r\n4.Remove from heat and allow to cool.\r\n\r\n5. Place the ugali into a large serving bowl. Wet your hands with water, form a ball and serve.\r\n\r\n6. Steps for Kachumbari: Mix the tomatoes, onions, chili and coriander leaves in a bowl.\r\n\r\n7. Serve and enjoy!\r\n\r\n"], ["cooking_time", 52], ["servings", 4], ["difficulty", "Hard"], ["created_at", "2024-10-31 06:19:09.897285"], ["updated_at", "2024-10-31 06:19:09.897285"], ["image_url", "https://www.themealdb.com/images/media/meals/cuio7s1555492979.jpg"]]
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (1.8ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Katsu Chicken curry"], ["ingredients", "4 pounded to 1cm thickness chicken breast, 2 tablespoons plain flour, 1 beaten egg, 100g fine breadcrumbs, 230ml frying vegetable oil, 2 tablespoons sunflower oil, 2 sliced onions, 5 chopped cloves garlic, 2 sliced carrot, 2 tablespoons plain flour, 4 teaspoons curry powder, 600ml chicken stock, 2 teaspoons honey, 4 teaspoons soy sauce, 1 bay leaf, 1 teaspoon garam masala"], ["instructions", "Prep:15min  ›  Cook:30min  ›  Ready in:45min \r\n\r\nFor the curry sauce: Heat oil in medium non-stick saucepan, add onion and garlic and cook until softened. Stir in carrots and cook over low heat for 10 to 12 minutes.\r\nAdd flour and curry powder; cook for 1 minute. Gradually stir in stock until combined; add honey, soy sauce and bay leaf. Slowly bring to the boil.\r\nTurn down heat and simmer for 20 minutes or until sauce thickens but is still of pouring consistency. Stir in garam masala. Pour the curry sauce through a sieve; return to saucepan and keep on low heat until ready to serve.\r\nFor the chicken: Season both sides of chicken breasts with salt and pepper. Place flour, egg and breadcrumbs in separate bowls and arrange in a row. Coat the chicken breasts in flour, then dip them into the egg, then coat in breadcrumbs, making sure you cover both sides.\r\nHeat oil in large frying pan over medium-high heat. Place chicken into hot oil and cook until golden brown, about 3 or 4 minutes each side. Once cooked, place on kitchen paper to absorb excess oil.\r\nPour curry sauce over chicken, serve with white rice and enjoy!"], ["cooking_time", 40], ["servings", 3], ["difficulty", "Medium"], ["created_at", "2024-10-31 06:19:10.185537"], ["updated_at", "2024-10-31 06:19:10.185537"], ["image_url", "https://www.themealdb.com/images/media/meals/vwrpps1503068729.jpg"]]
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (2.2ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Nutty Chicken Curry"], ["ingredients", "1 large Red Chilli, 0.5 Ginger, 1 large Garlic, Bunch Coriander, 1 tbsp Sunflower Oil, 4 Chicken Breasts, 5 tblsp  Peanut Butter, 150ml Chicken Stock, 200g Greek Yogurt"], ["instructions", "Finely slice a quarter of the chilli, then put the rest in a food processor with the ginger, garlic, coriander stalks and one-third of the leaves. Whizz to a rough paste with a splash of water if needed.\r\nHeat the oil in a frying pan, then quickly brown the chicken chunks for 1 min. Stir in the paste for another min, then add the peanut butter, stock and yogurt. When the sauce is gently bubbling, cook for 10 mins until the chicken is just cooked through and sauce thickened. Stir in most of the remaining coriander, then scatter the rest on top with the chilli, if using. Eat with rice or mashed sweet potato."], ["cooking_time", 77], ["servings", 4], ["difficulty", "Medium"], ["created_at", "2024-10-31 06:19:10.600214"], ["updated_at", "2024-10-31 06:19:10.600214"], ["image_url", "https://www.themealdb.com/images/media/meals/yxsurp1511304301.jpg"]]
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (12.6ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Christmas cake"], ["ingredients", "200g Butter, 200g Muscovado Sugar, 200g Plain Flour, 4 Beaten Eggs, 50g Ground Almonds, 100ml Sherry, 85g Candied Peel, 85g Glace Cherry, 250g Raisins, 250g Currants, 100g  Pecan Nuts, Grated zest of 1 Lemon, 1 ½ tbsp Mixed Spice, 1 ½ tbsp Rose water, 1/2 tsp Vanilla Extract, 1/2 tsp Baking Powder"], ["instructions", "Heat oven to 160C/fan 140C/gas 3. Line the base and sides of a 20 cm round, 7.5 cm deep cake tin. Beat the butter and sugar with an electric hand mixer for 1-2 mins until very creamy and pale in colour, scraping down the sides of the bowl half way through. Stir in a spoonful of the flour, then stir in the beaten egg and the rest of the flour alternately, a quarter at a time, beating well each time with a wooden spoon. Stir in the almonds.\r\n\r\nMix in the sherry (the mix will look curdled), then add the peel, cherries, raisins, cherries, nuts, lemon zest, spice, rosewater and vanilla. Beat together to mix, then stir in the baking powder.\r\n\r\nSpoon mixture into the tin and smooth the top, making a slight dip in the centre. Bake for 30 mins, then lower temperature to 150C/fan 130C/gas 2 and bake a further 2-2¼ hrs, until a skewer insterted in the middle comes out clean. Leave to cool in the tin, then take out of the tin and peel off the lining paper. When completely cold, wrap well in cling film and foil to store until ready to decorate. The cake will keep for several months."], ["cooking_time", 23], ["servings", 4], ["difficulty", "Hard"], ["created_at", "2024-10-31 06:19:10.862775"], ["updated_at", "2024-10-31 06:19:10.862775"], ["image_url", "https://www.themealdb.com/images/media/meals/ldnrm91576791881.jpg"]]
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (1.6ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Ratatouille"], ["ingredients", "2 large Aubergine, 4 Courgettes, 2 Yellow Pepper, 4 large Tomato, 5 tbs Olive Oil, Bunch Basil, 1 medium Onion, 3 finely chopped Garlic Clove, 1 tsp  Red Wine Vinegar, 1 tsp  Sugar"], ["instructions", "Cut the aubergines in half lengthways. Place them on the board, cut side down, slice in half lengthways again and then across into 1.5cm chunks. Cut off the courgettes ends, then across into 1.5cm slices. Peel the peppers from stalk to bottom. Hold upright, cut around the stalk, then cut into 3 pieces. Cut away any membrane, then chop into bite-size chunks.\r\nScore a small cross on the base of each tomato, then put them into a heatproof bowl. Pour boiling water over the tomatoes, leave for 20 secs, then remove. Pour the water away, replace the tomatoes and cover with cold water. Leave to cool, then peel the skin away. Quarter the tomatoes, scrape away the seeds with a spoon, then roughly chop the flesh.\r\nSet a sauté pan over medium heat and when hot, pour in 2 tbsp olive oil. Brown the aubergines for 5 mins on each side until the pieces are soft. Set them aside and fry the courgettes in another tbsp oil for 5 mins, until golden on both sides. Repeat with the peppers. Don’t overcook the vegetables at this stage, as they have some more cooking left in the next step.\r\nTear up the basil leaves and set aside. Cook the onion in the pan for 5 mins. Add the garlic and fry for a further min. Stir in the vinegar and sugar, then tip in the tomatoes and half the basil. Return the vegetables to the pan with some salt and pepper and cook for 5 mins. Serve with basil."], ["cooking_time", 18], ["servings", 4], ["difficulty", "Hard"], ["created_at", "2024-10-31 06:19:11.127708"], ["updated_at", "2024-10-31 06:19:11.127708"], ["image_url", "https://www.themealdb.com/images/media/meals/wrpwuu1511786491.jpg"]]
+>>>>>>> 3e5c4ca4d7b4f0c891e8e7208e125526d301f283
   ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
   ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
   ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+<<<<<<< HEAD
   [1m[36mRecipe Create (9.3ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "created_at", "updated_at", "image_url", "photo", "servings", "difficulty") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Apam balik"], ["ingredients", "200ml Milk, 60ml Oil, 2 Eggs, 1600g Flour, 3 tsp Baking Powder, 1/2 tsp Salt, 25g Unsalted Butter, 45g Sugar, 3 tbs Peanut Butter"], ["instructions", "Mix milk, oil and egg together. Sift flour, baking powder and salt into the mixture. Stir well until all ingredients are combined evenly.\r\n\r\nSpread some batter onto the pan. Spread a thin layer of batter to the side of the pan. Cover the pan for 30-60 seconds until small air bubbles appear.\r\n\r\nAdd butter, cream corn, crushed peanuts and sugar onto the pancake. Fold the pancake into half once the bottom surface is browned.\r\n\r\nCut into wedges and best eaten when it is warm."], ["cooking_time", 21], ["created_at", "2024-10-31 06:26:35.181154"], ["updated_at", "2024-10-31 06:26:35.181154"], ["image_url", "https://www.themealdb.com/images/media/meals/adxcbq1619787919.jpg"], ["photo", nil], ["servings", 1], ["difficulty", "Hard"]]
   ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
   [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
@@ -29849,11 +30593,21 @@ Completed 200 OK in 3532ms (Views: 0.7ms | ActiveRecord: 70.7ms (10 queries, 0 c
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
   ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
   [1m[36mRecipe Create (7.1ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "created_at", "updated_at", "image_url", "photo", "servings", "difficulty") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Vietnamese Grilled Pork (bun-thit-nuong)"], ["ingredients", "1.5 pounds sliced Pork, 1 package thin Rice Vermicelli, 4-6 Egg Rolls, 3 tablespoons minced Challots, 1.5 tablespoons minced garlic Garlic, ¼ cup Sugar, 1 tablespoon Fish Sauce, ½ tablespoon thick Soy sauce, ½ tablespoon Pepper, 3 tablespoons Olive Oil, Sliced Cucumber, Leaves Mint, Crushed Peanuts"], ["instructions", "Slice the uncooked pork thinly, about ⅛\". It helps to slightly freeze it (optional).\r\nMince garlic and shallots. Mix in a bowl with sugar, fish sauce, thick soy sauce, pepper, and oil until sugar dissolves.\r\nMarinate the meat for 1 hour, or overnight for better results.\r\nBake the pork at 375F for 10-15 minutes or until about 80% cooked. Finish cooking by broiling in the oven until a nice golden brown color develops, flipping the pieces midway.\r\nAssemble your bowl with veggies, noodles, and garnish. Many like to mix the whole bowl up and pour the fish sauce on top, but I like to make individual bites and sauce it slowly."], ["cooking_time", 59], ["created_at", "2024-10-31 06:26:36.534451"], ["updated_at", "2024-10-31 06:26:36.534451"], ["image_url", "https://www.themealdb.com/images/media/meals/qqwypw1504642429.jpg"], ["photo", nil], ["servings", 3], ["difficulty", "Medium"]]
+=======
+  [1m[36mRecipe Create (1.5ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Blini Pancakes"], ["ingredients", "1/2 cup  Buckwheat, 2/3 Cup Flour, 1/2 tsp Salt, 1 tsp  Yeast, 1 cup  Milk, 2 tbs Butter, 1 Seperated Egg"], ["instructions", "In a large bowl, whisk together 1/2 cup buckwheat flour, 2/3 cup all-purpose flour, 1/2 teaspoon salt, and 1 teaspoon yeast.\r\n\r\nMake a well in the center and pour in 1 cup warm milk, whisking until the batter is smooth.\r\n\r\nCover the bowl and let the batter rise until doubled, about 1 hour.\r\n\r\nEnrich and Rest the Batter\r\nStir 2 tablespoons melted butter and 1 egg yolk into the batter.\r\n\r\nIn a separate bowl, whisk 1 egg white until stiff, but not dry.\r\n\r\nFold the whisked egg white into the batter.\r\n\r\nCover the bowl and let the batter stand 20 minutes.\r\n\r\nPan-Fry the Blini\r\nHeat butter in a large nonstick skillet over medium heat.\r\n\r\nDrop quarter-sized dollops of batter into the pan, being careful not to overcrowd the pan. Cook for about 1 minute or until bubbles form.\r\n\r\nTurn and cook for about 30 additional seconds.\r\n\r\nRemove the finished blini onto a plate and cover them with a clean kitchen towel to keep warm. Add more butter to the pan and repeat the frying process with the remaining batter."], ["cooking_time", 17], ["servings", 1], ["difficulty", "Hard"], ["created_at", "2024-10-31 06:19:11.419376"], ["updated_at", "2024-10-31 06:19:11.419376"], ["image_url", "https://www.themealdb.com/images/media/meals/0206h11699013358.jpg"]]
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (8.2ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Tonkatsu pork"], ["ingredients", "4 Pork Chops, 100g  Flour, 2 Beaten  Eggs, 100g  Breadcrumbs, Fry Vegetable Oil, 2 tbs Tomato Ketchup, 2 tbs Worcestershire Sauce, 1 tbs Oyster Sauce, 2 tblsp  Caster Sugar"], ["instructions", "STEP 1\r\nRemove the large piece of fat on the edge of each pork loin, then bash each of the loins between two pieces of baking parchment until around 1cm in thickness – you can do this using a meat tenderiser or a rolling pin. Once bashed, use your hands to reshape the meat to its original shape and thickness – this step will ensure the meat is as succulent as possible.\r\n\r\nSTEP 2\r\nPut the flour, eggs and panko breadcrumbs into three separate wide-rimmed bowls. Season the meat, then dip first in the flour, followed by the eggs, then the breadcrumbs.\r\n\r\nSTEP 3\r\nIn a large frying or sauté pan, add enough oil to come 2cm up the side of the pan. Heat the oil to 180C – if you don’t have a thermometer, drop a bit of panko into the oil and if it sinks a little then starts to fry, the oil is ready. Add two pork chops and cook for 1 min 30 secs on each side, then remove and leave to rest on a wire rack for 5 mins. Repeat with the remaining pork chops.\r\n\r\nSTEP 4\r\nWhile the pork is resting, make the sauce by whisking the ingredients together, adding a splash of water if it’s particularly thick. Slice the tonkatsu and serve drizzled with the sauce."], ["cooking_time", 40], ["servings", 3], ["difficulty", "Medium"], ["created_at", "2024-10-31 06:19:11.641882"], ["updated_at", "2024-10-31 06:19:11.641882"], ["image_url", "https://www.themealdb.com/images/media/meals/lwsnkl1604181187.jpg"]]
+>>>>>>> 3e5c4ca4d7b4f0c891e8e7208e125526d301f283
   ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
   [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
   ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
   ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+<<<<<<< HEAD
   [1m[36mRecipe Create (5.7ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "created_at", "updated_at", "image_url", "photo", "servings", "difficulty") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Roast fennel and aubergine paella"], ["ingredients", "6 small Baby Aubergine, 4 small Fennel, 1 thinly sliced Red Pepper, 1 medium Courgettes, 1 finely chopped  Onion, 300g Paella Rice, 1 tsp  Paprika, pinch Saffron, 200ml White Wine, 700ml Vegetable Stock, 100g  Frozen Peas, 1 chopped Lemon, Handful Parsley, pinch Salt, pinch Black Pepper"], ["instructions", "1 Put the fennel, aubergine, pepper and courgette in a roasting tray. Add a glug of olive oil, season with salt and pepper and toss around to coat the veggies in the oil. Roast in the oven for 20 minutes, turning a couple of times until the veg are pretty much cooked through and turning golden.\r\n\r\n2 Meanwhile, heat a paella pan or large frying pan over a low– medium heat and add a glug of olive oil. Sauté the onion for 8–10 minutes until softened. Increase the heat to medium and stir in the rice, paprika and saffron. Cook for around 1 minute to start toasting the rice, then add the white wine. Reduce by about half before stirring in two-thirds of the stock. Reduce to a simmer and cook for 10 minutes without a lid, stirring a couple of times.\r\n\r\n3 Stir in the peas, add some seasoning, then gently mix in the roasted veg. Pour over the remaining stock, arrange the lemon wedges on top and cover with a lid or some aluminium foil. Cook for a further 10 minutes.\r\n\r\n4 To ensure you get the classic layer of toasted rice at the bottom of the pan, increase the heat to high until you hear a slight crackle. Remove from the heat and sit for 5 minutes before sprinkling over the parsley and serving."], ["cooking_time", 81], ["created_at", "2024-10-31 06:26:36.828856"], ["updated_at", "2024-10-31 06:26:36.828856"], ["image_url", "https://www.themealdb.com/images/media/meals/1520081754.jpg"], ["photo", nil], ["servings", 5], ["difficulty", "Hard"]]
   ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
   [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
@@ -30201,5 +30955,176 @@ Processing by RecipesController#load_more as */*
   [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
   ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
 Completed 200 OK in 3045ms (Views: 1.4ms | ActiveRecord: 97.6ms (10 queries, 0 cached) | GC: 0.2ms)
+=======
+  [1m[36mRecipe Create (6.3ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Battenberg Cake"], ["ingredients", "175g Butter, 175g Caster Sugar, 140g Self-raising Flour, 50g Almonds, ½ tsp Baking Powder, 3 Medium Eggs, ½ tsp Vanilla Extract, ¼ teaspoon Almond Extract, 175g Butter, 175g Caster Sugar, 140g Self-raising Flour, 50g Almonds, ½ tsp Baking Powder, 3 Medium Eggs, ½ tsp Vanilla Extract, ¼ teaspoon Almond Extract, ½ tsp Pink Food Colouring, 200g Apricot, 1kg Marzipan, Dusting Icing Sugar"], ["instructions", "Heat oven to 180C/160C fan/gas 4 and line the base and sides of a 20cm square tin with baking parchment (the easiest way is to cross 2 x 20cm-long strips over the base). To make the almond sponge, put the butter, sugar, flour, ground almonds, baking powder, eggs, vanilla and almond extract in a large bowl. Beat with an electric whisk until the mix comes together smoothly. Scrape into the tin, spreading to the corners, and bake for 25-30 mins – when you poke in a skewer, it should come out clean. Cool in the tin for 10 mins, then transfer to a wire rack to finish cooling while you make the second sponge.\r\nFor the pink sponge, line the tin as above. Mix all the ingredients together as above, but don’t add the almond extract. Fold in some pink food colouring. Then scrape it all into the tin and bake as before. Cool.\r\nTo assemble, heat the jam in a small pan until runny, then sieve. Barely trim two opposite edges from the almond sponge, then well trim a third edge. Roughly measure the height of the sponge, then cutting from the well-trimmed edge, use a ruler to help you cut 4 slices each the same width as the sponge height. Discard or nibble leftover sponge. Repeat with pink cake.\r\nTake 2 x almond slices and 2 x pink slices and trim so they are all the same length. Roll out one marzipan block on a surface lightly dusted with icing sugar to just over 20cm wide, then keep rolling lengthways until the marzipan is roughly 0.5cm thick. Brush with apricot jam, then lay a pink and an almond slice side by side at one end of the marzipan, brushing jam in between to stick sponges, and leaving 4cm clear marzipan at the end. Brush more jam on top of the sponges, then sandwich remaining 2 slices on top, alternating colours to give a checkerboard effect. Trim the marzipan to the length of the cakes.\r\nCarefully lift up the marzipan and smooth over the cake with your hands, but leave a small marzipan fold along the bottom edge before you stick it to the first side. Trim opposite side to match size of fold, then crimp edges using fingers and thumb (or, more simply, press with prongs of fork). If you like, mark the 10 slices using the prongs of a fork.\r\nAssemble second Battenberg and keep in an airtight box or well wrapped in cling film for up to 3 days. Can be frozen for up to a month."], ["cooking_time", 17], ["servings", 4], ["difficulty", "Medium"], ["created_at", "2024-10-31 06:19:11.931509"], ["updated_at", "2024-10-31 06:19:11.931509"], ["image_url", "https://www.themealdb.com/images/media/meals/ywwrsp1511720277.jpg"]]
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (8.9ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Blackberry Fool"], ["ingredients", "50g Hazlenuts, 125g Butter, 150g Caster Sugar, Grated Lemon, 150g Plain Flour, ½ tsp Baking Powder, 600g Blackberrys, 75g Sugar, 2 tbs Caster Sugar, 1 tbs Lemon Juice, 300ml  Double Cream, 100ml Yogurt, Garnish with Mint"], ["instructions", "For the biscuits, preheat the oven to 200C/180C (fan)/Gas 6 and line two large baking trays with baking parchment. Scatter the nuts over a baking tray and roast in the oven for 6-8 minutes, or until golden-brown. Watch them carefully so that they don’t have a chance to burn. Remove from the oven, tip onto a board and leave to cool.\r\nPut the butter and sugar in a large bowl and beat with a wooden spoon until light and creamy. Roughly chop the cooled nuts and add to the creamed butter and sugar, along with the lemon zest, flour and baking powder. Stir well until the mixture comes together and forms a ball – you may need to use your hands.\r\nDivide the biscuit dough into 24 even pieces and roll into small balls. Place the balls the prepared baking trays, spaced well apart to allow for spreading.\r\nPress the biscuits to flatten to around 1cm/½in thick. Bake the biscuits, one tray at a time, for 12 minutes or until very pale golden-brown. Leave to cool on the trays. They will be very soft when you take them out of the oven, but will crisp as they cool.\r\nStore in an airtight tin and eat within five days.\r\nFor the fool, rinse the blackberries in a colander to wash away any dust or dirt. Put the blackberries in a non-stick saucepan and sprinkle over the caster sugar.\r\nStir in the lemon juice and heat gently for two minutes, or until the blackberries begin to soften and release their juices. Remove and reserve 12 blackberries for decoration and continue cooking the rest.\r\nSimmer the blackberries very gently for 15 minutes, stirring regularly until very soft and squidgy. Remove from the heat and press the berries and juice through a sieve over a bowl, using the bottom of a ladle to help you extract as much of the purée as possible. Leave the purée to cool and discard the seeds. You should end up with around 325ml/11fl oz of purée.\r\nPut the cream and yoghurt in a large bowl and whip with an electric whisk until soft peaks form when the whisk is removed from the bowl – the acidity of the fruit will thicken the cream further, so don’t take it too far.\r\nWhen the purée is completely cold, adjust the sweetness to taste by adding more sugar if needed. Pour it into the bowl with the whipped cream and yoghurt and stir just once or twice until very lightly combined.\r\nSpoon the blackberry fool into individual wide, glass dishes – or one large, single bowl. It should look quite marbled, so don’t over-stir it. Scatter a few tiny mint leaves on top and decorate with the reserved blackberries. Sprinkle with a little sugar if you like and serve with the hazelnut biscuits."], ["cooking_time", 74], ["servings", 5], ["difficulty", "Easy"], ["created_at", "2024-10-31 06:19:12.179143"], ["updated_at", "2024-10-31 06:19:12.179143"], ["image_url", "https://www.themealdb.com/images/media/meals/rpvptu1511641092.jpg"]]
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+Completed 200 OK in 2784ms (Views: 0.4ms | ActiveRecord: 63.9ms (10 queries, 0 cached) | GC: 3.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2024-10-30 23:19:36 -0700
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 7.5ms | GC: 0.8ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | GC: 0.8ms)
+Completed 200 OK in 14ms (Views: 13.9ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.8ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mRecipe Delete All (15.1ms)[0m  [1m[31mDELETE FROM "recipes"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (1.4ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Blackberry Fool"], ["ingredients", "50g Hazlenuts, 125g Butter, 150g Caster Sugar, Grated Lemon, 150g Plain Flour, ½ tsp Baking Powder, 600g Blackberrys, 75g Sugar, 2 tbs Caster Sugar, 1 tbs Lemon Juice, 300ml  Double Cream, 100ml Yogurt, Garnish with Mint"], ["instructions", "For the biscuits, preheat the oven to 200C/180C (fan)/Gas 6 and line two large baking trays with baking parchment. Scatter the nuts over a baking tray and roast in the oven for 6-8 minutes, or until golden-brown. Watch them carefully so that they don’t have a chance to burn. Remove from the oven, tip onto a board and leave to cool.\r\nPut the butter and sugar in a large bowl and beat with a wooden spoon until light and creamy. Roughly chop the cooled nuts and add to the creamed butter and sugar, along with the lemon zest, flour and baking powder. Stir well until the mixture comes together and forms a ball – you may need to use your hands.\r\nDivide the biscuit dough into 24 even pieces and roll into small balls. Place the balls the prepared baking trays, spaced well apart to allow for spreading.\r\nPress the biscuits to flatten to around 1cm/½in thick. Bake the biscuits, one tray at a time, for 12 minutes or until very pale golden-brown. Leave to cool on the trays. They will be very soft when you take them out of the oven, but will crisp as they cool.\r\nStore in an airtight tin and eat within five days.\r\nFor the fool, rinse the blackberries in a colander to wash away any dust or dirt. Put the blackberries in a non-stick saucepan and sprinkle over the caster sugar.\r\nStir in the lemon juice and heat gently for two minutes, or until the blackberries begin to soften and release their juices. Remove and reserve 12 blackberries for decoration and continue cooking the rest.\r\nSimmer the blackberries very gently for 15 minutes, stirring regularly until very soft and squidgy. Remove from the heat and press the berries and juice through a sieve over a bowl, using the bottom of a ladle to help you extract as much of the purée as possible. Leave the purée to cool and discard the seeds. You should end up with around 325ml/11fl oz of purée.\r\nPut the cream and yoghurt in a large bowl and whip with an electric whisk until soft peaks form when the whisk is removed from the bowl – the acidity of the fruit will thicken the cream further, so don’t take it too far.\r\nWhen the purée is completely cold, adjust the sweetness to taste by adding more sugar if needed. Pour it into the bowl with the whipped cream and yoghurt and stir just once or twice until very lightly combined.\r\nSpoon the blackberry fool into individual wide, glass dishes – or one large, single bowl. It should look quite marbled, so don’t over-stir it. Scatter a few tiny mint leaves on top and decorate with the reserved blackberries. Sprinkle with a little sugar if you like and serve with the hazelnut biscuits."], ["cooking_time", 108], ["servings", 5], ["difficulty", "Hard"], ["created_at", "2024-10-31 06:21:00.581379"], ["updated_at", "2024-10-31 06:21:00.581379"], ["image_url", "https://www.themealdb.com/images/media/meals/rpvptu1511641092.jpg"]]
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (1.4ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Lamb Biryani"], ["ingredients", "12 Cashew nuts, ½ tbsp Khus khus, ½ tbsp Cumin seeds, 3 sliced thinly Onions, 2 tsp Ginger garlic paste, 4 whole Garlic, Leaves Mint, Leaves Cilantro, ½ tsp dissolved in ½ cup warm milk Saffron, 2 tbsp Ghee, 2 Cups Basmati rice, ½ cup Full fat yogurt, 1 tbsp Cumin Seeds, ½ Bay leaf, 1 thin piece Cinnamon, 3 Cloves, 2 Cardamom, 1 lb Lamb, 1 tsp Red Chilli powder, 1 tbsp Biryani masala"], ["instructions", "Grind the cashew, poppy seeds and cumin seeds into a smooth paste, using as little water as possible. Set aside. \r\n\r\nDeep fry the sliced onions when it is hot. Don’t overcrowd the oil. When the onions turn light brown, remove from oil and drain on paper towel. The fried onion will crisp up as it drains. Also fry the cashewnuts till golden brown. Set aside.\r\n\r\nWash the rice and soak in water for twenty minutes.\r\nMeanwhile, take a big wide pan, add oil in medium heat, add the sliced onions, add the blended paste, to it add the green chillies, ginger garlic paste and garlic and fry for a minute.\r\nThen add the tomatoes and sauté them well till they are cooked and not mushy.\r\n\r\nThen to it add the red chilli powder, biryani powder, mint, coriander leaves and sauté them well.\r\nAdd the yogurt and mix well. I always move the skillet away from the heat when adding yogurt which prevents it from curdling.\r\n\r\nNow after returning the skillet back to the stove, add the washed lamb and salt and ½ cup water and mix well. Cook for 1 hour and cook it covered in medium low heat or put it in a pressure cooker for 6 whistles. If the water is not drained totally, heat it by keeping it open.\r\n\r\nTake another big pan, add thrice the cup of rice you use, and boil it. When it is boiling high, add the rice, salt and jeera and mix well. After 7 minutes exact or when the rice is 80% done. Switch off and drain the rice.\r\n\r\nNow, the layering starts. To the lamb, pat and level it. Add the drained hot rice on the top of it. Garnish with fried onions, ghee, mint, coriander leaves and saffron dissolved in milk.\r\n\r\nCover the dish and bake in a 350f oven for 15 minutes or till the cooked but not mushy. Or cook in the stove medium heat for 12 minutes and lowest heat for 5 minutes. And switch off. Mix and serve hot!\r\nNotes\r\n1. If you are cooking in oven, do make sure to cook in a big oven safe pan and cover it tight and then keep in oven for the final step.\r\n2. You can skip biryani masala if you don’t have and add just garam masala (1 tsp and red chilli powder – 3 tsp instead of 1 tsp)\r\n3. If it is spicy in the end, squeeze some lemon, it will reduce the heat and enhance the flavors also."], ["cooking_time", 120], ["servings", 3], ["difficulty", "Easy"], ["created_at", "2024-10-31 06:21:01.203562"], ["updated_at", "2024-10-31 06:21:01.203562"], ["image_url", "https://www.themealdb.com/images/media/meals/xrttsx1487339558.jpg"]]
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (1.3ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Ribollita"], ["ingredients", "5 tablespoons Olive Oil, 1 chopped Onion, 1 chopped Carrot, 1 stalk chopped Celery, 1 tablespoon minced Garlic, 2 cups Cannellini Beans, 1 Canned tomatoes, 4 cups Water, 1 fresh sprig Rosemary, 1 fresh sprig Thyme, 1 pound chopped Kale, 4 thick slices Wholegrain Bread, 1 thinly sliced Red Onion, ½ cup freshly grated Parmesan"], ["instructions", "Put 2 tablespoons of the oil in a large pot over medium heat. When it’s hot, add onion, carrot, celery and garlic; sprinkle with salt and pepper and cook, stirring occasionally, until vegetables are soft, 5 to 10 minutes.\r\nHeat the oven to 500 degrees. Drain the beans; if they’re canned, rinse them as well. Add them to the pot along with tomatoes and their juices and stock, rosemary and thyme. Bring to a boil, then reduce heat so the soup bubbles steadily; cover and cook, stirring once or twice to break up the tomatoes, until the flavors meld, 15 to 20 minutes.\r\nFish out and discard rosemary and thyme stems, if you like, and stir in kale. Taste and adjust seasoning. Lay bread slices on top of the stew so they cover the top and overlap as little as possible. Scatter red onion slices over the top, drizzle with the remaining 3 tablespoons oil and sprinkle with Parmesan.\r\nPut the pot in the oven and bake until the bread, onions and cheese are browned and crisp, 10 to 15 minutes. (If your pot fits under the broiler, you can also brown the top there.) Divide the soup and bread among 4 bowls and serve."], ["cooking_time", 39], ["servings", 4], ["difficulty", "Medium"], ["created_at", "2024-10-31 06:21:01.429918"], ["updated_at", "2024-10-31 06:21:01.429918"], ["image_url", "https://www.themealdb.com/images/media/meals/xrrwpx1487347049.jpg"]]
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (2.5ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Apam balik"], ["ingredients", "200ml Milk, 60ml Oil, 2 Eggs, 1600g Flour, 3 tsp Baking Powder, 1/2 tsp Salt, 25g Unsalted Butter, 45g Sugar, 3 tbs Peanut Butter"], ["instructions", "Mix milk, oil and egg together. Sift flour, baking powder and salt into the mixture. Stir well until all ingredients are combined evenly.\r\n\r\nSpread some batter onto the pan. Spread a thin layer of batter to the side of the pan. Cover the pan for 30-60 seconds until small air bubbles appear.\r\n\r\nAdd butter, cream corn, crushed peanuts and sugar onto the pancake. Fold the pancake into half once the bottom surface is browned.\r\n\r\nCut into wedges and best eaten when it is warm."], ["cooking_time", 70], ["servings", 3], ["difficulty", "Easy"], ["created_at", "2024-10-31 06:21:01.698451"], ["updated_at", "2024-10-31 06:21:01.698451"], ["image_url", "https://www.themealdb.com/images/media/meals/adxcbq1619787919.jpg"]]
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (2.5ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Vegetarian Casserole"], ["ingredients", "1 Rapeseed Oil, 1 Onion, 3 cloves Garlic, 1 tsp  Paprika, ½ tsp Cumin, 1 tblsp  Thyme, 3 Medium Carrots, 2 small stalks Celery, 1 Red Pepper, 1 Yellow Pepper, 2 x 400g tins Tomato, 250ml Vegetable Stock Cube, 2 sliced Courgettes, 2 sprigs Thyme, 250g Lentils"], ["instructions", "Heat the oil in a large, heavy-based pan. Add the onions and cook gently for 5 – 10 mins until softened.\r\nAdd the garlic, spices, dried thyme, carrots, celery and peppers and cook for 5 minutes.\r\nAdd the tomatoes, stock, courgettes and fresh thyme and cook for 20 - 25 minutes.\r\nTake out the thyme sprigs. Stir in the lentils and bring back to a simmer. Serve with wild and white basmati rice, mash or quinoa."], ["cooking_time", 16], ["servings", 1], ["difficulty", "Hard"], ["created_at", "2024-10-31 06:21:02.005411"], ["updated_at", "2024-10-31 06:21:02.005411"], ["image_url", "https://www.themealdb.com/images/media/meals/vptwyt1511450962.jpg"]]
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (2.8ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Traditional Croatian Goulash"], ["ingredients", "500g Beef, 2 chopped Onions, 2 chopped Carrots, 2 cloves Garlic, 2 Bay Leaf, 200ml Red Wine, 2 Litres Water, 3 tbs Mustard, 1tbsp Salt, 1/2 tsp Pepper, 1/2 tsp Paprika, 2 tbs Vegetable Oil"], ["instructions", "Clean the meat from the veins if there are some and cut it into smaller pieces, 3 × 3 cm. Marinate the meat in the mustard and spices and let it sit in the refrigerator for one hour\r\nHeat one tablespoon of pork fat or vegetable oil in a pot and fry the meat on all sides until it gets browned. Once the meat is cooked, transfer it to a plate and add another tablespoon of fat to the pot\r\nCut the onions very fine, peel the carrots and shred it using a grater. Cook the onions and carrots over low heat for 15 minutes. You can salt the vegetables a little to make them soften faster\r\nOnce the vegetables have browned and become slightly mushy, add the meat and bay leaves and garlic. Pour over with wine and simmer for 10-15 minutes to allow the alcohol to evaporate. Now is the right time to add 2/3 the amount of liquid\r\nCover the pot and cook over low heat for an hour, stirring occasionally. After the first hour, pour over the rest of the water or stock and cook for another 30-45 minutes\r\nAllow the stew to cool slightly and serve it with a sprinkle of chopped parsley and few slices of fresh hot pepper if you like to spice it up a bit\r\nSlice ​​some fresh bread, season the salad and simply enjoying these wonderful flavors"], ["cooking_time", 71], ["servings", 5], ["difficulty", "Medium"], ["created_at", "2024-10-31 06:21:02.353976"], ["updated_at", "2024-10-31 06:21:02.353976"], ["image_url", "https://www.themealdb.com/images/media/meals/n1hcou1628770088.jpg"]]
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (2.6ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Smoky Lentil Chili with Squash"], ["ingredients", "1 tbls Olive Oil, 1 Onion, 1 chopped Leek, 3 cloves Garlic, 4 tsp ground  Cumin, 2 tsp ground Coriander, 1 tsp Smoked Paprika, 1/2 tsp Cinnamon, 1 tsp Chili Powder, 1 tsp Cocoa, 1/2 tsp Dried Oregano, 1 can Diced Tomatoes, 3 cups Water, 3 chopped Carrots, 1 1/2 cups Brown Lentils, 1 tsp Sea Salt, 1 Small Squash, 1 Cup Cashews, 1 tsp Apple Cider Vinegar"], ["instructions", "Begin by roasting the squash. Slice it into thin crescents and drizzle with a little oil and sprinkle with sea salt. I added a fresh little sage I had in the fridge, but it’s unnecessary. Roast the squash a 205 C (400 F) for 20-30 minutes, flipping halfway through, until soft and golden. Let cool and chop into cubes.\r\nMeanwhile, rinse the lentils and cover them with water. Bring them to the boil then turn down to a simmer and let cook (uncovered) for 20-30 minutes, or until tender. Drain and set aside.\r\nWhile the lentils are cooking heat the 1 Tbsp. of oil on low in a medium pot. Add the onions and leeks and sauté for 5 or so minutes, or until they begin to soften. Add the garlic next along with the cumin and coriander, cooking for a few more minutes. Add the remaining spices – paprika, cinnamon, chilli, cocoa, Worcestershire sauce, salt, and oregano. Next add the can of tomatoes, the water or stock, and carrots. Let simmer, covered, for 20 minutes or until the veg is tender and the mixture has thickened up. You’ll need to check on the pot periodically for a stir and a top of of liquid if needed.\r\nAdd the lentils and chopped roasted squash. Let cook for 10 more minutes to heat through.\r\nServe with sliced jalapeno, lime wedges, cilantro, green onions, and cashew sour cream.\r\n\r\nSIMPLE CASHEW SOUR CREAM\r\n\r\n1 Cup Raw Unsalted Cashews\r\nPinch Sea Salt\r\n1 tsp. Apple Cider Vinegar\r\nWater\r\n\r\nBring some water to the boil, and use it to soak the cashews for at least four hours. Alternatively, you can use cold water and let the cashews soak overnight, but I’m forgetful/lazy, so often use the boil method which is much faster.\r\nAfter the cashews have soaked, drain them and add to a high speed blender. Begin to puree, slowly adding about 1/2 cup fresh water, until a creamy consistency is reached. You may need to add less or more water to reach the desired consistency.\r\nAdd a pinch of sea salt and vinegar (or lemon juice)."], ["cooking_time", 43], ["servings", 4], ["difficulty", "Hard"], ["created_at", "2024-10-31 06:21:02.800004"], ["updated_at", "2024-10-31 06:21:02.800004"], ["image_url", "https://www.themealdb.com/images/media/meals/uwxqwy1483389553.jpg"]]
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (1.5ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Beef Lo Mein"], ["ingredients", "1/2 lb Beef, pinch Salt, pinch Pepper, 2 tsp Sesame Seed Oil, 1/2  Egg, 3 tbs Starch, 5 tbs Oil, 1/4 lb Noodles, 1/2 cup  Onion, 1 tsp  Minced Garlic, 1 tsp  Ginger, 1 cup  Bean Sprouts, 1 cup  Mushrooms, 1 cup  Water, 1 tbs Oyster Sauce, 1 tsp  Sugar, 1 tsp  Soy Sauce"], ["instructions", "STEP 1 - MARINATING THE BEEF\r\nIn a bowl, add the beef, salt, 1 pinch white pepper, 1 Teaspoon sesame seed oil, 1/2 egg, corn starch,1 Tablespoon of oil and mix together.\r\nSTEP 2 - BOILING THE THE NOODLES\r\nIn a 6 qt pot add your noodles to boiling water until the noodles are submerged and boil on high heat for 10 seconds. After your noodles is done boiling strain and cool with cold water.\r\nSTEP 3 - STIR FRY\r\nAdd 2 Tablespoons of oil, beef and cook on high heat untill beef is medium cooked.\r\nSet the cooked beef aside\r\nIn a wok add 2 Tablespoon of oil, onions, minced garlic, minced ginger, bean sprouts, mushrooms, peapods and 1.5 cups of water or until the vegetables are submerged in water.\r\nAdd the noodles to wok\r\nTo make the sauce, add oyster sauce, 1 pinch white pepper, 1 teaspoon sesame seed oil, sugar, and 1 Teaspoon of soy sauce.\r\nNext add the beef to wok and stir-fry"], ["cooking_time", 44], ["servings", 5], ["difficulty", "Hard"], ["created_at", "2024-10-31 06:21:03.131704"], ["updated_at", "2024-10-31 06:21:03.131704"], ["image_url", "https://www.themealdb.com/images/media/meals/1529444830.jpg"]]
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (2.9ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Grilled eggplant with coconut milk"], ["ingredients", "6 Egg Plants, 1 can  Coconut Milk, 1 tbs Lemon Juice, 1 tsp  Salt, To taste Red Pepper Flakes, 4 Sticks Onions"], ["instructions", ".  Prepare the eggplants for grilling by pricking them all over with a fork.  This is so it won’t burst during the grilling process as the natural water in it heats up.\r\n2.  Grill the eggplants, turning them over frequently to ensure even cooking.  Grill until the skins are dark brown, even black and the eggplant is soft when you touch it.\r\n3.  Soak the grilled eggplant in a bowl of water to cool it down.  Peel the skin off the eggplant.  Place the whole eggplants in a shallow dish (my mom actually cuts the eggplant into small, bite-sized pieces).\r\n 4.  In a small mixing bowl, mix together the coconut milk or cream, lemon powder, salt and hot pepper.  Mix until the lemon powder and salt dissolve.  Taste, then adjust the amount of lemon powder, salt and hot pepper to your liking.  Pour the mixture over the eggplant.  Sprinkle the green onions over the eggplant and coconut milk.  Stir gently to combine. \r\n"], ["cooking_time", 84], ["servings", 4], ["difficulty", "Easy"], ["created_at", "2024-10-31 06:21:03.439126"], ["updated_at", "2024-10-31 06:21:03.439126"], ["image_url", "https://www.themealdb.com/images/media/meals/bopa2i1683209167.jpg"]]
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (1.5ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Croatian lamb peka"], ["ingredients", "600g Potatoes, 1 chopped Courgettes, 1 chopped Carrots, 1 chopped Green Pepper, 1 small Aubergine, 1 Large Chopped Onion, 800g Lamb Shoulder, 1 tbs Garlic Sauce, 1 tbs Tomato Puree, 80 ml  Olive Oil, Sprinking Thyme, 250ml White Wine, Pinch Pepper"], ["instructions", "Preheat oven to 200°C fan / 220°C / 425°F / Gas mark 7\r\nIf you have not bought diced lamb, cut your lamb shoulder or leg into large chunks and place to one side.\r\nChunks of chopped lamb of a red chopping board\r\nMake oil marinade -\r\nMix 80ml of olive oil in a bowl with garlic puree, sundried tomato puree ,black pepper and salt.\r\nolive oil, gia sundried tomato puree and gia garlic puree and black pepper mixed together in a silver bowl to make Croatian peka\r\nAdd potatoes and vegetables into a large lidded casserole dish.\r\nChopped up vegetables which consist of chopped up red onion, courgette, potatoes red peppers in a cast iron pan\r\nPlace diced lamb on top of the vegetables, pour the marinade and wine over the top.\r\nChunks of lamb covered in in a sundried tomato oil sauce which is on top of chopped red onion, aubergine, courgette and potatoes in a cast iron pan\r\nAdd the rosemary, thyme and sage, trying to keep the herbs on top.\r\nSo you can easily remove the herb stalks once cooked.\r\nChunks of lamb coated in a sundried tomato oil sauce and covered with thyme, rosemary and sage which is on top of chopped red onion, aubergine, courgette and potatoes in a cast iron pan\r\nPlace lid on the casserole dish and cook for 1hr 30 minute\r\nIf you do not have a lid cover very well with kitchen foil\r\nCast iron dish with lid on in the oven\r\nTake the lid off, remove any thick herb stems. Stir in 2 tbsp of olive oil.\r\nCook for a further 20-30 mins.\r\nCooked Croatian Lamb Peka in a cast iron pan in the oven\r\nServe with fresh homemade bread to dip into the juices."], ["cooking_time", 46], ["servings", 2], ["difficulty", "Easy"], ["created_at", "2024-10-31 06:21:03.848427"], ["updated_at", "2024-10-31 06:21:03.848427"], ["image_url", "https://www.themealdb.com/images/media/meals/pn59o51628769837.jpg"]]
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/swipe" for 127.0.0.1 at 2024-10-30 23:21:14 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (2.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 26.9ms | GC: 1.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 30.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 89.3ms | GC: 1.5ms)
+Completed 200 OK in 192ms (Views: 90.2ms | ActiveRecord: 7.2ms (2 queries, 0 cached) | GC: 49.6ms)
+
+
+Started GET "/filter_recipes" for 127.0.0.1 at 2024-10-30 23:21:16 -0700
+Processing by FilterRecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering filter_recipes/index.html.erb within layouts/application
+  Rendered filter_recipes/index.html.erb within layouts/application (Duration: 1.5ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 7.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | GC: 0.0ms)
+Completed 200 OK in 19ms (Views: 15.5ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/recipes/share" for 127.0.0.1 at 2024-10-30 23:21:16 -0700
+Processing by RecipesController#share as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/share.html.erb within layouts/application
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/share.html.erb:3
+  Rendered recipes/share.html.erb within layouts/application (Duration: 5.4ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 3.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | GC: 0.0ms)
+Completed 200 OK in 22ms (Views: 20.0ms | ActiveRecord: 0.5ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/recipe_of_the_day" for 127.0.0.1 at 2024-10-30 23:21:28 -0700
+Processing by RecipesController#recipe_of_the_day as HTML
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:34:in `block in recipe_of_the_day'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/recipe_of_the_day.html.erb within layouts/application
+  Rendered recipes/recipe_of_the_day.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 8.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | GC: 0.0ms)
+Completed 200 OK in 18ms (Views: 12.3ms | ActiveRecord: 0.6ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/recipes/share" for 127.0.0.1 at 2024-10-30 23:21:34 -0700
+Processing by RecipesController#share as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/share.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/share.html.erb:3
+  Rendered recipes/share.html.erb within layouts/application (Duration: 3.0ms | GC: 0.0ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 4.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | GC: 0.0ms)
+Completed 200 OK in 14ms (Views: 12.3ms | ActiveRecord: 1.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2024-10-30 23:23:06 -0700
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 2.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 6.6ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+>>>>>>> 3e5c4ca4d7b4f0c891e8e7208e125526d301f283
 
 

@@ -58,12 +58,11 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_29_212640) do
     t.text "ingredients"
     t.text "instructions"
     t.integer "cooking_time"
+    t.integer "servings"
+    t.text "difficulty"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image_url"
-    t.string "photo"
-    t.integer "servings"
-    t.string "difficulty"
   end
 
   create_table "users", force: :cascade do |t|

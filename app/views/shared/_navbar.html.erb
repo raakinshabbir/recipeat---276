@@ -27,6 +27,10 @@
           <li class="nav-item">
             <%= link_to 'Filter', filter_recipes_path, class: "btn btn-outline-warning nav-link" %>
           </li>
+          <!-- Share Recipes Button -->
+          <li class="nav-item">
+            <%= link_to "Share Recipes", recipes_share_path, class: "btn btn-outline-warning nav-link" %>
+          </li>
           <!-- Sign Out Button -->
           <li class="nav-item">
             <%= link_to 'Sign Out', destroy_user_session_path, 'data-turbo-method': :delete, class: "btn btn-outline-danger nav-link" %>
