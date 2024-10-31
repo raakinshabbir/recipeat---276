@@ -1,0 +1,42 @@
+<h1>Add Your Recipe</h1>
+
+<%= form_with model: @recipe, url: create_recipe_path, local: true, multipart: true do |form| %>
+  <div>
+    <%= form.label :title, "Recipe Title" %><br>
+    <%= form.text_field :title, placeholder: "Recipe Title", required: true %>
+  </div>
+  
+  <div>
+    <%= form.label :ingredients, "Ingredients" %><br>
+    <%= form.text_area :ingredients, placeholder: "Ingredients", required: true %>
+  </div>
+
+  <div>
+    <%= form.label :instructions, "Instructions" %><br>
+    <%= form.text_area :instructions, placeholder: "Instructions", required: true %>
+  </div>
+
+  <div>
+    <%= form.label :cooking_time, "Cooking Time (minutes)" %><br>
+    <%= form.number_field :cooking_time, placeholder: "Cooking Time", required: true %>
+  </div>
+
+  <div>
+    <%= form.label :servings, "Servings" %><br>
+    <%= form.number_field :servings, placeholder: "Servings", required: true %>
+  </div>
+
+  <div>
+    <%= form.label :difficulty, "Difficulty" %><br>
+    <%= form.select :difficulty, ['Easy', 'Medium', 'Hard'], { prompt: 'Select Difficulty' }, required: true %>
+  </div>
+
+  <div>
+    <%= form.label :photo, "Recipe Photo" %><br>
+    <%= form.file_field :photo, accept: "image/*" %>
+  </div>
+
+  <div>
+    <%= form.submit "Add Recipe" %>
+  </div>
+<% end %>
