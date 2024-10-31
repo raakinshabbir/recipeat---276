@@ -3,6 +3,7 @@ import "@hotwired/turbo-rails";
 import "controllers";
 
 // swiper js
+let blankSlideAdded = false;
 document.addEventListener("turbo:load", function () {
   const swiperContainer = document.querySelector('swiper-container');
 
@@ -12,6 +13,8 @@ document.addEventListener("turbo:load", function () {
     let loading = false;
     let actionHandled = false; // Track if swipe action was already handled
 
+
+    // code to listen for swiper reaching end and loading new recipes
     swiper.on("reachEnd", async () => {
       if (loading) return; // Prevent multiple fetches
       loading = true; // Set loading state
@@ -74,12 +77,13 @@ document.addEventListener("turbo:load", function () {
       }
     });
     
-
+    //listener for the overlay of swiper change
     swiperContainer.addEventListener('swiperslidechange', (event) => {
       const activeIndex = swiper.activeIndex;
+      const previousIndex = swiper.previousIndex;
       const direction = activeIndex > lastSeenIndex ? 'right' : 'left';
 
-      if (activeIndex !== lastSeenIndex && !actionHandled) {
+      if (activeIndex !== previousIndex && !actionHandled) {
         actionHandled = true; // Set action as handled
         const activeSlide = swiper.slides[swiper.previousIndex]; // Get the slide to remove
 
@@ -89,21 +93,32 @@ document.addEventListener("turbo:load", function () {
 
         if (direction === 'right') {
           // Show like overlay and remove the previous slide
-          lastSeenIndex = activeIndex
           console.log("Liked recipe");
           likeOverlay.style.display = 'flex';
+          
           setTimeout(() => {
             likeOverlay.style.display = 'none'; // Hide overlay
-            swiper.removeSlide(swiper.previousIndex); // Remove the slide after the overlay hides
+            swiper.removeSlide(previousIndex); // Remove the slide after the overlay hides
+        
+            if (!blankSlideAdded) {
+              // Add a blank slide at the first position
+              const blankSlide = `
+                <swiper-slide style="padding: 60px; border: 3px solid #ccc; border-radius: 16px; background-color: #f9f9f9;"> 
+                </swiper-slide>`;
+              swiper.prependSlide(blankSlide); // Add the new blank slide at the beginning
+              blankSlideAdded = true;
+            }
+        
             actionHandled = false; // Reset action handling
           }, 500);
+        
         } else if (direction === 'left') {
           // Show dislike overlay and remove the previous slide
           console.log("Disliked recipe");
           dislikeOverlay.style.display = 'flex';
           setTimeout(() => {
             dislikeOverlay.style.display = 'none'; // Hide overlay
-            swiper.removeSlide(swiper.previousIndex); // Remove the slide after the overlay hides
+            swiper.removeSlide(previousIndex); // Remove the slide after the overlay hides
             swiper.slideNext(); // Move to the next slide after removal
             actionHandled = false; // Reset action handling
           }, 500);
