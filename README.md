@@ -10,7 +10,7 @@
 - Javier Sy Quia - 301564151  
 
 ## 1. Overview of Iteration 2
-For iteration 2, we mainly focused on refining our current functional requirements and features to enhance the user experience. We also added a new feature of a “Recipe of the Day” and worked on our Liked Recipe feature that was intended for the previous iteration. Our goal for this iteration was to improve UI and make some features more visually appealing. A significant portion of work in this iteration was spent on figuring out how to use the API for retrieving recipes (instead of doing it manually) and integrating it with our application. We utilized theMealDB's API to gather all the information about each meal and displayed it on our swiper page. We updated the logic of the swiper page to follow a similar interface to Tinder, allowing users to move to the next page regardless of whether they swiped left or right.
+For iteration 2, we mainly focused on refining our current functional requirements and features to enhance the user experience. We also added a new feature of a “Recipe of the Day” and continued work on our Liked Recipe feature that was intended for the previous iteration. Our goal for this iteration was to improve UI and make some features more visually appealing. A significant portion of work in this iteration was spent on figuring out how to use the API for retrieving recipes (instead of doing it manually) and integrating it with our application. We utilized theMealDB's API to gather all the information about each meal and displayed it on our swiper page. We updated the logic of the swiper page to follow a similar interface to Tinder, allowing users to move to the next page regardless of whether they swiped left or right.
 
 ## 2. Feature Tracking
 The team continued using Jira and principles from the Kanban software framework to track issues and assign features to team members. From the previous iteration, the team found great value in combining the Scrum framework with the Kanban format.
@@ -32,7 +32,6 @@ Unsure of how to unit test this, as it's a feature that's browser-based (user se
 ## 4. New Features
   - **Recipe of the Day Page:** Displayed a recipe of the day to engage users, along with a button to refresh for more exploration.
   - **Swiping Recipes:** Users could now swipe through a larger batch of recipes using a Tinder-like logic, preventing backtracking after swiping.
-  - **Liked Recipes:** The Liked Recipes feature now functions as intended, allowing users to view their liked recipes and related information in the liked recipes tab.
   - **Sharing Recipes:** The Sharing Recipes feature allows a user to send a recipe to their friend via email.
 
 ## 5. What Went Well?
@@ -58,7 +57,7 @@ New areas for improvement include:
 - **Sign-Up:** welcome!
 - **Sign-In:** welcome back! use your login information 
 - **Swipe:** swipe through to find your next loved recipe!
-- **Liked:** keep track of your likes!
+- **Liked:** keep track of your likes! (not working YET!)
 - **Filter:** don't like an ingredient? Only have 20 minutes to make something? No worries, find a recipe that suits you
 - **Add:** add your own recipe using the form!
 - **Share:** share a recipe to your friend by email!
