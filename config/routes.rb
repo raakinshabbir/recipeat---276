@@ -18,6 +18,10 @@ Rails.application.routes.draw do
   # New route for Recipe of the Day
   get '/recipe_of_the_day', to: 'recipes#recipe_of_the_day', as: 'recipe_of_the_day'
 
+  #New route to trigger api calls when load more recipes is called
+  get 'load_more_recipes', to: 'recipes#load_more'
+
+
   root to: 'welcome#index'
   # Defines the root path route ("/")
   # root "posts#index"
