@@ -20,7 +20,14 @@ class RecipesController < ApplicationController
       end
     end
 
-  
+    #Function to load more recipes once reaching end of swiper
+    def load_more
+      new_recipes = Recipe.fetch_new_recipes_from_api(10)
+
+      # Render the new recipes as JSON
+      render json: new_recipes.map { |recipe| recipe.slice(:id, :title, :ingredients, :instructions, :cooking_time, :servings, :difficulty, :image_url) }
+    end
+
     def recipe_of_the_day
       # Fetch the cached recipe, or select a new one if none is cached or it expired
       @recipe_of_the_day = Rails.cache.fetch('recipe_of_the_day', expires_in: 24.hours) do
