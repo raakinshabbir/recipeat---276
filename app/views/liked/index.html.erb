@@ -1,0 +1,13 @@
+<h1>Liked Recipes</h1>
+
+<% if @liked_recipes.any? %>
+  <ul>
+    <% @liked_recipes.each do |liked_recipe| %>
+      <li>
+        <%= link_to liked_recipe.recipe.title, recipe_path(liked_recipe.recipe) %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>Start swiping to like some recipes!.</p>
+<% end %>

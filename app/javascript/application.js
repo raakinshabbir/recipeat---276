@@ -29,7 +29,7 @@ document.addEventListener("turbo:load", function () {
           likeOverlay.style.display = 'flex';
 
           // Send a request to like the recipe
-          fetch('/liked', {
+          fetch(`/swipe_right/${recipeID}`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

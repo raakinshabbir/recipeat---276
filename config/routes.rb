@@ -6,11 +6,15 @@ Rails.application.routes.draw do
 
   get "/addrecipe", to: "addrecipe#index"
 
-  resources :liked_recipes, only: [:index, :create]
+  get 'recipes/:id', to: 'recipes#show', as: 'recipe'
+
+  resources :liked_recipes, only: [:index]
+  post '/liked', to: 'liked#index'
+  post '/swipe_right/:id', to: 'liked#swipe_right', as: 'swipe_right'
+
   get '/liked', to: 'liked#index'
-  post '/liked', to: 'liked#create' 
-  
-    root to: "welcome#index"
+
+  root to: "welcome#index"
   # Defines the root path route ("/")
   # root "posts#index"
 end
