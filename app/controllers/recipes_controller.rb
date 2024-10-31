@@ -29,9 +29,13 @@ class RecipesController < ApplicationController
     end
 
     def recipe_of_the_day
-      @recipe_of_the_day = Recipe.order("RANDOM()").first
+      # Fetch the cached recipe, or select a new one if none is cached or it expired
+      @recipe_of_the_day = Rails.cache.fetch('recipe_of_the_day', expires_in: 24.hours) do
+        Recipe.order("RANDOM()").first
+      end
+  
       respond_to do |format|
-        format.html # This will render the app/views/recipes/recipe_of_the_day.html.erb
+        format.html # Renders the HTML view
         format.json { render json: @recipe_of_the_day }
       end
     end
