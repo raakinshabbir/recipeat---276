@@ -22,8 +22,10 @@ class RecipesController < ApplicationController
 
     #Function to load more recipes once reaching end of swiper
     def load_more
-      Recipe.fetch_new_recipes_from_api # Custom method to call API and save recipes
-      render json: { status: "success" }
+      new_recipes = Recipe.fetch_new_recipes_from_api(10)
+
+      # Render the new recipes as JSON
+      render json: new_recipes.map { |recipe| recipe.slice(:id, :title, :ingredients, :instructions, :cooking_time, :servings, :difficulty, :image_url) }
     end
 
     def recipe_of_the_day

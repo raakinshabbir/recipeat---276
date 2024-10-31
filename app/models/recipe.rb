@@ -1,3 +1,6 @@
+require 'net/http' # Add this line
+require 'json'     # You might need this if you're using JSON parsing
+
 class Recipe < ApplicationRecord
   has_one_attached :photo
   
@@ -5,6 +8,7 @@ class Recipe < ApplicationRecord
 
   def self.fetch_new_recipes_from_api(count = 10)
     url = URI("https://www.themealdb.com/api/json/v1/1/random.php")
+    recipes = []
     
     count.times do
       response = Net::HTTP.get(url)
@@ -20,7 +24,7 @@ class Recipe < ApplicationRecord
       end.compact.join(", ") # Join ingredients into a string
 
       # Create the recipe
-      Recipe.create!(
+      recipes << Recipe.create!(
         title: meal_data["strMeal"],
         ingredients: ingredients,
         instructions: meal_data["strInstructions"],
@@ -30,5 +34,6 @@ class Recipe < ApplicationRecord
         image_url: meal_data['strMealThumb']
       )
     end
+    return recipes
   end
 end
