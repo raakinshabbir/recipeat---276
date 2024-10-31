@@ -4,6 +4,7 @@ import "controllers";
 
 // swiper js
 let blankSlideAdded = false;
+
 document.addEventListener("turbo:load", function () {
   const swiperContainer = document.querySelector('swiper-container');
 
@@ -12,6 +13,15 @@ document.addEventListener("turbo:load", function () {
     let lastSeenIndex = 0;
     let loading = false;
     let actionHandled = false; // Track if swipe action was already handled
+
+    if (!blankSlideAdded) {
+      // Add a blank slide at the first position
+      const blankSlide = `
+        <swiper-slide style="padding: 60px; border: 3px solid #ccc; border-radius: 16px; background-color: #f9f9f9;"> 
+        </swiper-slide>`;
+      swiper.prependSlide(blankSlide); // Add the new blank slide at the beginning
+      blankSlideAdded = true;
+    }
 
 
     // code to listen for swiper reaching end and loading new recipes
@@ -99,15 +109,6 @@ document.addEventListener("turbo:load", function () {
           setTimeout(() => {
             likeOverlay.style.display = 'none'; // Hide overlay
             swiper.removeSlide(previousIndex); // Remove the slide after the overlay hides
-        
-            if (!blankSlideAdded) {
-              // Add a blank slide at the first position
-              const blankSlide = `
-                <swiper-slide style="padding: 60px; border: 3px solid #ccc; border-radius: 16px; background-color: #f9f9f9;"> 
-                </swiper-slide>`;
-              swiper.prependSlide(blankSlide); // Add the new blank slide at the beginning
-              blankSlideAdded = true;
-            }
         
             actionHandled = false; // Reset action handling
           }, 500);
