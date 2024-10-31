@@ -21,13 +21,19 @@ The team continued using Jira and principles from the Kanban software framework 
 - **Recipe of the Day:**
 ![image](https://github.com/user-attachments/assets/f67b72b9-00e8-432c-969d-d85275fb8607)
 
-- **Liked Recipes:**
+- **Filter Recipes:**
+![image](https://github.com/user-attachments/assets/95ac64c3-b11b-4b44-85cf-776de399b895)
+
+- **Recipe Sharing:**
+Unsure of how to unit test this, as it's a feature that's browser-based (user sends an email to their friend about the recipe). It does work, as evidenced by this:
+![image](https://github.com/user-attachments/assets/e87204a2-7755-4df6-a35c-9a82eada72d6)
+
 
 ## 4. New Features
-- **Feature Implementation:** The team began implementing and improving the following functional requirements for iteration 2:
   - **Recipe of the Day Page:** Displayed a recipe of the day to engage users, along with a button to refresh for more exploration.
   - **Swiping Recipes:** Users could now swipe through a larger batch of recipes using a Tinder-like logic, preventing backtracking after swiping.
   - **Liked Recipes:** The Liked Recipes feature now functions as intended, allowing users to view their liked recipes and related information in the liked recipes tab.
+  - **Sharing Recipes:** The Sharing Recipes feature allows a user to send a recipe to their friend via email.
 
 ## 5. What Went Well?
 - The team effectively collaborated to discuss which functional requirements to add or improve.
@@ -55,3 +61,5 @@ New areas for improvement include:
 - **Liked:** keep track of your likes!
 - **Filter:** don't like an ingredient? Only have 20 minutes to make something? No worries, find a recipe that suits you
 - **Add:** add your own recipe using the form!
+- **Share:** share a recipe to your friend by email!
+  
