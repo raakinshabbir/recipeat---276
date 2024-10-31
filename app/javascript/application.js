@@ -45,7 +45,7 @@ document.addEventListener("turbo:load", function () {
           }, 500);
         }
       }
-    });
+    });    
   } else {
     console.log("Swiper container not found");
   }

@@ -32,6 +32,14 @@ class RecipesController < ApplicationController
         format.json { render json: @recipe_of_the_day }
       end
     end
+
+    def share
+      @recipes = Recipe.all
+    end
+
+    def show
+      @recipe = Recipe.find(params[:id])
+    end
     
     private
   

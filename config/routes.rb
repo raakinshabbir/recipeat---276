@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
   get '/swipe', to: 'swipe#index'
+   get 'recipes/share', to: 'recipes#share'
   get '/recipes/:id', to: 'recipes#show'
   devise_for :users
 
