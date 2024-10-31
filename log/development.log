@@ -29658,3 +29658,147 @@ Started GET "/manifest.json" for 127.0.0.1 at 2024-10-30 15:10:29 -0700
   
 ActionController::RoutingError (No route matches [GET] "/manifest.json"):
   
+Started GET "/" for 127.0.0.1 at 2024-10-30 19:53:09 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 3.7ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 6.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 209.7ms | GC: 0.0ms)
+Completed 200 OK in 871ms (Views: 457.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-10-30 19:53:14 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-10-30 19:53:15 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.3ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 275.9ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 281.9ms | GC: 0.0ms)
+Completed 200 OK in 593ms (Views: 376.2ms | ActiveRecord: 5.8ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2024-10-30 19:53:26 -0700
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (3.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2024-10-31 02:53:27.266069"], ["updated_at", "2024-10-31 02:53:27.266069"]]
+  [1m[36mTRANSACTION (25.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/swipe
+Completed 303 See Other in 732ms (ActiveRecord: 30.8ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/swipe" for 127.0.0.1 at 2024-10-30 19:53:27 -0700
+Processing by SwipeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 34.9ms | GC: 0.0ms)
+  [1m[36mUser Load (11.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 17.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 55.9ms | GC: 0.0ms)
+Completed 200 OK in 612ms (Views: 73.2ms | ActiveRecord: 12.8ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/recipe_of_the_day" for 127.0.0.1 at 2024-10-30 19:53:58 -0700
+Processing by RecipesController#recipe_of_the_day as HTML
+  [1m[36mRecipe Load (1.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:34:in `block in recipe_of_the_day'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/recipe_of_the_day.html.erb within layouts/application
+  Rendered recipes/recipe_of_the_day.html.erb within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 7.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | GC: 0.0ms)
+Completed 200 OK in 115ms (Views: 25.2ms | ActiveRecord: 1.7ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/swipe" for 127.0.0.1 at 2024-10-30 19:54:00 -0700
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 8.9ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 16.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 31.8ms | GC: 0.0ms)
+Completed 200 OK in 39ms (Views: 31.9ms | ActiveRecord: 1.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/load_more_recipes" for 127.0.0.1 at 2024-10-30 19:55:11 -0700
+Processing by RecipesController#load_more as */*
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (6.6ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "created_at", "updated_at", "image_url", "photo", "servings", "difficulty") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Wontons"], ["ingredients", "1lb Pork, 3 chopped Garlic Clove, 1 tsp  Ginger, 1 tbs Soy Sauce, 1 tsp  Sesame Seed Oil, 3 finely chopped Carrots, 3 finely chopped Celery, 6 chopped Spring Onions, 1 Packet Wonton Skin, Fry Oil, Bottle Water"], ["instructions", "Combine pork, garlic, ginger, soy sauce, sesame oil, and vegetables in a bowl.\r\nSeparate wonton skins.\r\nPlace a heaping teaspoon of filling in the center of the wonton.\r\nBrush water on 2 borders of the skin, covering 1/4 inch from the edge.\r\nFold skin over to form a triangle, sealing edges.\r\nPinch the two long outside points together.\r\nHeat oil to 450 degrees and fry 4 to 5 at a time until golden.\r\nDrain and serve with sauce."], ["cooking_time", 75], ["created_at", "2024-10-31 02:55:11.841380"], ["updated_at", "2024-10-31 02:55:11.841380"], ["image_url", "https://www.themealdb.com/images/media/meals/1525876468.jpg"], ["photo", nil], ["servings", 5], ["difficulty", "Medium"]]
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (2.8ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "created_at", "updated_at", "image_url", "photo", "servings", "difficulty") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Fettuccine Alfredo"], ["ingredients", "1 lb Fettuccine, 1/2 cup  Heavy Cream, 1/2 cup  Butter, 1/2 cup  Parmesan, 2 tbsp Parsley, Black Pepper"], ["instructions", "Cook pasta according to package instructions in a large pot of boiling water and salt. Add heavy cream and butter to a large skillet over medium heat until the cream bubbles and the butter melts. Whisk in parmesan and add seasoning (salt and black pepper). Let the sauce thicken slightly and then add the pasta and toss until coated in sauce. Garnish with parsley, and it's ready."], ["cooking_time", 120], ["created_at", "2024-10-31 02:55:12.207016"], ["updated_at", "2024-10-31 02:55:12.207016"], ["image_url", "https://www.themealdb.com/images/media/meals/0jv5gx1661040802.jpg"], ["photo", nil], ["servings", 2], ["difficulty", "Easy"]]
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (2.7ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "created_at", "updated_at", "image_url", "photo", "servings", "difficulty") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Chicken Marengo"], ["ingredients", "1 tbs Olive Oil, 300g Mushrooms, 4 Chicken Legs, 500g Passata, 1 Chicken Stock Cube, 100g  Black Olives, Chopped Parsley"], ["instructions", "Heat the oil in a large flameproof casserole dish and stir-fry the mushrooms until they start to soften. Add the chicken legs and cook briefly on each side to colour them a little.\r\nPour in the passata, crumble in the stock cube and stir in the olives. Season with black pepper – you shouldn’t need salt. Cover and simmer for 40 mins until the chicken is tender. Sprinkle with parsley and serve with pasta and a salad, or mash and green veg, if you like."], ["cooking_time", 11], ["created_at", "2024-10-31 02:55:12.564122"], ["updated_at", "2024-10-31 02:55:12.564122"], ["image_url", "https://www.themealdb.com/images/media/meals/qpxvuq1511798906.jpg"], ["photo", nil], ["servings", 2], ["difficulty", "Hard"]]
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (21.8ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "created_at", "updated_at", "image_url", "photo", "servings", "difficulty") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Laksa King Prawn Noodles"], ["ingredients", "1 tbsp Olive Oil, 1 finely sliced red chili, 2 ½ tbsp Thai red curry paste, 1 vegetable stock cube, 400ml can coconut milk, 2 tsp fish sauce, 100g rice noodles, 2 juice of 1, the other halved lime, 150g king prawns, ½ small pack coriander"], ["instructions", "Heat the oil in a medium saucepan and add the chilli. Cook for 1 min, then add the curry paste, stir and cook for 1 min more. Dissolve the stock cube in a large jug in 700ml boiling water, then pour into the pan and stir to combine. Tip in the coconut milk and bring to the boil.\r\nAdd the fish sauce and a little seasoning. Toss in the noodles and cook for a further 3-4 mins until softening. Squeeze in the lime juice, add the prawns and cook through until warm, about 2-3 mins. Scatter over some of the coriander.\r\nServe in bowls with the remaining coriander and lime wedges on top for squeezing over."], ["cooking_time", 47], ["created_at", "2024-10-31 02:55:12.968345"], ["updated_at", "2024-10-31 02:55:12.968345"], ["image_url", "https://www.themealdb.com/images/media/meals/rvypwy1503069308.jpg"], ["photo", nil], ["servings", 1], ["difficulty", "Medium"]]
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (3.4ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "created_at", "updated_at", "image_url", "photo", "servings", "difficulty") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Eggplant Adobo"], ["ingredients", "1 lb Egg Plants, 2 tbs Sugar, 1 tsp  Salt, 1 tsp  Pepper, 1 whole Garlic, 3 tbs Olive Oil, 4 oz  Ground Pork, 3 tbs Rice Vinegar, 2 tbs Soy Sauce, 2 Bay Leaf"], ["instructions", "1.\tSlice 1 lb. small Japanese or Italian eggplant (about 3) into quarters lengthwise, then cut crosswise into 2\"-wide pieces. Place in a medium bowl. Add 1 Tbsp. sugar, 1 tsp. Diamond Crystal or ½ tsp. Morton kosher salt, and ½ tsp. freshly ground black pepper. Toss to evenly coat eggplant and let sit at room temperature at least 20 minutes and up to 2 hours.\r\n2.\tPeel and thinly slice 8 garlic cloves. Add 3 Tbsp. vegetable oil and half of garlic to a medium Dutch oven or other heavy pot. Cook over medium-high heat, stirring constantly with a wooden spoon, until light golden and crisp, about 5 minutes. Using a slotted spoon, transfer garlic chips to a plate; season lightly with salt.\r\n3. Place 4 oz. ground pork in same pot and break up into small pieces with wooden spoon. Season with ¼ tsp. Diamond Crystal or Morton kosher salt and cook, undisturbed, until deeply browned underneath, about 5 minutes. Using a slotted spoon, transfer to another plate, leaving fat behind in the pot.\r\n4. Place eggplant on a clean kitchen towel and blot away any moisture the salt has drawn out.\r\n5. Working in batches and adding more oil if needed, cook eggplant in the same pot until lightly browned, about 3 minutes per side. Transfer to a plate with pork.\r\n6. Pour 1½ cups of water into the pot and scrape up browned bits from the bottom with a wooden spoon. Add remaining garlic, 3 Tbsp. coconut vinegar or unseasoned rice vinegar, 2 Tbsp. soy sauce, 2 bay leaves, 1 tsp. freshly ground black pepper, and remaining 1 Tbsp. sugar. Bring to a simmer, then return pork and eggplant to pot. Reduce heat to medium-low, partially cover, and simmer until eggplant is tender and silky and sauce is reduced by half, 20–25 minutes. Taste and season with more salt and pepper and add a little more sugar if needed.\r\n7. Top with garlic chips and serve with cooked white rice.\r\n"], ["cooking_time", 46], ["created_at", "2024-10-31 02:55:13.342910"], ["updated_at", "2024-10-31 02:55:13.342910"], ["image_url", "https://www.themealdb.com/images/media/meals/y7h0lq1683208991.jpg"], ["photo", nil], ["servings", 2], ["difficulty", "Medium"]]
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (7.3ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "created_at", "updated_at", "image_url", "photo", "servings", "difficulty") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Potato Salad (Olivier Salad)"], ["ingredients", "4 Potatoes, 3 Carrots, 1 tbs Salt, 1/2 tbs White Wine Vinegar, 4 Eggs, 7 oz  Sausages, 4 oz  Dill, 1 can  Peas, 4 Onions, 1 cup  Mayonnaise"], ["instructions", "Cut the potatoes and carrots into small uniform cubes.\r\nPlace them in a large pot and fill with water.\r\nAdd salt and vinegar. Bring it to a boil over medium high heat, and then reduce the heat to medium and continue to cook until the potatoes are cooked through, about 15 minutes. Drain the potatoes and let it cool to room temperature.\r\nMeanwhile, cut the sausage and pickles into small cubes, and chop the green onions.\r\nCut the hard-boiled eggs into small cubes as well.\r\nIf using fresh dill, chop them as well.\r\nIn a large bowl, combine potatoes, carrots, sausage, pickles, peas and green onions.\r\nAdd mayo and dill and mix until well combined.\r\nSalt and pepper to taste. Cover with a plastic wrap and refrigerate for at least 1 hour before serving."], ["cooking_time", 112], ["created_at", "2024-10-31 02:55:13.733288"], ["updated_at", "2024-10-31 02:55:13.733288"], ["image_url", "https://www.themealdb.com/images/media/meals/ebvuir1699013665.jpg"], ["photo", nil], ["servings", 5], ["difficulty", "Medium"]]
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (4.6ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "created_at", "updated_at", "image_url", "photo", "servings", "difficulty") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Shawarma"], ["ingredients", "1 kg Chicken Thighs, 1 tbs Coriander, 1 tbs Cumin, 1 tbs Cardamom, 1 tsp  Cayenne Pepper, 2 tsp Paprika, 2 tbs Lemon Juice, 3 tbs Olive Oil, 1 cup  Greek Yogurt, 1 Garlic Clove, 1 tsp  Cumin, Splash Lemon Juice, Sliced Lettuce, Sliced Tomato, 6 Pita Bread"], ["instructions", "Combine the marinade ingredients in a large ziplock bag (or bowl).\r\nAdd the chicken and use your hands to make sure each piece is coated. If using a ziplock bag, I find it convenient to close the bag then massage the bag to disperse the rub all over each chicken piece.\r\nMarinate overnight or up to 24 hours.\r\nCombine the Yoghurt Sauce ingredients in a bowl and mix. Cover and put in the fridge until required (it will last for 3 days in the fridge).\r\nHeat grill/BBQ (or large heavy based pan on stove) on medium high. You should not need to oil it because the marinade has oil in it and also thigh fillets have fat. But if you are worried then oil your hotplate/grill. (See notes for baking)\r\nPlace chicken on the grill and cook the first side for 4 to 5 minutes until nicely charred, then turn and cook the other side for 3 to 4 minutes (the 2nd side takes less time).\r\nRemove chicken from the grill and cover loosely with foil. Set aside to rest for 5 minutes.\r\nTO SERVE\r\nSlice chicken and pile onto platter alongside flatbreads, Salad and the Yoghurt Sauce.\r\nTo make a wrap, get a piece of flatbread and smear with Yoghurt Sauce. Top with a bit of lettuce and tomato and Chicken Shawarma. Roll up and enjoy!"], ["cooking_time", 90], ["created_at", "2024-10-31 02:55:13.978638"], ["updated_at", "2024-10-31 02:55:13.978638"], ["image_url", "https://www.themealdb.com/images/media/meals/kcv6hj1598733479.jpg"], ["photo", nil], ["servings", 5], ["difficulty", "Medium"]]
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (2.7ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "created_at", "updated_at", "image_url", "photo", "servings", "difficulty") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Battenberg Cake"], ["ingredients", "175g Butter, 175g Caster Sugar, 140g Self-raising Flour, 50g Almonds, ½ tsp Baking Powder, 3 Medium Eggs, ½ tsp Vanilla Extract, ¼ teaspoon Almond Extract, 175g Butter, 175g Caster Sugar, 140g Self-raising Flour, 50g Almonds, ½ tsp Baking Powder, 3 Medium Eggs, ½ tsp Vanilla Extract, ¼ teaspoon Almond Extract, ½ tsp Pink Food Colouring, 200g Apricot, 1kg Marzipan, Dusting Icing Sugar"], ["instructions", "Heat oven to 180C/160C fan/gas 4 and line the base and sides of a 20cm square tin with baking parchment (the easiest way is to cross 2 x 20cm-long strips over the base). To make the almond sponge, put the butter, sugar, flour, ground almonds, baking powder, eggs, vanilla and almond extract in a large bowl. Beat with an electric whisk until the mix comes together smoothly. Scrape into the tin, spreading to the corners, and bake for 25-30 mins – when you poke in a skewer, it should come out clean. Cool in the tin for 10 mins, then transfer to a wire rack to finish cooling while you make the second sponge.\r\nFor the pink sponge, line the tin as above. Mix all the ingredients together as above, but don’t add the almond extract. Fold in some pink food colouring. Then scrape it all into the tin and bake as before. Cool.\r\nTo assemble, heat the jam in a small pan until runny, then sieve. Barely trim two opposite edges from the almond sponge, then well trim a third edge. Roughly measure the height of the sponge, then cutting from the well-trimmed edge, use a ruler to help you cut 4 slices each the same width as the sponge height. Discard or nibble leftover sponge. Repeat with pink cake.\r\nTake 2 x almond slices and 2 x pink slices and trim so they are all the same length. Roll out one marzipan block on a surface lightly dusted with icing sugar to just over 20cm wide, then keep rolling lengthways until the marzipan is roughly 0.5cm thick. Brush with apricot jam, then lay a pink and an almond slice side by side at one end of the marzipan, brushing jam in between to stick sponges, and leaving 4cm clear marzipan at the end. Brush more jam on top of the sponges, then sandwich remaining 2 slices on top, alternating colours to give a checkerboard effect. Trim the marzipan to the length of the cakes.\r\nCarefully lift up the marzipan and smooth over the cake with your hands, but leave a small marzipan fold along the bottom edge before you stick it to the first side. Trim opposite side to match size of fold, then crimp edges using fingers and thumb (or, more simply, press with prongs of fork). If you like, mark the 10 slices using the prongs of a fork.\r\nAssemble second Battenberg and keep in an airtight box or well wrapped in cling film for up to 3 days. Can be frozen for up to a month."], ["cooking_time", 66], ["created_at", "2024-10-31 02:55:14.195243"], ["updated_at", "2024-10-31 02:55:14.195243"], ["image_url", "https://www.themealdb.com/images/media/meals/ywwrsp1511720277.jpg"], ["photo", nil], ["servings", 1], ["difficulty", "Hard"]]
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (6.3ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "created_at", "updated_at", "image_url", "photo", "servings", "difficulty") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Tonkatsu pork"], ["ingredients", "4 Pork Chops, 100g  Flour, 2 Beaten  Eggs, 100g  Breadcrumbs, Fry Vegetable Oil, 2 tbs Tomato Ketchup, 2 tbs Worcestershire Sauce, 1 tbs Oyster Sauce, 2 tblsp  Caster Sugar"], ["instructions", "STEP 1\r\nRemove the large piece of fat on the edge of each pork loin, then bash each of the loins between two pieces of baking parchment until around 1cm in thickness – you can do this using a meat tenderiser or a rolling pin. Once bashed, use your hands to reshape the meat to its original shape and thickness – this step will ensure the meat is as succulent as possible.\r\n\r\nSTEP 2\r\nPut the flour, eggs and panko breadcrumbs into three separate wide-rimmed bowls. Season the meat, then dip first in the flour, followed by the eggs, then the breadcrumbs.\r\n\r\nSTEP 3\r\nIn a large frying or sauté pan, add enough oil to come 2cm up the side of the pan. Heat the oil to 180C – if you don’t have a thermometer, drop a bit of panko into the oil and if it sinks a little then starts to fry, the oil is ready. Add two pork chops and cook for 1 min 30 secs on each side, then remove and leave to rest on a wire rack for 5 mins. Repeat with the remaining pork chops.\r\n\r\nSTEP 4\r\nWhile the pork is resting, make the sauce by whisking the ingredients together, adding a splash of water if it’s particularly thick. Slice the tonkatsu and serve drizzled with the sauce."], ["cooking_time", 107], ["created_at", "2024-10-31 02:55:14.411286"], ["updated_at", "2024-10-31 02:55:14.411286"], ["image_url", "https://www.themealdb.com/images/media/meals/lwsnkl1604181187.jpg"], ["photo", nil], ["servings", 1], ["difficulty", "Medium"]]
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (3.8ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "created_at", "updated_at", "image_url", "photo", "servings", "difficulty") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Brie wrapped in prosciutto & brioche"], ["ingredients", "375g Plain Flour, 50g Caster Sugar, 7g Yeast, 75g Milk, 3 Large Eggs, To Glaze Eggs, 180g Butter, 250g Brie, 8 slices Prosciutto"], ["instructions", "Mix the flour, 1 tsp salt, caster sugar, yeast, milk and eggs together in a mixer using the dough attachment for 5 mins until the dough is smooth. Add the butter and mix for a further 4 mins on medium speed. Scrape the dough bowl and mix again for 1 min. Place the dough in a container, cover with cling film and leave in the fridge for at least 6 hrs before using.\r\nWrap the Brie in the prosciutto and set aside. Turn out the dough onto a lightly floured surface. Roll into a 25cm circle. Place the wrapped Brie in the middle of the circle and fold the edges in neatly. Put the parcel onto a baking tray lined with baking parchment and brush with beaten egg. Chill in the fridge for 30 mins, then brush again with beaten egg and chill for a further 30 mins. Leave to rise for 1 hr at room temperature. Heat oven to 200C/180C fan/gas 6, then bake for 22 mins. Serve warm."], ["cooking_time", 105], ["created_at", "2024-10-31 02:55:14.782470"], ["updated_at", "2024-10-31 02:55:14.782470"], ["image_url", "https://www.themealdb.com/images/media/meals/qqpwsy1511796276.jpg"], ["photo", nil], ["servings", 2], ["difficulty", "Hard"]]
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:27:in `block in fetch_new_recipes_from_api'
+Completed 200 OK in 3532ms (Views: 0.7ms | ActiveRecord: 70.7ms (10 queries, 0 cached) | GC: 0.0ms)
+
+
