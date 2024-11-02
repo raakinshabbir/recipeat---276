@@ -31778,3 +31778,408 @@ Processing by SwipeController#index as HTML
 Completed 200 OK in 43ms (Views: 36.4ms | ActiveRecord: 2.2ms (2 queries, 0 cached) | GC: 25.3ms)
 
 
+Started GET "/" for ::1 at 2024-11-01 20:44:30 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 10.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 47.8ms | GC: 0.0ms)
+Completed 200 OK in 89ms (Views: 61.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-11-01 20:44:31 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/users/sign_up" for ::1 at 2024-11-01 20:44:33 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 7.9ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 28.7ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 37.5ms | GC: 0.0ms)
+Completed 200 OK in 111ms (Views: 49.7ms | ActiveRecord: 4.2ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2024-11-01 20:44:33 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 22.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 33.6ms | GC: 0.0ms)
+Completed 200 OK in 56ms (Views: 39.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2024-11-01 20:44:40 -0700
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/swipe
+Completed 303 See Other in 339ms (ActiveRecord: 2.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/swipe" for ::1 at 2024-11-01 20:44:40 -0700
+Processing by SwipeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (7.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 61.3ms | GC: 1.4ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 13.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 83.7ms | GC: 1.4ms)
+Completed 200 OK in 160ms (Views: 75.5ms | ActiveRecord: 11.7ms (2 queries, 0 cached) | GC: 5.6ms)
+
+
+Started GET "/welcome/index" for ::1 at 2024-11-01 20:44:45 -0700
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 10.9ms | GC: 0.0ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 38.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 110.2ms | GC: 0.0ms)
+Completed 200 OK in 122ms (Views: 112.5ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/swipe" for ::1 at 2024-11-01 20:44:46 -0700
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 31.8ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 34.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 90.4ms | GC: 0.0ms)
+Completed 200 OK in 103ms (Views: 95.8ms | ActiveRecord: 0.6ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-11-01 20:44:46 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/" for ::1 at 2024-11-01 21:19:11 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (10.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 1.6ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 21.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 55.1ms | GC: 0.0ms)
+Completed 200 OK in 122ms (Views: 83.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-11-01 21:19:12 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/users/sign_in" for ::1 at 2024-11-01 21:19:14 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 155.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 2.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 172.2ms | GC: 0.0ms)
+Completed 200 OK in 396ms (Views: 181.7ms | ActiveRecord: 2.7ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2024-11-01 21:19:18 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 10.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.8ms | GC: 0.0ms)
+Completed 200 OK in 33ms (Views: 22.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2024-11-01 21:19:25 -0700
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (8.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/swipe
+Completed 303 See Other in 537ms (ActiveRecord: 8.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/swipe" for ::1 at 2024-11-01 21:19:26 -0700
+Processing by SwipeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (9.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 69.7ms | GC: 4.6ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 14.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 90.2ms | GC: 4.6ms)
+Completed 200 OK in 230ms (Views: 109.5ms | ActiveRecord: 13.2ms (2 queries, 0 cached) | GC: 33.9ms)
+
+
+Started GET "/swipe" for ::1 at 2024-11-01 21:19:30 -0700
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 31.3ms | GC: 0.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 14.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 65.5ms | GC: 0.9ms)
+Completed 200 OK in 77ms (Views: 67.9ms | ActiveRecord: 1.1ms (2 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-11-01 21:19:30 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/" for ::1 at 2024-11-01 21:24:29 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 2.1ms | GC: 0.0ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 85.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 120.5ms | GC: 0.0ms)
+Completed 200 OK in 160ms (Views: 122.7ms | ActiveRecord: 16.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-11-01 21:24:31 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/liked" for ::1 at 2024-11-01 21:24:33 -0700
+Processing by LikedController#index as HTML
+  [1m[36mUser Load (13.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering liked/liked.html.erb within layouts/application
+  Rendered liked/liked.html.erb within layouts/application (Duration: 3.7ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 13.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 30.8ms | GC: 0.0ms)
+Completed 200 OK in 185ms (Views: 38.5ms | ActiveRecord: 20.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/addrecipe" for ::1 at 2024-11-01 21:24:33 -0700
+Processing by AddrecipeController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering addrecipe/new.html.erb within layouts/application
+  Rendered addrecipe/new.html.erb within layouts/application (Duration: 41.6ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 37.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 94.8ms | GC: 0.7ms)
+Completed 200 OK in 327ms (Views: 97.2ms | ActiveRecord: 3.3ms (1 query, 0 cached) | GC: 34.8ms)
+
+
+Started GET "/swipe" for ::1 at 2024-11-01 21:24:34 -0700
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (7.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 23.5ms | GC: 1.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 35.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 64.7ms | GC: 1.4ms)
+Completed 200 OK in 70ms (Views: 59.1ms | ActiveRecord: 8.5ms (2 queries, 0 cached) | GC: 1.4ms)
+
+
+Started GET "/swipe" for ::1 at 2024-11-01 21:24:39 -0700
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (1.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 117.4ms | GC: 11.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 60.8ms | GC: 3.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 276.6ms | GC: 19.4ms)
+Completed 200 OK in 297ms (Views: 281.3ms | ActiveRecord: 1.6ms (2 queries, 0 cached) | GC: 19.4ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-11-01 21:24:41 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mRecipe Delete All (11.7ms)[0m  [1m[31mDELETE FROM "recipes"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (2.5ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Keleya Zaara"], ["ingredients", "4 tbs Olive Oil, 750g Lamb, 1 1/2 tsp  Saffron, 1 Large Chopped Onion, 25 ml Water, 30g Parsley, 1 tbs Butter, 1 Lemon"], ["instructions", "Heat the vegetable oil in a large frying pan over medium-high heat. Add the lamb and cook until browned on all sides, about 5 minutes. Season with saffron, salt and pepper to taste; stir in all but 4 tablespoons of the onion, and pour in the water. Bring to the boil, then cover, reduce heat to medium-low, and simmer until the lamb is tender, about 15 minutes.\r\nUncover the pan, stir in the butter and allow the sauce reduce 5 to 10 minutes to desired consistency. Season to taste with salt and pepper, then pour into a serving dish. Sprinkle with the remaining chopped onions and parsley. Garnish with lemon wedges to serve.\r\n"], ["cooking_time", 73], ["servings", 1], ["difficulty", "Easy"], ["created_at", "2024-11-02 19:52:41.814530"], ["updated_at", "2024-11-02 19:52:41.814530"], ["image_url", "https://www.themealdb.com/images/media/meals/8x09hy1560460923.jpg"]]
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (8.5ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Breakfast Potatoes"], ["ingredients", "3 Medium Potatoes, 1 tbs Olive Oil, 2 strips Bacon, Minced Garlic Clove, 1 tbs Maple Syrup, Garnish Parsley, Pinch Salt, Pinch Pepper, To taste Allspice"], ["instructions", "Before you do anything, freeze your bacon slices that way when you're ready to prep, it'll be so much easier to chop!\r\nWash the potatoes and cut medium dice into square pieces. To prevent any browning, place the already cut potatoes in a bowl filled with water.\r\nIn the meantime, heat 1-2 tablespoons of oil in a large skillet over medium-high heat. Tilt the skillet so the oil spreads evenly.\r\nOnce the oil is hot, drain the potatoes and add to the skillet. Season with salt, pepper, and Old Bay as needed.\r\nCook for 10 minutes, stirring the potatoes often, until brown. If needed, add a tablespoon more of oil.\r\nChop up the bacon and add to the potatoes. The bacon will start to render and the fat will begin to further cook the potatoes. Toss it up a bit! The bacon will take 5-6 minutes to crisp.\r\nOnce the bacon is cooked, reduce the heat to medium-low, add the minced garlic and toss. Season once more. Add dried or fresh parsley. Control heat as needed.\r\nLet the garlic cook until fragrant, about one minute.\r\nJust before serving, drizzle over the maple syrup and toss. Let that cook another minute, giving the potatoes a caramelized effect.\r\nServe in a warm bowl with a sunny side up egg!"], ["cooking_time", 115], ["servings", 5], ["difficulty", "Medium"], ["created_at", "2024-11-02 19:52:42.170921"], ["updated_at", "2024-11-02 19:52:42.170921"], ["image_url", "https://www.themealdb.com/images/media/meals/1550441882.jpg"]]
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (1.0ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Lancashire hotpot"], ["ingredients", "100g  Butter, 900g Lamb, 3 Lamb Kidney, 2 medium Onions, 4 sliced Carrots, 25g Plain Flour, 2 tsp Worcestershire Sauce, 500ml Chicken Stock, 2 Bay Leaves, 900g Potatoes"], ["instructions", "Heat oven to 160C/fan 140C/gas 3. Heat some dripping or butter in a large shallow casserole dish, brown the lamb in batches, lift to a plate, then repeat with the kidneys.\r\nFry the onions and carrots in the pan with a little more dripping until golden. Sprinkle over the flour, allow to cook for a couple of mins, shake over the Worcestershire sauce, pour in the stock, then bring to the boil. Stir in the meat and bay leaves, then turn off the heat. Arrange the sliced potatoes on top of the meat, then drizzle with a little more dripping. Cover, then place in the oven for about 1½ hrs until the potatoes are cooked.\r\nRemove the lid, brush the potatoes with a little more dripping, then turn the oven up to brown the potatoes, or finish under the grill for 5-8 mins until brown."], ["cooking_time", 98], ["servings", 1], ["difficulty", "Medium"], ["created_at", "2024-11-02 19:52:42.602463"], ["updated_at", "2024-11-02 19:52:42.602463"], ["image_url", "https://www.themealdb.com/images/media/meals/uttrxw1511637813.jpg"]]
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (1.9ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Beef Bourguignon"], ["ingredients", "3 tsp Goose Fat, 600g Beef Shin, 100g  Bacon, 350g Challots, 250g Chestnut Mushroom, 2 sliced Garlic Clove, 1 Bouquet Garni, 1 tbs Tomato Puree, 750 ml  Red Wine, 600g Celeriac, 2 tbs Olive Oil, sprigs of fresh Thyme, sprigs of fresh Rosemary, 2 Bay Leaf, 4 Cardamom"], ["instructions", "Heat a large casserole pan and add 1 tbsp goose fat. Season the beef and fry until golden brown, about 3-5 mins, then turn over and fry the other side until the meat is browned all over, adding more fat if necessary. Do this in 2-3 batches, transferring the meat to a colander set over a bowl when browned.\r\nIn the same pan, fry the bacon, shallots or pearl onions, mushrooms, garlic and bouquet garni until lightly browned. Mix in the tomato purée and cook for a few mins, stirring into the mixture. This enriches the bourguignon and makes a great base for the stew. Then return the beef and any drained juices to the pan and stir through.\r\nPour over the wine and about 100ml water so the meat bobs up from the liquid, but isn’t completely covered. Bring to the boil and use a spoon to scrape the caramelised cooking juices from the bottom of the pan – this will give the stew more flavour.\r\nHeat oven to 150C/fan 130C/gas 2. Make a cartouche: tear off a square of foil slightly larger than the casserole, arrange it in the pan so it covers the top of the stew and trim away any excess foil. Then cook for 3 hrs. If the sauce looks watery, remove the beef and veg with a slotted spoon, and set aside. Cook the sauce over a high heat for a few mins until the sauce has thickened a little, then return the beef and vegetables to the pan.\r\nTo make the celeriac mash, peel the celeriac and cut into cubes. Heat the olive oil in a large frying pan. Tip in the celeriac and fry for 5 mins until it turns golden. Season well with salt and pepper. Stir in the rosemary, thyme, bay and cardamom pods, then pour over 200ml water, enough to nearly cover the celeriac. Turn the heat to low, partially cover the pan and leave to simmer for 25-30 mins.\r\nAfter 25-30 mins, the celeriac should be soft and most of the water will have evaporated. Drain away any remaining water, then remove the herb sprigs, bay and cardamom pods. Lightly crush with a potato masher, then finish with a glug of olive oil and season to taste. Spoon the beef bourguignon into serving bowls and place a large spoonful of the celeriac mash on top. Garnish with one of the bay leaves, if you like."], ["cooking_time", 38], ["servings", 2], ["difficulty", "Easy"], ["created_at", "2024-11-02 19:52:42.982771"], ["updated_at", "2024-11-02 19:52:42.982771"], ["image_url", "https://www.themealdb.com/images/media/meals/vtqxtu1511784197.jpg"]]
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (10.8ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Salmon Prawn Risotto"], ["ingredients", "50g/2oz butter, 1 finely chopped  onion, 150g rice, 125ml  white wine, 1 litre hot vegetable stock, The juice and zest of one lemon, 240g large King Prawns, 150g salmon, 100g tips blanched briefly in boiling water asparagus, ground black pepper, 50g shavings Parmesan"], ["instructions", "Melt the butter in a thick-based pan and gently cook the onion without colour until it is soft.\r\nAdd the rice and stir to coat all the grains in the butter\r\nAdd the wine and cook gently stirring until it is absorbed\r\nGradually add the hot stock, stirring until each addition is absorbed. Keep stirring until the rice is tender\r\nSeason with the lemon juice and zest, and pepper to taste. (there will probably be sufficient saltiness from the salmon to not need to add salt) Stir gently to heat through\r\nServe scattered with the Parmesan and seasonal vegetables.\r\nGrill the salmon and gently place onto the risotto with the prawns and asparagus"], ["cooking_time", 53], ["servings", 5], ["difficulty", "Medium"], ["created_at", "2024-11-02 19:52:43.392290"], ["updated_at", "2024-11-02 19:52:43.392290"], ["image_url", "https://www.themealdb.com/images/media/meals/xxrxux1503070723.jpg"]]
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (11.8ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Coq au vin"], ["ingredients", "1½ tbsp Olive Oil, 3 rashers (100g) chopped dry-cured Bacon, 12 small Shallots, 2 (460g) Chicken Legs, 4 (650g) Chicken Thighs, 2 (280g) Chicken Breasts, 3 finely chopped Garlic, 3 tbsp Brandy, 600ml Red Wine, 150ml Chicken Stock, 2 tsp tomato puree, 3 sprigs thyme, 2 sprigs Rosemary, 2 bay leaves, garnish parsley, 250g chestnut mushroom, 2 tbsp plain flour, 1 tsp butter"], ["instructions", "Heat 1 tbsp of the oil in a large, heavy-based saucepan or flameproof dish. Tip in the bacon and fry until crisp. Remove and drain on kitchen paper. Add the shallots to the pan and fry, stirring or shaking the pan often, for 5-8 mins until well browned all over. Remove and set aside with the bacon.\r\nPat the chicken pieces dry with kitchen paper. Pour the remaining oil into the pan, then fry half the chicken pieces, turning regularly, for 5-8 mins until well browned. Remove, then repeat with the remaining chicken. Remove and set aside.\r\nScatter in the garlic and fry briefly, then, with the heat medium-high, pour in the brandy or Cognac, stirring the bottom of the pan to deglaze. The alcohol should sizzle and start to evaporate so there is not much left.\r\nReturn the chicken legs and thighs to the pan along with any juices, then pour in a little of the wine, stirring the bottom of the pan again. Stir in the rest of the wine, the stock and tomato purée, drop in the bouquet garni, season with pepper and a pinch of salt, then return the bacon and shallots to the pan. Cover, lower the heat to a gentle simmer, add the chicken breasts and cook for 50 mins-1hr.\r\nJust before ready to serve, heat the oil for the mushrooms in a large non-stick frying pan. Add the mushrooms and fry over a high heat for a few mins until golden. Remove and keep warm.\r\nLift the chicken, shallots and bacon from the pan and transfer to a warmed serving dish. Remove the bouquet garni. To make the thickener, mix the flour, olive oil and butter in a small bowl using the back of a teaspoon. Bring the wine mixture to a gentle boil, then gradually drop in small pieces of the thickener, whisking each piece in using a wire whisk. Simmer for 1-2 mins. Scatter the mushrooms over the chicken, then pour over the wine sauce. Garnish with chopped parsley."], ["cooking_time", 56], ["servings", 3], ["difficulty", "Medium"], ["created_at", "2024-11-02 19:52:43.627285"], ["updated_at", "2024-11-02 19:52:43.627285"], ["image_url", "https://www.themealdb.com/images/media/meals/qstyvs1505931190.jpg"]]
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (7.9ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Hot and Sour Soup"], ["ingredients", "1/3 cup Mushrooms, 1/3 cup Wood Ear Mushrooms, 2/3 Cup Tofu, 1/2 cup  Pork, 2-1/2 cups Chicken Stock, 1/2 tsp Salt, 1/4 tsp Sugar, 1 tsp  Sesame Seed Oil, 1/4 tsp Pepper, 1/2 tsp Hotsauce, 1-½ cups Vinegar, 1 tsp  Soy Sauce, 1 tbs Cornstarch, 2 tbs Water, 1/4 cup Spring Onions"], ["instructions", "STEP 1 - MAKING THE SOUP\r\nIn a wok add chicken broth and wait for it to boil.\r\nNext add salt, sugar, sesame seed oil, white pepper, hot pepper sauce, vinegar and soy sauce and stir for few seconds.\r\nAdd Tofu, mushrooms, black wood ear mushrooms to the wok.\r\nTo thicken the sauce, whisk together 1 Tablespoon of cornstarch and 2 Tablespoon of water in a bowl and slowly add to your soup until it's the right thickness.\r\nNext add 1 egg slightly beaten with a knife or fork and add it to the soup and stir for 8 seconds\r\nServe the soup in a bowl and add the bbq pork and sliced green onions on top."], ["cooking_time", 84], ["servings", 4], ["difficulty", "Easy"], ["created_at", "2024-11-02 19:52:44.012835"], ["updated_at", "2024-11-02 19:52:44.012835"], ["image_url", "https://www.themealdb.com/images/media/meals/1529445893.jpg"]]
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (3.5ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Eggplant Adobo"], ["ingredients", "1 lb Egg Plants, 2 tbs Sugar, 1 tsp  Salt, 1 tsp  Pepper, 1 whole Garlic, 3 tbs Olive Oil, 4 oz  Ground Pork, 3 tbs Rice Vinegar, 2 tbs Soy Sauce, 2 Bay Leaf"], ["instructions", "1.\tSlice 1 lb. small Japanese or Italian eggplant (about 3) into quarters lengthwise, then cut crosswise into 2\"-wide pieces. Place in a medium bowl. Add 1 Tbsp. sugar, 1 tsp. Diamond Crystal or ½ tsp. Morton kosher salt, and ½ tsp. freshly ground black pepper. Toss to evenly coat eggplant and let sit at room temperature at least 20 minutes and up to 2 hours.\r\n2.\tPeel and thinly slice 8 garlic cloves. Add 3 Tbsp. vegetable oil and half of garlic to a medium Dutch oven or other heavy pot. Cook over medium-high heat, stirring constantly with a wooden spoon, until light golden and crisp, about 5 minutes. Using a slotted spoon, transfer garlic chips to a plate; season lightly with salt.\r\n3. Place 4 oz. ground pork in same pot and break up into small pieces with wooden spoon. Season with ¼ tsp. Diamond Crystal or Morton kosher salt and cook, undisturbed, until deeply browned underneath, about 5 minutes. Using a slotted spoon, transfer to another plate, leaving fat behind in the pot.\r\n4. Place eggplant on a clean kitchen towel and blot away any moisture the salt has drawn out.\r\n5. Working in batches and adding more oil if needed, cook eggplant in the same pot until lightly browned, about 3 minutes per side. Transfer to a plate with pork.\r\n6. Pour 1½ cups of water into the pot and scrape up browned bits from the bottom with a wooden spoon. Add remaining garlic, 3 Tbsp. coconut vinegar or unseasoned rice vinegar, 2 Tbsp. soy sauce, 2 bay leaves, 1 tsp. freshly ground black pepper, and remaining 1 Tbsp. sugar. Bring to a simmer, then return pork and eggplant to pot. Reduce heat to medium-low, partially cover, and simmer until eggplant is tender and silky and sauce is reduced by half, 20–25 minutes. Taste and season with more salt and pepper and add a little more sugar if needed.\r\n7. Top with garlic chips and serve with cooked white rice.\r\n"], ["cooking_time", 16], ["servings", 5], ["difficulty", "Easy"], ["created_at", "2024-11-02 19:52:44.351040"], ["updated_at", "2024-11-02 19:52:44.351040"], ["image_url", "https://www.themealdb.com/images/media/meals/y7h0lq1683208991.jpg"]]
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (5.6ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Beef Rendang"], ["ingredients", "1lb Beef, 5 tbs Vegetable Oil, 1 Cinnamon Stick, 3 Cloves, 3 Star Anise, 3 Cardamom, 1 cup  Coconut Cream, 1 cup  Water, 2 tbs Tamarind Paste, 6 Lime, 1 tbs Sugar, 5 Challots"], ["instructions", "Chop the spice paste ingredients and then blend it in a food processor until fine.\r\nHeat the oil in a stew pot, add the spice paste, cinnamon, cloves, star anise, and cardamom and stir-fry until aromatic. Add the beef and the pounded lemongrass and stir for 1 minute. Add the coconut milk, tamarind juice, water, and simmer on medium heat, stirring frequently until the meat is almost cooked. Add the kaffir lime leaves, kerisik (toasted coconut), sugar or palm sugar, stirring to blend well with the meat.\r\nLower the heat to low, cover the lid, and simmer for 1 to 1 1/2 hours or until the meat is really tender and the gravy has dried up. Add more salt and sugar to taste. Serve immediately with steamed rice and save some for overnight."], ["cooking_time", 87], ["servings", 3], ["difficulty", "Hard"], ["created_at", "2024-11-02 19:52:44.591480"], ["updated_at", "2024-11-02 19:52:44.591480"], ["image_url", "https://www.themealdb.com/images/media/meals/bc8v651619789840.jpg"]]
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (33.7ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Beef and Mustard Pie"], ["ingredients", "1kg Beef, 2 tbs Plain Flour, 2 tbs Rapeseed Oil, 200ml Red Wine, 400ml Beef Stock, 1 finely sliced Onion, 2 chopped Carrots, 3 sprigs Thyme, 2 tbs Mustard, 2 free-range Egg Yolks, 400g Puff Pastry, 300g Green Beans, 25g Butter, pinch Salt, pinch Pepper"], ["instructions", "Preheat the oven to 150C/300F/Gas 2.\r\nToss the beef and flour together in a bowl with some salt and black pepper.\r\nHeat a large casserole until hot, add half of the rapeseed oil and enough of the beef to just cover the bottom of the casserole.\r\nFry until browned on each side, then remove and set aside. Repeat with the remaining oil and beef.\r\nReturn the beef to the pan, add the wine and cook until the volume of liquid has reduced by half, then add the stock, onion, carrots, thyme and mustard, and season well with salt and pepper.\r\nCover with a lid and place in the oven for two hours.\r\nRemove from the oven, check the seasoning and set aside to cool. Remove the thyme.\r\nWhen the beef is cool and you're ready to assemble the pie, preheat the oven to 200C/400F/Gas 6.\r\nTransfer the beef to a pie dish, brush the rim with the beaten egg yolks and lay the pastry over the top. Brush the top of the pastry with more beaten egg.\r\nTrim the pastry so there is just enough excess to crimp the edges, then place in the oven and bake for 30 minutes, or until the pastry is golden-brown and cooked through.\r\nFor the green beans, bring a saucepan of salted water to the boil, add the beans and cook for 4-5 minutes, or until just tender.\r\nDrain and toss with the butter, then season with black pepper.\r\nTo serve, place a large spoonful of pie onto each plate with some green beans alongside."], ["cooking_time", 79], ["servings", 4], ["difficulty", "Easy"], ["created_at", "2024-11-02 19:52:44.812906"], ["updated_at", "2024-11-02 19:52:44.812906"], ["image_url", "https://www.themealdb.com/images/media/meals/sytuqu1511553755.jpg"]]
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+Started GET "/" for ::1 at 2024-11-02 12:52:51 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 41.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 66.7ms | GC: 0.0ms)
+Completed 200 OK in 99ms (Views: 75.6ms | ActiveRecord: 2.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-11-02 12:52:52 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/swipe" for ::1 at 2024-11-02 12:52:55 -0700
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (7.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 89.9ms | GC: 27.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 16.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 114.1ms | GC: 27.0ms)
+Completed 200 OK in 245ms (Views: 108.7ms | ActiveRecord: 10.0ms (2 queries, 0 cached) | GC: 27.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2024-11-02 12:52:56 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/swipe
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 123ms (ActiveRecord: 2.5ms (1 query, 0 cached) | GC: 2.1ms)
+
+
+Started GET "/swipe" for ::1 at 2024-11-02 12:52:56 -0700
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 5.4ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 7.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 28.0ms | GC: 0.0ms)
+Completed 200 OK in 46ms (Views: 40.7ms | ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/swipe" for ::1 at 2024-11-02 12:53:05 -0700
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (1.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 50.1ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 40.4ms | GC: 11.9ms)
+  Rendered layout layouts/application.html.erb (Duration: 106.1ms | GC: 12.9ms)
+Completed 200 OK in 113ms (Views: 107.9ms | ActiveRecord: 1.8ms (2 queries, 0 cached) | GC: 12.9ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-11-02 12:53:05 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/liked" for ::1 at 2024-11-02 12:53:13 -0700
+Processing by LikedController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering liked/liked.html.erb within layouts/application
+  Rendered liked/liked.html.erb within layouts/application (Duration: 3.0ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 12.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 27.7ms | GC: 0.0ms)
+Completed 200 OK in 175ms (Views: 31.1ms | ActiveRecord: 7.3ms (1 query, 0 cached) | GC: 11.7ms)
+
+
+Started GET "/liked.json" for ::1 at 2024-11-02 12:53:13 -0700
+Processing by LikedController#index as JSON
+  Parameters: {"liked"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:3:in `index'
+  [1m[36mLikedRecipe Load (1.3ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/liked_controller.rb:7:in `map'
+Completed 200 OK in 58ms (Views: 0.2ms | ActiveRecord: 1.4ms (2 queries, 0 cached) | GC: 3.2ms)
+
+
+Started GET "/swipe" for ::1 at 2024-11-02 12:53:17 -0700
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (6.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 41.7ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 3.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 68.0ms | GC: 0.4ms)
+Completed 200 OK in 75ms (Views: 67.9ms | ActiveRecord: 2.0ms (2 queries, 0 cached) | GC: 0.4ms)
+
+
