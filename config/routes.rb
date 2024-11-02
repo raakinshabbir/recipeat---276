@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
   get '/swipe', to: 'swipe#index'
-   get 'recipes/share', to: 'recipes#share'
+  get 'recipes/share', to: 'recipes#share'
   get '/recipes/:id', to: 'recipes#show'
   devise_for :users
 
@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   get '/addrecipe', to: 'addrecipe#new'
   post '/addrecipe', to: 'addrecipe#create', as: 'create_recipe' # Form submission
-  get '/liked', to: 'liked#index'
+  get '/liked', to: 'liked#index', defaults: { format: :html }
 
   # New route for Recipe of the Day
   get '/recipe_of_the_day', to: 'recipes#recipe_of_the_day', as: 'recipe_of_the_day'

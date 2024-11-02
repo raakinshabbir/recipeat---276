@@ -1,0 +1,11 @@
+<!-- app/views/recipes/_recipe.html.erb -->
+<li>
+  <h2><%= recipe.title %></h2>
+  <p><strong>Ingredients:</strong> <%= recipe.ingredients %></p>
+  <p><strong>Instructions:</strong> <%= recipe.instructions %></p>
+  <p><strong>Cooking Time:</strong> <%= recipe.cooking_time %> minutes</p>
+  <p><strong>Servings:</strong> <%= recipe.servings %></p>
+  <p><strong>Difficulty:</strong> <%= recipe.difficulty %></p>
+  <%= link_to 'View Recipe', recipe_path(recipe), class: 'btn btn-primary' %>
+  <%= link_to 'Unlike', recipe_liked_path(recipe), method: :delete, class: 'btn btn-danger' %>
+</li>

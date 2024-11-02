@@ -10,7 +10,6 @@
     <h1>Liked Recipes</h1>
 
     <div id="liked-recipes-list">
-      <!-- This is where the liked recipes will be rendered -->
       <ul id="recipes">
         <!-- Each liked recipe will be appended here as an <li> element -->
       </ul>
@@ -38,17 +37,18 @@
           likedRecipes.forEach(recipe => {
             const listItem = document.createElement('li');
             listItem.innerHTML = `
-              <h3>${recipe.name}</h3>
-              <p>${recipe.description}</p>
-              <img src="${recipe.photo_url}" alt="${recipe.name}" width="150" height="150">
+              <h3>${recipe.title}</h3>
+              <p><strong>Ingredients:</strong> ${recipe.ingredients}</p>
+              <p><strong>Instructions:</strong> ${recipe.instructions}</p>
+              <p><strong>Cooking Time:</strong> ${recipe.cooking_time} minutes</p>
+              <p><strong>Servings:</strong> ${recipe.servings}</p>
+              <p><strong>Difficulty:</strong> ${recipe.difficulty}</p>
+              <a href="/recipes/${recipe.id}" class="btn btn-primary">View Recipe</a>
+              <a href="/recipes/${recipe.id}/liked" data-method="delete" class="btn btn-danger">Unlike</a>
             `;
             recipesList.appendChild(listItem);
           });
         }
-      })
-      .catch(error => {
-        console.error("Error fetching liked recipes:", error);
-        document.getElementById('recipes').innerHTML = '<li>Error loading liked recipes.</li>';
       });
     </script>
   </center>

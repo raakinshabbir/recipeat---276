@@ -102,6 +102,23 @@ document.addEventListener("turbo:load", function () {
         const dislikeOverlay = activeSlide.querySelector('.feedback-overlay.dislike');
 
         if (direction === 'right') {
+          const recipeId = activeSlide.getAttribute('data-recipe-id');
+
+          fetch(`/recipes/${recipeId}/liked`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+            }
+          }).then(response => response.json())
+            .then(data => {
+              if (data.status === 'success') {
+                console.log("Recipe saved successfully");
+              } else {
+                console.error("Failed to save recipe");
+              }
+            });
+          
           // Show like overlay and remove the previous slide
           console.log("Liked recipe");
           likeOverlay.style.display = 'flex';
