@@ -102,6 +102,7 @@ document.addEventListener("turbo:load", function () {
         const dislikeOverlay = activeSlide.querySelector('.feedback-overlay.dislike');
 
         if (direction === 'right') {
+          console.log("Swiped right on recipe");
           const recipeId = activeSlide.getAttribute('data-recipe-id');
 
           fetch(`/recipes/${recipeId}/liked`, {
