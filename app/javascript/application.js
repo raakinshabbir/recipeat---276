@@ -7,7 +7,10 @@ let blankSlideAdded = false;
 
 document.addEventListener("turbo:load", function () {
   const swiperContainer = document.querySelector('swiper-container');
-
+  console.log(swiperContainer);
+  
+  
+  
   if (swiperContainer) {
     const swiper = swiperContainer.swiper;
     let lastSeenIndex = 0;
@@ -89,6 +92,7 @@ document.addEventListener("turbo:load", function () {
     
     //listener for the overlay of swiper change
     swiperContainer.addEventListener('swiperslidechange', (event) => {
+      console.log("Swiper slide change detected"); // Debugging statement
       const activeIndex = swiper.activeIndex;
       const previousIndex = swiper.previousIndex;
       const direction = activeIndex > lastSeenIndex ? 'right' : 'left';
@@ -102,8 +106,8 @@ document.addEventListener("turbo:load", function () {
         const dislikeOverlay = activeSlide.querySelector('.feedback-overlay.dislike');
 
         if (direction === 'right') {
-          /*console.log("Swiped right on recipe");
-          const recipeId = activeSlide.getAttribute('data-recipe-id');
+          console.log("Swiped right on recipe");
+          /*const recipeId = activeSlide.getAttribute('data-recipe-id');
 
           fetch(`/recipes/${recipeId}/liked`, {
             method: 'POST',
