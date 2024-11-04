@@ -32183,3 +32183,853 @@ Processing by SwipeController#index as HTML
 Completed 200 OK in 75ms (Views: 67.9ms | ActiveRecord: 2.0ms (2 queries, 0 cached) | GC: 0.4ms)
 
 
+Started GET "/" for 127.0.0.1 at 2024-11-03 17:59:01 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 1.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 3.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 25.1ms | GC: 0.0ms)
+Completed 200 OK in 78ms (Views: 37.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-11-03 17:59:02 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-11-03 17:59:06 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 74.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 81.9ms | GC: 0.0ms)
+Completed 200 OK in 142ms (Views: 90.3ms | ActiveRecord: 4.0ms (0 queries, 0 cached) | GC: 1.6ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-11-03 17:59:08 -0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.1ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 17.7ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 24.4ms | GC: 0.0ms)
+Completed 200 OK in 48ms (Views: 46.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-11-03 17:59:10 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 7.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 3.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 21.0ms | GC: 0.0ms)
+Completed 200 OK in 28ms (Views: 24.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2024-11-03 17:59:17 -0800
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/swipe
+Completed 303 See Other in 431ms (ActiveRecord: 1.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/swipe" for 127.0.0.1 at 2024-11-03 17:59:17 -0800
+Processing by SwipeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 15.4ms | GC: 0.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 4.1ms | GC: 0.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 21.9ms | GC: 1.4ms)
+Completed 200 OK in 248ms (Views: 22.3ms | ActiveRecord: 1.7ms (2 queries, 0 cached) | GC: 20.6ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2024-11-03 17:59:23 -0800
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 4.3ms | GC: 0.0ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 17.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 32.9ms | GC: 0.0ms)
+Completed 200 OK in 38ms (Views: 33.7ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/swipe" for 127.0.0.1 at 2024-11-03 17:59:24 -0800
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 8.0ms | GC: 0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 6.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 22.9ms | GC: 2.3ms)
+Completed 200 OK in 26ms (Views: 23.6ms | ActiveRecord: 0.8ms (2 queries, 0 cached) | GC: 2.3ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-11-03 17:59:24 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/manifest.json" for 127.0.0.1 at 2024-11-03 17:59:30 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/swipe" for 127.0.0.1 at 2024-11-03 18:05:21 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (1.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 20.4ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 21.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 57.2ms | GC: 0.0ms)
+Completed 200 OK in 106ms (Views: 60.2ms | ActiveRecord: 3.9ms (2 queries, 0 cached) | GC: 3.1ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-11-03 18:05:22 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/manifest.json" for 127.0.0.1 at 2024-11-03 18:05:27 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/" for 127.0.0.1 at 2024-11-03 18:07:07 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 4.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | GC: 0.4ms)
+Completed 200 OK in 36ms (Views: 23.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-11-03 18:07:08 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-11-03 18:07:11 -0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 60.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 62.2ms | GC: 0.0ms)
+Completed 200 OK in 112ms (Views: 64.7ms | ActiveRecord: 10.1ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-11-03 18:07:13 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.8ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | GC: 0.7ms)
+Completed 200 OK in 43ms (Views: 25.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.7ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2024-11-03 18:07:24 -0800
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/swipe
+Completed 303 See Other in 310ms (ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 1.4ms)
+
+
+Started GET "/swipe" for 127.0.0.1 at 2024-11-03 18:07:24 -0800
+Processing by SwipeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 15.1ms | GC: 0.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 4.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 22.9ms | GC: 0.6ms)
+Completed 200 OK in 56ms (Views: 22.9ms | ActiveRecord: 1.6ms (2 queries, 0 cached) | GC: 1.6ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-11-03 18:07:31 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mRecipe Delete All (93.0ms)[0m  [1m[31mDELETE FROM "recipes"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (2.9ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Kafteji"], ["ingredients", "5 Large Potatoes, 2 tbs Olive Oil, 1 Green Pepper, 5 Onions, 1 tbs Ras el hanout, 500g Pumpkin, 24 Skinned Eggs, Pinch Salt, Pinch Pepper"], ["instructions", "Peel potatoes and cut into 5cm cubes.\r\nPour 1-2 cm of olive oil into a large pan and heat up very hot. Fry potatoes until golden brown for 20 minutes, turning from time to time. Place on kitchen paper to drain.\r\nCut the peppers in half and remove seeds. Rub a little olive oil on them and place the cut side down on a baking tray. Place them under the grill. Grill until the skin is dark and bubbly. While the peppers are still hot, put them into a plastic sandwich bag and seal it. Take them out after 15 minutes and remove skins.\r\nIn the meantime, heat more olive oil another pan. Peel the onions and cut into thin rings. Fry for 15 minutes until golden brown, turning them often. Add the Ras el hanout at the end.\r\nCut the pumpkin into 5cm cubes and fry in the same pan you used for the potatoes for 10-15 minutes until it is soft and slightly browned. Place on kitchen paper.\r\nPour the remaining olive oil out of the pan and put all the cooked vegetables into the pan and mix. Whisk eggs and pour them over the vegetables. Put the lid on the pan so that the eggs cook. Put the contents of the pan onto a large chopping board, add salt and pepper and chopped and mix everything with a big knife."], ["cooking_time", 78], ["servings", 1], ["difficulty", "Hard"], ["created_at", "2024-11-04 02:08:28.529661"], ["updated_at", "2024-11-04 02:08:28.529661"], ["image_url", "https://www.themealdb.com/images/media/meals/1bsv1q1560459826.jpg"]]
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (4.2ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Chinon Apple Tarts"], ["ingredients", "320g Puff Pastry, 4 tbs Dark Brown Soft Sugar, 3 Braeburn Apples, 4 tbs Red Wine Jelly, 100ml Creme Fraiche, 1 tbs Icing Sugar, 3 Cardamom"], ["instructions", "To make the red wine jelly, put the red wine, jam sugar, star anise, clove, cinnamon stick, allspice, split vanilla pod and seeds in a medium saucepan. Stir together, then heat gently to dissolve the sugar. Turn up the heat and boil for 20 mins until reduced and syrupy. Strain into a small, sterilised jam jar and leave to cool completely. Will keep in the fridge for up to 1 month.\r\n\r\nTake the pastry out of the fridge and leave at room temperature for 10 mins, then unroll. Heat the grill to high and heat the oven to 180C/160C fan/gas 4. Cut out 2 x 13cm circles of pastry, using a plate as a guide, and place on a non-stick baking sheet. Sprinkle each circle with 1 tbsp sugar and grill for 5 mins to caramelise, watching carefully so that the sugar doesn’t burn. Remove from the grill. Can be done a few hours ahead, and left, covered, out of the fridge.\r\n\r\nPeel, quarter and core the apples, cut into 2mm-thin slices and arrange on top of the pastry. Sprinkle over the remaining sugar and pop in the oven for 20-25 mins until the pastry is cooked through and golden, and the apples are softened. Remove and allow to cool slightly. Warm 3 tbsp of the red wine jelly in a small pan over a low heat with 1 tsp water to make it a little more runny, then brush over the top of the tarts.\r\n\r\nTip the crème fraîche into a bowl, sift over the icing sugar and cardamom, and mix together. Carefully lift the warm tarts onto serving plates and serve with the cardamom crème fraîche."], ["cooking_time", 49], ["servings", 4], ["difficulty", "Medium"], ["created_at", "2024-11-04 02:08:28.865519"], ["updated_at", "2024-11-04 02:08:28.865519"], ["image_url", "https://www.themealdb.com/images/media/meals/qtqwwu1511792650.jpg"]]
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (2.4ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Beef Rendang"], ["ingredients", "1lb Beef, 5 tbs Vegetable Oil, 1 Cinnamon Stick, 3 Cloves, 3 Star Anise, 3 Cardamom, 1 cup  Coconut Cream, 1 cup  Water, 2 tbs Tamarind Paste, 6 Lime, 1 tbs Sugar, 5 Challots"], ["instructions", "Chop the spice paste ingredients and then blend it in a food processor until fine.\r\nHeat the oil in a stew pot, add the spice paste, cinnamon, cloves, star anise, and cardamom and stir-fry until aromatic. Add the beef and the pounded lemongrass and stir for 1 minute. Add the coconut milk, tamarind juice, water, and simmer on medium heat, stirring frequently until the meat is almost cooked. Add the kaffir lime leaves, kerisik (toasted coconut), sugar or palm sugar, stirring to blend well with the meat.\r\nLower the heat to low, cover the lid, and simmer for 1 to 1 1/2 hours or until the meat is really tender and the gravy has dried up. Add more salt and sugar to taste. Serve immediately with steamed rice and save some for overnight."], ["cooking_time", 49], ["servings", 5], ["difficulty", "Hard"], ["created_at", "2024-11-04 02:08:29.222602"], ["updated_at", "2024-11-04 02:08:29.222602"], ["image_url", "https://www.themealdb.com/images/media/meals/bc8v651619789840.jpg"]]
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (4.2ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Portuguese fish stew (Caldeirada de peixe)"], ["ingredients", "2 finely chopped Onions, 1 Diced Red Pepper, Small bunch Coriander, 1 small Red Chilli, 3 cloves Garlic, 400ml Dry White Wine, Pinch Saffron, 1 Bay Leaf, 300g Potatoes, 400g Plum Tomatoes, 600g Cod, 300g Squid, 8 Tiger Prawns, 500g Clams, 500g Mussels, 1 sliced Baguette"], ["instructions", "STEP 1\r\n\r\nHeat a drizzle of oil in a large, deep-sided frying pan, and fry the onion and pepper on a medium heat until softened but not browned. Finely chop the coriander stalks (keep the leaves for later), and add to the pan with the chilli and chopped garlic. Fry for another few minutes. Add the wine, saffron and bay leaf and let it simmer until reduced by half.\r\n\r\nSTEP 2\r\n\r\nAdd the potatoes, tomatoes, and 300ml water and bring to a gentle boil. Break up the tomatoes with a spoon on the side of the pan and simmer for 20-25 minutes until the potatoes are just tender, and the tomatoes have broken down.\r\n\r\nSTEP 3\r\n\r\nSeason well, then gently push the fish into the sauce, and arrange the squid, prawns, clams and mussels on the surface. Put the lid on and cook for 6-8 minutes until the mussel and clam shells have opened, the prawns are cooked and the fish is flaky. Toast the bread, rub lightly with the halved garlic clove and drizzle with olive oil. Serve the stew scatted with chopped coriander leaves, and the toasts for dunking."], ["cooking_time", 85], ["servings", 1], ["difficulty", "Medium"], ["created_at", "2024-11-04 02:08:29.553620"], ["updated_at", "2024-11-04 02:08:29.553620"], ["image_url", "https://www.themealdb.com/images/media/meals/do7zps1614349775.jpg"]]
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (2.0ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Peach & Blueberry Grunt"], ["ingredients", "1 tsp  Corn Flour, Juice of 2 Orange, Zest of 1 Orange, 2 tbs Caster Sugar, 6 Peaches, 250g Blueberries, 200g Self-raising Flour, 50g Butter, 100g  Muscovado Sugar, 1 tsp  Cinnamon, 6 tblsp Milk"], ["instructions", "Heat oven to 190C/170C fan/gas 5. Butter a wide shallow ovenproof dish. Blend the cornflour with the orange zest and juice, and put in a large pan with the sugar. Halve, stone and slice the peaches and add to the pan. Bring slowly to the boil, stirring gently until the sauce is shiny and thickened, about 3-4 mins. Remove from the heat, stir in the blueberries and tip into the prepared dish.\r\nTip the flour into a mixing bowl and add the 50g butter. Rub the butter into the flour until it resembles fine breadcrumbs, then stir in half the sugar. Mix the remaining sugar with the cinnamon and set aside.\r\nAdd the milk to the dry ingredients and mix to a soft dough. Turn out onto a lightly floured surface and knead briefly. Roll out to an oblong roughly 16 x 24cm. Brush with melted butter and sprinkle evenly with the spicy sugar. Roll up from one long side and cut into 12 slices. Arrange around the top of the dish, leaving the centre uncovered.\r\nBake for 20-25 mins, until the topping is crisp and golden. Serve warm."], ["cooking_time", 31], ["servings", 4], ["difficulty", "Hard"], ["created_at", "2024-11-04 02:08:29.898836"], ["updated_at", "2024-11-04 02:08:29.898836"], ["image_url", "https://www.themealdb.com/images/media/meals/ssxvup1511387476.jpg"]]
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (4.0ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Chakchouka "], ["ingredients", "4 Tomatoes, 2 tbs Olive Oil, 1 Diced Onion, 1 sliced Red Pepper, 1 sliced Green Pepper, 3 Cloves Crushed Garlic, 1 tsp  Cumin, 1 tsp  Paprika, 3/4 teaspoon Salt, 1/2 teaspoon Chili Powder, 4 Eggs"], ["instructions", "In a large cast iron skillet or sauté pan with a lid, heat oil over medium high heat. Add the onion and sauté for 2-3 minutes, until softened. Add the peppers and garlic, and sauté for an additional 3-5 minutes. Add the tomatoes, cumin, paprika, salt, and chili powder. Mix well and bring the mixture to a simmer. Reduce the heat to medium low and continue to simmer, uncovered, 10-15 minutes until the mixture has thickened to your desired consistency. (Taste the sauce at this point and adjust for salt and spice, as desired.) Using the back of a spoon, make four craters in the mixture, large enough to hold an egg. Crack one egg into each of the craters. Cover the skillet and simmer for 5-7 minutes, until the eggs have set. Serve immediately with crusty bread or pita."], ["cooking_time", 108], ["servings", 2], ["difficulty", "Hard"], ["created_at", "2024-11-04 02:08:30.233100"], ["updated_at", "2024-11-04 02:08:30.233100"], ["image_url", "https://www.themealdb.com/images/media/meals/gpz67p1560458984.jpg"]]
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (4.4ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Salmon Eggs Eggs Benedict"], ["ingredients", "4 Eggs, 2 tbs White Wine Vinegar, 2 English Muffins, To serve Butter, 8 slices Smoked Salmon, 2 tsp Lemon Juice, 2 tsp White Wine Vinegar, 3 Yolkes Egg, 125g Unsalted Butter"], ["instructions", "First make the Hollandaise sauce. Put the lemon juice and vinegar in a small bowl, add the egg yolks and whisk with a balloon whisk until light and frothy. Place the bowl over a pan of simmering water and whisk until mixture thickens. Gradually add the butter, whisking constantly until thick – if it looks like it might be splitting, then whisk off the heat for a few mins. Season and keep warm.\r\n\r\nTo poach the eggs, bring a large pan of water to the boil and add the vinegar. Lower the heat so that the water is simmering gently. Stir the water so you have a slight whirlpool, then slide in the eggs one by one. Cook each for about 4 mins, then remove with a slotted spoon.\r\n\r\nLightly toast and butter the muffins, then put a couple of slices of salmon on each half. Top each with an egg, spoon over some Hollandaise and garnish with chopped chives."], ["cooking_time", 89], ["servings", 1], ["difficulty", "Hard"], ["created_at", "2024-11-04 02:08:30.450259"], ["updated_at", "2024-11-04 02:08:30.450259"], ["image_url", "https://www.themealdb.com/images/media/meals/1550440197.jpg"]]
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (2.0ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Apple Frangipan Tart"], ["ingredients", "175g/6oz digestive biscuits, 75g/3oz butter, 200g/7oz Bramley apples, 75g/3oz butter, softened, 75g/3oz caster sugar, 2 free-range eggs, beaten, 75g/3oz ground almonds, 1 tsp almond extract, 50g/1¾oz flaked almonds"], ["instructions", "Preheat the oven to 200C/180C Fan/Gas 6.\r\nPut the biscuits in a large re-sealable freezer bag and bash with a rolling pin into fine crumbs. Melt the butter in a small pan, then add the biscuit crumbs and stir until coated with butter. Tip into the tart tin and, using the back of a spoon, press over the base and sides of the tin to give an even layer. Chill in the fridge while you make the filling.\r\nCream together the butter and sugar until light and fluffy. You can do this in a food processor if you have one. Process for 2-3 minutes. Mix in the eggs, then add the ground almonds and almond extract and blend until well combined.\r\nPeel the apples, and cut thin slices of apple. Do this at the last minute to prevent the apple going brown. Arrange the slices over the biscuit base. Spread the frangipane filling evenly on top. Level the surface and sprinkle with the flaked almonds.\r\nBake for 20-25 minutes until golden-brown and set.\r\nRemove from the oven and leave to cool for 15 minutes. Remove the sides of the tin. An easy way to do this is to stand the tin on a can of beans and push down gently on the edges of the tin.\r\nTransfer the tart, with the tin base attached, to a serving plate. Serve warm with cream, crème fraiche or ice cream."], ["cooking_time", 22], ["servings", 4], ["difficulty", "Easy"], ["created_at", "2024-11-04 02:08:30.650261"], ["updated_at", "2024-11-04 02:08:30.650261"], ["image_url", "https://www.themealdb.com/images/media/meals/wxywrq1468235067.jpg"]]
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (1.9ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Piri-piri chicken and slaw"], ["ingredients", "1.5kg Chicken, 3 chopped Red Chilli, 2 cloves Garlic, 1 tsp  Ginger, 1 tsp  Dried Oregano, 1 tsp  Coriander, 1 tsp  Paprika, 2 tbs Red Wine Vinegar, 2 tbs Oil, 1 sliced Red Onions, 2 Carrots, 1 Beetroot, 4 leaves Cabbage, 2 tbs Mayonnaise, 2 tbs Greek Yogurt, 2 tbs Red Wine Vinegar, 1 tsp  Cumin Seeds"], ["instructions", "STEP 1\r\n\r\nWhizz together all of the marinade ingredients in a small food processor. Rub the marinade onto the chicken and leave for 1 hour at room temperature.\r\n\r\nSTEP 2\r\n\r\nHeat the oven to 190C/fan 170C/gas 5. Put the chicken in a roasting tray and cook for 1 hour 20 minutes. Rest under loose foil for 20 minutes. While the chicken is resting, mix together the slaw ingredients and season. Serve the chicken with slaw, fries and condiments."], ["cooking_time", 76], ["servings", 5], ["difficulty", "Hard"], ["created_at", "2024-11-04 02:08:30.843190"], ["updated_at", "2024-11-04 02:08:30.843190"], ["image_url", "https://www.themealdb.com/images/media/meals/hglsbl1614346998.jpg"]]
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (3.3ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Boxty Breakfast"], ["ingredients", "4 large Potatoes, 1  bunch Spring Onions, 100g  Plain Flour, 1 Egg White, 150ml Milk, 1 tsp  Bicarbonate Of Soda, 3 tbs Butter, 2 tbs Vegetable Oil, 6 Cherry Tomatoes, 12 Bacon, 6 Egg"], ["instructions", "STEP 1\r\nBefore you start, put your oven on its lowest setting, ready to keep things warm. Peel the potatoes, grate 2 of them, then set aside. Cut the other 2 into large chunks, then boil for 10-15 mins or until tender. Meanwhile, squeeze as much of the liquid from the grated potatoes as you can using a clean tea towel. Mash the boiled potatoes, then mix with the grated potato, spring onions and flour.\r\n\r\nSTEP 2\r\nWhisk the egg white in a large bowl until it holds soft peaks. Fold in the buttermilk, then add the bicarbonate of soda. Fold into the potato mix.\r\n\r\nSTEP 3\r\nHeat a large non-stick frying pan over a medium heat, then add 1 tbsp butter and some of the oil. Drop 3-4 spoonfuls of the potato mixture into the pan, then gently cook for 3-5 mins on each side until golden and crusty. Keep warm on a plate in the oven while you cook the next batch, adding more butter and oil to the pan before you do so. You will get 16 crumpet-size boxty from the mix. Can be made the day ahead, drained on kitchen paper, then reheated in a low oven for 20 mins.\r\n\r\nSTEP 4\r\nHeat the grill to medium and put the tomatoes in a heavy-based pan. Add a good knob of butter and a little oil, then fry for about 5 mins until softened. Grill the bacon, then pile onto a plate and keep warm. Stack up the boxty, bacon and egg, and serve the tomatoes on the side."], ["cooking_time", 49], ["servings", 5], ["difficulty", "Medium"], ["created_at", "2024-11-04 02:08:31.170133"], ["updated_at", "2024-11-04 02:08:31.170133"], ["image_url", "https://www.themealdb.com/images/media/meals/naqyel1608588563.jpg"]]
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+Started GET "/swipe" for 127.0.0.1 at 2024-11-03 18:09:44 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (1.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 19.3ms | GC: 0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 15.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 48.6ms | GC: 0.0ms)
+Completed 200 OK in 97ms (Views: 56.2ms | ActiveRecord: 2.8ms (2 queries, 0 cached) | GC: 2.7ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-11-03 18:09:45 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/swipe" for 127.0.0.1 at 2024-11-03 18:09:49 -0800
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 4.4ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 7.8ms | GC: 1.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | GC: 1.5ms)
+Completed 200 OK in 32ms (Views: 23.1ms | ActiveRecord: 0.7ms (2 queries, 0 cached) | GC: 1.5ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-11-03 18:09:49 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/liked" for 127.0.0.1 at 2024-11-03 18:09:52 -0800
+Processing by LikedController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering liked/liked.html.erb within layouts/application
+  Rendered liked/liked.html.erb within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | GC: 0.0ms)
+Completed 200 OK in 83ms (Views: 8.4ms | ActiveRecord: 2.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/liked.json" for 127.0.0.1 at 2024-11-03 18:09:52 -0800
+Processing by LikedController#index as JSON
+  Parameters: {"liked"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:3:in `index'
+  [1m[36mLikedRecipe Load (3.9ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/liked_controller.rb:7:in `map'
+Completed 200 OK in 29ms (Views: 0.7ms | ActiveRecord: 0.6ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2024-11-03 18:13:19 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 3.1ms | GC: 0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 46.4ms | GC: 3.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 75.8ms | GC: 4.5ms)
+Completed 200 OK in 94ms (Views: 74.3ms | ActiveRecord: 6.6ms (1 query, 0 cached) | GC: 4.9ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-11-03 18:13:21 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/" for 127.0.0.1 at 2024-11-03 18:13:28 -0800
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 7.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-11-03 18:13:28 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-11-03 18:13:30 -0800
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/swipe
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 10ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/swipe" for 127.0.0.1 at 2024-11-03 18:13:30 -0800
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 27.3ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 3.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 35.5ms | GC: 0.0ms)
+Completed 200 OK in 89ms (Views: 35.6ms | ActiveRecord: 1.5ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/swipe" for 127.0.0.1 at 2024-11-03 18:13:32 -0800
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 4.3ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 5.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/swipe" for 127.0.0.1 at 2024-11-03 18:13:59 -0800
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 19.6ms | GC: 0.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 20.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 121.5ms | GC: 65.2ms)
+Completed 200 OK in 129ms (Views: 124.2ms | ActiveRecord: 1.2ms (2 queries, 0 cached) | GC: 65.2ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-11-03 18:14:01 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/recipes/share" for 127.0.0.1 at 2024-11-03 18:14:13 -0800
+Processing by RecipesController#share as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/share.html.erb within layouts/application
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/share.html.erb:3
+  Rendered recipes/share.html.erb within layouts/application (Duration: 6.3ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 6.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 20.7ms | GC: 0.0ms)
+Completed 200 OK in 28ms (Views: 22.4ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/liked" for 127.0.0.1 at 2024-11-03 18:14:14 -0800
+Processing by LikedController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering liked/liked.html.erb within layouts/application
+  Rendered liked/liked.html.erb within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | GC: 0.0ms)
+Completed 200 OK in 43ms (Views: 7.3ms | ActiveRecord: 1.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/liked.json" for 127.0.0.1 at 2024-11-03 18:14:14 -0800
+Processing by LikedController#index as JSON
+  Parameters: {"liked"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:3:in `index'
+  [1m[36mLikedRecipe Load (0.4ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/liked_controller.rb:7:in `map'
+Completed 200 OK in 25ms (Views: 0.4ms | ActiveRecord: 0.7ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/swipe" for 127.0.0.1 at 2024-11-03 18:14:17 -0800
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 4.1ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 4.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2024-11-03 18:14:59 -0800
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 12.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | GC: 0.0ms)
+Completed 200 OK in 21ms (Views: 18.2ms | ActiveRecord: 2.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/swipe" for 127.0.0.1 at 2024-11-03 18:15:00 -0800
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 4.7ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 4.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | GC: 0.0ms)
+Completed 200 OK in 18ms (Views: 16.0ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-11-03 18:15:01 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/liked" for 127.0.0.1 at 2024-11-03 18:15:09 -0800
+Processing by LikedController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering liked/liked.html.erb within layouts/application
+  Rendered liked/liked.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | GC: 0.0ms)
+Completed 200 OK in 30ms (Views: 9.2ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/liked.json" for 127.0.0.1 at 2024-11-03 18:15:11 -0800
+Processing by LikedController#index as JSON
+  Parameters: {"liked"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:3:in `index'
+  [1m[36mLikedRecipe Load (0.1ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/liked_controller.rb:7:in `map'
+Completed 200 OK in 9ms (Views: 0.5ms | ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/swipe" for 127.0.0.1 at 2024-11-03 18:15:13 -0800
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 8.5ms | GC: 0.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 19.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 40.3ms | GC: 0.0ms)
+Completed 200 OK in 45ms (Views: 42.0ms | ActiveRecord: 0.9ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2024-11-03 18:16:17 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 1.5ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 43.5ms | GC: 2.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 66.1ms | GC: 3.1ms)
+Completed 200 OK in 85ms (Views: 70.7ms | ActiveRecord: 4.7ms (1 query, 0 cached) | GC: 3.4ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-11-03 18:16:18 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-11-03 18:16:19 -0800
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/swipe
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 18ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/swipe" for 127.0.0.1 at 2024-11-03 18:16:19 -0800
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 25.0ms | GC: 1.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 2.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 31.0ms | GC: 1.3ms)
+Completed 200 OK in 82ms (Views: 31.7ms | ActiveRecord: 1.1ms (2 queries, 0 cached) | GC: 5.3ms)
+
+
+Started GET "/swipe" for 127.0.0.1 at 2024-11-03 18:16:23 -0800
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 4.2ms | GC: 0.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 4.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | GC: 0.3ms)
+Completed 200 OK in 18ms (Views: 16.4ms | ActiveRecord: 0.5ms (2 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-11-03 18:16:23 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started POST "/recipes/56/liked" for 127.0.0.1 at 2024-11-03 18:16:25 -0800
+  
+ActionController::RoutingError (uninitialized constant LikedsController):
+
+Causes:
+ActionDispatch::MissingController (uninitialized constant LikedsController)
+NameError (uninitialized constant LikedsController)
+  
+Started POST "/recipes/57/liked" for 127.0.0.1 at 2024-11-03 18:16:26 -0800
+  
+ActionController::RoutingError (uninitialized constant LikedsController):
+
+Causes:
+ActionDispatch::MissingController (uninitialized constant LikedsController)
+NameError (uninitialized constant LikedsController)
+  
+Started GET "/" for 127.0.0.1 at 2024-11-03 18:31:39 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 1.5ms | GC: 0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 26.1ms | GC: 2.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 44.0ms | GC: 3.4ms)
+Completed 200 OK in 57ms (Views: 44.9ms | ActiveRecord: 2.9ms (1 query, 0 cached) | GC: 3.7ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-11-03 18:31:39 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/addrecipe" for 127.0.0.1 at 2024-11-03 18:31:41 -0800
+Processing by AddrecipeController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering addrecipe/new.html.erb within layouts/application
+  Rendered addrecipe/new.html.erb within layouts/application (Duration: 15.6ms | GC: 0.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 2.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | GC: 0.2ms)
+Completed 200 OK in 123ms (Views: 21.5ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 9.6ms)
+
+
+Started GET "/recipes/share" for 127.0.0.1 at 2024-11-03 18:31:43 -0800
+Processing by RecipesController#share as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/share.html.erb within layouts/application
+  [1m[36mRecipe Load (0.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/share.html.erb:3
+  Rendered recipes/share.html.erb within layouts/application (Duration: 20.0ms | GC: 0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 8.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 50.3ms | GC: 1.0ms)
+Completed 200 OK in 61ms (Views: 56.8ms | ActiveRecord: 1.0ms (2 queries, 0 cached) | GC: 1.0ms)
+
+
+Started DELETE "/users/sign_out?_method=delete" for 127.0.0.1 at 2024-11-03 18:31:43 -0800
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 21ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2024-11-03 18:31:43 -0800
+Processing by WelcomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 4.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-11-03 18:31:43 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 15.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 21.5ms | GC: 0.6ms)
+Completed 200 OK in 33ms (Views: 27.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-11-03 18:31:44 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | GC: 0.0ms)
+Completed 200 OK in 14ms (Views: 10.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2024-11-03 18:32:35 -0800
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/swipe
+Completed 303 See Other in 365ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/swipe" for 127.0.0.1 at 2024-11-03 18:32:35 -0800
+Processing by SwipeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 4.2ms | GC: 0.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 3.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | GC: 0.4ms)
+Completed 200 OK in 15ms (Views: 13.4ms | ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/liked" for 127.0.0.1 at 2024-11-03 18:32:38 -0800
+Processing by LikedController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering liked/liked.html.erb within layouts/application
+  Rendered liked/liked.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | GC: 0.0ms)
+Completed 200 OK in 37ms (Views: 11.1ms | ActiveRecord: 1.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/swipe" for 127.0.0.1 at 2024-11-03 18:32:41 -0800
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 11.4ms | GC: 0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 6.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 24.3ms | GC: 0.0ms)
+Completed 200 OK in 28ms (Views: 25.2ms | ActiveRecord: 0.6ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-11-03 18:32:41 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started POST "/recipes/56/liked" for 127.0.0.1 at 2024-11-03 18:32:43 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"56", "liked"=>{}}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 56], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (5.8ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/liked_controller.rb:15:in `create'
+  [1m[36mLikedRecipe Create (219.4ms)[0m  [1m[32mINSERT INTO "liked_recipes" ("user_id", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["user_id", 2], ["recipe_id", 56], ["created_at", "2024-11-04 02:32:43.946583"], ["updated_at", "2024-11-04 02:32:43.946583"]]
+  ↳ app/controllers/liked_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (216.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/liked_controller.rb:15:in `create'
+Completed 200 OK in 516ms (Views: 0.4ms | ActiveRecord: 440.0ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/57/liked" for 127.0.0.1 at 2024-11-03 18:32:44 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"57", "liked"=>{}}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 57], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/liked_controller.rb:15:in `create'
+  [1m[36mLikedRecipe Create (19.1ms)[0m  [1m[32mINSERT INTO "liked_recipes" ("user_id", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["user_id", 2], ["recipe_id", 57], ["created_at", "2024-11-04 02:32:44.706523"], ["updated_at", "2024-11-04 02:32:44.706523"]]
+  ↳ app/controllers/liked_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/liked_controller.rb:15:in `create'
+Completed 200 OK in 59ms (Views: 2.9ms | ActiveRecord: 21.1ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/liked" for 127.0.0.1 at 2024-11-03 18:32:45 -0800
+Processing by LikedController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering liked/liked.html.erb within layouts/application
+  Rendered liked/liked.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 3.7ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/liked.json" for 127.0.0.1 at 2024-11-03 18:32:45 -0800
+Processing by LikedController#index as JSON
+  Parameters: {"liked"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:3:in `index'
+  [1m[36mLikedRecipe Load (0.3ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/liked_controller.rb:7:in `map'
+  [1m[36mRecipe Load (9.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" IN (?, ?)[0m  [["id", 56], ["id", 57]]
+  ↳ app/controllers/liked_controller.rb:7:in `map'
+Completed 200 OK in 83ms (Views: 1.4ms | ActiveRecord: 10.1ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/swipe" for 127.0.0.1 at 2024-11-03 18:32:48 -0800
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (1.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 16.5ms | GC: 0.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 50.8ms | GC: 25.8ms)
+  Rendered layout layouts/application.html.erb (Duration: 77.9ms | GC: 25.8ms)
+Completed 200 OK in 82ms (Views: 79.0ms | ActiveRecord: 1.5ms (2 queries, 0 cached) | GC: 25.8ms)
+
+
+Started POST "/recipes/56/liked" for 127.0.0.1 at 2024-11-03 18:32:50 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"56", "liked"=>{}}
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 56], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/liked_controller.rb:15:in `create'
+  [1m[36mLikedRecipe Create (16.1ms)[0m  [1m[32mINSERT INTO "liked_recipes" ("user_id", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["user_id", 2], ["recipe_id", 56], ["created_at", "2024-11-04 02:32:50.252299"], ["updated_at", "2024-11-04 02:32:50.252299"]]
+  ↳ app/controllers/liked_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/liked_controller.rb:15:in `create'
+Completed 200 OK in 118ms (Views: 0.5ms | ActiveRecord: 19.7ms (3 queries, 0 cached) | GC: 2.5ms)
+
+
+Started POST "/recipes/57/liked" for 127.0.0.1 at 2024-11-03 18:32:50 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"57", "liked"=>{}}
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 57], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/liked_controller.rb:15:in `create'
+  [1m[36mLikedRecipe Create (6.5ms)[0m  [1m[32mINSERT INTO "liked_recipes" ("user_id", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["user_id", 2], ["recipe_id", 57], ["created_at", "2024-11-04 02:32:50.767132"], ["updated_at", "2024-11-04 02:32:50.767132"]]
+  ↳ app/controllers/liked_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/liked_controller.rb:15:in `create'
+Completed 200 OK in 84ms (Views: 1.9ms | ActiveRecord: 9.0ms (3 queries, 0 cached) | GC: 7.0ms)
+
+
+Started POST "/recipes/59/liked" for 127.0.0.1 at 2024-11-03 18:32:51 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"59", "liked"=>{}}
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 59], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/liked_controller.rb:15:in `create'
+  [1m[36mLikedRecipe Create (3.2ms)[0m  [1m[32mINSERT INTO "liked_recipes" ("user_id", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["user_id", 2], ["recipe_id", 59], ["created_at", "2024-11-04 02:32:51.404808"], ["updated_at", "2024-11-04 02:32:51.404808"]]
+  ↳ app/controllers/liked_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/liked_controller.rb:15:in `create'
+Completed 200 OK in 40ms (Views: 0.3ms | ActiveRecord: 5.0ms (3 queries, 0 cached) | GC: 1.8ms)
+
+
+Started POST "/recipes/60/liked" for 127.0.0.1 at 2024-11-03 18:32:52 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"60", "liked"=>{}}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 60], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/liked_controller.rb:15:in `create'
+  [1m[36mLikedRecipe Create (3.8ms)[0m  [1m[32mINSERT INTO "liked_recipes" ("user_id", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["user_id", 2], ["recipe_id", 60], ["created_at", "2024-11-04 02:32:52.342801"], ["updated_at", "2024-11-04 02:32:52.342801"]]
+  ↳ app/controllers/liked_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/liked_controller.rb:15:in `create'
+Completed 200 OK in 34ms (Views: 0.4ms | ActiveRecord: 4.9ms (3 queries, 0 cached) | GC: 0.6ms)
+
+

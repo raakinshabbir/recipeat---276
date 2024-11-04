@@ -2,35 +2,15 @@
 import "@hotwired/turbo-rails";
 import "controllers";
 
-// At the top of application.js
-document.addEventListener('turbolinks:load', initializeSwipe);
-document.addEventListener('DOMContentLoaded', initializeSwipe);
-
-function initializeSwipe() {
-  // Move all your swipe-related code here
-  const swiper = new Swiper('.swiper-container', {
-    // your existing swiper config
-  });
-
-  let actionHandled = false;
-  let previousIndex = 0;
-
-  swiper.on('slideChange', function() {
-    // your existing slide change logic
-  });
-
-  // Move your existing touch handling code here
-  document.addEventListener('touchstart', handleTouchStart);
-  document.addEventListener('touchmove', handleTouchMove);
-  document.addEventListener('touchend', handleTouchEnd);
-}
-
 // swiper js
 let blankSlideAdded = false;
 
 document.addEventListener("turbo:load", function () {
   const swiperContainer = document.querySelector('swiper-container');
   // console.log(swiperContainer);
+  
+  
+  
   if (swiperContainer) {
     const swiper = swiperContainer.swiper;
     let lastSeenIndex = 0;

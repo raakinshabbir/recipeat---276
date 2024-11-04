@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :recipes do
-    resource :liked, only: [:create, :destroy]
+    resource :liked, only: [:create, :destroy], controller: 'liked'
   end
 
   get '/addrecipe', to: 'addrecipe#new'
