@@ -7,5 +7,8 @@
   <p><strong>Servings:</strong> <%= recipe.servings %></p>
   <p><strong>Difficulty:</strong> <%= recipe.difficulty %></p>
   <%= link_to 'View Recipe', recipe_path(recipe), class: 'btn btn-primary' %>
-  <%= link_to 'Unlike', recipe_liked_path(recipe), method: :delete, class: 'btn btn-danger' %>
+  <%= link_to 'Unlike', recipe_liked_path(recipe), 
+      method: :delete, 
+      class: 'btn btn-danger unlike-button',
+      data: { recipe_id: recipe.id } %>
 </li>

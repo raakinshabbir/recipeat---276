@@ -89,7 +89,7 @@ document.addEventListener("turbo:load", function () {
     
     //listener for the overlay of swiper change
     swiperContainer.addEventListener('swiperslidechange', (event) => {
-      //console.log("Swiper slide change detected"); // Debugging statement
+      console.log("Swiper slide change detected"); // Debugging statement
       const activeIndex = swiper.activeIndex;
       const previousIndex = swiper.previousIndex;
       const direction = activeIndex > lastSeenIndex ? 'right' : 'left';
@@ -119,7 +119,7 @@ document.addEventListener("turbo:load", function () {
               return { status: 'error', message: e.toString() };
             });
           }).then(data => {
-              if (data.message === 'Recipe liked successfully') {
+              if (data.status === 'success') {
                 console.log("Recipe saved successfully");
               } else {
                 console.error("Failed to save recipe. Server response: ", data);
