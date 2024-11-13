@@ -1,18 +1,10 @@
 <h1>Your Liked Recipes</h1>
 <ul>
-  <% if @likedrecipes.present? %>
+  <% if @liked_recipes.present? %>
     <% @liked_recipes.each do |liked_recipe| %>
-      <% recipe = liked_recipe.recipe %> <!-- Get the associated Recipe -->
-      <li>
-        <h2><%= recipe.title %></h2>
-        <p><strong>Ingredients:</strong> <%= recipe.ingredients %></p>
-        <p><strong>Instructions:</strong> <%= recipe.instructions %></p>
-        <p><strong>Cooking Time:</strong> <%= recipe.cooking_time %> minutes</p>
-        <p><strong>Servings:</strong> <%= recipe.servings %></p>
-        <p><strong>Difficulty:</strong> <%= recipe.difficulty %></p>
-      </li>
+      <%= render partial: 'recipes/recipe', locals: { recipe: liked_recipe.recipe } %>
     <% end %>
   <% else %>
-    <p>No liked recipes found.</p>
+    <p>No liked recipes found. Swipe on some recipes!</p>
   <% end %>
 </ul>

@@ -7,7 +7,7 @@ let blankSlideAdded = false;
 
 document.addEventListener("turbo:load", function () {
   const swiperContainer = document.querySelector('swiper-container');
-  // console.log(swiperContainer);
+
   if (swiperContainer) {
     const swiper = swiperContainer.swiper;
     let lastSeenIndex = 0;
@@ -89,7 +89,6 @@ document.addEventListener("turbo:load", function () {
     
     //listener for the overlay of swiper change
     swiperContainer.addEventListener('swiperslidechange', (event) => {
-      //console.log("Swiper slide change detected"); // Debugging statement
       const activeIndex = swiper.activeIndex;
       const previousIndex = swiper.previousIndex;
       const direction = activeIndex > lastSeenIndex ? 'right' : 'left';
@@ -103,7 +102,7 @@ document.addEventListener("turbo:load", function () {
         const dislikeOverlay = activeSlide.querySelector('.feedback-overlay.dislike');
 
         if (direction === 'right') {
-          console.log("Swiped right on recipe");
+          /*console.log("Swiped right on recipe");
           const recipeId = activeSlide.getAttribute('data-recipe-id');
 
           fetch(`/recipes/${recipeId}/liked`, {
@@ -112,19 +111,14 @@ document.addEventListener("turbo:load", function () {
               'Content-Type': 'application/json',
               'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
             }
-          }).then(response => {
-            console.log("Response status:", response.status); // Debug line
-            return response.json().catch(e => {
-              console.error("JSON parse error:", e);
-              return { status: 'error', message: e.toString() };
-            });
-          }).then(data => {
-              if (data.message === 'Recipe liked successfully') {
+          }).then(response => response.json())
+            .then(data => {
+              if (data.status === 'success') {
                 console.log("Recipe saved successfully");
               } else {
-                console.error("Failed to save recipe. Server response: ", data);
+                console.error("Failed to save recipe");
               }
-            });
+            });*/
           
           // Show like overlay and remove the previous slide
           console.log("Liked recipe");

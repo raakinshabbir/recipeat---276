@@ -4,20 +4,53 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Liked Recipes</title>
+  <style>
+    #liked-recipes-list {
+      max-height: 80vh;
+      overflow-y: auto;
+      padding: 20px;
+      width: 90%;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    #recipes {
+      list-style: none;
+      padding: 0;
+    }
+
+    .recipe-card {
+      margin-bottom: 20px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .btn {
+      padding: 8px 16px;
+      margin: 5px;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary { background-color: #007bff; color: white; }
+    .btn-danger { background-color: #dc3545; color: white; }
+  </style>
 </head>
 <body>
   <center>
     <h1>Liked Recipes</h1>
 
     <div id="liked-recipes-list">
-      <!-- This is where the liked recipes will be rendered -->
       <ul id="recipes">
-        <!-- Each liked recipe will be appended here as an <li> element -->
+        <!-- Each liked recipe will be appended here -->
       </ul>
     </div>
 
     <script>
-      // Fetch liked recipes from the server via AJAX
       fetch('/liked.json', {
         method: 'GET',
         headers: {
@@ -27,29 +60,46 @@
       })
       .then(response => response.json())
       .then(likedRecipes => {
-        // Grab the <ul> element to append the recipes
         const recipesList = document.getElementById('recipes');
 
-        // Check if there are liked recipes
         if (likedRecipes.length === 0) {
-          recipesList.innerHTML = '<li>No liked recipes yet!</li>';
+          recipesList.innerHTML = '<li class="recipe-card">No liked recipes yet!</li>';
         } else {
-          // Dynamically render each liked recipe into the list
           likedRecipes.forEach(recipe => {
-            const listItem = document.createElement('li');
-            listItem.innerHTML = `
-              <h3>${recipe.name}</h3>
-              <p>${recipe.description}</p>
-              <img src="${recipe.photo_url}" alt="${recipe.name}" width="150" height="150">
+            const li = document.createElement('li');
+            li.className = 'recipe-card';
+            li.innerHTML = `
+              <h2>${recipe.title}</h2>
+              <p><strong>Ingredients:</strong> ${recipe.ingredients}</p>
+              <p><strong>Instructions:</strong> ${recipe.instructions}</p>
+              <p><strong>Cooking Time:</strong> ${recipe.cooking_time} minutes</p>
+              <p><strong>Servings:</strong> ${recipe.servings}</p>
+              <p><strong>Difficulty:</strong> ${recipe.difficulty}</p>
+              <div>
+                <a href="/recipes/${recipe.id}" class="btn btn-primary">View Recipe</a>
+                <button onclick="unlikeRecipe(${recipe.id})" class="btn btn-danger">Unlike</button>
+              </div>
             `;
-            recipesList.appendChild(listItem);
+            recipesList.appendChild(li);
           });
         }
-      })
-      .catch(error => {
-        console.error("Error fetching liked recipes:", error);
-        document.getElementById('recipes').innerHTML = '<li>Error loading liked recipes.</li>';
       });
+
+      function unlikeRecipe(recipeId) {
+        fetch(`/recipes/${recipeId}/liked`, {
+          method: 'DELETE',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+          }
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.message === 'Recipe unliked successfully') {
+            location.reload();
+          }
+        });
+      }
     </script>
   </center>
 </body>

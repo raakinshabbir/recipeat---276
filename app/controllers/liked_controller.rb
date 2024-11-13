@@ -1,23 +1,20 @@
 class LikedController < ApplicationController
     def index
-      # Check if this is a JSON request (made by JavaScript)
-      if request.format.json?
-        liked_recipes = [
-          { name: 'Spaghetti Carbonara', description: 'A delicious Italian pasta dish', photo_url: 'example1.jpg' },
-          { name: 'Chicken Tacos', description: 'Tacos with a spicy chicken filling', photo_url: 'example2.jpg' },
-          { name: 'Vegan Buddha Bowl', description: 'A healthy vegan dish with quinoa and veggies', photo_url: 'example3.jpg' }
-        ]
-  
-        # Respond with JSON for the fetch request
-        render json: liked_recipes
-      else
-        # Render the HTML view (index.html.erb)
-        render :index
+      @liked_recipes = current_user.liked_recipes.includes(:recipe)
+
+      respond_to do |format|
+        format.html { render :liked } # renders liked.html.erb
+        format.json { render json: @liked_recipes.map { |lr| lr.recipe } }
       end
     end
   
     def create
       recipe = Recipe.find(params[:recipe_id])
+      if current_user.liked_recipes.find_by(recipe: recipe)
+        render json: { message: 'Recipe already liked', recipe_id: recipe.id }, status: :unprocessable_entity
+        return
+      end
+      
       liked_recipe = current_user.liked_recipes.build(recipe: recipe)
   
       if liked_recipe.save
@@ -26,5 +23,26 @@ class LikedController < ApplicationController
         render json: { error: 'Unable to like recipe' }, status: :unprocessable_entity
       end
     end
-  end
+
+    def destroy
+      begin
+        recipe = Recipe.find(params[:recipe_id])
+
+        result = ActiveRecord::Base.connection.execute(
+          "DELETE FROM liked_recipes 
+          WHERE user_id = #{current_user.id} 
+          AND recipe_id = #{recipe.id}"
+        )
+
+      if result
+        render json: { message: 'Recipe unliked successfully', recipe_id: recipe.id }, status: :ok
+      else
+        render json: { error: 'Unable to unlike recipe' }, status: :unprocessable_entity
+      end
+      rescue => e
+        render json: { error: "Delete failed: #{e.message}" }, status: :unprocessable_entity
+      end
+    
+    end
+end
   
