@@ -3,7 +3,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 254px;
+    font-size: 48px;
     color: white;
     display: none;
     padding: 20px;
@@ -13,14 +13,26 @@
     text-align: center;
   }
   
-  .like {
+  .feedback-overlay.like {
     background-color: transparent;
-    color: green
+    font-size: 36px;
+    color: green;
+    content: "✔️";
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
-  .dislike {
+  .feedback-overlay.dislike {
     background-color: transparent;
+    font-size: 36px;
+    color: red;
+    content: "❌";
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
+  
   
   
   body {

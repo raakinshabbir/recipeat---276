@@ -3,7 +3,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 254px;
+    font-size: 48px;
     color: white;
     display: none;
     padding: 20px;
@@ -14,12 +14,11 @@
   }
   
   .like {
-    background-color: transparent;
-    color: green
+    background-color: orange
   }
   
   .dislike {
-    background-color: transparent;
+    background-color: rgba(255, 0, 0, 0.6);
   }
   
   
