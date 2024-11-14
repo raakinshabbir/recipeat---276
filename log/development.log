@@ -43542,3 +43542,1733 @@ Processing by LikedController#create as */*
 Completed 422 Unprocessable Content in 37ms (Views: 0.5ms | ActiveRecord: 0.7ms (3 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2024-11-13 17:05:01 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 82.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 148.2ms | GC: 0.0ms)
+Completed 200 OK in 1825ms (Views: 172.2ms | ActiveRecord: 9.2ms (1 query, 0 cached) | GC: 991.1ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-11-13 17:05:05 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/recipe_of_the_day" for 127.0.0.1 at 2024-11-13 17:05:06 -0800
+Processing by RecipesController#recipe_of_the_day as HTML
+  [1m[36mRecipe Load (2.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:34:in `block in recipe_of_the_day'
+Started GET "/swipe" for 127.0.0.1 at 2024-11-13 17:05:07 -0800
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/recipe_of_the_day.html.erb within layouts/application
+  Rendered recipes/recipe_of_the_day.html.erb within layouts/application (Duration: 2.3ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 12.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 24.0ms | GC: 0.0ms)
+Completed 200 OK in 433ms (Views: 38.1ms | ActiveRecord: 3.7ms (2 queries, 0 cached) | GC: 0.3ms)
+
+
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 23.7ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 11.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 41.4ms | GC: 0.0ms)
+Completed 200 OK in 68ms (Views: 60.0ms | ActiveRecord: 1.0ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/swipe" for 127.0.0.1 at 2024-11-13 17:05:14 -0800
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (2.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 19.8ms | GC: 0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 12.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 39.9ms | GC: 0.0ms)
+Completed 200 OK in 53ms (Views: 39.1ms | ActiveRecord: 3.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-11-13 17:05:15 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started POST "/recipes/56/liked" for 127.0.0.1 at 2024-11-13 17:05:19 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"56", "liked"=>{}}
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 56], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (1.2ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 56], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 145ms (Views: 0.6ms | ActiveRecord: 3.6ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/59/liked" for 127.0.0.1 at 2024-11-13 17:05:21 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"59", "liked"=>{}}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 59], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.2ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 59], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 54ms (Views: 1.6ms | ActiveRecord: 0.8ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/61/liked" for 127.0.0.1 at 2024-11-13 17:05:22 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"61", "liked"=>{}}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.2ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 42ms (Views: 0.4ms | ActiveRecord: 0.6ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/63/liked" for 127.0.0.1 at 2024-11-13 17:05:23 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"63", "liked"=>{}}
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.3ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 63], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 51ms (Views: 0.4ms | ActiveRecord: 1.0ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/64/liked" for 127.0.0.1 at 2024-11-13 17:05:23 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"64", "liked"=>{}}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.2ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 64], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 56ms (Views: 0.7ms | ActiveRecord: 1.1ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/65/liked" for 127.0.0.1 at 2024-11-13 17:05:24 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"65", "liked"=>{}}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 65], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.2ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 65], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 61ms (Views: 0.3ms | ActiveRecord: 0.8ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/66/liked" for 127.0.0.1 at 2024-11-13 17:05:25 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"66", "liked"=>{}}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.4ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 66], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 44ms (Views: 0.4ms | ActiveRecord: 0.9ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/67/liked" for 127.0.0.1 at 2024-11-13 17:05:25 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"67", "liked"=>{}}
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 67], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.2ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 67], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 40ms (Views: 0.6ms | ActiveRecord: 0.8ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/68/liked" for 127.0.0.1 at 2024-11-13 17:05:26 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"68", "liked"=>{}}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 68], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.3ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 68], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 42ms (Views: 0.7ms | ActiveRecord: 0.7ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/69/liked" for 127.0.0.1 at 2024-11-13 17:05:28 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"69", "liked"=>{}}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.2ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 69ms (Views: 0.9ms | ActiveRecord: 0.8ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/71/liked" for 127.0.0.1 at 2024-11-13 17:05:29 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"71", "liked"=>{}}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.3ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 102ms (Views: 0.3ms | ActiveRecord: 0.9ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/72/liked" for 127.0.0.1 at 2024-11-13 17:05:29 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"72", "liked"=>{}}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.2ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 36ms (Views: 0.4ms | ActiveRecord: 0.7ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/73/liked" for 127.0.0.1 at 2024-11-13 17:05:30 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"73", "liked"=>{}}
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.2ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 36ms (Views: 0.6ms | ActiveRecord: 0.7ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/74/liked" for 127.0.0.1 at 2024-11-13 17:05:31 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"74", "liked"=>{}}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 74], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.4ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 74], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 40ms (Views: 0.4ms | ActiveRecord: 1.0ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/75/liked" for 127.0.0.1 at 2024-11-13 17:05:31 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"75", "liked"=>{}}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 75], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.2ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 75], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 44ms (Views: 0.4ms | ActiveRecord: 1.1ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/76/liked" for 127.0.0.1 at 2024-11-13 17:05:32 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"76", "liked"=>{}}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 76], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.5ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 76], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 39ms (Views: 1.2ms | ActiveRecord: 0.9ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/77/liked" for 127.0.0.1 at 2024-11-13 17:05:33 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"77", "liked"=>{}}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 77], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.4ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 77], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 39ms (Views: 0.6ms | ActiveRecord: 0.8ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/79/liked" for 127.0.0.1 at 2024-11-13 17:05:33 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"79", "liked"=>{}}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 79], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.2ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 79], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 39ms (Views: 0.4ms | ActiveRecord: 0.6ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/80/liked" for 127.0.0.1 at 2024-11-13 17:05:34 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"80", "liked"=>{}}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 80], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.2ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 80], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 45ms (Views: 0.5ms | ActiveRecord: 0.7ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/81/liked" for 127.0.0.1 at 2024-11-13 17:05:35 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"81", "liked"=>{}}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 81], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.4ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 81], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 40ms (Views: 0.6ms | ActiveRecord: 1.1ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/82/liked" for 127.0.0.1 at 2024-11-13 17:05:35 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"82", "liked"=>{}}
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 82], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.2ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 82], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 50ms (Views: 0.4ms | ActiveRecord: 0.8ms (3 queries, 0 cached) | GC: 0.2ms)
+
+
+Started POST "/recipes/83/liked" for 127.0.0.1 at 2024-11-13 17:05:36 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"83", "liked"=>{}}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.3ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 83], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 39ms (Views: 0.8ms | ActiveRecord: 0.9ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/84/liked" for 127.0.0.1 at 2024-11-13 17:05:36 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"84", "liked"=>{}}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 84], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.3ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 84], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 33ms (Views: 0.3ms | ActiveRecord: 0.7ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/85/liked" for 127.0.0.1 at 2024-11-13 17:05:37 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"85", "liked"=>{}}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 85], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.3ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 85], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 40ms (Views: 0.4ms | ActiveRecord: 0.8ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/87/liked" for 127.0.0.1 at 2024-11-13 17:05:38 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"87", "liked"=>{}}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 87], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.2ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 87], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 39ms (Views: 0.5ms | ActiveRecord: 0.7ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/89/liked" for 127.0.0.1 at 2024-11-13 17:05:39 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"89", "liked"=>{}}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 89], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.3ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 89], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 39ms (Views: 0.4ms | ActiveRecord: 0.8ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/91/liked" for 127.0.0.1 at 2024-11-13 17:05:40 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"91", "liked"=>{}}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 91], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.2ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 91], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/liked_controller.rb:20:in `create'
+  [1m[36mLikedRecipe Create (14.9ms)[0m  [1m[32mINSERT INTO "liked_recipes" ("user_id", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["user_id", 3], ["recipe_id", 91], ["created_at", "2024-11-14 01:05:40.783574"], ["updated_at", "2024-11-14 01:05:40.783574"]]
+  ↳ app/controllers/liked_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (15.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/liked_controller.rb:20:in `create'
+Completed 200 OK in 82ms (Views: 0.4ms | ActiveRecord: 31.0ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/92/liked" for 127.0.0.1 at 2024-11-13 17:05:40 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"92", "liked"=>{}}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 92], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.2ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 92], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/liked_controller.rb:20:in `create'
+  [1m[36mLikedRecipe Create (8.5ms)[0m  [1m[32mINSERT INTO "liked_recipes" ("user_id", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["user_id", 3], ["recipe_id", 92], ["created_at", "2024-11-14 01:05:41.417318"], ["updated_at", "2024-11-14 01:05:41.417318"]]
+  ↳ app/controllers/liked_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/liked_controller.rb:20:in `create'
+Completed 200 OK in 66ms (Views: 0.4ms | ActiveRecord: 10.0ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/94/liked" for 127.0.0.1 at 2024-11-13 17:05:42 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"94", "liked"=>{}}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 94], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.2ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 94], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 38ms (Views: 0.4ms | ActiveRecord: 0.6ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/95/liked" for 127.0.0.1 at 2024-11-13 17:05:45 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"95", "liked"=>{}}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 95], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.2ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 95], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 35ms (Views: 0.4ms | ActiveRecord: 0.7ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/97/liked" for 127.0.0.1 at 2024-11-13 17:05:46 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"97", "liked"=>{}}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 97], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.3ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 97], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/liked_controller.rb:20:in `create'
+  [1m[36mLikedRecipe Create (10.9ms)[0m  [1m[32mINSERT INTO "liked_recipes" ("user_id", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["user_id", 3], ["recipe_id", 97], ["created_at", "2024-11-14 01:05:46.954721"], ["updated_at", "2024-11-14 01:05:46.954721"]]
+  ↳ app/controllers/liked_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/liked_controller.rb:20:in `create'
+Completed 200 OK in 67ms (Views: 0.4ms | ActiveRecord: 12.8ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/98/liked" for 127.0.0.1 at 2024-11-13 17:05:47 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"98", "liked"=>{}}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 98], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.2ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 98], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/liked_controller.rb:20:in `create'
+  [1m[36mLikedRecipe Create (7.0ms)[0m  [1m[32mINSERT INTO "liked_recipes" ("user_id", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["user_id", 3], ["recipe_id", 98], ["created_at", "2024-11-14 01:05:47.469292"], ["updated_at", "2024-11-14 01:05:47.469292"]]
+  ↳ app/controllers/liked_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/liked_controller.rb:20:in `create'
+Completed 200 OK in 71ms (Views: 1.0ms | ActiveRecord: 8.0ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/100/liked" for 127.0.0.1 at 2024-11-13 17:05:47 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"100", "liked"=>{}}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.6ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 100], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/liked_controller.rb:20:in `create'
+  [1m[36mLikedRecipe Create (12.3ms)[0m  [1m[32mINSERT INTO "liked_recipes" ("user_id", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["user_id", 3], ["recipe_id", 100], ["created_at", "2024-11-14 01:05:48.322172"], ["updated_at", "2024-11-14 01:05:48.322172"]]
+  ↳ app/controllers/liked_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/liked_controller.rb:20:in `create'
+Completed 200 OK in 76ms (Views: 0.3ms | ActiveRecord: 13.6ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/101/liked" for 127.0.0.1 at 2024-11-13 17:05:53 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"101", "liked"=>{}}
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.2ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 101], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/liked_controller.rb:20:in `create'
+  [1m[36mLikedRecipe Create (11.0ms)[0m  [1m[32mINSERT INTO "liked_recipes" ("user_id", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["user_id", 3], ["recipe_id", 101], ["created_at", "2024-11-14 01:05:53.561862"], ["updated_at", "2024-11-14 01:05:53.561862"]]
+  ↳ app/controllers/liked_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/liked_controller.rb:20:in `create'
+Completed 200 OK in 71ms (Views: 0.4ms | ActiveRecord: 12.2ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/103/liked" for 127.0.0.1 at 2024-11-13 17:05:54 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"103", "liked"=>{}}
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 103], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.2ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 103], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/liked_controller.rb:20:in `create'
+  [1m[36mLikedRecipe Create (7.3ms)[0m  [1m[32mINSERT INTO "liked_recipes" ("user_id", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["user_id", 3], ["recipe_id", 103], ["created_at", "2024-11-14 01:05:54.500150"], ["updated_at", "2024-11-14 01:05:54.500150"]]
+  ↳ app/controllers/liked_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/liked_controller.rb:20:in `create'
+Completed 200 OK in 72ms (Views: 0.7ms | ActiveRecord: 8.7ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/load_more_recipes" for 127.0.0.1 at 2024-11-13 17:05:54 -0800
+Processing by RecipesController#load_more as */*
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (9.1ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Vegetarian Chilli"], ["ingredients", "400g Roasted Vegetables, 1 can  Kidney Beans, 1 can  Chopped Tomatoes, 1 Packet Mixed Grain"], ["instructions", "Heat oven to 200C/180C fan/ gas 6. Cook the vegetables in a casserole dish for 15 mins. Tip in the beans and tomatoes, season, and cook for another 10-15 mins until piping hot. Heat the pouch in the microwave on High for 1 min and serve with the chilli."], ["cooking_time", 90], ["servings", 3], ["difficulty", "Easy"], ["created_at", "2024-11-14 01:05:55.530255"], ["updated_at", "2024-11-14 01:05:55.530255"], ["image_url", "https://www.themealdb.com/images/media/meals/wqurxy1511453156.jpg"]]
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+Started POST "/recipes/104/liked" for 127.0.0.1 at 2024-11-13 17:05:55 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"104", "liked"=>{}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (11.5ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Fennel Dauphinoise"], ["ingredients", "225g Potatoes, 1 small Fennel, 1 clove finely chopped Garlic, 75 ml  Milk, 100ml Double Cream, For Greasing Butter, to serve Parmesan Cheese"], ["instructions", "Heat oven to 180C/160C fan/gas 4. Put potatoes, fennel, and garlic in a medium non-stick pan. Pour in milk and double cream, season well and simmer gently, covered, for 10 mins, stirring halfway through, until potatoes are just tender.\r\nDivide the mixture between 2 small (about 150ml) buttered ramekins and scatter with Parmesan. Bake for 40 mins until the potatoes are golden and tender when pierced with a knife. Snip the reserved fennel fronds over before serving."], ["cooking_time", 47], ["servings", 2], ["difficulty", "Easy"], ["created_at", "2024-11-14 01:05:56.025336"], ["updated_at", "2024-11-14 01:05:56.025336"], ["image_url", "https://www.themealdb.com/images/media/meals/ytttsv1511798734.jpg"]]
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Load (24.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 104], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.4ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 104], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/liked_controller.rb:20:in `create'
+  [1m[36mLikedRecipe Create (7.7ms)[0m  [1m[32mINSERT INTO "liked_recipes" ("user_id", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["user_id", 3], ["recipe_id", 104], ["created_at", "2024-11-14 01:05:56.112035"], ["updated_at", "2024-11-14 01:05:56.112035"]]
+  ↳ app/controllers/liked_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/liked_controller.rb:20:in `create'
+Completed 200 OK in 128ms (Views: 0.3ms | ActiveRecord: 33.7ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/102/liked" for 127.0.0.1 at 2024-11-13 17:05:56 -0800
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (8.1ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Summer Pistou"], ["ingredients", "1 tbs Rapeseed Oil, 2 finely chopped Leek, 1 large Courgettes, 1L Vegetable Stock, 400g Cannellini Beans, 200g Green Beans, 3 chopped Tomatoes, 3 chopped Garlic Clove, Small pack Basil, 40g Parmesan"], ["instructions", "Heat the oil in a large pan and fry the leeks and courgette for 5 mins to soften. Pour in the stock, add three-quarters of the haricot beans with the green beans, half the tomatoes, and simmer for 5-8 mins until the vegetables are tender.\r\nMeanwhile, blitz the remaining beans and tomatoes, the garlic and basil in a food processor (or in a bowl with a stick blender) until smooth, then stir in the Parmesan. Stir the sauce into the soup, cook for 1 min, then ladle half into bowls or pour into a flask for a packed lunch. Chill the remainder. Will keep for a couple of days."], ["cooking_time", 28], ["servings", 2], ["difficulty", "Easy"], ["created_at", "2024-11-14 01:05:56.442055"], ["updated_at", "2024-11-14 01:05:56.442055"], ["image_url", "https://www.themealdb.com/images/media/meals/rqtxvr1511792990.jpg"]]
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (7.8ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Minced Beef Pie"], ["ingredients", "2 tbs Vegetable Oil, 500g Minced Beef, 1 chopped Onion, 1 tbls Tomato Puree, 1 ½ tbsp Plain Flour, 75g Mushrooms, 250ml Beef Stock, Dash Worcestershire Sauce, 400g Shortcrust Pastry, 1 Egg Yolks"], ["instructions", "Preheat the oven to 200C/400F/Gas 6.\r\nHeat the oil in a deep frying pan and fry the beef mince for 4-5 minutes, breaking it up with a wooden spoon as it browns.\r\nAdd the onion and cook for 2-3 minutes, then stir in the tomato purée and cook for 2-3 more minutes. Stir in the flour and cook for a further minute, then add the chopped mushrooms, the stout or beef stock and a couple of dashes of Worcestershire sauce. Bring to the boil, then reduce the heat, cover the pan with a lid and leave to simmer for 20 minutes. Set aside and leave to cool, then turn the meat mixture into a one litre pie dish.\r\nRoll out the pastry on a floured work surface until it is slightly larger than the pie dish. Gently drape the pastry over the dish, pressing firmly onto the edges. Trim, then shape the edges into a fluted shape.\r\nCut some leaf shapes out of the pastry trimmings and decorate the top of the pie, sticking them to the pastry with the beaten egg yolk.\r\nMake three or four slits in the pastry to allow the steam to escape, then brush the pie with the rest of the beaten egg yolk and bake in the oven for 20-25 minutes, or until golden-brown.\r\nTo serve, slice into wedges."], ["cooking_time", 102], ["servings", 2], ["difficulty", "Medium"], ["created_at", "2024-11-14 01:05:56.738649"], ["updated_at", "2024-11-14 01:05:56.738649"], ["image_url", "https://www.themealdb.com/images/media/meals/xwutvy1511555540.jpg"]]
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"102", "liked"=>{}}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.2ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 102], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/liked_controller.rb:20:in `create'
+  [1m[36mLikedRecipe Create (8.3ms)[0m  [1m[32mINSERT INTO "liked_recipes" ("user_id", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["user_id", 3], ["recipe_id", 102], ["created_at", "2024-11-14 01:05:56.848056"], ["updated_at", "2024-11-14 01:05:56.848056"]]
+  ↳ app/controllers/liked_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/liked_controller.rb:20:in `create'
+Completed 200 OK in 77ms (Views: 0.5ms | ActiveRecord: 9.3ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (12.4ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Jam Roly-Poly"], ["ingredients", "50g Butter, 250g Self-raising Flour, 1 small Vanilla, 50g Suet, 150ml Milk, 100g  Raspberry Jam, to serve Custard"], ["instructions", "Put a deep roasting tin onto the bottom shelf of the oven, and make sure that there’s another shelf directly above it. Pull the roasting tin out on its shelf, fill two-thirds with boiling water from the kettle, then carefully slide it back in. Heat oven to 180C/160C fan/gas 4. Tear off a large sheet of foil and greaseproof paper (about 30 x 40cm). Sit the greaseproof on top of the foil and butter it.\r\nTip butter, flour and vanilla seeds into a food processor; pulse until the butter has disappeared. Tip into a mixing bowl. Stir through the suet, pour in the milk and work together with a cutlery knife until you get a sticky dough. You may need a drop more milk, depending on your flour.\r\nTip the dough out onto a floured surface, quickly pat together to smooth, then roll out to a square roughly 25 x 25cm. Spread the jam all over, leaving a gap along one edge, then roll up from the opposite edge. Pinch the jam-free edge into the dough where it meets, and pinch the ends roughly, too. Carefully lift onto the greased paper, join-side down (you might find a flat baking sheet helpful for this), loosely bring up the paper and foil around it, then scrunch together along the edges and ends to seal. The roly-poly will puff quite a bit during cooking so don’t wrap it tightly. Lift the parcel directly onto the rack above the tin and cook for 1 hr.\r\nLet the pudding sit for 5 mins before unwrapping, then carefully open the foil and paper, and thickly slice to serve."], ["cooking_time", 108], ["servings", 2], ["difficulty", "Medium"], ["created_at", "2024-11-14 01:05:57.248573"], ["updated_at", "2024-11-14 01:05:57.248573"], ["image_url", "https://www.themealdb.com/images/media/meals/ysqupp1511640538.jpg"]]
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (13.8ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Callaloo Jamaican Style"], ["ingredients", "1  bunch Kale, 2 strips Bacon, 3 cloves Chopped Garlic, 1 medium Onion, 1/2 tsp Paprika, 1 Sprig Thyme, 1 Tomato, 1 Red Pepper, 4 Banana, Splash Vegetable Oil"], ["instructions", "Cut leaves and soft stems from the kale branches, them soak in a bowl of cold water for about 5-10 minutes or until finish with prep.\r\nProceed to slicing the onions, mincing the garlic and dicing the tomatoes. Set aside\r\nRemove kale from water cut in chunks.\r\nPlace bacon on saucepan and cook until crispy. Then add onions, garlic, thyme, stir for about a minute or more\r\nAdd tomatoes; scotch bonnet pepper, smoked paprika. Sauté for about 2-3 more minutes.\r\nFinally add vegetable, salt, mix well, and steamed for about 6-8 minutes or until leaves are tender. Add a tiny bit of water as needed. Adjust seasonings and turn off the heat.\r\nUsing a sharp knife cut both ends off the plantain. This will make it easy to grab the skin of the plantains. Slit a shallow line down the long seam of the plantain; peel only as deep as the peel. Remove plantain peel by pulling it back.\r\nSlice the plantain into medium size lengthwise slices and set aside.\r\nCoat a large frying pan with cooking oil spray. Spray the tops of the plantains with a generous layer of oil spray and sprinkle with salt, freshly ground pepper.\r\nLet the plantains \"fry\" on medium heat, shaking the frying pan to redistribute them every few minutes.\r\nAs the plantains brown, continue to add more cooking oil spray, salt and pepper (if needed) until they have reached the desired color and texture.\r\nRemove and serve with kale"], ["cooking_time", 47], ["servings", 4], ["difficulty", "Medium"], ["created_at", "2024-11-14 01:05:57.763911"], ["updated_at", "2024-11-14 01:05:57.763911"], ["image_url", "https://www.themealdb.com/images/media/meals/ussyxw1515364536.jpg"]]
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+Started GET "/swipe" for 127.0.0.1 at 2024-11-13 17:05:57 -0800
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (12.7ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Koshari"], ["ingredients", "1 1/2 cups  Brown Lentils, 1 1/2 cups  Rice, 1/2 tsp Coriander, 2 cups  Macaroni, Can Chickpeas, 1 large Onion, Sprinking Salt, 1/2 cup  Vegetable Oil"], ["instructions", "Cook the lentils. Bring lentils and 4 cups of water to a boil in a medium pot or saucepan over high heat. Reduce the heat to low and cook until lentils are just tender (15-17 minutes). Drain from water and season with a little salt. (Note: when the lentils are ready, they should not be fully cooked. They should be only par-cooked and still have a bite to them as they need to finish cooking with the rice).\r\nNow, for the rice. Drain the rice from its soaking water. Combine the par-cooked lentils and the rice in the saucepan over medium-high heat with 1 tbsp cooking oil, salt, pepper, and coriander. Cook for 3 minutes, stirring regularly. Add warm water to cover the rice and lentil mixture by about 1 1/2 inches (you’ll probably use about 3 cups of water here). Bring to a boil; the water should reduce a bit. Now cover and cook until all the liquid has been absorbed and both the rice and lentils are well cooked through (about 20 minutes).  Keep covered and undisturbed for 5 minutes or so.\r\nNow make the pasta. While the rice and lentils are cooking, make the pasta according to package instructions by adding the elbow pasta to boiling water with a dash of salt and a little oil. Cook until the pasta is al dente. Drain.\r\nCover the chickpeas and warm in the microwave briefly before serving.\r\n\r\nMake the crispy onion topping. \r\n\r\nSprinkle the onion rings with salt, then toss them in the flour to coat. Shake off excess flour.\r\nIn a large skillet, heat the cooking oil over medium-high heat, cook the onion rings, stirring often, until they turn a nice caramelized brown. Onions must be crispy, but not burned (15-20 minutes)."], ["cooking_time", 69], ["servings", 4], ["difficulty", "Medium"], ["created_at", "2024-11-14 01:05:58.165681"], ["updated_at", "2024-11-14 01:05:58.165681"], ["image_url", "https://www.themealdb.com/images/media/meals/4er7mj1598733193.jpg"]]
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 19.3ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 12.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 38.7ms | GC: 0.0ms)
+Completed 200 OK in 51ms (Views: 39.4ms | ActiveRecord: 1.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (6.3ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Choc Chip Pecan Pie"], ["ingredients", "300g Plain Flour, 75g Butter, 100g  Cream Cheese, 1 tbls Icing Sugar, 150g Butter, 200ml Maple Syrup, 250g Light Brown Soft Sugar, 100g  Dark Brown Soft Sugar, 4 Eggs, 1 tsp  Vanilla Extract, 400g Pecan Nuts, 200g Dark Chocolate Chips"], ["instructions", "First, make the pastry. Tip the ingredients into a food processor with 1 /4 tsp salt. Blend until the mixture resembles breadcrumbs. Drizzle 2-3 tsp cold water into the funnel while the blade is running – the mixture should start to clump together. Tip onto a work surface and bring together, kneading briefly into a ball. Pat into a disc, wrap in cling film, and chill for at least 20 mins. Heat oven to 200C/180C fan/gas 6.\r\n\r\nRemove the pastry from the fridge and leave at room temperature for 5 mins to soften. Flour the work surface, then unwrap the pastry and roll to a circle the thickness of a £1 coin. Use the pastry to line a deep, 23cm round fluted tin – mine was about 3cm deep. Press the pastry into the corners and up the sides, making sure there are no gaps. Leave 1cm pastry overhanging (save some of the pastry scraps for later). Line with baking parchment (scrunch it up first to make it more pliable) and fill with baking beans. Blind-bake for 15-20 mins until the sides are set, then remove the parchment and beans and return to the oven for 5 mins until golden brown. Trim the pastry so it’s flush with the top of the tin – a small serrated knife is best for this. If there are any cracks, patch them up with the pastry scraps.\r\n\r\nMeanwhile, weigh the butter, syrup and sugars into a pan, and add 1 /4 tsp salt. Heat until the butter has melted and the sugar dissolved, stirring until smooth. Remove from the heat and cool for 10 mins. Reduce oven to 160C/140C fan/gas 3.\r\n\r\nBeat the eggs in a bowl. Add the syrup mixture, vanilla and pecans, and mix until well combined. Pour half the mixture into the tart case, scatter over half the chocolate chips, then cover with the remaining filling and chocolate chips. Bake on the middle shelf for 50-55 mins until set. Remove from the oven and leave to cool, then chill for at least 2 hrs before serving."], ["cooking_time", 30], ["servings", 1], ["difficulty", "Easy"], ["created_at", "2024-11-14 01:05:58.600381"], ["updated_at", "2024-11-14 01:05:58.600381"], ["image_url", "https://www.themealdb.com/images/media/meals/rqvwxt1511384809.jpg"]]
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (8.9ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Poutine"], ["ingredients", "Dash Vegetable Oil, 1 Can Beef Gravy, 5 thin cut Potatoes, 2 cups Cheese Curds"], ["instructions", "Heat oil in a deep fryer or deep heavy skillet to 365°F (185°C).\r\nWarm gravy in saucepan or microwave.\r\nPlace the fries into the hot oil, and cook until light brown, about 5 minutes.\r\nRemove to a paper towel lined plate to drain.\r\nPlace the fries on a serving platter, and sprinkle the cheese over them.\r\nLadle gravy over the fries and cheese, and serve immediately."], ["cooking_time", 27], ["servings", 5], ["difficulty", "Hard"], ["created_at", "2024-11-14 01:05:58.833064"], ["updated_at", "2024-11-14 01:05:58.833064"], ["image_url", "https://www.themealdb.com/images/media/meals/uuyrrx1487327597.jpg"]]
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mRecipe Create (7.4ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "ingredients", "instructions", "cooking_time", "servings", "difficulty", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Chickpea Fajitas"], ["ingredients", "400g Chickpeas, 1 tblsp  Olive Oil, pinch Paprika, 2 small cut chunks Tomatoes, 1 finely sliced Red Onions, 2 tsp Red Wine Vinegar, 1 Avocado, Juice of 1 Lime, Chopped Lime, 100g  Sour Cream, 2 tsp Harissa Spice, 4 Corn Tortillas, to serve Coriander"], ["instructions", "Heat oven to 200C/180C fan/gas 6 and line a baking tray with foil. Drain the chickpeas, pat dry and tip onto the prepared baking tray. Add the oil and paprika, toss to coat, then roast for 20-25 mins until browned and crisp, shaking halfway through cooking.\r\n\r\nMeanwhile, put the tomatoes and onion in a small bowl with the vinegar and set aside to pickle. Put the avocado in another bowl and mash with a fork, leaving some larger chunks. Stir in the lime juice and season well. Mix the soured cream with the harissa and set aside until ready to serve.\r\n\r\nHeat a griddle pan until nearly smoking. Add the tortillas , one at a time, charring each side until hot with griddle lines. \r\n\r\nPut everything on the table and build the fajitas : spread a little of the harissa cream over the tortilla, top with roasted chickpeas, guacamole, pickled salsa and coriander, if you like. Serve with the lime wedges for squeezing over."], ["cooking_time", 109], ["servings", 5], ["difficulty", "Hard"], ["created_at", "2024-11-14 01:05:59.097095"], ["updated_at", "2024-11-14 01:05:59.097095"], ["image_url", "https://www.themealdb.com/images/media/meals/tvtxpq1511464705.jpg"]]
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/recipe.rb:30:in `block in fetch_new_recipes_from_api'
+Completed 200 OK in 4164ms (Views: 1.1ms | ActiveRecord: 104.5ms (10 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-11-13 17:05:59 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started POST "/recipes/58/liked" for 127.0.0.1 at 2024-11-13 17:06:11 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"58", "liked"=>{}}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.2ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 58], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 60ms (Views: 0.5ms | ActiveRecord: 0.8ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/59/liked" for 127.0.0.1 at 2024-11-13 17:06:12 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"59", "liked"=>{}}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 59], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.2ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 59], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 52ms (Views: 0.7ms | ActiveRecord: 0.8ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/61/liked" for 127.0.0.1 at 2024-11-13 17:06:13 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"61", "liked"=>{}}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.3ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 41ms (Views: 0.6ms | ActiveRecord: 0.8ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2024-11-13 17:10:11 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 2.1ms | GC: 0.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 56.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 101.5ms | GC: 0.0ms)
+Completed 200 OK in 1196ms (Views: 121.5ms | ActiveRecord: 4.6ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-11-13 17:10:13 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/recipe_of_the_day" for 127.0.0.1 at 2024-11-13 17:10:15 -0800
+Processing by RecipesController#recipe_of_the_day as HTML
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:34:in `block in recipe_of_the_day'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/recipe_of_the_day.html.erb within layouts/application
+  Rendered recipes/recipe_of_the_day.html.erb within layouts/application (Duration: 1.5ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 5.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | GC: 0.0ms)
+Completed 200 OK in 289ms (Views: 20.7ms | ActiveRecord: 0.9ms (2 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/swipe" for 127.0.0.1 at 2024-11-13 17:10:15 -0800
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 20.4ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 3.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 30.5ms | GC: 0.0ms)
+Completed 200 OK in 49ms (Views: 39.0ms | ActiveRecord: 0.5ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/swipe" for 127.0.0.1 at 2024-11-13 17:11:45 -0800
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (3.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 24.8ms | GC: 0.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 11.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 44.4ms | GC: 0.0ms)
+Completed 200 OK in 58ms (Views: 42.5ms | ActiveRecord: 4.0ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-11-13 17:11:47 -0800
+Started POST "/recipes/56/liked" for 127.0.0.1 at 2024-11-13 17:11:47 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started POST "/recipes/57/liked" for 127.0.0.1 at 2024-11-13 17:11:48 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"56", "liked"=>{}}
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"57", "liked"=>{}}
+  [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 56], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 57], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (10.3ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 56], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (6.0ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 57], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 298ms (Views: 0.7ms | ActiveRecord: 13.8ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Completed 422 Unprocessable Content in 289ms (Views: 0.3ms | ActiveRecord: 6.4ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/58/liked" for 127.0.0.1 at 2024-11-13 17:11:50 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"58", "liked"=>{}}
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.2ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 58], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 38ms (Views: 1.9ms | ActiveRecord: 2.9ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/60/liked" for 127.0.0.1 at 2024-11-13 17:11:52 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"60", "liked"=>{}}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 60], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.3ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 60], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 40ms (Views: 0.4ms | ActiveRecord: 0.8ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/61/liked" for 127.0.0.1 at 2024-11-13 17:11:52 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"61", "liked"=>{}}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.2ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 35ms (Views: 0.4ms | ActiveRecord: 0.7ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/62/liked" for 127.0.0.1 at 2024-11-13 17:11:53 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"62", "liked"=>{}}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 62], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.3ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 62], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 39ms (Views: 0.4ms | ActiveRecord: 0.7ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/63/liked" for 127.0.0.1 at 2024-11-13 17:11:53 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"63", "liked"=>{}}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.3ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 63], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 34ms (Views: 0.3ms | ActiveRecord: 1.0ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/64/liked" for 127.0.0.1 at 2024-11-13 17:11:54 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"64", "liked"=>{}}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.4ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 64], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 36ms (Views: 0.4ms | ActiveRecord: 0.9ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/65/liked" for 127.0.0.1 at 2024-11-13 17:11:55 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"65", "liked"=>{}}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 65], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.3ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 65], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 43ms (Views: 0.5ms | ActiveRecord: 1.0ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/66/liked" for 127.0.0.1 at 2024-11-13 17:11:56 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"66", "liked"=>{}}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.2ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 66], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 39ms (Views: 0.5ms | ActiveRecord: 0.6ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/67/liked" for 127.0.0.1 at 2024-11-13 17:11:56 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"67", "liked"=>{}}
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 67], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.2ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 67], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 40ms (Views: 0.3ms | ActiveRecord: 0.9ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/69/liked" for 127.0.0.1 at 2024-11-13 17:11:59 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"69", "liked"=>{}}
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.2ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 30ms (Views: 0.3ms | ActiveRecord: 0.8ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/70/liked" for 127.0.0.1 at 2024-11-13 17:12:01 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"70", "liked"=>{}}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.2ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 31ms (Views: 0.3ms | ActiveRecord: 0.6ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/71/liked" for 127.0.0.1 at 2024-11-13 17:12:01 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"71", "liked"=>{}}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.2ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 31ms (Views: 0.3ms | ActiveRecord: 0.6ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/72/liked" for 127.0.0.1 at 2024-11-13 17:12:02 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"72", "liked"=>{}}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.2ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 30ms (Views: 0.3ms | ActiveRecord: 0.6ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/74/liked" for 127.0.0.1 at 2024-11-13 17:12:05 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"74", "liked"=>{}}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 74], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.2ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 74], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 40ms (Views: 0.3ms | ActiveRecord: 0.7ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/75/liked" for 127.0.0.1 at 2024-11-13 17:12:06 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"75", "liked"=>{}}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 75], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.3ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 75], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 32ms (Views: 0.3ms | ActiveRecord: 0.6ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/76/liked" for 127.0.0.1 at 2024-11-13 17:12:23 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"76", "liked"=>{}}
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 76], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.3ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 76], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 34ms (Views: 0.6ms | ActiveRecord: 0.9ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/77/liked" for 127.0.0.1 at 2024-11-13 17:12:34 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"77", "liked"=>{}}
+  [1m[36mRecipe Load (0.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 77], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.2ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 77], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 35ms (Views: 0.5ms | ActiveRecord: 1.1ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/78/liked" for 127.0.0.1 at 2024-11-13 17:12:43 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"78", "liked"=>{}}
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 78], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.3ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 78], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 34ms (Views: 0.4ms | ActiveRecord: 0.8ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/79/liked" for 127.0.0.1 at 2024-11-13 17:12:46 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"79", "liked"=>{}}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 79], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.2ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 79], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 37ms (Views: 0.2ms | ActiveRecord: 0.6ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/recipes/80/liked" for 127.0.0.1 at 2024-11-13 17:12:49 -0800
+Processing by LikedController#create as */*
+  Parameters: {"recipe_id"=>"80", "liked"=>{}}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 80], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:12:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+  [1m[36mLikedRecipe Load (0.2ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ? AND "liked_recipes"."recipe_id" = ? LIMIT ?[0m  [["user_id", 3], ["recipe_id", 80], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:13:in `create'
+Completed 422 Unprocessable Content in 33ms (Views: 0.4ms | ActiveRecord: 0.6ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/addrecipe" for 127.0.0.1 at 2024-11-13 17:13:09 -0800
+Processing by AddrecipeController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering addrecipe/new.html.erb within layouts/application
+  Rendered addrecipe/new.html.erb within layouts/application (Duration: 56.6ms | GC: 0.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 11.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 73.3ms | GC: 0.0ms)
+Completed 200 OK in 106ms (Views: 89.1ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/liked" for 127.0.0.1 at 2024-11-13 17:13:12 -0800
+Processing by LikedController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering liked/liked.html.erb within layouts/application
+  Rendered liked/liked.html.erb within layouts/application (Duration: 3.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | GC: 0.0ms)
+Completed 200 OK in 51ms (Views: 32.4ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/liked.json" for 127.0.0.1 at 2024-11-13 17:13:12 -0800
+Processing by LikedController#index as JSON
+  Parameters: {"liked"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:3:in `index'
+  [1m[36mLikedRecipe Load (1.2ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/liked_controller.rb:7:in `map'
+  [1m[36mRecipe Load (1.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 56], ["id", 57], ["id", 59], ["id", 61], ["id", 63], ["id", 65], ["id", 66], ["id", 64], ["id", 62], ["id", 58], ["id", 60], ["id", 67], ["id", 68], ["id", 70], ["id", 71], ["id", 72], ["id", 73], ["id", 69], ["id", 74], ["id", 75], ["id", 76], ["id", 77], ["id", 78], ["id", 79], ["id", 80], ["id", 81], ["id", 83], ["id", 82], ["id", 84], ["id", 86], ["id", 87], ["id", 89], ["id", 85], ["id", 95], ["id", 94], ["id", 91], ["id", 92], ["id", 97], ["id", 98], ["id", 100], ["id", 101], ["id", 103], ["id", 104], ["id", 102]]
+  ↳ app/controllers/liked_controller.rb:7:in `map'
+Completed 200 OK in 231ms (Views: 38.8ms | ActiveRecord: 3.5ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/filter_recipes" for 127.0.0.1 at 2024-11-13 17:13:13 -0800
+Processing by FilterRecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering filter_recipes/index.html.erb within layouts/application
+  Rendered filter_recipes/index.html.erb within layouts/application (Duration: 2.5ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 9.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.8ms | GC: 0.0ms)
+Completed 200 OK in 43ms (Views: 29.5ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/recipes/share" for 127.0.0.1 at 2024-11-13 17:13:21 -0800
+Processing by RecipesController#share as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/share.html.erb within layouts/application
+  [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/share.html.erb:3
+  Rendered recipes/share.html.erb within layouts/application (Duration: 13.2ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 8.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 29.1ms | GC: 0.0ms)
+Completed 200 OK in 42ms (Views: 30.8ms | ActiveRecord: 1.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/recipe_of_the_day" for 127.0.0.1 at 2024-11-13 17:13:26 -0800
+Processing by RecipesController#recipe_of_the_day as HTML
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:34:in `block in recipe_of_the_day'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/recipe_of_the_day.html.erb within layouts/application
+  Rendered recipes/recipe_of_the_day.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 9.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.4ms | GC: 0.0ms)
+Completed 200 OK in 39ms (Views: 18.0ms | ActiveRecord: 0.8ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/swipe" for 127.0.0.1 at 2024-11-13 17:13:27 -0800
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 15.1ms | GC: 0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 11.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 32.4ms | GC: 0.0ms)
+Completed 200 OK in 41ms (Views: 32.8ms | ActiveRecord: 1.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/addrecipe" for 127.0.0.1 at 2024-11-13 17:13:35 -0800
+Processing by AddrecipeController#new as HTML
+Started GET "/recipes/share" for 127.0.0.1 at 2024-11-13 17:13:36 -0800
+  Rendering layout layouts/application.html.erb
+  Rendering addrecipe/new.html.erb within layouts/application
+  Rendered addrecipe/new.html.erb within layouts/application (Duration: 4.3ms | GC: 0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 9.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | GC: 0.0ms)
+Completed 200 OK in 33ms (Views: 20.5ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Processing by RecipesController#share as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/share.html.erb within layouts/application
+  [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/share.html.erb:3
+  Rendered recipes/share.html.erb within layouts/application (Duration: 12.5ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 8.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 28.4ms | GC: 0.0ms)
+Completed 200 OK in 51ms (Views: 29.1ms | ActiveRecord: 1.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/recipe_of_the_day" for 127.0.0.1 at 2024-11-13 17:13:38 -0800
+Processing by RecipesController#recipe_of_the_day as HTML
+  [1m[36mRecipe Load (0.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:34:in `block in recipe_of_the_day'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/recipe_of_the_day.html.erb within layouts/application
+  Rendered recipes/recipe_of_the_day.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 8.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | GC: 0.0ms)
+Completed 200 OK in 34ms (Views: 15.8ms | ActiveRecord: 0.9ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/swipe" for 127.0.0.1 at 2024-11-13 17:13:39 -0800
+Started GET "/liked" for 127.0.0.1 at 2024-11-13 17:13:39 -0800
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (1.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 15.7ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 10.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 32.4ms | GC: 0.0ms)
+Completed 200 OK in 45ms (Views: 31.7ms | ActiveRecord: 2.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Processing by LikedController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering liked/liked.html.erb within layouts/application
+  Rendered liked/liked.html.erb within layouts/application (Duration: 2.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | GC: 0.0ms)
+Completed 200 OK in 40ms (Views: 13.3ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/recipe_of_the_day" for 127.0.0.1 at 2024-11-13 17:13:44 -0800
+Started GET "/swipe" for 127.0.0.1 at 2024-11-13 17:13:44 -0800
+Processing by RecipesController#recipe_of_the_day as HTML
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:34:in `block in recipe_of_the_day'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/recipe_of_the_day.html.erb within layouts/application
+  Rendered recipes/recipe_of_the_day.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 9.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.9ms | GC: 0.0ms)
+Completed 200 OK in 40ms (Views: 20.0ms | ActiveRecord: 0.7ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 10.2ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 9.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 24.7ms | GC: 0.0ms)
+Completed 200 OK in 32ms (Views: 25.5ms | ActiveRecord: 0.7ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/swipe" for 127.0.0.1 at 2024-11-13 17:13:44 -0800
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 19.2ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 7.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 31.0ms | GC: 0.0ms)
+Completed 200 OK in 41ms (Views: 32.0ms | ActiveRecord: 0.6ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/swipe" for 127.0.0.1 at 2024-11-13 17:14:15 -0800
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (1.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 160.8ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 10.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 210.1ms | GC: 0.0ms)
+Completed 200 OK in 231ms (Views: 212.1ms | ActiveRecord: 1.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/addrecipe" for 127.0.0.1 at 2024-11-13 17:14:17 -0800
+Processing by AddrecipeController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering addrecipe/new.html.erb within layouts/application
+  Rendered addrecipe/new.html.erb within layouts/application (Duration: 5.4ms | GC: 0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 7.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | GC: 0.0ms)
+Completed 200 OK in 28ms (Views: 20.8ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/liked" for 127.0.0.1 at 2024-11-13 17:14:22 -0800
+Started GET "/liked.json" for 127.0.0.1 at 2024-11-13 17:14:23 -0800
+Processing by LikedController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering liked/liked.html.erb within layouts/application
+  Rendered liked/liked.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | GC: 0.0ms)
+Completed 200 OK in 29ms (Views: 9.0ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Processing by LikedController#index as JSON
+  Parameters: {"liked"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:3:in `index'
+  [1m[36mLikedRecipe Load (1.2ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/liked_controller.rb:7:in `map'
+  [1m[36mRecipe Load (2.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 56], ["id", 57], ["id", 59], ["id", 61], ["id", 63], ["id", 65], ["id", 66], ["id", 64], ["id", 62], ["id", 58], ["id", 60], ["id", 67], ["id", 68], ["id", 70], ["id", 71], ["id", 72], ["id", 73], ["id", 69], ["id", 74], ["id", 75], ["id", 76], ["id", 77], ["id", 78], ["id", 79], ["id", 80], ["id", 81], ["id", 83], ["id", 82], ["id", 84], ["id", 86], ["id", 87], ["id", 89], ["id", 85], ["id", 95], ["id", 94], ["id", 91], ["id", 92], ["id", 97], ["id", 98], ["id", 100], ["id", 101], ["id", 103], ["id", 104], ["id", 102]]
+  ↳ app/controllers/liked_controller.rb:7:in `map'
+Completed 200 OK in 82ms (Views: 29.5ms | ActiveRecord: 4.3ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/liked.json" for 127.0.0.1 at 2024-11-13 17:14:23 -0800
+Processing by LikedController#index as JSON
+  Parameters: {"liked"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:3:in `index'
+  [1m[36mLikedRecipe Load (0.4ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/liked_controller.rb:7:in `map'
+  [1m[36mRecipe Load (1.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 56], ["id", 57], ["id", 59], ["id", 61], ["id", 63], ["id", 65], ["id", 66], ["id", 64], ["id", 62], ["id", 58], ["id", 60], ["id", 67], ["id", 68], ["id", 70], ["id", 71], ["id", 72], ["id", 73], ["id", 69], ["id", 74], ["id", 75], ["id", 76], ["id", 77], ["id", 78], ["id", 79], ["id", 80], ["id", 81], ["id", 83], ["id", 82], ["id", 84], ["id", 86], ["id", 87], ["id", 89], ["id", 85], ["id", 95], ["id", 94], ["id", 91], ["id", 92], ["id", 97], ["id", 98], ["id", 100], ["id", 101], ["id", 103], ["id", 104], ["id", 102]]
+  ↳ app/controllers/liked_controller.rb:7:in `map'
+Completed 200 OK in 87ms (Views: 46.6ms | ActiveRecord: 1.7ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/liked" for 127.0.0.1 at 2024-11-13 17:31:51 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LikedController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering liked/liked.html.erb within layouts/application
+  Rendered liked/liked.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 2.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 33.7ms | GC: 0.0ms)
+Completed 200 OK in 2228ms (Views: 2001.2ms | ActiveRecord: 10.2ms (1 query, 0 cached) | GC: 1.3ms)
+
+
+Started GET "/liked.json" for 127.0.0.1 at 2024-11-13 17:31:55 -0800
+Started GET "/manifest.json" for 127.0.0.1 at 2024-11-13 17:31:55 -0800
+Processing by LikedController#index as JSON
+  Parameters: {"liked"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:3:in `index'
+  [1m[36mLikedRecipe Load (0.6ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/liked_controller.rb:7:in `map'
+  [1m[36mRecipe Load (1.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 56], ["id", 57], ["id", 59], ["id", 61], ["id", 63], ["id", 65], ["id", 66], ["id", 64], ["id", 62], ["id", 58], ["id", 60], ["id", 67], ["id", 68], ["id", 70], ["id", 71], ["id", 72], ["id", 73], ["id", 69], ["id", 74], ["id", 75], ["id", 76], ["id", 77], ["id", 78], ["id", 79], ["id", 80], ["id", 81], ["id", 83], ["id", 82], ["id", 84], ["id", 86], ["id", 87], ["id", 89], ["id", 85], ["id", 95], ["id", 94], ["id", 91], ["id", 92], ["id", 97], ["id", 98], ["id", 100], ["id", 101], ["id", 103], ["id", 104], ["id", 102]]
+  ↳ app/controllers/liked_controller.rb:7:in `map'
+Completed 200 OK in 440ms (Views: 28.2ms | ActiveRecord: 3.5ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/swipe" for 127.0.0.1 at 2024-11-13 17:34:31 -0800
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 16.2ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 5.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 27.5ms | GC: 0.0ms)
+Completed 200 OK in 48ms (Views: 41.0ms | ActiveRecord: 0.8ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/recipe_of_the_day" for 127.0.0.1 at 2024-11-13 17:35:55 -0800
+Processing by RecipesController#recipe_of_the_day as HTML
+  [1m[36mRecipe Load (7.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:34:in `block in recipe_of_the_day'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/recipe_of_the_day.html.erb within layouts/application
+  Rendered recipes/recipe_of_the_day.html.erb within layouts/application (Duration: 4.7ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 7.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 20.8ms | GC: 0.0ms)
+Completed 200 OK in 86ms (Views: 34.1ms | ActiveRecord: 7.5ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/liked" for 127.0.0.1 at 2024-11-13 17:36:07 -0800
+Processing by LikedController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering liked/liked.html.erb within layouts/application
+  Rendered liked/liked.html.erb within layouts/application (Duration: 222.0ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 35.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 308.6ms | GC: 0.0ms)
+Completed 200 OK in 2018ms (Views: 355.1ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/swipe" for 127.0.0.1 at 2024-11-13 17:36:10 -0800
+Started GET "/liked" for 127.0.0.1 at 2024-11-13 17:36:10 -0800
+Started GET "/liked.json" for 127.0.0.1 at 2024-11-13 17:36:10 -0800
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (6.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 20.1ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 19.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 46.7ms | GC: 0.0ms)
+Completed 200 OK in 52ms (Views: 41.3ms | ActiveRecord: 6.5ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Processing by LikedController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering liked/liked.html.erb within layouts/application
+  Rendered liked/liked.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | GC: 0.0ms)
+Completed 200 OK in 39ms (Views: 9.8ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Processing by LikedController#index as JSON
+  Parameters: {"liked"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:3:in `index'
+  [1m[36mLikedRecipe Load (0.9ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/liked_controller.rb:7:in `map'
+  [1m[36mRecipe Load (2.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 56], ["id", 57], ["id", 59], ["id", 61], ["id", 63], ["id", 65], ["id", 66], ["id", 64], ["id", 62], ["id", 58], ["id", 60], ["id", 67], ["id", 68], ["id", 70], ["id", 71], ["id", 72], ["id", 73], ["id", 69], ["id", 74], ["id", 75], ["id", 76], ["id", 77], ["id", 78], ["id", 79], ["id", 80], ["id", 81], ["id", 83], ["id", 82], ["id", 84], ["id", 86], ["id", 87], ["id", 89], ["id", 85], ["id", 95], ["id", 94], ["id", 91], ["id", 92], ["id", 97], ["id", 98], ["id", 100], ["id", 101], ["id", 103], ["id", 104], ["id", 102]]
+  ↳ app/controllers/liked_controller.rb:7:in `map'
+Completed 200 OK in 70ms (Views: 29.7ms | ActiveRecord: 3.3ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/liked" for 127.0.0.1 at 2024-11-13 17:36:12 -0800
+Started GET "/manifest.json" for 127.0.0.1 at 2024-11-13 17:36:12 -0800
+Processing by LikedController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering liked/liked.html.erb within layouts/application
+  Rendered liked/liked.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | GC: 0.0ms)
+Completed 200 OK in 21ms (Views: 7.9ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/liked.json" for 127.0.0.1 at 2024-11-13 17:36:13 -0800
+Processing by LikedController#index as JSON
+  Parameters: {"liked"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:3:in `index'
+  [1m[36mLikedRecipe Load (0.1ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/liked_controller.rb:7:in `map'
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 56], ["id", 57], ["id", 59], ["id", 61], ["id", 63], ["id", 65], ["id", 66], ["id", 64], ["id", 62], ["id", 58], ["id", 60], ["id", 67], ["id", 68], ["id", 70], ["id", 71], ["id", 72], ["id", 73], ["id", 69], ["id", 74], ["id", 75], ["id", 76], ["id", 77], ["id", 78], ["id", 79], ["id", 80], ["id", 81], ["id", 83], ["id", 82], ["id", 84], ["id", 86], ["id", 87], ["id", 89], ["id", 85], ["id", 95], ["id", 94], ["id", 91], ["id", 92], ["id", 97], ["id", 98], ["id", 100], ["id", 101], ["id", 103], ["id", 104], ["id", 102]]
+  ↳ app/controllers/liked_controller.rb:7:in `map'
+Completed 200 OK in 145ms (Views: 30.3ms | ActiveRecord: 0.7ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/filter_recipes" for 127.0.0.1 at 2024-11-13 17:36:14 -0800
+Processing by FilterRecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering filter_recipes/index.html.erb within layouts/application
+  Rendered filter_recipes/index.html.erb within layouts/application (Duration: 2.2ms | GC: 0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 8.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | GC: 0.0ms)
+Completed 200 OK in 35ms (Views: 24.4ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/recipe_of_the_day" for 127.0.0.1 at 2024-11-13 17:37:16 -0800
+Processing by RecipesController#recipe_of_the_day as HTML
+  [1m[36mRecipe Load (1.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:34:in `block in recipe_of_the_day'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/recipe_of_the_day.html.erb within layouts/application
+  Rendered recipes/recipe_of_the_day.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 9.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | GC: 0.0ms)
+Completed 200 OK in 42ms (Views: 20.0ms | ActiveRecord: 1.5ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/swipe" for 127.0.0.1 at 2024-11-13 17:37:16 -0800
+Started GET "/recipe_of_the_day" for 127.0.0.1 at 2024-11-13 17:37:17 -0800
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 15.0ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 10.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 33.5ms | GC: 0.0ms)
+Completed 200 OK in 47ms (Views: 35.6ms | ActiveRecord: 0.8ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Processing by RecipesController#recipe_of_the_day as HTML
+  [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:34:in `block in recipe_of_the_day'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/recipe_of_the_day.html.erb within layouts/application
+  Rendered recipes/recipe_of_the_day.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 7.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | GC: 0.0ms)
+Completed 200 OK in 32ms (Views: 15.9ms | ActiveRecord: 1.0ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/recipe_of_the_day" for 127.0.0.1 at 2024-11-13 17:37:18 -0800
+Processing by RecipesController#recipe_of_the_day as HTML
+  [1m[36mRecipe Load (0.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:34:in `block in recipe_of_the_day'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/recipe_of_the_day.html.erb within layouts/application
+  Rendered recipes/recipe_of_the_day.html.erb within layouts/application (Duration: 1.5ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 9.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 33.6ms | GC: 0.0ms)
+Completed 200 OK in 61ms (Views: 34.6ms | ActiveRecord: 0.9ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/addrecipe" for 127.0.0.1 at 2024-11-13 17:37:18 -0800
+Started GET "/swipe" for 127.0.0.1 at 2024-11-13 17:37:18 -0800
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 16.5ms | GC: 0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 15.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 40.1ms | GC: 0.0ms)
+Completed 200 OK in 50ms (Views: 41.0ms | ActiveRecord: 0.9ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Processing by AddrecipeController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering addrecipe/new.html.erb within layouts/application
+  Rendered addrecipe/new.html.erb within layouts/application (Duration: 68.7ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 7.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 79.4ms | GC: 0.0ms)
+Completed 200 OK in 104ms (Views: 90.3ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/liked" for 127.0.0.1 at 2024-11-13 17:37:28 -0800
+Started GET "/liked.json" for 127.0.0.1 at 2024-11-13 17:37:28 -0800
+Processing by LikedController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering liked/liked.html.erb within layouts/application
+  Rendered liked/liked.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | GC: 0.0ms)
+Completed 200 OK in 26ms (Views: 8.1ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Processing by LikedController#index as JSON
+  Parameters: {"liked"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:3:in `index'
+  [1m[36mLikedRecipe Load (0.7ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/liked_controller.rb:7:in `map'
+  [1m[36mRecipe Load (1.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 56], ["id", 57], ["id", 59], ["id", 61], ["id", 63], ["id", 65], ["id", 66], ["id", 64], ["id", 62], ["id", 58], ["id", 60], ["id", 67], ["id", 68], ["id", 70], ["id", 71], ["id", 72], ["id", 73], ["id", 69], ["id", 74], ["id", 75], ["id", 76], ["id", 77], ["id", 78], ["id", 79], ["id", 80], ["id", 81], ["id", 83], ["id", 82], ["id", 84], ["id", 86], ["id", 87], ["id", 89], ["id", 85], ["id", 95], ["id", 94], ["id", 91], ["id", 92], ["id", 97], ["id", 98], ["id", 100], ["id", 101], ["id", 103], ["id", 104], ["id", 102]]
+  ↳ app/controllers/liked_controller.rb:7:in `map'
+Completed 200 OK in 87ms (Views: 29.2ms | ActiveRecord: 2.4ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/filter_recipes" for 127.0.0.1 at 2024-11-13 17:37:29 -0800
+Started GET "/liked.json" for 127.0.0.1 at 2024-11-13 17:37:29 -0800
+Processing by FilterRecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering filter_recipes/index.html.erb within layouts/application
+  Rendered filter_recipes/index.html.erb within layouts/application (Duration: 1.5ms | GC: 0.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 13.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 21.0ms | GC: 0.0ms)
+Completed 200 OK in 32ms (Views: 23.1ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Processing by LikedController#index as JSON
+  Parameters: {"liked"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:3:in `index'
+  [1m[36mLikedRecipe Load (0.4ms)[0m  [1m[34mSELECT "liked_recipes".* FROM "liked_recipes" WHERE "liked_recipes"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/liked_controller.rb:7:in `map'
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 56], ["id", 57], ["id", 59], ["id", 61], ["id", 63], ["id", 65], ["id", 66], ["id", 64], ["id", 62], ["id", 58], ["id", 60], ["id", 67], ["id", 68], ["id", 70], ["id", 71], ["id", 72], ["id", 73], ["id", 69], ["id", 74], ["id", 75], ["id", 76], ["id", 77], ["id", 78], ["id", 79], ["id", 80], ["id", 81], ["id", 83], ["id", 82], ["id", 84], ["id", 86], ["id", 87], ["id", 89], ["id", 85], ["id", 95], ["id", 94], ["id", 91], ["id", 92], ["id", 97], ["id", 98], ["id", 100], ["id", 101], ["id", 103], ["id", 104], ["id", 102]]
+  ↳ app/controllers/liked_controller.rb:7:in `map'
+Completed 200 OK in 56ms (Views: 21.6ms | ActiveRecord: 1.1ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/recipes/share" for 127.0.0.1 at 2024-11-13 17:37:30 -0800
+Processing by RecipesController#share as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/share.html.erb within layouts/application
+  [1m[36mRecipe Load (1.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/share.html.erb:3
+  Rendered recipes/share.html.erb within layouts/application (Duration: 28.4ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 8.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 43.6ms | GC: 0.0ms)
+Completed 200 OK in 58ms (Views: 44.8ms | ActiveRecord: 1.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/recipe_of_the_day" for 127.0.0.1 at 2024-11-13 17:37:31 -0800
+Processing by RecipesController#recipe_of_the_day as HTML
+  [1m[36mRecipe Load (0.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:34:in `block in recipe_of_the_day'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/recipe_of_the_day.html.erb within layouts/application
+  Rendered recipes/recipe_of_the_day.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 10.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | GC: 0.0ms)
+Completed 200 OK in 39ms (Views: 21.3ms | ActiveRecord: 1.5ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/swipe" for 127.0.0.1 at 2024-11-13 17:37:33 -0800
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 14.6ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 7.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 29.1ms | GC: 0.0ms)
+Completed 200 OK in 35ms (Views: 30.1ms | ActiveRecord: 0.7ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/recipe_of_the_day" for 127.0.0.1 at 2024-11-13 17:38:49 -0800
+Processing by RecipesController#recipe_of_the_day as HTML
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:34:in `block in recipe_of_the_day'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/recipe_of_the_day.html.erb within layouts/application
+  Rendered recipes/recipe_of_the_day.html.erb within layouts/application (Duration: 6.9ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 7.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | GC: 0.0ms)
+Completed 200 OK in 44ms (Views: 22.5ms | ActiveRecord: 0.8ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/addrecipe" for 127.0.0.1 at 2024-11-13 17:38:52 -0800
+Started GET "/swipe" for 127.0.0.1 at 2024-11-13 17:38:52 -0800
+Processing by AddrecipeController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering addrecipe/new.html.erb within layouts/application
+  Rendered addrecipe/new.html.erb within layouts/application (Duration: 6.0ms | GC: 0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 7.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 29.3ms | GC: 0.0ms)
+Completed 200 OK in 42ms (Views: 31.5ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (1.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 15.4ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 10.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 33.3ms | GC: 0.0ms)
+Completed 200 OK in 42ms (Views: 32.8ms | ActiveRecord: 2.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/addrecipe" for 127.0.0.1 at 2024-11-13 17:38:54 -0800
+Processing by AddrecipeController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering addrecipe/new.html.erb within layouts/application
+  Rendered addrecipe/new.html.erb within layouts/application (Duration: 3.4ms | GC: 0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 8.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 21.4ms | GC: 0.0ms)
+Completed 200 OK in 30ms (Views: 22.3ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/filter_recipes" for 127.0.0.1 at 2024-11-13 17:38:55 -0800
+Processing by FilterRecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering filter_recipes/index.html.erb within layouts/application
+  Rendered filter_recipes/index.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 9.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | GC: 0.0ms)
+Completed 200 OK in 27ms (Views: 16.2ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/recipes/share" for 127.0.0.1 at 2024-11-13 17:39:01 -0800
+Processing by RecipesController#share as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/share.html.erb within layouts/application
+  [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/share.html.erb:3
+  Rendered recipes/share.html.erb within layouts/application (Duration: 14.3ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 9.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 31.3ms | GC: 0.0ms)
+Completed 200 OK in 40ms (Views: 31.6ms | ActiveRecord: 1.0ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/liked" for 127.0.0.1 at 2024-11-13 17:39:02 -0800
+Started GET "/filter_recipes" for 127.0.0.1 at 2024-11-13 17:39:03 -0800
+Processing by LikedController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/liked_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering liked/liked.html.erb within layouts/application
+  Rendered liked/liked.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | GC: 0.0ms)
+Completed 200 OK in 32ms (Views: 8.2ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Processing by FilterRecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering filter_recipes/index.html.erb within layouts/application
+  Rendered filter_recipes/index.html.erb within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 26.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 32.9ms | GC: 0.0ms)
+Completed 200 OK in 44ms (Views: 34.2ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/recipes/share" for 127.0.0.1 at 2024-11-13 17:39:03 -0800
+Processing by RecipesController#share as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/share.html.erb within layouts/application
+  [1m[36mRecipe Load (0.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/share.html.erb:3
+  Rendered recipes/share.html.erb within layouts/application (Duration: 12.0ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 10.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 28.1ms | GC: 0.0ms)
+Completed 200 OK in 37ms (Views: 28.6ms | ActiveRecord: 1.0ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/recipes/share" for 127.0.0.1 at 2024-11-13 17:39:04 -0800
+Processing by RecipesController#share as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/share.html.erb within layouts/application
+  [1m[36mRecipe Load (1.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/share.html.erb:3
+  Rendered recipes/share.html.erb within layouts/application (Duration: 11.8ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 8.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 26.7ms | GC: 0.0ms)
+Completed 200 OK in 39ms (Views: 28.2ms | ActiveRecord: 1.5ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/swipe" for 127.0.0.1 at 2024-11-13 17:39:48 -0800
+Processing by SwipeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering swipe/index.html.erb within layouts/application
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/swipe/index.html.erb:13
+  Rendered swipe/index.html.erb within layouts/application (Duration: 14.9ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:9
+  Rendered shared/_navbar.html.erb (Duration: 6.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 32.5ms | GC: 0.0ms)
+Completed 200 OK in 53ms (Views: 33.4ms | ActiveRecord: 1.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
