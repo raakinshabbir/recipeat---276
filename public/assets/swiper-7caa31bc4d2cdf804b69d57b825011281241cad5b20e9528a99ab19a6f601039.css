@@ -1,0 +1,45 @@
+.feedback-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 36px;
+  font-weight: bold;
+  color: white;
+  display: none;  /* Initially hidden */
+  z-index: 10;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-align: center;
+  pointer-events: none;
+}
+
+/* "Like" overlay (green) */
+.feedback-overlay.like {
+  background-color: green;
+  border: 2px solid darkgreen;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out; /* Smooth transition */
+}
+
+/* "Dislike" overlay (red) */
+.feedback-overlay.dislike {
+  background-color: red;
+  border: 2px solid darkred;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out; /* Smooth transition */
+}
+
+/* Show the like overlay on swipe right */
+.swiper-slide.swiped-right .feedback-overlay.like {
+  display: flex;
+  opacity: 1;
+}
+
+/* Show the dislike overlay on swipe left */
+.swiper-slide.swiped-left .feedback-overlay.dislike {
+  display: flex;
+  opacity: 1;
+}
