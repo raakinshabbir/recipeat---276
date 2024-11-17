@@ -4,26 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=0.5">
     <title>Recipeat Recipes</title>
+    <link rel="stylesheet" href="app/stylesheets/swiper.css">
 </head>
 <body>
-    <center>
-    <h1>Add Your Recipe!</h1>
-    <form id="recipe-form">
-        <input type="text" id="recipe-title" placeholder="Recipe Title" required><br>
-        <textarea id="recipe-ingredients" placeholder="Ingredients" required></textarea><br>
-        <textarea id="recipe-instructions" placeholder="Instructions" required></textarea><br>
-        <input type="number" id="recipe-cooking-time" placeholder="Cooking Time (minutes)" required><br>
-        <input type="number" id="recipe-servings" placeholder="Servings" required><br>
-        <select id="recipe-difficulty" required>
-            <option value="" disabled selected>Select Difficulty</option>
-            <option value="Easy">Easy</option>
-            <option value="Medium">Medium</option>
-            <option value="Hard">Hard</option>
-        </select><br>
-        <input type="file" id="recipe-photo" accept="image/*"><br>
-        <button type="submit">Add Recipe</button>
-    </form>
-    <div id="recipe-list"></div>
-    </center>
+    <div class="container">
+        <h1 class="form-title">Add Your Recipe!</h1>
+        <form id="recipe-form" class="recipe-form">
+            <input type="text" id="recipe-name" class="form-input" placeholder="Recipe Name" required><br>
+            <textarea id="recipe-description" class="form-textarea" placeholder="Recipe Description" required></textarea>
+            <textarea id="recipe-origin" class="form-textarea" placeholder="Country Origin" required></textarea>
+            <textarea id="recipe-steps" class="form-textarea" placeholder="Steps" required></textarea>
+            <input type="file" id="recipe-photo" class="form-file-input" accept="image/*"><br>
+            <button type="submit" class="form-button">Add Recipe</button>
+        </form>
+        <div id="recipe-list" class="recipe-list"></div>
+        <script src="recipeatadd.js"></script>
+    </div>
 </body>
 </html>
