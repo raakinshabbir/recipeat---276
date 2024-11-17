@@ -170,32 +170,3 @@
     box-shadow: -35vmin 0 4.9vmin currentColor;
 }
 
-.background span:nth-child(11) {
-    color: #e00043;
-    top: 40%;
-    left: 80%;
-    animation-duration: 100s;
-    animation-delay: -100s;
-    transform-origin: -10vw -20vh;
-    box-shadow: 22vmin 0 4.7vmin currentColor;
-}
-
-.background span:nth-child(12) {
-    color: #f65a83;
-    top: 88%;
-    left: 20%;
-    animation-duration: 72s;
-    animation-delay: -80s;
-    transform-origin: 18vw 10vh;
-    box-shadow: -25vmin 0 4.3vmin currentColor;
-}
-
-.background span:nth-child(13) {
-    color: #ff87b2;
-    top: 15%;
-    left: 75%;
-    animation-duration: 55s;
-    animation-delay: -95s;
-    transform-origin: 10vw -5vh;
-    box-shadow: 27vmin 0 4.9vmin currentColor;
-}

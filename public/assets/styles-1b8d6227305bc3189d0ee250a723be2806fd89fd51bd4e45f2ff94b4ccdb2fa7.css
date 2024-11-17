@@ -1,0 +1,103 @@
+.navbar {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    position: relative; /* Ensures that it stays at the top */
+    z-index: 1; /* Keeps it above other elements */
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.navbar .nav-link {
+    color: white; 
+}
+
+.navbar-brand {
+    font-size: 3.0rem; 
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+    font-weight: bold;
+    font-style: oblique;
+    letter-spacing: 0px;
+}
+
+.nav-link {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+    font-weight: bold;
+    font-style: oblique;
+    letter-spacing: 0px;
+}
+
+@keyframes move {
+    100% {
+        transform: translate3d(0, 0, 1px) rotate(360deg);
+    }
+}
+
+.background {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: #fed7e7;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.background span {
+    width: 16vmin;
+    height: 16vmin;
+    border-radius: 16vmin;
+    backface-visibility: hidden;
+    position: absolute;
+    animation: move;
+    animation-duration: 30;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.background span:nth-child(1) {
+    color: #e00043;
+    top: 67%;
+    left: 38%;
+    animation-duration: 59s;
+    animation-delay: -170s;
+    transform-origin: 1vw -17vh;
+    box-shadow: 32vmin 0 4.9vmin currentColor;
+}
+
+.background span:nth-child(2) {
+    color: #f65a83;
+    top: 20%;
+    left: 71%;
+    animation-duration: 43s;
+    animation-delay: -90s;
+    transform-origin: 15vw 1vh;
+    box-shadow: -28vmin 0 5vmin currentColor;
+}
+
+.background span:nth-child(3) {
+    color: #ff87b2;
+    top: 80%;
+    left: 15%;
+    animation-duration: 71s;
+    animation-delay: -30s;
+    transform-origin: -10vw 10vh;
+    box-shadow: 35vmin 0 4.5vmin currentColor;
+}
+
+
