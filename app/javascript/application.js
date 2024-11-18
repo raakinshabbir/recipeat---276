@@ -2,36 +2,13 @@
 import "@hotwired/turbo-rails";
 import "controllers";
 // swiper js
-let blankSlideAdded = false;
 
 document.addEventListener("turbo:load", function () {
+  let blankSlideAdded = false;
   const swiperContainer = document.querySelector('swiper-container');
   // console.log(swiperContainer);
   if (swiperContainer) {
     let swiper = swiperContainer.swiper;
-
-    if (!swiper) {
-      // Initialize Swiper if not already initialized
-      swiper = new Swiper(swiperContainer, {
-        direction: "horizontal",
-        loop: false,
-        slidesPerView: 1,
-        navigation: false,
-        pagination: false,
-        keyboard: {
-          enabled: true,
-        },
-        effect: "cards",
-        grabCursor: true, // Optional, enables grabbing cursor for the "cards" effect
-        style: {
-          "--swiper-navigation-color": "#333",
-          "--swiper-pagination-color": "#333",
-          width: "100%",
-          maxWidth: "600px",
-          margin: "0 auto",
-        },
-      });
-    }
 
     let lastSeenIndex = 0;
     let loading = false;
