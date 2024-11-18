@@ -1,14 +1,18 @@
 // Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
 import "controllers";
-
 // swiper js
-let blankSlideAdded = false;
 
+<<<<<<< HEAD
 document.addEventListener("DOMContentLoaded", function () {
+=======
+document.addEventListener("turbo:load", function () {
+  let blankSlideAdded = false;
+>>>>>>> BugFixing
   const swiperContainer = document.querySelector('swiper-container');
   // console.log(swiperContainer);
   if (swiperContainer) {
-    const swiper = swiperContainer.swiper;
+    let swiper = swiperContainer.swiper;
+
     let lastSeenIndex = 0;
     let loading = false;
     let actionHandled = false; // Track if swipe action was already handled
@@ -70,8 +74,8 @@ document.addEventListener("DOMContentLoaded", function () {
                   </div>
                 </div>
               </div>
-              <div class="feedback-overlay like">Liked</div>
-              <div class="feedback-overlay dislike">Disliked</div>
+              <div class="feedback-overlay like">✅</div>
+              <div class="feedback-overlay dislike">❌</div>
             `;
     
             swiper.appendSlide(newSlide); // Add the new slide to the swiper
@@ -134,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
             swiper.removeSlide(previousIndex); // Remove the slide after the overlay hides
         
             actionHandled = false; // Reset action handling
-          }, 500);
+          }, 300);
         
         } else if (direction === 'left') {
           // Show dislike overlay and remove the previous slide
@@ -145,7 +149,7 @@ document.addEventListener("DOMContentLoaded", function () {
             swiper.removeSlide(previousIndex); // Remove the slide after the overlay hides
             swiper.slideNext(); // Move to the next slide after removal
             actionHandled = false; // Reset action handling
-          }, 500);
+          }, 300);
         }
       }
     });
