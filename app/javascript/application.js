@@ -1,11 +1,10 @@
 // Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
-import "@hotwired/turbo-rails";
 import "controllers";
 
 // swiper js
 let blankSlideAdded = false;
 
-document.addEventListener("turbo:load", function () {
+document.addEventListener("DOMContentLoaded", function () {
   const swiperContainer = document.querySelector('swiper-container');
   // console.log(swiperContainer);
   if (swiperContainer) {

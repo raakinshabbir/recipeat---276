@@ -2,7 +2,7 @@ class RecipesController < ApplicationController
     protect_from_forgery with: :null_session # Necessary for API calls without session verification
   
     def index
-      @recipes = Recipe.all
+      @recipes = Recipe.limit(10)
       render json: @recipes
     end
   
