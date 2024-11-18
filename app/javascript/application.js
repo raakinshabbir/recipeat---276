@@ -1,28 +1,40 @@
 // Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
+import "@hotwired/turbo-rails";
 import "controllers";
 // swiper js
 
-<<<<<<< HEAD
-document.addEventListener("DOMContentLoaded", function () {
-=======
 document.addEventListener("turbo:load", function () {
-  let blankSlideAdded = false;
->>>>>>> BugFixing
   const swiperContainer = document.querySelector('swiper-container');
-  // console.log(swiperContainer);
   if (swiperContainer) {
     let swiper = swiperContainer.swiper;
 
+    if (!swiper) {
+      console.log("Swiper instance not found. Initializing a new Swiper instance...");
+      swiper = new Swiper('.swiper', {
+        direction: 'horizontal',
+        loop: false,
+        slidesPerView: 1,
+        navigation: false,
+        pagination: false,
+        keyboard: {
+          enabled: true,
+        },
+        effect: "cards", // Use the cards effect
+        on: {
+          init: () => console.log("Swiper initialized!"),
+        },
+      });
+    } 
+    let blankSlideAdded = false;
     let lastSeenIndex = 0;
     let loading = false;
     let actionHandled = false; // Track if swipe action was already handled
 
     if (!blankSlideAdded) {
-      // Add a blank slide at the first position
       const blankSlide = `
-        <swiper-slide style="padding: 60px; border: 3px solid #ccc; border-radius: 16px; background-color: #f9f9f9;"> 
+        <swiper-slide style="padding: 60px; border: 3px solid #ccc; border-radius: 16px; background-color: #f9f9f9;">
         </swiper-slide>`;
-      swiper.prependSlide(blankSlide); // Add the new blank slide at the beginning
+      swiper.prependSlide(blankSlide);
       blankSlideAdded = true;
     }
 
@@ -153,8 +165,6 @@ document.addEventListener("turbo:load", function () {
         }
       }
     });
-
-
   } else {
     console.log("Swiper container not found");
   }

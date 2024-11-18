@@ -6,9 +6,9 @@
   pagination="false"
   style="--swiper-navigation-color: #333; --swiper-pagination-color: #333; width: 100%; max-width: 600px; margin: 0 auto;"
   keyboard="true"
-  #allow-slide-prev="false"
   effect="cards"
 >
+
   <!-- Loop through filtered recipes and display each one as a swiper slide -->
   <% @recipes.each do |recipe| %>
     <swiper-slide style="padding: 60px; border: 3px solid #ccc; border-radius: 16px; background-color: #f9f9f9;" data-recipe-id="<%=recipe.id %>"> 
