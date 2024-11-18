@@ -1,7 +1,6 @@
 // Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
 import "@hotwired/turbo-rails";
 import "controllers";
-
 // swiper js
 let blankSlideAdded = false;
 
@@ -9,7 +8,31 @@ document.addEventListener("turbo:load", function () {
   const swiperContainer = document.querySelector('swiper-container');
   // console.log(swiperContainer);
   if (swiperContainer) {
-    const swiper = swiperContainer.swiper;
+    let swiper = swiperContainer.swiper;
+
+    if (!swiper) {
+      // Initialize Swiper if not already initialized
+      swiper = new Swiper(swiperContainer, {
+        direction: "horizontal",
+        loop: false,
+        slidesPerView: 1,
+        navigation: false,
+        pagination: false,
+        keyboard: {
+          enabled: true,
+        },
+        effect: "cards",
+        grabCursor: true, // Optional, enables grabbing cursor for the "cards" effect
+        style: {
+          "--swiper-navigation-color": "#333",
+          "--swiper-pagination-color": "#333",
+          width: "100%",
+          maxWidth: "600px",
+          margin: "0 auto",
+        },
+      });
+    }
+
     let lastSeenIndex = 0;
     let loading = false;
     let actionHandled = false; // Track if swipe action was already handled
@@ -71,8 +94,8 @@ document.addEventListener("turbo:load", function () {
                   </div>
                 </div>
               </div>
-              <div class="feedback-overlay like">Liked</div>
-              <div class="feedback-overlay dislike">Disliked</div>
+              <div class="feedback-overlay like">✅</div>
+              <div class="feedback-overlay dislike">❌</div>
             `;
     
             swiper.appendSlide(newSlide); // Add the new slide to the swiper
@@ -135,7 +158,7 @@ document.addEventListener("turbo:load", function () {
             swiper.removeSlide(previousIndex); // Remove the slide after the overlay hides
         
             actionHandled = false; // Reset action handling
-          }, 500);
+          }, 300);
         
         } else if (direction === 'left') {
           // Show dislike overlay and remove the previous slide
@@ -146,7 +169,7 @@ document.addEventListener("turbo:load", function () {
             swiper.removeSlide(previousIndex); // Remove the slide after the overlay hides
             swiper.slideNext(); // Move to the next slide after removal
             actionHandled = false; // Reset action handling
-          }, 500);
+          }, 300);
         }
       }
     });

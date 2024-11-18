@@ -8,6 +8,7 @@ class Recipe < ApplicationRecord
 
   has_many :liked_recipes
   has_many :users, through: :liked_recipes
+
   
   def self.fetch_new_recipes_from_api(count = 10)
     url = URI("https://www.themealdb.com/api/json/v1/1/random.php")
