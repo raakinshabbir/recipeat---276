@@ -55,4 +55,110 @@
     object-fit: cover;
   }
   
-  
+  /* Recipe Form Container */
+.recipe-form-container {
+  background-color: #fff; /* White background for form */
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 20px auto;
+  position: relative;
+}
+
+/* Form heading */
+.recipe-form-container h1 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: "Trebuchet MS", Tahoma, sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Styling form elements */
+.recipe-form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe-form-container form div {
+  margin-bottom: 20px;
+}
+
+.recipe-form-container label {
+  font-size: 1.1em;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.recipe-form-container input,
+.recipe-form-container textarea,
+.recipe-form-container select,
+.recipe-form-container button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 1em;
+  color: #333;
+}
+
+.recipe-form-container input:focus,
+.recipe-form-container textarea:focus,
+.recipe-form-container select:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Submit button */
+.recipe-form-container button[type="submit"] {
+  background-color: #28a745;
+  color: white;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.recipe-form-container button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+/* File input */
+.recipe-form-container input[type="file"] {
+  padding: 5px;
+  font-size: 1em;
+}
+
+/* Select dropdown */
+.recipe-form-container select {
+  padding: 12px;
+  font-size: 1em;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .recipe-form-container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .recipe-form-container h1 {
+    font-size: 1.5em;
+  }
+
+  .recipe-form-container input,
+  .recipe-form-container textarea,
+  .recipe-form-container select {
+    font-size: 1em;
+  }
+
+  .recipe-form-container button[type="submit"] {
+    font-size: 1em;
+    padding: 10px;
+  }
+}
