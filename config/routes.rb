@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get '/swipe', to: 'swipe#index'
   get 'recipes/share', to: 'recipes#share'
   get '/recipes/:id', to: 'recipes#show'
+  #to show recipes when clicked on
+  get 'recipes/:id', to: 'recipes#show', as: 'recipe'
   devise_for :users
 
   resources :recipes do
