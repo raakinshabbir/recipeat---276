@@ -1,0 +1,539 @@
+.recipe-of-the-day-container {
+    background-color: #fff; /* White background for form */
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    padding: 30px;
+    width: 100%;
+    max-width: 800px; /* Slightly smaller width for filter form */
+    margin: 20px auto;
+    position: relative;
+  }
+
+.recipe-of-the-day-container h1 {
+        font-size: 2em;
+        color: #333;
+        margin-bottom: 20px;
+        text-align: center;
+        font-family: "Trebuchet MS", Tahoma, sans-serif;
+        font-weight: 700;
+        font-style: italic;
+}
+/* Filter Form Container */
+.filter-form-container {
+    background-color: #fff; /* White background for form */
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    padding: 30px;
+    width: 100%;
+    max-width: 800px; /* Slightly smaller width for filter form */
+    margin: 20px auto;
+    position: relative;
+  }
+  
+  /* Form heading */
+  .filter-form-container h1 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: "Trebuchet MS", Tahoma, sans-serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  /* Styling form elements */
+  .filter-form-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .filter-form-container form .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .filter-form-container label {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .filter-form-container input,
+  .filter-form-container select,
+  .filter-form-container button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    font-size: 1em;
+    color: #333;
+  }
+  
+  .filter-form-container input:focus,
+  .filter-form-container select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  /* Submit button */
+  .filter-form-container button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .filter-form-container button[type="submit"]:hover {
+    background-color: #218838;
+  }
+  
+.navbar {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    position: relative; /* Ensures that it stays at the top */
+    z-index: 1; /* Keeps it above other elements */
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.navbar .nav-link {
+    color: white; 
+}
+
+.navbar-brand {
+    font-size: 3.0rem; 
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+    font-weight: bold;
+    font-style: oblique;
+    letter-spacing: 0px;
+}
+
+.nav-link {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+    font-weight: bold;
+    font-style: oblique;
+    letter-spacing: 0px;
+}
+
+@keyframes move {
+    100% {
+        transform: translate3d(0, 0, 1px) rotate(360deg);
+    }
+}
+
+.background {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: #fed7e7;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.background span {
+    width: 16vmin;
+    height: 16vmin;
+    border-radius: 16vmin;
+    backface-visibility: hidden;
+    position: absolute;
+    animation: move;
+    animation-duration: 30;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.background span:nth-child(1) {
+    color: #e00043;
+    top: 67%;
+    left: 38%;
+    animation-duration: 59s;
+    animation-delay: -170s;
+    transform-origin: 1vw -17vh;
+    box-shadow: 32vmin 0 4.9vmin currentColor;
+}
+
+.background span:nth-child(2) {
+    color: #f65a83;
+    top: 20%;
+    left: 71%;
+    animation-duration: 43s;
+    animation-delay: -90s;
+    transform-origin: 15vw 1vh;
+    box-shadow: -28vmin 0 5vmin currentColor;
+}
+
+.background span:nth-child(3) {
+    color: #ff87b2;
+    top: 80%;
+    left: 15%;
+    animation-duration: 71s;
+    animation-delay: -30s;
+    transform-origin: -10vw 10vh;
+    box-shadow: 35vmin 0 4.5vmin currentColor;
+}
+
+.background span:nth-child(4) {
+    color: #ff87b2;
+    top: 12%;
+    left: 5%;
+    animation-duration: 51s;
+    animation-delay: -120s;
+    transform-origin: 20vw -5vh;
+    box-shadow: -30vmin 0 4.8vmin currentColor;
+}
+
+.background span:nth-child(5) {
+    color: #e00043;
+    top: 65%;
+    left: 85%;
+    animation-duration: 75s;
+    animation-delay: -60s;
+    transform-origin: 10vw -15vh;
+    box-shadow: 25vmin 0 5vmin currentColor;
+}
+
+.background span:nth-child(6) {
+    color: #f65a83;
+    top: 45%;
+    left: 40%;
+    animation-duration: 37s;
+    animation-delay: -110s;
+    transform-origin: 5vw 10vh;
+    box-shadow: -20vmin 0 4.7vmin currentColor;
+}
+
+.background span:nth-child(7) {
+    color: #ff87b2;
+    top: 95%;
+    left: 30%;
+    animation-duration: 62s;
+    animation-delay: -80s;
+    transform-origin: -15vw -10vh;
+    box-shadow: 30vmin 0 5.2vmin currentColor;
+}
+
+.background span:nth-child(8) {
+    color: #e00043;
+    top: 5%;
+    left: 90%;
+    animation-duration: 49s;
+    animation-delay: -140s;
+    transform-origin: -25vw 5vh;
+    box-shadow: 28vmin 0 5vmin currentColor;
+}
+
+.background span:nth-child(9) {
+    color: #f65a83;
+    top: 50%;
+    left: 50%;
+    animation-duration: 66s;
+    animation-delay: -50s;
+    transform-origin: 0vw 0vh;
+    box-shadow: 40vmin 0 4.6vmin currentColor;
+}
+
+.background span:nth-child(10) {
+    color: #ff87b2;
+    top: 10%;
+    left: 10%;
+    animation-duration: 90s;
+    animation-delay: -20s;
+    transform-origin: 30vw 20vh;
+    box-shadow: -35vmin 0 4.9vmin currentColor;
+}
+
+.background span:nth-child(11) {
+    color: #e00043;
+    top: 40%;
+    left: 80%;
+    animation-duration: 100s;
+    animation-delay: -100s;
+    transform-origin: -10vw -20vh;
+    box-shadow: 22vmin 0 4.7vmin currentColor;
+}
+
+.background span:nth-child(12) {
+    color: #f65a83;
+    top: 88%;
+    left: 20%;
+    animation-duration: 72s;
+    animation-delay: -80s;
+    transform-origin: 18vw 10vh;
+    box-shadow: -25vmin 0 4.3vmin currentColor;
+}
+
+.background span:nth-child(13) {
+    color: #ff87b2;
+    top: 15%;
+    left: 75%;
+    animation-duration: 55s;
+    animation-delay: -95s;
+    transform-origin: 10vw -5vh;
+    box-shadow: 27vmin 0 4.9vmin currentColor;
+}
+
+  .feedback-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 254px;
+    color: white;
+    display: none;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    text-align: center;
+  }
+  
+  .like {
+    background-color: transparent;
+    color: green
+  }
+  
+  .dislike {
+    background-color: transparent;
+  }
+  
+  
+  body {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: "Trebuchet MS", Tahoma, sans-serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  swiper-container {
+    max-width: 100%;
+    height: 1200px;
+    padding: 20px;
+    background-color: transparent; /* Makes the container transparent */
+  }
+  
+  swiper-slide {
+    background-color: rgba(255, 255, 255, 0.8); /* Slight transparency for blending */
+    border-radius: 15px; /* Less rounded corners for a modern look */
+    padding: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Softer shadow for subtle depth */
+    overflow-y: auto;
+    transition: all 0.3s ease-in-out; /* Smooth transition on hover */
+  }
+  
+  swiper-slide:hover {
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow on hover */
+  }
+  
+  img {
+    border-radius: 12px; /* Softer image border */
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  /* Recipe Form Container */
+.recipe-form-container {
+  background-color: #fff; /* White background for form */
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 20px auto;
+  position: relative;
+}
+
+/* Form heading */
+.recipe-form-container h1 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: "Trebuchet MS", Tahoma, sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Styling form elements */
+.recipe-form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe-form-container form div {
+  margin-bottom: 20px;
+}
+
+.recipe-form-container label {
+  font-size: 1.1em;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.recipe-form-container input,
+.recipe-form-container textarea,
+.recipe-form-container select,
+.recipe-form-container button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 1em;
+  color: #333;
+}
+
+.recipe-form-container input:focus,
+.recipe-form-container textarea:focus,
+.recipe-form-container select:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Submit button */
+.recipe-form-container button[type="submit"] {
+  background-color: #28a745;
+  color: white;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.recipe-form-container button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+/* File input */
+.recipe-form-container input[type="file"] {
+  padding: 5px;
+  font-size: 1em;
+}
+
+/* Select dropdown */
+.recipe-form-container select {
+  padding: 12px;
+  font-size: 1em;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .recipe-form-container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .recipe-form-container h1 {
+    font-size: 1.5em;
+  }
+
+  .recipe-form-container input,
+  .recipe-form-container textarea,
+  .recipe-form-container select {
+    font-size: 1em;
+  }
+
+  .recipe-form-container button[type="submit"] {
+    font-size: 1em;
+    padding: 10px;
+  }
+}
+body {
+  overflow: hidden;
+}
+
+
+.notice, .alert {
+  margin: 0; /* Remove default margins */
+  padding: 0; /* Remove default padding */
+}
+
+
+.welcome-container {
+  display: flex; /* Enables Flexbox layout */
+  flex-direction: column; /* Stacks children vertically */
+  justify-content: center; /* Centers children vertically */
+  align-items: center; /* Centers children horizontally */
+  overflow: hidden;
+  position: relative; /* Positioning context for the overlay */
+  text-align: center;
+  padding: 50px;
+  background-image: url(/assets/background3.png); /* Your background image */
+  background-size: cover; /* Ensures the image covers the entire container */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  height: 100vh; /* Full height of the viewport */
+  color: white;
+  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 1.0) 50%, transparent 100%); /* For Safari */
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 1.0) 50%, transparent 100%); /* For other browsers */
+}
+
+  .welcome-container h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    align-items: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+    font-style: oblique;
+  }
+  
+  .welcome-container h2 {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    align-items: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+    font-weight: bolder;
+    font-style: oblique;
+
+
+  }
+  
+  .welcome-container .btn {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    font-weight: bolder;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+    font-weight: bolder;
+    font-style: oblique;
+  }
+  
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
+ 
+
+ 

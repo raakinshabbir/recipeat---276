@@ -1,0 +1,87 @@
+/* Recipe Sharing Container */
+.recipe-sharing-container {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    padding: 30px;
+    width: 100%;
+    max-width: 800px;
+    max-height: 1200px;
+    overflow-y: scroll;
+    margin: 20px auto;
+    position: relative;
+}
+
+/* Heading for Share Your Favorite Recipes */
+.recipe-sharing-title {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: "Trebuchet MS", Tahoma, sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* Recipe Card */
+.recipe-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow around the card */
+}
+
+/* Recipe Title */
+.recipe-title {
+    font-size: 1.5em;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Recipe Details */
+.recipe-details p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin: 10px 0;
+    color: #555;
+}
+
+.recipe-details p strong {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Share Recipe Link */
+.share-recipe-link {
+    display: block;
+    text-align: center;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #3498db;
+    padding: 10px 20px;
+    margin-top: 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.share-recipe-link:hover {
+    background-color: #2980b9;
+}
+
+/* Recipe Image Container */
+.recipe-image-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.recipe-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}

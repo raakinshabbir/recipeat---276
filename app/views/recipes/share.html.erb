@@ -1,12 +1,33 @@
-<h1>Share Your Favorite Recipes</h1>
-<ul>
-  <% @recipes.each do |recipe| %>
-    <li>
-      <strong><%= recipe.title %></strong>
-      <!-- Mailto link for sharing the recipe via email -->
-      <a href="mailto:?subject=Recipe: <%= recipe.title %>&body=Check out this recipe!%0D%0A%0D%0ARecipe: <%= recipe.title %>%0D%0AIngredients:%0D%0A<%= recipe.ingredients %>%0D%0AInstructions:%0D%0A<%= recipe.instructions %>" target="_blank">
-        Share Recipe
-      </a>
-    </li>
-  <% end %>
-</ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="app/stylesheets/recipeShare.css">
+  <title>Share Your Favorite Recipes</title>
+</head>
+<body>
+  <div class="recipe-sharing-container">
+    <h1 class="recipe-sharing-title">Share Your Favorite Recipes!</h1>
+    <ul class="recipe-list">
+      <% @recipes.each do |recipe| %>
+        <li class="recipe-item">
+          <div class="recipe-card">
+            <% if recipe.image_url.present? %>
+              <div class="recipe-image-container">
+                <img src="<%= recipe.image_url %>" alt="<%= recipe.title %>" class="recipe-image">
+              </div>
+            <% end %>
+
+            <h2 class="recipe-title"><%= recipe.title %></h2>
+            <!-- Mailto link for sharing the recipe via email -->
+            <a href="mailto:?subject=Recipe: <%= recipe.title %>&body=Check out this recipe!%0D%0A%0D%0ARecipe: <%= recipe.title %>%0D%0AIngredients:%0D%0A<%= recipe.ingredients %>%0D%0AInstructions:%0D%0A<%= recipe.instructions %>" class="share-recipe-link" target="_blank">
+              Share Recipe
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</body>
+</html>

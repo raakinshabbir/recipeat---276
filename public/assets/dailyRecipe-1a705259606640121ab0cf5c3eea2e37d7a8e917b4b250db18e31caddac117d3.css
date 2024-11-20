@@ -1,0 +1,20 @@
+.recipe-of-the-day-container {
+    background-color: #fff; /* White background for form */
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    padding: 30px;
+    width: 100%;
+    max-width: 800px; /* Slightly smaller width for filter form */
+    margin: 20px auto;
+    position: relative;
+  }
+
+.recipe-of-the-day-container h1 {
+        font-size: 2em;
+        color: #333;
+        margin-bottom: 20px;
+        text-align: center;
+        font-family: "Trebuchet MS", Tahoma, sans-serif;
+        font-weight: 700;
+        font-style: italic;
+}

@@ -1,0 +1,71 @@
+/* Filter Form Container */
+.filter-form-container {
+    background-color: #fff; /* White background for form */
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    padding: 30px;
+    width: 100%;
+    max-width: 800px; /* Slightly smaller width for filter form */
+    margin: 20px auto;
+    position: relative;
+  }
+  
+  /* Form heading */
+  .filter-form-container h1 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: "Trebuchet MS", Tahoma, sans-serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  /* Styling form elements */
+  .filter-form-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .filter-form-container form .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .filter-form-container label {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .filter-form-container input,
+  .filter-form-container select,
+  .filter-form-container button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    font-size: 1em;
+    color: #333;
+  }
+  
+  .filter-form-container input:focus,
+  .filter-form-container select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  /* Submit button */
+  .filter-form-container button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .filter-form-container button[type="submit"]:hover {
+    background-color: #218838;
+  }
+  

@@ -13,7 +13,7 @@
   <% @recipes.each do |recipe| %>
     <swiper-slide style="padding: 60px; border: 3px solid #ccc; border-radius: 16px; background-color: #f9f9f9;" data-recipe-id="<%=recipe.id %>"> 
       <!-- Recipe Title -->
-      <h2 style="color: #2c3e50;"><%= recipe.title %></h2>
+      <h2 class="recipe-title"><%= recipe.title %></h2>
 
       <!-- Recipe Image -->
       <div style="text-align: center;">

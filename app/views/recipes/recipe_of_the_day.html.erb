@@ -1,21 +1,36 @@
-<h1>Recipe of the Day</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="app/stylesheets/recipeDay.css">
+  <title>Recipe of the Day</title> <!-- Add a title for the page -->
+</head>
+<body>
+  <div class="recipe-of-the-day-container">
+    <h1 class="recipe-of-the-day-title">Recipe of the Day</h1>
+    <% if @recipe_of_the_day %>
+      <div class="recipe-card">
+        <!-- Add image here -->
+        <% if @recipe_of_the_day.image_url.present? %>
+          <div class="recipe-image-container">
+            <img src="<%= @recipe_of_the_day.image_url %>" alt="<%= @recipe_of_the_day.title %>" class="recipe-image">
+          </div>
+        <% end %>
 
-<div id="recipe-container">
-  <% if @recipe_of_the_day %>
-    <div class="recipe-card" style="padding: 20px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9; margin-top: 20px;">
-      <h2 style="color: #2c3e50;"><%= @recipe_of_the_day.title %></h2>
+        <h2 class="recipe-title"><%= @recipe_of_the_day.title %></h2>
 
-      <p><strong>Ingredients:</strong> <%= @recipe_of_the_day.ingredients || 'Not specified' %></p>
-
-      <p><strong>Instructions:</strong> <%= @recipe_of_the_day.instructions || 'Not specified' %></p>
-
-      <p><strong>Cooking Time:</strong> <%= @recipe_of_the_day.cooking_time || 'Not specified' %> minutes</p>
-
-      <p><strong>Servings:</strong> <%= @recipe_of_the_day.servings || 'Not specified' %></p>
-
-      <p><strong>Difficulty:</strong> <%= @recipe_of_the_day.difficulty ? @recipe_of_the_day.difficulty.capitalize : 'Not specified' %></p>
-    </div>
-  <% else %>
-    <p>No recipe of the day is available at the moment. Please check back later!</p>
-  <% end %>
-</div>
+        <div class="recipe-details">
+          <p class="recipe-ingredients"><strong>Ingredients:</strong> <%= @recipe_of_the_day.ingredients || 'Not specified' %></p>
+          <p class="recipe-instructions"><strong>Instructions:</strong> <%= @recipe_of_the_day.instructions || 'Not specified' %></p>
+          <p class="recipe-cooking-time"><strong>Cooking Time:</strong> <%= @recipe_of_the_day.cooking_time || 'Not specified' %> minutes</p>
+          <p class="recipe-servings"><strong>Servings:</strong> <%= @recipe_of_the_day.servings || 'Not specified' %></p>
+          <p class="recipe-difficulty"><strong>Difficulty:</strong> <%= @recipe_of_the_day.difficulty ? @recipe_of_the_day.difficulty.capitalize : 'Not specified' %></p>
+        </div>
+      </div>
+    <% else %>
+      <p class="no-recipe-message">No recipe of the day is available at the moment. Please check back later!</p>
+    <% end %>
+  </div>
+</body>
+</html>

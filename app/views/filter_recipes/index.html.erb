@@ -1,25 +1,40 @@
-<h1>Filter Recipes</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="app/stylesheets/recipeFilter.css">
+  <title>Filter Recipes</title> <!-- Add a title for the page -->
+</head>
+<body>
+  <div class="filter-form-container">
+  <h1 class="filter-recipes-title">Filter Recipes</h1>
 
-<form id="recipeFilterForm" method="get" action="/swipe">
-  <div>
-    <label for="difficulty">Difficulty:</label>
-    <select id="difficulty" name="difficulty">
-      <option value="">All</option>
-      <option value="Easy">Easy</option>
-      <option value="Medium">Medium</option>
-      <option value="Hard">Hard</option>
-    </select>
-  </div>
+  <form id="recipeFilterForm" class="recipe-filter-form" method="get" action="/swipe">
+    <div class="form-group">
+      <label for="difficulty" class="form-label">Difficulty:</label>
+      <select id="difficulty" name="difficulty" class="form-select">
+        <option value="">All</option>
+        <option value="Easy">Easy</option>
+        <option value="Medium">Medium</option>
+        <option value="Hard">Hard</option>
+      </select>
+    </div>
 
-  <div>
-    <label for="cooking_time">Max Cooking Time (minutes):</label>
-    <input type="number" id="cooking_time" name="cooking_time" placeholder="e.g., 30", min="0">
-  </div>
+    <div class="form-group">
+      <label for="cooking_time" class="form-label">Max Cooking Time (minutes):</label>
+      <input type="number" id="cooking_time" name="cooking_time" class="form-input" placeholder="e.g., 30" min="0">
+    </div>
 
-  <div>
-    <label for="unwanted_ingredients">Unwanted Ingredients (comma-separated):</label>
-    <input type="text" id="unwanted_ingredients" name="unwanted_ingredients" placeholder="e.g., Garlic, Onion" value="<%= params[:unwanted_ingredients] %>">
-  </div>
+    <div class="form-group">
+      <label for="unwanted_ingredients" class="form-label">Unwanted Ingredients (comma-separated):</label>
+      <input type="text" id="unwanted_ingredients" name="unwanted_ingredients" class="form-input" placeholder="e.g., Garlic, Onion">
+    </div>
 
-  <button type="submit">Filter</button>
-</form>
+    <div class="form-group">
+      <button type="submit" class="form-button">Filter</button>
+    </div>
+  </form>
+</div>
+</body>
+</html>
